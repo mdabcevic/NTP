@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2023/06/13 14:20:55.879,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2023/06/13 14:20:55.928,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2023/06/13 14:21:23.986,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\PutniNaloziPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2023/06/13 14:21:23.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
-    <Transaction>2023/06/13 14:21:23.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2023/06/13 14:21:23.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2023/06/13 14:21:24.009,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\PutniNalozi.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>2023/06/13 14:21:30.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm</Transaction>
-    <Transaction>2023/06/13 14:21:30.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h</Transaction>
-    <Transaction>2023/06/13 14:21:30.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
+	<Transactions>
+    <Transaction>2023/06/13 14:20:55.000.928,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/06/13 14:20:55.000.879,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/06/13 14:21:23.000.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
+    <Transaction>2023/06/13 14:21:23.000.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h</Transaction>
+    <Transaction>2023/06/13 14:21:23.000.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm</Transaction>
+    <Transaction>2023/06/13 14:21:23.000.986,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\PutniNaloziPCH1.h</Transaction>
+    <Transaction>2023/06/13 14:21:24.000.009,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\PutniNalozi.cbproj</Transaction>
+    <Transaction>2023/06/13 14:21:30.000.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.h</Transaction>
+    <Transaction>2023/06/13 14:21:30.000.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.dfm</Transaction>
+    <Transaction>2023/06/13 14:21:30.000.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.cpp</Transaction>
   </Transactions>
 </BorlandProject>
