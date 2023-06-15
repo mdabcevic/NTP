@@ -27,17 +27,19 @@ object Form1: TForm1
   end
   object pwConfirmLabel: TLabel
     Left = 208
-    Top = 232
+    Top = 216
     Width = 122
     Height = 15
     Caption = 'password confirmation'
+    Visible = False
   end
   object emailLabel: TLabel
     Left = 208
-    Top = 288
+    Top = 272
     Width = 34
     Height = 15
     Caption = 'e-mail'
+    Visible = False
   end
   object usernameBox: TEdit
     Left = 208
@@ -60,10 +62,11 @@ object Form1: TForm1
     Height = 17
     Caption = 'I'#39'd like to register'
     TabOrder = 2
+    OnClick = isRegisterClick
   end
   object isAdmin: TCheckBox
     Left = 208
-    Top = 192
+    Top = 184
     Width = 185
     Height = 17
     Caption = 'I'#39'm an administrator'
@@ -71,21 +74,23 @@ object Form1: TForm1
   end
   object pwConfirmBox: TEdit
     Left = 208
-    Top = 253
+    Top = 237
     Width = 185
     Height = 23
     TabOrder = 4
+    Visible = False
   end
   object emailBox: TEdit
     Left = 208
-    Top = 309
+    Top = 293
     Width = 185
     Height = 23
     TabOrder = 5
+    Visible = False
   end
   object loginButton: TButton
     Left = 208
-    Top = 352
+    Top = 336
     Width = 185
     Height = 25
     Caption = 'Login'
