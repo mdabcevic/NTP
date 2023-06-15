@@ -23,6 +23,7 @@ __published:	// IDE-managed Components
 	TEdit *emailBox;
 	TButton *loginButton;
 	void __fastcall isRegisterClick(TObject *Sender);
+	void __fastcall loginButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
