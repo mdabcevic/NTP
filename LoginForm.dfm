@@ -53,6 +53,7 @@ object Form1: TForm1
     Top = 109
     Width = 185
     Height = 23
+    PasswordChar = '*'
     TabOrder = 1
   end
   object isRegister: TCheckBox
@@ -77,6 +78,7 @@ object Form1: TForm1
     Top = 237
     Width = 185
     Height = 23
+    PasswordChar = '*'
     TabOrder = 4
     Visible = False
   end
