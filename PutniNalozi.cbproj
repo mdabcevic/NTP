@@ -154,7 +154,14 @@
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <CppCompile Include="TestWindow.cpp">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>TestWindow.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
         <FormResources Include="LoginForm.dfm"/>
+        <FormResources Include="TestWindow.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -189,6 +196,7 @@
                 </Excluded_Packages>
                 <Folders>
                     <Folder Path="C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers" Masks="*.*" ShowSubdirectories="false"/>
+                    <Folder Path="C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Data" Masks="*.*" ShowSubdirectories="false"/>
                 </Folders>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="4">

@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "LoginForm.h"
+#include "TestWindow.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -54,6 +55,11 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 //2.2 HASH pw unos i usporedi u bazi (sol + dinamicka + papar)
 //2.3 pokreni LOGIN
 
+// Create an instance of Window2
+	TForm2 *testwindow = new TForm2(this);
+
+    // Show Window2
+	testwindow->Show();
 
 }
 //---------------------------------------------------------------------------
