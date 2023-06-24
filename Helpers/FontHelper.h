@@ -6,8 +6,13 @@
 #include <Registry.hpp> //Include for TIniFile
 #include "IniSettingsHelper.h"
 //---------------------------------------------------------------------------
-#endif
 
+
+/*
+* @brief Class that provides all operations for Font settings.
+*
+*
+*/
 class FontHelper : public IniSettingsHelper
 {
 public:
@@ -20,3 +25,8 @@ public:
 	void LoadSection(UnicodeString name);
 	void SaveCurrent();
 };
+
+//---------------------------------------------------------------------------
+extern PACKAGE FontHelper *FontHelper;
+//---------------------------------------------------------------------------
+#endif

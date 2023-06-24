@@ -1,7 +1,6 @@
 //---------------------------------------------------------------------------
 
-#ifndef IniSettingsHelperH
-#define IniSettingsHelperH
+
 #include <System.hpp> // Include for UnicodeString
 #include <Registry.hpp> //Include for TIniFile
 //---------------------------------------------------------------------------
@@ -30,4 +29,4 @@ public:
 //---------------------------------------------------------------------------
 extern PACKAGE IniSettingsHelper *IniSettingsHelper;
 //---------------------------------------------------------------------------
-#endif
+
