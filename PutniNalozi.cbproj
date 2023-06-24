@@ -125,6 +125,10 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="Helpers\FontHelper.cpp">
+            <DependentOn>Helpers\FontHelper.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Helpers\IniSettingsHelper.cpp">
             <DependentOn>Helpers\IniSettingsHelper.h</DependentOn>
             <BuildOrder>3</BuildOrder>
