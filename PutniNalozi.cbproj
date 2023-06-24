@@ -137,6 +137,10 @@
             <DependentOn>Helpers\ThemeHelper.h</DependentOn>
             <BuildOrder>4</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Helpers\WRSettingsHelper.cpp">
+            <DependentOn>Helpers\WRSettingsHelper.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
         <CppCompile Include="LoginForm.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
