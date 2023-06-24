@@ -19,4 +19,5 @@ public:
 	void resetToDefault();
 	void LoadSection(UnicodeString name);
 	void EditSection(UnicodeString name);
+    void SaveCurrent();
 };

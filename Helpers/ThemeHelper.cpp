@@ -27,4 +27,10 @@ void ThemeHelper::LoadSection(UnicodeString name)
 void ThemeHelper::EditSection(UnicodeString name)
 {
     // Implementation of EditSection function
+void ThemeHelper::SaveCurrent()
+{
+	// Implementation of EditSection function
+	ini->WriteString("CURRENT THEME", "backgroundColour", backgroundColour);
+	ini->WriteString("CURRENT THEME", "fontColour", textColour);
+	ini->WriteString("CURRENT THEME", "highlightColour", highlightTextColour);
 }
