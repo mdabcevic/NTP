@@ -13,7 +13,10 @@ ThemeHelper::ThemeHelper()
 
 void ThemeHelper::resetToDefault()
 {
-    // Implementation of resetToDefault function
+	// Implementation of resetToDefault function
+	LoadSection("DEFAULT THEME");
+    SaveCurrent();
+
 }
 
 void ThemeHelper::LoadSection(UnicodeString name)
@@ -26,7 +29,9 @@ void ThemeHelper::LoadSection(UnicodeString name)
 
 void ThemeHelper::EditSection(UnicodeString name)
 {
-    // Implementation of EditSection function
+	// Implementation of EditSection function
+}
+
 void ThemeHelper::SaveCurrent()
 {
 	// Implementation of EditSection function
