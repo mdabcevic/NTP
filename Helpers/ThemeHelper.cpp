@@ -18,7 +18,10 @@ void ThemeHelper::resetToDefault()
 
 void ThemeHelper::LoadSection(UnicodeString name)
 {
-    // Implementation of LoadSection function
+	// Implementation of LoadSection function
+	backgroundColour = ini->ReadString(name, "backgroundColour", "clBtnFace");
+	textColour = ini->ReadString(name, "fontColour", "clWindowText");
+	highlightTextColour = ini->ReadString(name, "highlightColour", "clWindowText");
 }
 
 void ThemeHelper::EditSection(UnicodeString name)
