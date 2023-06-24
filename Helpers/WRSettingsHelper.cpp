@@ -3,33 +3,45 @@
 #pragma hdrstop
 
 #include "WRSettingsHelper.h"
-#include <Registry.hpp> //include for TRegistry
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-/*
-* @brief Class that provides all operations for App settings stored in Windows
-Registry.
-*
-*
-*/
- class WRSettingsHelper
+
+WRSettingsHelper::WRSettingsHelper()
 {
-public:
-	TRegistry *registry = new TRegistry;
-	UnicodeString key = "Software\\PutniNalozi";
-	//UnicodeString sectionName;
+	// Constructor implementation
+    registry->RootKey = HKEY_CURRENT_USER;
+}
 
-	virtual void ResetToDefault();
-	virtual void LoadSection(UnicodeString name);
-	virtual void SaveCurrent();
-
-	~WRSettingsHelper()
-	{
-		delete registry;
+void WRSettingsHelper::LoadSettings()
+{
+	if(registry->OpenKey(key, false)){
+		isRememberMe = registry->ReadBool("isRememberMe");
+		if (isRememberMe) {
+			username = registry->ReadString("username");
+			password = registry->ReadString("password");
+		}
 	}
+    registry->CloseKey();
+}
 
-};
-//---------------------------------------------------------------------------
-extern PACKAGE WRSettingsHelper *WRSettingsHelper;
-//---------------------------------------------------------------------------
+void WRSettingsHelper::SaveSettings(){
+	if(registry->OpenKey(key, true)){
+		registry->WriteBool("isRememberMe", isRememberMe);
+		if(isRememberMe){
+			registry->WriteString("username", username);
+			registry->WriteString("password", password);
+		}
+	}
+    registry->CloseKey();
+}
+
+void WRSettingsHelper::DeleteSettings()
+{
+	if(registry->OpenKey(key, true)){
+		registry->WriteBool("isRememberMe", false);
+		registry->WriteString("username", "");
+		registry->WriteString("password", "");
+	}
+    registry->CloseKey();
+}
