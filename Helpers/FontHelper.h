@@ -16,7 +16,7 @@ public:
 	//UnicodeString highlightTextColour;
 
 	FontHelper();
-	void resetToDefault();
+	void ResetToDefault();
 	void LoadSection(UnicodeString name);
 	void SaveCurrent();
 };

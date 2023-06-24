@@ -12,7 +12,7 @@ FontHelper::FontHelper()
 	LoadSection("CURRENT FONT");
 }
 
-void FontHelper::resetToDefault()
+void FontHelper::ResetToDefault()
 {
 	// Implementation of resetToDefault function
 	LoadSection("DEFAULT FONT");

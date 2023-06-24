@@ -16,8 +16,7 @@ public:
 	UnicodeString highlightTextColour;
 
 	ThemeHelper();
-	void resetToDefault();
+	void ResetToDefault();
 	void LoadSection(UnicodeString name);
-	void EditSection(UnicodeString name);
     void SaveCurrent();
 };

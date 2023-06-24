@@ -8,10 +8,11 @@
 
 ThemeHelper::ThemeHelper()
 {
-    // Constructor implementation
+	// Constructor implementation
+    LoadSection("CURRENT THEME");
 }
 
-void ThemeHelper::resetToDefault()
+void ThemeHelper::ResetToDefault()
 {
 	// Implementation of resetToDefault function
 	LoadSection("DEFAULT THEME");
@@ -25,11 +26,6 @@ void ThemeHelper::LoadSection(UnicodeString name)
 	backgroundColour = ini->ReadString(name, "backgroundColour", "clBtnFace");
 	textColour = ini->ReadString(name, "fontColour", "clWindowText");
 	highlightTextColour = ini->ReadString(name, "highlightColour", "clWindowText");
-}
-
-void ThemeHelper::EditSection(UnicodeString name)
-{
-	// Implementation of EditSection function
 }
 
 void ThemeHelper::SaveCurrent()
