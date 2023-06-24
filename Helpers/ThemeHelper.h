@@ -11,6 +11,10 @@
 class ThemeHelper : public IniSettingsHelper
 {
 public:
+	UnicodeString backgroundColour;
+	UnicodeString textColour;
+	UnicodeString highlightTextColour;
+
 	ThemeHelper();
 	void resetToDefault();
 	void LoadSection(UnicodeString name);
