@@ -14,8 +14,8 @@
 {
 public:
 	TIniFile *ini = new TIniFile("settings.ini");
-	UnicodeString path;
-	UnicodeString sectionName;
+	//UnicodeString path;
+	//UnicodeString sectionName;
 
 	virtual void resetToDefault();
 	virtual void LoadSection(UnicodeString name);
