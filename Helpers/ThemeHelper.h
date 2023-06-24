@@ -27,6 +27,6 @@ public:
 };
 
 //---------------------------------------------------------------------------
-extern PACKAGE ThemeHelper *ThemeHelper;
+extern PACKAGE ThemeHelper* themeHelper;
 //---------------------------------------------------------------------------
 #endif

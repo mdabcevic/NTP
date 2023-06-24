@@ -17,9 +17,9 @@ public:
 	//UnicodeString path;
 	//UnicodeString sectionName;
 
-	virtual void ResetToDefault();
-	virtual void LoadSection(UnicodeString name);
-	virtual void SaveCurrent();
+	virtual void ResetToDefault() {}
+	virtual void LoadSection(UnicodeString name) {}
+	virtual void SaveCurrent() {}
 
     virtual ~IniSettingsHelper()
 	{

@@ -27,6 +27,6 @@ public:
 };
 
 //---------------------------------------------------------------------------
-extern PACKAGE FontHelper *FontHelper;
+extern PACKAGE FontHelper *fontHelper;
 //---------------------------------------------------------------------------
 #endif

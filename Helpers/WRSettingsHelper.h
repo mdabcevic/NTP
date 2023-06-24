@@ -34,7 +34,7 @@ public:
 
 };
 //---------------------------------------------------------------------------
-extern PACKAGE WRSettingsHelper *WRSettingsHelper;
+extern PACKAGE WRSettingsHelper *wrSettingsHelper;
 //---------------------------------------------------------------------------
 
 
