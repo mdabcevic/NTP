@@ -6,7 +6,7 @@
 #include <Registry.hpp> //Include for TIniFile
 //---------------------------------------------------------------------------
 /*
-* @brief Class that provides all that is necessary for creating INI settings.
+* @brief Class that provides all that is necessary for operating INI settings.
 *
 *
 */

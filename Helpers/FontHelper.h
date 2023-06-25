@@ -9,7 +9,8 @@
 
 
 /*
-* @brief Class that provides all operations for Font settings.
+* @brief Class that provides all operations for Font settings saved in INI
+files.
 *
 *
 */

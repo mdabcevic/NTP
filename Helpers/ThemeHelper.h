@@ -9,7 +9,8 @@
 
 
 /*
-* @brief Class that provides all operations for Theme settings.
+* @brief Class that provides all operations for Theme settings stored in INI
+file.
 *
 *
 */
