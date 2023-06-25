@@ -28,6 +28,6 @@ public:
 
 };
 //---------------------------------------------------------------------------
-extern PACKAGE IniSettingsHelper *IniSettingsHelper;
+extern PACKAGE IniSettingsHelper *iniSettingsHelper;
 //---------------------------------------------------------------------------
 #endif
