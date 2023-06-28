@@ -17,7 +17,7 @@ if (isRegister->Checked) {
 		pwConfirmBox->Visible = true;
 		emailLabel->Visible = true;
 		emailBox->Visible = true;
-		loginButton->Top = 336;
+		loginButton->Top = 376;
 		loginButton->Caption = "Register";
 	}
 	else{
@@ -25,7 +25,7 @@ if (isRegister->Checked) {
 		pwConfirmBox->Visible = false;
 		emailLabel->Visible = false;
 		emailBox->Visible = false;
-		loginButton->Top = 216;
+		loginButton->Top = 256;
         loginButton->Caption = "Login";
 	}
 }
@@ -33,7 +33,7 @@ if (isRegister->Checked) {
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-	loginButton->Top = 216;
+	loginButton->Top = 256;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::loginButtonClick(TObject *Sender)
