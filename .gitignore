@@ -3,3 +3,15 @@ __history/
 __recovery/
 Helpers/__recovery/
 Win32/Debug/
+
+# Exclude intermediate language files
+*.ilc
+*.ild
+*.ilf
+*.ils
+
+# Exclude map files
+*.map
+
+# Exclude Turbo Debugger symbol files
+*.tds
