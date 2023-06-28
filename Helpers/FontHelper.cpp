@@ -23,15 +23,13 @@ void FontHelper::ResetToDefault()
 void FontHelper::LoadSection(UnicodeString name)
 {
 	// Implementation of LoadSection function
-	fontName = ini->ReadString(name, "fontName", "Tahoma");
-	textHeight = ini->ReadString(name, "textHeight", "13");
-	//highlightTextColour = ini->ReadString(name, "highlightColour", "clWindowText");
+	fontName = ini->ReadString(name, "fontName", "Segoe UI");
+	textHeight = ini->ReadInteger(name, "textHeight", 9);
 }
 
 void FontHelper::SaveCurrent()
 {
 	// Implementation of EditSection function
 	ini->WriteString("CURRENT FONT", "fontName", fontName);
-	ini->WriteString("CURRENT FONT", "textHeight", textHeight);
-	//ini->WriteString("CURRENT FONT", "highlightColour", highlightTextColour);
+	ini->WriteInteger("CURRENT FONT", "textHeight", textHeight);
 }

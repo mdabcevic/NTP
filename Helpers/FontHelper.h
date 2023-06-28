@@ -18,7 +18,7 @@ class FontHelper : public IniSettingsHelper
 {
 public:
 	UnicodeString fontName;
-	UnicodeString textHeight;
+	int textHeight;
 	//UnicodeString highlightTextColour;
 
 	FontHelper();
