@@ -29,3 +29,18 @@ void __fastcall TForm2::LoadIni_testClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm2::Button1Click(TObject *Sender)
+{
+	DataModule1->wrSettingsHelper.DeleteSettings();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Button2Click(TObject *Sender)
+{
+	DataModule1->wrSettingsHelper.isRememberMe = true;
+	DataModule1->wrSettingsHelper.username = "test1";
+	DataModule1->wrSettingsHelper.password = "test2";
+	DataModule1->wrSettingsHelper.SaveSettings();
+}
+//---------------------------------------------------------------------------
+

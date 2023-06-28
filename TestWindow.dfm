@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Test Window'
-  ClientHeight = 441
-  ClientWidth = 624
+  ClientHeight = 440
+  ClientWidth = 620
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -35,5 +35,23 @@ object Form2: TForm2
     Height = 25
     Caption = 'Load WR settings TEST'
     TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 101
+    Width = 185
+    Height = 25
+    Caption = 'Delete WR settings TEST'
+    TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 132
+    Width = 185
+    Height = 25
+    Caption = 'Save WR settings TEST'
+    TabOrder = 4
+    OnClick = Button2Click
   end
 end
