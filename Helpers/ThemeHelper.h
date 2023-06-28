@@ -4,6 +4,7 @@
 #define ThemeHelperH
 #include <System.hpp> // Include for UnicodeString
 #include <Registry.hpp> //Include for TIniFile
+#include <System.UITypes.hpp> //Include for TColor
 #include "IniSettingsHelper.h"
 //---------------------------------------------------------------------------
 
