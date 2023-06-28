@@ -13,7 +13,7 @@
  class IniSettingsHelper
 {
 public:
-	TIniFile *ini = new TIniFile("settings.ini");
+	TIniFile *ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
 	//UnicodeString path;
 	//UnicodeString sectionName;
 
