@@ -17,9 +17,8 @@ file.
 class ThemeHelper : public IniSettingsHelper
 {
 public:
-	UnicodeString backgroundColour;
-	UnicodeString textColour;
-	UnicodeString highlightTextColour;
+	TColor backgroundColour;
+	TColor textColour;
 
 	ThemeHelper();
 	void ResetToDefault();
