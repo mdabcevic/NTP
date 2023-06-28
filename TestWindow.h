@@ -16,7 +16,6 @@ __published:	// IDE-managed Components
 	TButton *SaveIni_Test;
 	TButton *LoadWR_Test;
 	void __fastcall LoadIni_testClick(TObject *Sender);
-	void __fastcall SaveIni_TestClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 

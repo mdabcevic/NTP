@@ -24,7 +24,9 @@ public:
 	ThemeHelper();
 	void ResetToDefault();
 	void LoadSection(UnicodeString name);
-    void SaveCurrent();
+	void SaveCurrent();
+	TColor StringToRGBColor(const UnicodeString& hex);
+    UnicodeString TColorToRGBString(TColor color);
 };
 
 //---------------------------------------------------------------------------

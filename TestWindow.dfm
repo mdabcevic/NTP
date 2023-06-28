@@ -27,7 +27,6 @@ object Form2: TForm2
     Height = 25
     Caption = 'Save INI settings TEST'
     TabOrder = 1
-    OnClick = SaveIni_TestClick
   end
   object LoadWR_Test: TButton
     Left = 8
