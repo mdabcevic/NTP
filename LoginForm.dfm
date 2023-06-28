@@ -28,7 +28,7 @@ object Form1: TForm1
   end
   object pwConfirmLabel: TLabel
     Left = 208
-    Top = 216
+    Top = 256
     Width = 122
     Height = 15
     Caption = 'password confirmation'
@@ -36,7 +36,7 @@ object Form1: TForm1
   end
   object emailLabel: TLabel
     Left = 208
-    Top = 272
+    Top = 312
     Width = 34
     Height = 15
     Caption = 'e-mail'
@@ -76,7 +76,7 @@ object Form1: TForm1
   end
   object pwConfirmBox: TEdit
     Left = 208
-    Top = 237
+    Top = 277
     Width = 185
     Height = 23
     PasswordChar = '*'
@@ -85,7 +85,7 @@ object Form1: TForm1
   end
   object emailBox: TEdit
     Left = 208
-    Top = 293
+    Top = 333
     Width = 185
     Height = 23
     TabOrder = 5
@@ -93,11 +93,20 @@ object Form1: TForm1
   end
   object loginButton: TButton
     Left = 208
-    Top = 336
+    Top = 376
     Width = 185
     Height = 25
     Caption = 'Login'
     TabOrder = 6
     OnClick = loginButtonClick
+  end
+  object isRememberMe: TCheckBox
+    Left = 208
+    Top = 216
+    Width = 185
+    Height = 18
+    Caption = 'Remember me'
+    TabOrder = 7
+    OnClick = isRememberMeClick
   end
 end
