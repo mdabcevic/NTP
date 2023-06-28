@@ -23,9 +23,11 @@ __published:	// IDE-managed Components
 	TLabel *emailLabel;
 	TEdit *emailBox;
 	TButton *loginButton;
+	TCheckBox *isRememberMe;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
+	void __fastcall isRememberMeClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

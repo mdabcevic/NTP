@@ -66,6 +66,7 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 
 void __fastcall TForm1::FormShow(TObject *Sender)
 {
+	//load theme and font for window (INI)
 	DataModule1->themeHelper.LoadSection("CURRENT THEME");
 	Form1->Color = DataModule1->themeHelper.backgroundColour;
 	Form1->Font->Color = DataModule1->themeHelper.textColour;
@@ -73,7 +74,23 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 	Form1->Font->Name = DataModule1->fontHelper.fontName;
 	Form1->Font->Size = DataModule1->fontHelper.textHeight;
 
+	//auto-fill credentials (Windows Registry)
+	DataModule1->wrSettingsHelper.LoadSettings();
+	Form1->isRememberMe->Checked = DataModule1->wrSettingsHelper.isRememberMe;
+	if (DataModule1->wrSettingsHelper.isRememberMe) {
+		Form1->usernameBox->Text = DataModule1->wrSettingsHelper.username;
+		Form1->pwBox->Text = DataModule1->wrSettingsHelper.password;
+	}
+
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::isRememberMeClick(TObject *Sender)
+{
+	if(!Form1->isRememberMe->Checked){
+		DataModule1->wrSettingsHelper.DeleteSettings();
+	}
+}
+//---------------------------------------------------------------------------
 
