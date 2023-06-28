@@ -69,6 +69,9 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 	DataModule1->themeHelper.LoadSection("CURRENT THEME");
 	Form1->Color = DataModule1->themeHelper.backgroundColour;
 	Form1->Font->Color = DataModule1->themeHelper.textColour;
+	DataModule1->fontHelper.LoadSection("DEFAULT FONT");
+	Form1->Font->Name = DataModule1->fontHelper.fontName;
+	Form1->Font->Size = DataModule1->fontHelper.textHeight;
 
 }
 //---------------------------------------------------------------------------
