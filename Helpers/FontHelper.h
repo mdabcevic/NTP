@@ -17,10 +17,11 @@ files.
 class FontHelper : public IniSettingsHelper
 {
 public:
+	//properties
 	UnicodeString fontName;
 	int textHeight;
-	//UnicodeString highlightTextColour;
 
+    //methods
 	FontHelper();
 	void ResetToDefault();
 	void LoadSection(UnicodeString name);

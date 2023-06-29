@@ -18,9 +18,11 @@ file.
 class ThemeHelper : public IniSettingsHelper
 {
 public:
+	//properties
 	TColor backgroundColour;
 	TColor textColour;
 
+    //methods
 	ThemeHelper();
 	void ResetToDefault();
 	void LoadSection(UnicodeString name);

@@ -8,13 +8,14 @@
 
 FontHelper::FontHelper()
 {
-	// Constructor implementation
+	// Constructor - always loads CURRENT FONT section first
+	// Invoked on starting the app.
 	LoadSection("CURRENT FONT");
 }
 
 void FontHelper::ResetToDefault()
 {
-	// Implementation of resetToDefault function
+	// Loads the default options and overwrites CURRENT THEME with them.
 	LoadSection("DEFAULT FONT");
     SaveCurrent();
 
@@ -22,14 +23,14 @@ void FontHelper::ResetToDefault()
 
 void FontHelper::LoadSection(UnicodeString name)
 {
-	// Implementation of LoadSection function
+	// Load properties in ini for given FONT section name into instance
 	fontName = ini->ReadString(name, "fontName", "Segoe UI");
 	textHeight = ini->ReadInteger(name, "textHeight", 9);
 }
 
 void FontHelper::SaveCurrent()
 {
-	// Implementation of EditSection function
+	// Saves values from object instance into CURRENT theme properties
 	ini->WriteString("CURRENT FONT", "fontName", fontName);
 	ini->WriteInteger("CURRENT FONT", "textHeight", textHeight);
 }

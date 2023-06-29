@@ -13,10 +13,10 @@
  class IniSettingsHelper
 {
 public:
+	//properties
 	TIniFile *ini = new TIniFile(GetCurrentDir() + "\\settings.ini");
-	//UnicodeString path;
-	//UnicodeString sectionName;
 
+    //methods
 	virtual void ResetToDefault() {}
 	virtual void LoadSection(UnicodeString name) {}
 	virtual void SaveCurrent() {}

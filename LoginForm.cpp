@@ -12,6 +12,7 @@ TForm1 *Form1;
 //---------------------------------------------------------------------------
 void __fastcall TForm1::isRegisterClick(TObject *Sender)
 {
+//Show additional input information needed for registering.
 if (isRegister->Checked) {
 		pwConfirmLabel->Visible = true;
 		pwConfirmBox->Visible = true;
@@ -20,6 +21,7 @@ if (isRegister->Checked) {
 		loginButton->Top = 376;
 		loginButton->Caption = "Register";
 	}
+//Hide additional input information needed for registering.
 	else{
 		pwConfirmLabel->Visible = false;
 		pwConfirmBox->Visible = false;
@@ -33,6 +35,7 @@ if (isRegister->Checked) {
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
+    //move this to onShow + set isRegister to false
 	loginButton->Top = 256;
 }
 //---------------------------------------------------------------------------
@@ -74,7 +77,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 	Form1->Font->Name = DataModule1->fontHelper.fontName;
 	Form1->Font->Size = DataModule1->fontHelper.textHeight;
 
-	//auto-fill credentials (Windows Registry)
+	//Auto-fill credentials (Windows Registry)
 	DataModule1->wrSettingsHelper.LoadSettings();
 	Form1->isRememberMe->Checked = DataModule1->wrSettingsHelper.isRememberMe;
 	if (DataModule1->wrSettingsHelper.isRememberMe) {
@@ -86,6 +89,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+//Deletes settings in Windows Registry when isRegister is unchecked
 void __fastcall TForm1::isRememberMeClick(TObject *Sender)
 {
 	if(!Form1->isRememberMe->Checked){
