@@ -18,13 +18,17 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm2::LoadIni_testClick(TObject *Sender)
 {
-	DataModule1->themeHelper.LoadSection("DARK THEME");
+	DataModule1->themeHelper.LoadSection("LIGHT THEME");
 	//ShowMessage(DataModule1->themeHelper.textColour);
-	ShowMessage(DataModule1->themeHelper.TColorToRGBString(DataModule1->themeHelper.backgroundColour));
-    Form2->Color =        DataModule1->themeHelper.backgroundColour;
+	//ShowMessage(DataModule1->themeHelper.TColorToRGBString(DataModule1->themeHelper.backgroundColour));
+	Form2->Color = DataModule1->themeHelper.backgroundColour;
+	DataModule1->themeHelper.SaveCurrent();
 	//load font
-	DataModule1->fontHelper.LoadSection("CURRENT FONT");
+	DataModule1->fontHelper.LoadSection("TEST FONT");
 	ShowMessage(DataModule1->fontHelper.fontName);
+	ShowMessage(DataModule1->fontHelper.textHeight);
+	DataModule1->fontHelper.SaveCurrent();
+    ShowMessage(DataModule1->fontHelper.fontName);
 	ShowMessage(DataModule1->fontHelper.textHeight);
 }
 //---------------------------------------------------------------------------
