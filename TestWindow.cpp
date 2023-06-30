@@ -53,3 +53,25 @@ void __fastcall TForm2::LoadWR_TestClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm2::Button3Click(TObject *Sender)
+{
+	ListView1->Items->Clear();
+	for(int i = 0; i < DataModule1->companycars->Count; i++){
+		ListView1->Items->Add();
+		ListView1->Items->Item[i]->Caption =
+				DataModule1->companycars->car[i]->licenseplate;
+		ListView1->Items->Item[i]->
+				Caption = DataModule1->companycars->car[i]->licenseplate;
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->internalmark);
+        ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->assigned);
+        ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->currentuser);
+        ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->location);
+
+	}
+}
+//---------------------------------------------------------------------------
+

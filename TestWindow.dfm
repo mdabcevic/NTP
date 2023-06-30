@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Test Window'
-  ClientHeight = 440
-  ClientWidth = 620
+  ClientHeight = 422
+  ClientWidth = 614
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,8 +12,8 @@ object Form2: TForm2
   Font.Style = []
   TextHeight = 15
   object LoadIni_test: TButton
-    Left = 8
-    Top = 8
+    Left = 0
+    Top = 0
     Width = 185
     Height = 25
     Caption = 'Load INI settings TEST'
@@ -21,8 +21,8 @@ object Form2: TForm2
     OnClick = LoadIni_testClick
   end
   object SaveIni_Test: TButton
-    Left = 8
-    Top = 39
+    Left = 0
+    Top = 31
     Width = 185
     Height = 25
     Caption = 'Save INI settings TEST'
@@ -30,8 +30,8 @@ object Form2: TForm2
     OnClick = SaveIni_TestClick
   end
   object LoadWR_Test: TButton
-    Left = 8
-    Top = 70
+    Left = 0
+    Top = 62
     Width = 185
     Height = 25
     Caption = 'Load WR settings TEST'
@@ -39,8 +39,8 @@ object Form2: TForm2
     OnClick = LoadWR_TestClick
   end
   object Button1: TButton
-    Left = 8
-    Top = 101
+    Left = 0
+    Top = 93
     Width = 185
     Height = 25
     Caption = 'Delete WR settings TEST'
@@ -48,12 +48,45 @@ object Form2: TForm2
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 8
-    Top = 132
+    Left = 0
+    Top = 124
     Width = 185
     Height = 25
     Caption = 'Save WR settings TEST'
     TabOrder = 4
     OnClick = Button2Click
+  end
+  object ListView1: TListView
+    Left = 0
+    Top = 155
+    Width = 604
+    Height = 94
+    Columns = <
+      item
+        Caption = 'License plate'
+      end
+      item
+        Caption = 'Internal name'
+      end
+      item
+        Caption = 'Assigned to'
+      end
+      item
+        Caption = 'Current user'
+      end
+      item
+        Caption = 'Location'
+      end>
+    TabOrder = 5
+    ViewStyle = vsReport
+  end
+  object Button3: TButton
+    Left = 0
+    Top = 255
+    Width = 105
+    Height = 25
+    Caption = 'Load XML'
+    TabOrder = 6
+    OnClick = Button3Click
   end
 end
