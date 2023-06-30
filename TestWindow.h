@@ -20,6 +20,8 @@ __published:	// IDE-managed Components
 	void __fastcall LoadIni_testClick(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall SaveIni_TestClick(TObject *Sender);
+	void __fastcall LoadWR_TestClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 

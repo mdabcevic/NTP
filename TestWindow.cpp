@@ -19,17 +19,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 void __fastcall TForm2::LoadIni_testClick(TObject *Sender)
 {
 	DataModule1->themeHelper.LoadSection("LIGHT THEME");
-	//ShowMessage(DataModule1->themeHelper.textColour);
-	//ShowMessage(DataModule1->themeHelper.TColorToRGBString(DataModule1->themeHelper.backgroundColour));
-	Form2->Color = DataModule1->themeHelper.backgroundColour;
-	DataModule1->themeHelper.SaveCurrent();
-	//load font
 	DataModule1->fontHelper.LoadSection("TEST FONT");
-	ShowMessage(DataModule1->fontHelper.fontName);
-	ShowMessage(DataModule1->fontHelper.textHeight);
-	DataModule1->fontHelper.SaveCurrent();
-    ShowMessage(DataModule1->fontHelper.fontName);
-	ShowMessage(DataModule1->fontHelper.textHeight);
 }
 //---------------------------------------------------------------------------
 
@@ -45,6 +35,21 @@ void __fastcall TForm2::Button2Click(TObject *Sender)
 	DataModule1->wrSettingsHelper.username = "test1";
 	DataModule1->wrSettingsHelper.password = "test2";
 	DataModule1->wrSettingsHelper.SaveSettings();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::SaveIni_TestClick(TObject *Sender)
+{
+	DataModule1->themeHelper.SaveCurrent();
+	DataModule1->fontHelper.SaveCurrent();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::LoadWR_TestClick(TObject *Sender)
+{
+	DataModule1->wrSettingsHelper.LoadSettings();
+	ShowMessage(DataModule1->wrSettingsHelper.username);
+    ShowMessage(DataModule1->wrSettingsHelper.password);
 }
 //---------------------------------------------------------------------------
 
