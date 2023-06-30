@@ -25,6 +25,7 @@ public:		// User declarations
 	FontHelper fontHelper;
 	WRSettingsHelper wrSettingsHelper;
 	_di_IXMLcompanycarsType companycars = Getcompanycars(XmlDoc);
+    _di_IXMLcarType currentCar;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;

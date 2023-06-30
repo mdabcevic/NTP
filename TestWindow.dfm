@@ -57,8 +57,8 @@ object Form2: TForm2
     OnClick = Button2Click
   end
   object ListView1: TListView
-    Left = 0
-    Top = 155
+    Left = 2
+    Top = 211
     Width = 604
     Height = 94
     Columns = <
@@ -77,12 +77,13 @@ object Form2: TForm2
       item
         Caption = 'Location'
       end>
+    Ctl3D = True
     TabOrder = 5
     ViewStyle = vsReport
   end
   object Button3: TButton
-    Left = 0
-    Top = 255
+    Left = 2
+    Top = 311
     Width = 105
     Height = 25
     Caption = 'Load XML'

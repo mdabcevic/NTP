@@ -62,6 +62,7 @@ void __fastcall TForm2::LoadWR_TestClick(TObject *Sender)
 
 void __fastcall TForm2::Button3Click(TObject *Sender)
 {
+	DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
 	ListView1->Items->Clear();
 	for(int i = 0; i < DataModule1->companycars->Count; i++){
 		ListView1->Items->Add();

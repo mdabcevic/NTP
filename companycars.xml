@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="ISO-8859-2"?>
 <companycars>
-    <car>
-        <licenseplate> xxx </licenseplate>
-        <internalmark> Toyota-01-yar </internalmark>
-        <assigned> X. X. </assigned>
-        <currentuser> X.X. </currentuser>
-        <location> Zagreb </location>
-    </car>
-        <car>
-        <licenseplate> xxx </licenseplate>
-        <internalmark> Toyota-01-yar </internalmark>
-        <assigned> X. X. </assigned>
-        <currentuser> X.X. </currentuser>
-        <location> Zagreb </location>
-    </car>
-        <car>
-        <licenseplate> xxx </licenseplate>
-        <internalmark> Toyota-01-yar </internalmark>
-        <assigned> X. X. </assigned>
-        <currentuser> X.X. </currentuser>
-        <location> Zagreb </location>
-    </car>
+	<car>
+		<licenseplate> xxx </licenseplate>
+		<internalmark> Toyota-01-yar </internalmark>
+		<assigned> X. X. </assigned>
+		<currentuser> X.X. </currentuser>
+		<location> Zagreb </location>
+	</car>
+	<car>
+		<licenseplate> xxx </licenseplate>
+		<internalmark> Toyota-01-yar </internalmark>
+		<assigned> X. X. </assigned>
+		<currentuser> X.X. </currentuser>
+		<location> Zagreb </location>
+	</car>
+	<car>
+		<licenseplate> xxx </licenseplate>
+		<internalmark> Toyota-01-yar </internalmark>
+		<assigned> X. X. </assigned>
+		<currentuser> X.X. </currentuser>
+		<location> Zagreb </location>
+	</car>
+	<car>
+		<licenseplate>added</licenseplate>
+		<internalmark>Peugeot-508</internalmark>
+		<assigned>K. D.</assigned>
+		<currentuser>K. S.</currentuser>
+		<location>Zagreb</location>
+	</car>
+	<car>
+		<licenseplate>added</licenseplate>
+		<internalmark>Peugeot-508</internalmark>
+		<assigned>K. D.</assigned>
+		<currentuser>K. S.</currentuser>
+		<location>Zagreb</location>
+	</car>  <car>
+    <licenseplate>added</licenseplate>
+    <internalmark>Peugeot-508</internalmark>
+    <assigned>K. D.</assigned>
+    <currentuser>K. S.</currentuser>
+    <location>Zagreb</location>
+  </car>
 </companycars>
