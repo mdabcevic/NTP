@@ -72,11 +72,11 @@ void __fastcall TForm2::Button3Click(TObject *Sender)
 				Caption = DataModule1->companycars->car[i]->licenseplate;
 		ListView1->Items->Item[i]->SubItems->
 				Add(DataModule1->companycars->car[i]->internalmark);
-        ListView1->Items->Item[i]->SubItems->
+		ListView1->Items->Item[i]->SubItems->
 				Add(DataModule1->companycars->car[i]->assigned);
-        ListView1->Items->Item[i]->SubItems->
+		ListView1->Items->Item[i]->SubItems->
 				Add(DataModule1->companycars->car[i]->currentuser);
-        ListView1->Items->Item[i]->SubItems->
+		ListView1->Items->Item[i]->SubItems->
 				Add(DataModule1->companycars->car[i]->location);
 
 	}
@@ -99,7 +99,18 @@ void __fastcall TForm2::Button5Click(TObject *Sender)
 	DataModule1->currentCar->assigned = "K. D.";
 	DataModule1->currentCar->currentuser = "K. S.";
 	DataModule1->currentCar->location = "Zagreb";
-    DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
+	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
+
+	DataModule1->companycars->Remove(DataModule1->currentCar);
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm2::Button6Click(TObject *Sender)
+{
+	//delete car
+
+	DataModule1->companycars->Delete(ListView1->ItemIndex);
+}
+//---------------------------------------------------------------------------
+
 

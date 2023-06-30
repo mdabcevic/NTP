@@ -8,35 +8,35 @@
 		<location> Zagreb </location>
 	</car>
 	<car>
-		<licenseplate> xxx </licenseplate>
-		<internalmark> Toyota-01-yar </internalmark>
+		<licenseplate> ppp </licenseplate>
+		<internalmark> Toyota-02-yar </internalmark>
 		<assigned> X. X. </assigned>
 		<currentuser> X.X. </currentuser>
 		<location> Zagreb </location>
 	</car>
 	<car>
-		<licenseplate> xxx </licenseplate>
-		<internalmark> Toyota-01-yar </internalmark>
+		<licenseplate> yyy </licenseplate>
+		<internalmark> Toyota-03-yar </internalmark>
 		<assigned> X. X. </assigned>
 		<currentuser> X.X. </currentuser>
 		<location> Zagreb </location>
 	</car>
 	<car>
 		<licenseplate>added</licenseplate>
-		<internalmark>Peugeot-508</internalmark>
+		<internalmark>Peugeot-508-01</internalmark>
 		<assigned>K. D.</assigned>
 		<currentuser>K. S.</currentuser>
 		<location>Zagreb</location>
 	</car>
 	<car>
-		<licenseplate>added</licenseplate>
-		<internalmark>Peugeot-508</internalmark>
+		<licenseplate>xyxy</licenseplate>
+		<internalmark>Peugeot-508-02</internalmark>
 		<assigned>K. D.</assigned>
 		<currentuser>K. S.</currentuser>
 		<location>Zagreb</location>
 	</car>  <car>
-    <licenseplate>added</licenseplate>
-    <internalmark>Peugeot-508</internalmark>
+    <licenseplate>xzxz</licenseplate>
+    <internalmark>Peugeot-508-03</internalmark>
     <assigned>K. D.</assigned>
     <currentuser>K. S.</currentuser>
     <location>Zagreb</location>

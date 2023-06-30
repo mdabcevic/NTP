@@ -78,6 +78,7 @@ object Form2: TForm2
         Caption = 'Location'
       end>
     Ctl3D = True
+    RowSelect = True
     TabOrder = 5
     ViewStyle = vsReport
   end
@@ -86,7 +87,7 @@ object Form2: TForm2
     Top = 311
     Width = 105
     Height = 25
-    Caption = 'Load XML'
+    Caption = 'Load all cars'
     TabOrder = 6
     OnClick = Button3Click
   end
@@ -107,5 +108,14 @@ object Form2: TForm2
     Caption = 'Add car'
     TabOrder = 8
     OnClick = Button5Click
+  end
+  object Button6: TButton
+    Left = 223
+    Top = 311
+    Width = 154
+    Height = 25
+    Caption = 'Remove selected car'
+    TabOrder = 9
+    OnClick = Button6Click
   end
 end
