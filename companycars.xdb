@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://www.borland.com/schemas/delphi/10.0/XMLDataBinding">
+  <xs:element name="companycars" type="companycarsType"/>
+  <xs:complexType name="companycarsType"><xs:annotation>
+      <xs:appinfo xdb:docElement="companycars"/>
+    </xs:annotation>
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="car" type="carType" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:complexType name="carType">
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="licenseplate" type="xs:string"/>
+      <xs:element name="internalmark" type="xs:string"/>
+      <xs:element name="assigned" type="xs:string"/>
+      <xs:element name="currentuser" type="xs:string"/>
+      <xs:element name="location" type="xs:string"/>
+    </sequence>
+  </xs:complexType>
+</xs:schema>
