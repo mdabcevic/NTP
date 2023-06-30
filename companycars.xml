@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-2"?>
 <companycars>
 	<car>
-		<licenseplate> xxx </licenseplate>
-		<internalmark> Toyota-01-yar </internalmark>
-		<assigned> X. X. </assigned>
-		<currentuser> X.X. </currentuser>
-		<location> Zagreb </location>
+		<licenseplate>xxx</licenseplate>
+		<internalmark>Toyota-01-yar</internalmark>
+		<assigned>X. X.</assigned>
+		<currentuser>X.X.</currentuser>
+		<location>Zagreb</location>
 	</car>
 	<car>
-		<licenseplate> ppp </licenseplate>
-		<internalmark> Toyota-02-yar </internalmark>
-		<assigned> X. X. </assigned>
-		<currentuser> X.X. </currentuser>
-		<location> Zagreb </location>
+		<licenseplate>ppp </licenseplate>
+		<internalmark>Toyota-02-yar</internalmark>
+		<assigned>X. X.</assigned>
+		<currentuser>X.X.</currentuser>
+		<location>Zagreb</location>
 	</car>
 	<car>
 		<licenseplate> yyy </licenseplate>
 		<internalmark> Toyota-03-yar </internalmark>
-		<assigned> X. X. </assigned>
-		<currentuser> X.X. </currentuser>
-		<location> Zagreb </location>
+		<assigned>X. X.</assigned>
+		<currentuser>X.X.</currentuser>
+		<location>Zagreb</location>
 	</car>
 	<car>
 		<licenseplate>added</licenseplate>
