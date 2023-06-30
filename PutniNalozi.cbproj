@@ -126,6 +126,12 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="CarInfoInputForm.cpp">
+            <Form>Form3</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>CarInfoInputForm.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Data\AllData.cpp">
             <Form>DataModule1</Form>
             <FormType>dfm</FormType>
@@ -175,6 +181,7 @@
         <FormResources Include="LoginForm.dfm"/>
         <FormResources Include="TestWindow.dfm"/>
         <FormResources Include="Data\AllData.dfm"/>
+        <FormResources Include="CarInfoInputForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

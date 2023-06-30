@@ -3,14 +3,14 @@
 	<Transactions>
     <Transaction>2023/06/13 14:20:55.000.879,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>2023/06/13 14:20:55.000.928,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2023/06/13 14:21:23.000.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2023/06/13 14:21:23.000.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2023/06/13 14:21:23.000.986,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\PutniNaloziPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/06/13 14:21:23.000.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2023/06/13 14:21:23.000.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2023/06/13 14:21:23.000.998,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2023/06/13 14:21:24.000.009,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\PutniNalozi.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2023/06/13 14:21:30.000.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm</Transaction>
     <Transaction>2023/06/13 14:21:30.000.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
     <Transaction>2023/06/13 14:21:30.000.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h</Transaction>
-    <Transaction>2023/06/13 14:21:30.000.717,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\LoginForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm</Transaction>
     <Transaction>2023/06/16 23:11:49.000.075,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
     <Transaction>2023/06/16 23:16:32.000.683,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\IniSettingsHelper.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h</Transaction>
     <Transaction>2023/06/16 23:16:32.000.683,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\IniSettingsHelper.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
@@ -20,11 +20,11 @@
     <Transaction>2023/06/16 23:23:12.000.882,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\IniSettingsHelper.cpp</Transaction>
     <Transaction>2023/06/16 23:23:12.000.882,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\IniSettingsHelper.h</Transaction>
     <Transaction>2023/06/17 00:09:27.000.678,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
-    <Transaction>2023/06/17 00:10:20.000.955,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\ThemeHelper.h</Transaction>
     <Transaction>2023/06/17 00:10:20.000.955,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\ThemeHelper.cpp</Transaction>
+    <Transaction>2023/06/17 00:10:20.000.955,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\ThemeHelper.h</Transaction>
     <Transaction>2023/06/24 12:38:15.000.507,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
-    <Transaction>2023/06/24 12:38:46.000.443,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\FontHelper.h</Transaction>
     <Transaction>2023/06/24 12:38:46.000.443,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\FontHelper.cpp</Transaction>
+    <Transaction>2023/06/24 12:38:46.000.443,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\FontHelper.h</Transaction>
     <Transaction>2023/06/24 13:04:28.000.019,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
     <Transaction>2023/06/24 13:07:32.000.069,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\WRSettingsHelper.h</Transaction>
     <Transaction>2023/06/24 13:07:32.000.069,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\WRSettingsHelper.cpp</Transaction>
@@ -33,11 +33,15 @@
     <Transaction>2023/06/24 15:10:32.000.163,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit2.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\TestWindow.dfm</Transaction>
     <Transaction>2023/06/24 15:10:32.000.163,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit2.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\TestWindow.cpp</Transaction>
     <Transaction>2023/06/24 15:20:38.000.635,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp</Transaction>
-    <Transaction>2023/06/24 15:20:58.000.244,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Data\AllData.h</Transaction>
-    <Transaction>2023/06/24 15:20:58.000.244,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Data\AllData.cpp</Transaction>
     <Transaction>2023/06/24 15:20:58.000.244,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Data\AllData.dfm</Transaction>
+    <Transaction>2023/06/24 15:20:58.000.244,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Data\AllData.cpp</Transaction>
+    <Transaction>2023/06/24 15:20:58.000.244,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Data\AllData.h</Transaction>
     <Transaction>2023/06/30 19:04:24.873,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\companycars.cpp</Transaction>
     <Transaction>2023/06/30 19:05:18.858,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\companycars.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\companycars.h</Transaction>
     <Transaction>2023/06/30 19:05:18.858,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\companycars.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\companycars.cpp</Transaction>
+    <Transaction>2023/06/30 23:33:17.395,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit3.cpp</Transaction>
+    <Transaction>2023/06/30 23:43:11.624,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\CarInfoInputForm.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit3.cpp</Transaction>
+    <Transaction>2023/06/30 23:43:11.624,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\CarInfoInputForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit3.dfm</Transaction>
+    <Transaction>2023/06/30 23:43:11.624,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\CarInfoInputForm.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Unit3.h</Transaction>
   </Transactions>
 </BorlandProject>
