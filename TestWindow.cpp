@@ -82,3 +82,10 @@ void __fastcall TForm2::Button3Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm2::Button4Click(TObject *Sender)
+{
+	DataModule1->themeHelper.ResetToDefault();
+    DataModule1->fontHelper.ResetToDefault();
+}
+//---------------------------------------------------------------------------
+

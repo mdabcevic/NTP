@@ -89,4 +89,13 @@ object Form2: TForm2
     TabOrder = 6
     OnClick = Button3Click
   end
+  object Button4: TButton
+    Left = 0
+    Top = 155
+    Width = 185
+    Height = 25
+    Caption = 'Reset to Default INI TEST'
+    TabOrder = 7
+    OnClick = Button4Click
+  end
 end
