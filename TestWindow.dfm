@@ -81,6 +81,7 @@ object Form2: TForm2
     RowSelect = True
     TabOrder = 5
     ViewStyle = vsReport
+    OnSelectItem = ListView1SelectItem
   end
   object Button3: TButton
     Left = 2

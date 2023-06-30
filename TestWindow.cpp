@@ -107,10 +107,21 @@ void __fastcall TForm2::Button5Click(TObject *Sender)
 
 void __fastcall TForm2::Button6Click(TObject *Sender)
 {
-	//delete car
-
+	//delete car based on index
 	DataModule1->companycars->Delete(ListView1->ItemIndex);
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm2::ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected)
+
+{
+	//get the selected node from xml on selecting the listview item
+	if(ListView1->ItemIndex == -1){
+		return;
+	}
+	DataModule1->currentCar = DataModule1->companycars->car[ListView1->ItemIndex];
+
+}
+//---------------------------------------------------------------------------
 
