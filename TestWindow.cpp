@@ -14,6 +14,13 @@ TForm2 *Form2;
 __fastcall TForm2::TForm2(TComponent* Owner)
 	: TForm(Owner)
 {
+//make ListView columns have equally distributed width & fill entire space
+if(ListView1->Columns->Count > 0)
+  {
+    int ColWidth = ListView1->ClientWidth / ListView1->Columns->Count;
+    for(int i = 0; i < ListView1->Columns->Count; i++)
+      ListView1->Columns->Items[i]->Width = ColWidth;
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::LoadIni_testClick(TObject *Sender)
