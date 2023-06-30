@@ -78,7 +78,6 @@ void __fastcall TForm2::Button3Click(TObject *Sender)
 				Add(DataModule1->companycars->car[i]->currentuser);
 		ListView1->Items->Item[i]->SubItems->
 				Add(DataModule1->companycars->car[i]->location);
-
 	}
 }
 //---------------------------------------------------------------------------
@@ -109,6 +108,28 @@ void __fastcall TForm2::Button6Click(TObject *Sender)
 {
 	//delete car based on index
 	DataModule1->companycars->Delete(ListView1->ItemIndex);
+	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
+    //avoid double click deleting next node in line
+	ListView1->ItemIndex = -1;
+	DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
+    //extract this to avoid duplication
+	ListView1->Items->Clear();
+	for(int i = 0; i < DataModule1->companycars->Count; i++){
+		ListView1->Items->Add();
+		ListView1->Items->Item[i]->Caption =
+				DataModule1->companycars->car[i]->licenseplate;
+		ListView1->Items->Item[i]->
+				Caption = DataModule1->companycars->car[i]->licenseplate;
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->internalmark);
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->assigned);
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->currentuser);
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->location);
+	}
+
 }
 //---------------------------------------------------------------------------
 
