@@ -36,6 +36,8 @@ __published:	// IDE-managed Components
 	void __fastcall ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected);
 	void __fastcall Button7Click(TObject *Sender);
 
+	void __fastcall FillListView();
+
 
 private:	// User declarations
 public:		// User declarations

@@ -48,7 +48,6 @@ void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 	DataModule1->currentCar->currentuser = Form3->User_Box->Text;
 	DataModule1->currentCar->location = Form3->Location_Box->Text;
 	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
-	DataModule1->companycars->Remove(DataModule1->currentCar);
     Form3->Close();
 	}
 }

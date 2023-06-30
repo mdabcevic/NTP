@@ -77,7 +77,6 @@ object Form2: TForm2
       item
         Caption = 'Location'
       end>
-    Ctl3D = True
     RowSelect = True
     TabOrder = 5
     ViewStyle = vsReport
