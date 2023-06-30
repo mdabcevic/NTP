@@ -5,7 +5,8 @@
 
 #include "TestWindow.h"
 #include "Data/AllData.h"
-#include <IniFiles.hpp> // Include the IniFiles header
+#include <IniFiles.hpp>  //Include the IniFiles header
+#include "CarInfoInputForm.h"   //Include for showing Form3
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -92,7 +93,7 @@ void __fastcall TForm2::Button4Click(TObject *Sender)
 
 void __fastcall TForm2::Button5Click(TObject *Sender)
 {
-    //open separate window for entering car info
+	//open separate window for entering car info
 	DataModule1->currentCar = DataModule1->companycars->Add();
 	DataModule1->currentCar->licenseplate = "added";
 	DataModule1->currentCar->internalmark = "Peugeot-508";
@@ -100,8 +101,10 @@ void __fastcall TForm2::Button5Click(TObject *Sender)
 	DataModule1->currentCar->currentuser = "K. S.";
 	DataModule1->currentCar->location = "Zagreb";
 	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
-
 	DataModule1->companycars->Remove(DataModule1->currentCar);
+
+	Form3->AddCarMode();
+    Form3->Show();
 }
 //---------------------------------------------------------------------------
 
@@ -172,6 +175,8 @@ void __fastcall TForm2::Button7Click(TObject *Sender)
 		ListView1->Items->Item[i]->SubItems->
 				Add(DataModule1->companycars->car[i]->location);
 	}
+	Form3->EditCarMode();
+	Form3->Show();
 }
 //---------------------------------------------------------------------------
 

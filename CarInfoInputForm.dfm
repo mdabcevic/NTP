@@ -2,8 +2,8 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = 'Car information'
-  ClientHeight = 434
-  ClientWidth = 448
+  ClientHeight = 433
+  ClientWidth = 444
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,7 +11,7 @@ object Form3: TForm3
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object LicensePlate_Label: TLabel
     Left = 144
     Top = 48
     Width = 169
@@ -20,7 +20,7 @@ object Form3: TForm3
     AutoSize = False
     Caption = 'License plate'
   end
-  object Label2: TLabel
+  object InternalName_Label: TLabel
     Left = 144
     Top = 104
     Width = 169
@@ -29,7 +29,7 @@ object Form3: TForm3
     AutoSize = False
     Caption = 'Internal name'
   end
-  object Label3: TLabel
+  object Assigned_Label: TLabel
     Left = 144
     Top = 158
     Width = 169
@@ -38,7 +38,7 @@ object Form3: TForm3
     AutoSize = False
     Caption = 'Officially assigned to'
   end
-  object Label4: TLabel
+  object User_Label: TLabel
     Left = 144
     Top = 216
     Width = 169
@@ -47,7 +47,7 @@ object Form3: TForm3
     AutoSize = False
     Caption = 'Currently used by'
   end
-  object Label5: TLabel
+  object Location_Label: TLabel
     Left = 144
     Top = 272
     Width = 169
@@ -56,47 +56,42 @@ object Form3: TForm3
     AutoSize = False
     Caption = 'Location'
   end
-  object Edit1: TEdit
+  object LicensePlate_Box: TEdit
     Left = 144
     Top = 69
     Width = 169
     Height = 23
     TabOrder = 0
-    Text = 'Edit1'
   end
-  object Edit2: TEdit
+  object InternalName_Box: TEdit
     Left = 144
     Top = 123
     Width = 169
     Height = 23
     TabOrder = 1
-    Text = 'Edit1'
   end
-  object Edit3: TEdit
+  object Assigned_Box: TEdit
     Left = 144
     Top = 179
     Width = 169
     Height = 23
     TabOrder = 2
-    Text = 'Edit1'
   end
-  object Edit4: TEdit
+  object User_Box: TEdit
     Left = 144
     Top = 237
     Width = 169
     Height = 23
     TabOrder = 3
-    Text = 'Edit1'
   end
-  object Edit5: TEdit
+  object Location_Box: TEdit
     Left = 144
     Top = 293
     Width = 169
     Height = 23
     TabOrder = 4
-    Text = 'Edit1'
   end
-  object Button1: TButton
+  object SaveCarChanges_Button: TButton
     Left = 144
     Top = 330
     Width = 169

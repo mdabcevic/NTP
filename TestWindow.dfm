@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Test Window'
-  ClientHeight = 628
-  ClientWidth = 613
+  ClientHeight = 523
+  ClientWidth = 604
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
