@@ -92,6 +92,7 @@ void __fastcall TForm2::Button4Click(TObject *Sender)
 
 void __fastcall TForm2::Button5Click(TObject *Sender)
 {
+    //open separate window for entering car info
 	DataModule1->currentCar = DataModule1->companycars->Add();
 	DataModule1->currentCar->licenseplate = "added";
 	DataModule1->currentCar->internalmark = "Peugeot-508";
@@ -143,6 +144,34 @@ void __fastcall TForm2::ListView1SelectItem(TObject *Sender, TListItem *Item, bo
 	}
 	DataModule1->currentCar = DataModule1->companycars->car[ListView1->ItemIndex];
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Button7Click(TObject *Sender)
+{
+	//open separate window for entering car info
+	DataModule1->currentCar->licenseplate = "added";
+	DataModule1->currentCar->internalmark = "Peugeot-508";
+	DataModule1->currentCar->assigned = "K. D.";
+	DataModule1->currentCar->currentuser = "K. S.";
+	DataModule1->currentCar->location = "Zagreb";
+	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
+    ListView1->Items->Clear();
+	for(int i = 0; i < DataModule1->companycars->Count; i++){
+		ListView1->Items->Add();
+		ListView1->Items->Item[i]->Caption =
+				DataModule1->companycars->car[i]->licenseplate;
+		ListView1->Items->Item[i]->
+				Caption = DataModule1->companycars->car[i]->licenseplate;
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->internalmark);
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->assigned);
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->currentuser);
+		ListView1->Items->Item[i]->SubItems->
+				Add(DataModule1->companycars->car[i]->location);
+	}
 }
 //---------------------------------------------------------------------------
 

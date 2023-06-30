@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Test Window'
-  ClientHeight = 422
-  ClientWidth = 614
+  ClientHeight = 628
+  ClientWidth = 613
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -59,8 +59,8 @@ object Form2: TForm2
   object ListView1: TListView
     Left = 2
     Top = 211
-    Width = 604
-    Height = 94
+    Width = 603
+    Height = 198
     Columns = <
       item
         Caption = 'License plate'
@@ -85,7 +85,7 @@ object Form2: TForm2
   end
   object Button3: TButton
     Left = 2
-    Top = 311
+    Top = 415
     Width = 105
     Height = 25
     Caption = 'Load all cars'
@@ -103,7 +103,7 @@ object Form2: TForm2
   end
   object Button5: TButton
     Left = 113
-    Top = 311
+    Top = 415
     Width = 104
     Height = 25
     Caption = 'Add car'
@@ -112,11 +112,20 @@ object Form2: TForm2
   end
   object Button6: TButton
     Left = 223
-    Top = 311
+    Top = 415
     Width = 154
     Height = 25
     Caption = 'Remove selected car'
     TabOrder = 9
     OnClick = Button6Click
+  end
+  object Button7: TButton
+    Left = 383
+    Top = 415
+    Width = 146
+    Height = 25
+    Caption = 'Edit selected car'
+    TabOrder = 10
+    OnClick = Button7Click
   end
 end
