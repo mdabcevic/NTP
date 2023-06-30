@@ -98,5 +98,6 @@ object Form3: TForm3
     Height = 25
     Caption = 'Add / Edit '
     TabOrder = 5
+    OnClick = SaveCarChanges_ButtonClick
   end
 end

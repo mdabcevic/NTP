@@ -22,6 +22,7 @@ __published:	// IDE-managed Components
 	TEdit *User_Box;
 	TEdit *Location_Box;
 	TButton *SaveCarChanges_Button;
+	void __fastcall SaveCarChanges_ButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 
