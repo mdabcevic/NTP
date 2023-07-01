@@ -27,6 +27,7 @@ void __fastcall TForm6::EmployeeActionButtonClick(TObject *Sender)
 	DataModule1->EmployeeTable->FieldByName("DriverLicense")->AsBoolean = Form6->isDriver->Checked;
 	DataModule1->EmployeeTable->FieldByName("Address")->AsString = Form6->AddressBox->Text;
 	DataModule1->EmployeeTable->FieldByName("DepositAccountNumber")->AsString = Form6->DepositAccBox->Text;
+    DataModule1->EmployeeTable->FieldByName("Tenure")->AsInteger = Form6->TenureBox->Text.ToInt();
 	DataModule1->EmployeeTable->Post();
 
 }
