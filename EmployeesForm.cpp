@@ -18,6 +18,25 @@ __fastcall TForm4::TForm4(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button1Click(TObject *Sender)
 {
-    Form6->ShowModal();
+	Form6->ShowModal();
+	DataModule1->EmployeeQuery->Close();
+	DataModule1->EmployeeQuery->Open();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm4::Button2Click(TObject *Sender)
+{
+    int employeeID = DBGrid1->DataSource->DataSet->FieldByName("EmployeeID")->AsInteger;
+	//AnsiString temp = DataModule1->EmployeeQuery->SQL->Text;
+	//DataModule1->EmployeeQuery->Clear();
+    TADOQuery *Query1 = new TADOQuery(NULL);
+	Query1->Connection = DataModule1->Connection;
+	Query1->SQL->Clear();
+	Query1->SQL->Add("DELETE FROM Employees WHERE EmployeeID = :ID");
+	Query1->Parameters->ParamByName("ID")->Value = employeeID;
+	Query1->ExecSQL();
+	delete Query1;
+	DataModule1->EmployeeQuery->Close();
+	DataModule1->EmployeeQuery->Open();
+
 }
 //---------------------------------------------------------------------------

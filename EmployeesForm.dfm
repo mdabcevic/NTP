@@ -61,4 +61,13 @@ object Form4: TForm4
     TabOrder = 1
     OnClick = Button1Click
   end
+  object Button2: TButton
+    Left = 207
+    Top = 190
+    Width = 202
+    Height = 25
+    Caption = 'Delete selected employee'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
 end

@@ -40,7 +40,9 @@ object DataModule1: TDataModule1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT e.FirstName, e.LastName, e.Email, d.DepartmentName'
+      
+        'SELECT e.EmployeeID, e.FirstName, e.LastName, e.Email, d.Departm' +
+        'entName'
       'FROM Employees as e'
       
         'INNER JOIN Departments as d ON e.DepartmentCode = d.DepartmentCo' +
