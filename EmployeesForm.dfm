@@ -52,4 +52,13 @@ object Form4: TForm4
         Visible = True
       end>
   end
+  object Button1: TButton
+    Left = 8
+    Top = 190
+    Width = 193
+    Height = 25
+    Caption = 'Add employee'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
 end

@@ -139,6 +139,18 @@
             <DependentOn>Data\AllData.h</DependentOn>
             <BuildOrder>8</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DepartmentsForm.cpp">
+            <Form>Form5</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DepartmentsForm.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="EmployeeInfoInputForm.cpp">
+            <Form>Form6</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>EmployeeInfoInputForm.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
         <CppCompile Include="EmployeesForm.cpp">
             <Form>Form4</Form>
             <FormType>dfm</FormType>
@@ -189,6 +201,8 @@
         <FormResources Include="Data\AllData.dfm"/>
         <FormResources Include="CarInfoInputForm.dfm"/>
         <FormResources Include="EmployeesForm.dfm"/>
+        <FormResources Include="DepartmentsForm.dfm"/>
+        <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

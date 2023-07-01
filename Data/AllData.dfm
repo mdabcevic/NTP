@@ -26,15 +26,15 @@ object DataModule1: TDataModule1
     Connection = Connection
     CursorType = ctStatic
     TableName = 'Employees'
-    Left = 152
+    Left = 128
     Top = 120
   end
   object EmployeeDataSource: TDataSource
-    DataSet = ADOQuery1
+    DataSet = EmployeeQuery
     Left = 384
     Top = 120
   end
-  object ADOQuery1: TADOQuery
+  object EmployeeQuery: TADOQuery
     Active = True
     Connection = Connection
     CursorType = ctStatic
@@ -47,5 +47,37 @@ object DataModule1: TDataModule1
         'de')
     Left = 256
     Top = 120
+  end
+  object DepartmentsQuery: TADOQuery
+    Active = True
+    Connection = Connection
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT d.DepartmentName, head.FirstName, head.LastName, deputy.F' +
+        'irstName, deputy.LastName'
+      'FROM Departments AS d '
+      
+        'INNER JOIN Employees AS head ON d.DepartmentHead = head.Employee' +
+        'ID'
+      
+        'INNER JOIN Employees AS deputy ON d.DeputyHead = deputy.Employee' +
+        'ID')
+    Left = 256
+    Top = 200
+  end
+  object DepartmentsDataSource: TDataSource
+    DataSet = DepartmentsTable
+    Left = 384
+    Top = 200
+  end
+  object DepartmentsTable: TADOTable
+    Active = True
+    Connection = Connection
+    CursorType = ctStatic
+    TableName = 'Departments'
+    Left = 128
+    Top = 200
   end
 end

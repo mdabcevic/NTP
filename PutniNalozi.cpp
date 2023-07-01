@@ -9,6 +9,8 @@ USEFORM("TestWindow.cpp", Form2);
 USEFORM("Data\AllData.cpp", DataModule1); /* TDataModule: File Type */
 USEFORM("CarInfoInputForm.cpp", Form3);
 USEFORM("EmployeesForm.cpp", Form4);
+USEFORM("DepartmentsForm.cpp", Form5);
+USEFORM("EmployeeInfoInputForm.cpp", Form6);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -21,6 +23,8 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TDataModule1), &DataModule1);
 		Application->CreateForm(__classid(TForm3), &Form3);
 		Application->CreateForm(__classid(TForm4), &Form4);
+		Application->CreateForm(__classid(TForm5), &Form5);
+		Application->CreateForm(__classid(TForm6), &Form6);
 		Application->Run();
 	}
 	catch (Exception &exception)

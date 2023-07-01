@@ -23,7 +23,10 @@ __published:	// IDE-managed Components
 	TADOConnection *Connection;
 	TADOTable *EmployeeTable;
 	TDataSource *EmployeeDataSource;
-	TADOQuery *ADOQuery1;
+	TADOQuery *EmployeeQuery;
+	TADOQuery *DepartmentsQuery;
+	TDataSource *DepartmentsDataSource;
+	TADOTable *DepartmentsTable;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);
