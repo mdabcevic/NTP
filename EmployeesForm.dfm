@@ -2,8 +2,8 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Form4'
-  ClientHeight = 442
-  ClientWidth = 1115
+  ClientHeight = 441
+  ClientWidth = 1111
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -33,50 +33,22 @@ object Form4: TForm4
     Columns = <
       item
         Expanded = False
-        FieldName = 'EmployeeID'
-        Width = 120
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'FirstName'
-        Width = 120
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'LastName'
-        Width = 120
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'IdentificationNumber'
-        Width = 120
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Address'
-        Width = 120
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Username'
-        Width = 120
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Email'
-        Width = 120
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Phone'
-        Width = 120
+        FieldName = 'DepartmentName'
         Visible = True
       end>
   end

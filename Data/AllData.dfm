@@ -30,8 +30,22 @@ object DataModule1: TDataModule1
     Top = 120
   end
   object EmployeeDataSource: TDataSource
-    DataSet = EmployeeTable
-    Left = 280
+    DataSet = ADOQuery1
+    Left = 384
+    Top = 120
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = Connection
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT e.FirstName, e.LastName, e.Email, d.DepartmentName'
+      'FROM Employees as e'
+      
+        'INNER JOIN Departments as d ON e.DepartmentCode = d.DepartmentCo' +
+        'de')
+    Left = 256
     Top = 120
   end
 end
