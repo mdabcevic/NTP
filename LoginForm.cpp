@@ -5,6 +5,7 @@
 
 #include "LoginForm.h"
 #include "TestWindow.h"
+#include "EmployeesForm.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -95,6 +96,13 @@ void __fastcall TForm1::isRememberMeClick(TObject *Sender)
 	if(!Form1->isRememberMe->Checked){
 		DataModule1->wrSettingsHelper.DeleteSettings();
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	Form4->ShowModal();
+
 }
 //---------------------------------------------------------------------------
 
