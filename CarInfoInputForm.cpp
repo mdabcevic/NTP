@@ -41,14 +41,16 @@ void TForm3::EditCarMode()
 void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 {
 	if(Form3->SaveCarChanges_Button->Caption == "Add car"){
-	DataModule1->currentCar = DataModule1->companycars->Add();
+		DataModule1->currentCar = DataModule1->companycars->Add();
+
+	}
 	DataModule1->currentCar->licenseplate = Form3->LicensePlate_Box->Text;
 	DataModule1->currentCar->internalmark = Form3->InternalName_Box->Text;
 	DataModule1->currentCar->assigned = Form3->Assigned_Box->Text;
 	DataModule1->currentCar->currentuser = Form3->User_Box->Text;
 	DataModule1->currentCar->location = Form3->Location_Box->Text;
 	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
-    Form3->Close();
-	}
+
+	Form3->Close();
 }
 //---------------------------------------------------------------------------

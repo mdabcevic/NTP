@@ -63,23 +63,7 @@ void __fastcall TForm2::LoadWR_TestClick(TObject *Sender)
 
 void __fastcall TForm2::Button3Click(TObject *Sender)
 {
-	DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
-	ListView1->Items->Clear();
-	for(int i = 0; i < DataModule1->companycars->Count; i++){
-		ListView1->Items->Add();
-		ListView1->Items->Item[i]->Caption =
-				DataModule1->companycars->car[i]->licenseplate;
-		ListView1->Items->Item[i]->
-				Caption = DataModule1->companycars->car[i]->licenseplate;
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->internalmark);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->assigned);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->currentuser);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->location);
-	}
+    FillListView();
 }
 //---------------------------------------------------------------------------
 
@@ -94,17 +78,9 @@ void __fastcall TForm2::Button4Click(TObject *Sender)
 void __fastcall TForm2::Button5Click(TObject *Sender)
 {
 	//open separate window for entering car info
-	DataModule1->currentCar = DataModule1->companycars->Add();
-	DataModule1->currentCar->licenseplate = "added";
-	DataModule1->currentCar->internalmark = "Peugeot-508";
-	DataModule1->currentCar->assigned = "K. D.";
-	DataModule1->currentCar->currentuser = "K. S.";
-	DataModule1->currentCar->location = "Zagreb";
-	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
-	//DataModule1->companycars->Remove(DataModule1->currentCar);
-
 	Form3->AddCarMode();
 	Form3->ShowModal();
+	//get changes
     FillListView();
 }
 //---------------------------------------------------------------------------
@@ -116,24 +92,7 @@ void __fastcall TForm2::Button6Click(TObject *Sender)
 	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
     //avoid double click deleting next node in line
 	ListView1->ItemIndex = -1;
-	DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
-    //extract this to avoid duplication
-	ListView1->Items->Clear();
-	for(int i = 0; i < DataModule1->companycars->Count; i++){
-		ListView1->Items->Add();
-		ListView1->Items->Item[i]->Caption =
-				DataModule1->companycars->car[i]->licenseplate;
-		ListView1->Items->Item[i]->
-				Caption = DataModule1->companycars->car[i]->licenseplate;
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->internalmark);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->assigned);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->currentuser);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->location);
-	}
+	FillListView();
 
 }
 //---------------------------------------------------------------------------
@@ -154,35 +113,14 @@ void __fastcall TForm2::ListView1SelectItem(TObject *Sender, TListItem *Item, bo
 void __fastcall TForm2::Button7Click(TObject *Sender)
 {
 	//open separate window for entering car info
-	DataModule1->currentCar->licenseplate = "added";
-	DataModule1->currentCar->internalmark = "Peugeot-508";
-	DataModule1->currentCar->assigned = "K. D.";
-	DataModule1->currentCar->currentuser = "K. S.";
-	DataModule1->currentCar->location = "Zagreb";
-	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
-    ListView1->Items->Clear();
-	for(int i = 0; i < DataModule1->companycars->Count; i++){
-		ListView1->Items->Add();
-		ListView1->Items->Item[i]->Caption =
-				DataModule1->companycars->car[i]->licenseplate;
-		ListView1->Items->Item[i]->
-				Caption = DataModule1->companycars->car[i]->licenseplate;
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->internalmark);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->assigned);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->currentuser);
-		ListView1->Items->Item[i]->SubItems->
-				Add(DataModule1->companycars->car[i]->location);
-	}
 	Form3->EditCarMode();
-	Form3->Show();
+	Form3->ShowModal();
+	FillListView();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::FillListView(){
-	DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
-	Form2->ListView1->Items->Clear();
+		DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
+	ListView1->Items->Clear();
 	for(int i = 0; i < DataModule1->companycars->Count; i++){
 		ListView1->Items->Add();
 		ListView1->Items->Item[i]->Caption =
