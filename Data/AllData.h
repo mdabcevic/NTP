@@ -21,6 +21,8 @@ class TDataModule1 : public TDataModule
 __published:	// IDE-managed Components
 	TXMLDocument *XmlDoc;
 	TADOConnection *Connection;
+	TADOTable *EmployeeTable;
+	TDataSource *EmployeeDataSource;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);
