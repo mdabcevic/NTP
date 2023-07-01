@@ -14,6 +14,8 @@ TForm4 *Form4;
 __fastcall TForm4::TForm4(TComponent* Owner)
 	: TForm(Owner)
 {
+	//GroupBox1->SendToBack();
+	//RadioButton1->BringToFront();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button1Click(TObject *Sender)
@@ -47,5 +49,35 @@ void __fastcall TForm4::Button3Click(TObject *Sender)
 	Form6->ShowModal();
 	DataModule1->EmployeeQuery->Close();
 	DataModule1->EmployeeQuery->Open();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm4::Sort(TObject *Sender)
+{
+	String field;
+	String direction;
+
+     // Check which field radio button was selected
+	if(FnSortOption->Checked)
+		field = "FirstName";
+	else if(LnSortOption->Checked)
+		field = "LastName";
+    else if(DepartmentSortOption->Checked)
+		field = "DepartmentName";
+	else{
+		// if there is no sorting, go out
+		DataModule1->EmployeeQuery->Sort = "";
+		return;
+	}
+
+    // Check which sort direction radio button was selected
+	if(DescSortOption->Checked)
+		direction = "DESC";
+	else
+		//default
+		direction = "ASC";
+	DataModule1->EmployeeQuery->Sort = field + " " + direction;
+
+
+
 }
 //---------------------------------------------------------------------------

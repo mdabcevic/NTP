@@ -1,7 +1,7 @@
 object Form4: TForm4
   Left = 0
   Top = 0
-  Caption = 'Form4'
+  Caption = 'Employees'
   ClientHeight = 441
   ClientWidth = 1111
   Color = clBtnFace
@@ -10,6 +10,7 @@ object Form4: TForm4
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClick = Sort
   TextHeight = 15
   object Label1: TLabel
     Left = 264
@@ -17,6 +18,50 @@ object Form4: TForm4
     Width = 60
     Height = 15
     Caption = 'Zaposlenici'
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 221
+    Width = 185
+    Height = 148
+    Caption = 'Sorting field'
+    TabOrder = 4
+    object NoSortOption: TRadioButton
+      Left = 40
+      Top = 104
+      Width = 113
+      Height = 17
+      Caption = 'None'
+      TabOrder = 0
+      OnClick = Sort
+    end
+    object DepartmentSortOption: TRadioButton
+      Left = 40
+      Top = 81
+      Width = 113
+      Height = 17
+      Caption = 'Department Name'
+      TabOrder = 1
+      OnClick = Sort
+    end
+    object LnSortOption: TRadioButton
+      Left = 40
+      Top = 58
+      Width = 113
+      Height = 17
+      Caption = 'Last Name'
+      TabOrder = 2
+      OnClick = Sort
+    end
+    object FnSortOption: TRadioButton
+      Left = 40
+      Top = 35
+      Width = 113
+      Height = 17
+      Caption = 'First Name'
+      TabOrder = 3
+      OnClick = Sort
+    end
   end
   object DBGrid1: TDBGrid
     Left = 8
@@ -78,5 +123,31 @@ object Form4: TForm4
     Caption = 'Edit Selected employee'
     TabOrder = 3
     OnClick = Button3Click
+  end
+  object GroupBox2: TGroupBox
+    Left = 199
+    Top = 221
+    Width = 185
+    Height = 148
+    Caption = 'Sorting direction'
+    TabOrder = 5
+    object AscSortOption: TRadioButton
+      Left = 32
+      Top = 51
+      Width = 113
+      Height = 17
+      Caption = 'Ascending'
+      TabOrder = 0
+      OnClick = Sort
+    end
+    object DescSortOption: TRadioButton
+      Left = 32
+      Top = 74
+      Width = 113
+      Height = 17
+      Caption = 'Descending'
+      TabOrder = 1
+      OnClick = Sort
+    end
   end
 end
