@@ -75,13 +75,21 @@ object Form6: TForm6
     Height = 15
     Caption = 'Tenure:'
   end
+  object DriverLicenseLabel: TLabel
+    Left = 175
+    Top = 310
+    Width = 76
+    Height = 15
+    Caption = 'Driver License:'
+  end
   object Button1: TButton
-    Left = 176
-    Top = 320
+    Left = 175
+    Top = 344
     Width = 297
     Height = 25
     Caption = 'Add or edit employee'
     TabOrder = 0
+    OnClick = Button1Click
   end
   object FirstNameBox: TEdit
     Left = 328
@@ -149,5 +157,12 @@ object Form6: TForm6
     Height = 23
     Associate = TenureBox
     TabOrder = 9
+  end
+  object isDriver: TCheckBox
+    Left = 384
+    Top = 304
+    Width = 17
+    Height = 21
+    TabOrder = 10
   end
 end

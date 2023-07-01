@@ -33,6 +33,9 @@ __published:	// IDE-managed Components
 	TNumberBox *TenureBox;
 	TLabel *TenureLabel;
 	TUpDown *UpDown1;
+	TLabel *DriverLicenseLabel;
+	TCheckBox *isDriver;
+	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm6(TComponent* Owner);
