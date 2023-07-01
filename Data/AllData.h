@@ -13,11 +13,14 @@
 #include <Xml.XMLDoc.hpp>
 #include <Xml.xmldom.hpp>
 #include <Xml.XMLIntf.hpp>
+#include <Data.DB.hpp>
+#include <Data.Win.ADODB.hpp>
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
 {
 __published:	// IDE-managed Components
 	TXMLDocument *XmlDoc;
+	TADOConnection *Connection;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);

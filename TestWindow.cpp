@@ -112,12 +112,13 @@ void __fastcall TForm2::ListView1SelectItem(TObject *Sender, TListItem *Item, bo
 
 void __fastcall TForm2::Button7Click(TObject *Sender)
 {
-	//open separate window for entering car info
+	//open separate window for entering car info with selected info
 	Form3->EditCarMode();
 	Form3->ShowModal();
 	FillListView();
 }
 //---------------------------------------------------------------------------
+//update company cars and fill the list view with most recent info
 void __fastcall TForm2::FillListView(){
 		DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
 	ListView1->Items->Clear();

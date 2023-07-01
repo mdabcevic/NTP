@@ -10,4 +10,13 @@ object DataModule1: TDataModule1
     Left = 40
     Top = 32
   end
+  object Connection: TADOConnection
+    ConnectionString = 
+      'Provider=SQLNCLI11.1;Integrated Security=SSPI;Persist Security I' +
+      'nfo=False;User ID="";Initial Catalog=PutniNaloziDB;Data Source=l' +
+      'ocalhost\SQLEXPRESS;Initial File Name="";Server SPN=""'
+    Provider = 'SQLNCLI11.1'
+    Left = 40
+    Top = 120
+  end
 end
