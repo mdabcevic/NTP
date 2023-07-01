@@ -82,14 +82,14 @@ object Form6: TForm6
     Height = 15
     Caption = 'Driver License:'
   end
-  object Button1: TButton
+  object EmployeeActionButton: TButton
     Left = 175
     Top = 344
     Width = 297
     Height = 25
     Caption = 'Add or edit employee'
     TabOrder = 0
-    OnClick = Button1Click
+    OnClick = EmployeeActionButtonClick
   end
   object FirstNameBox: TEdit
     Left = 328

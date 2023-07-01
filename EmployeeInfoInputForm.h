@@ -15,7 +15,7 @@ class TForm6 : public TForm
 {
 __published:	// IDE-managed Components
 	TLabel *Label1;
-	TButton *Button1;
+	TButton *EmployeeActionButton;
 	TEdit *FirstNameBox;
 	TLabel *FirstNameLabel;
 	TEdit *LastNameBox;
@@ -35,10 +35,12 @@ __published:	// IDE-managed Components
 	TUpDown *UpDown1;
 	TLabel *DriverLicenseLabel;
 	TCheckBox *isDriver;
-	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall EmployeeActionButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm6(TComponent* Owner);
+	void CreateMode();
+    void EditMode();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm6 *Form6;
