@@ -1,9 +1,9 @@
 object Form6: TForm6
   Left = 0
   Top = 0
-  Caption = 'Form6'
-  ClientHeight = 442
-  ClientWidth = 628
+  Caption = 'Employee Information'
+  ClientHeight = 441
+  ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,119 +12,121 @@ object Form6: TForm6
   Font.Style = []
   TextHeight = 15
   object Label1: TLabel
-    Left = 216
+    Left = 176
     Top = 32
-    Width = 184
+    Width = 295
     Height = 15
+    Alignment = taCenter
     Caption = 'Please enter employee information'
   end
-  object Label2: TLabel
-    Left = 216
+  object FirstNameLabel: TLabel
+    Left = 176
     Top = 75
-    Width = 34
+    Width = 63
     Height = 15
-    Caption = 'Label2'
+    Caption = 'First Name: '
   end
-  object Label3: TLabel
-    Left = 216
+  object LastNameLabel: TLabel
+    Left = 176
     Top = 104
-    Width = 34
+    Width = 62
     Height = 15
-    Caption = 'Label2'
+    Caption = 'Last Name: '
   end
-  object Label4: TLabel
-    Left = 216
+  object IDNumberLabel: TLabel
+    Left = 176
     Top = 133
-    Width = 34
+    Width = 120
     Height = 15
-    Caption = 'Label2'
+    Caption = 'Identification Number:'
   end
-  object Label5: TLabel
-    Left = 216
+  object EducationLabel: TLabel
+    Left = 176
     Top = 162
-    Width = 34
+    Width = 79
     Height = 15
-    Caption = 'Label2'
+    Caption = 'Qualifications: '
   end
-  object Label6: TLabel
-    Left = 216
+  object AddressLabel: TLabel
+    Left = 176
     Top = 191
-    Width = 34
+    Width = 45
     Height = 15
-    Caption = 'Label2'
+    Caption = 'Address:'
   end
-  object Label7: TLabel
-    Left = 216
+  object DepositAccountLabel: TLabel
+    Left = 176
     Top = 220
-    Width = 34
+    Width = 138
     Height = 15
-    Caption = 'Label2'
+    Caption = 'Deposit Account Number:'
   end
-  object Label8: TLabel
-    Left = 216
-    Top = 256
-    Width = 34
+  object DepartmentCodeLabel: TLabel
+    Left = 175
+    Top = 249
+    Width = 66
     Height = 15
-    Caption = 'Label8'
+    Caption = 'Department:'
+  end
+  object TenureLabel: TLabel
+    Left = 175
+    Top = 278
+    Width = 38
+    Height = 15
+    Caption = 'Tenure:'
   end
   object Button1: TButton
-    Left = 232
-    Top = 328
-    Width = 161
+    Left = 176
+    Top = 320
+    Width = 297
     Height = 25
     Caption = 'Add or edit employee'
     TabOrder = 0
   end
-  object Edit1: TEdit
-    Left = 288
+  object FirstNameBox: TEdit
+    Left = 328
     Top = 72
-    Width = 121
+    Width = 145
     Height = 23
     TabOrder = 1
-    Text = 'Edit1'
   end
-  object Edit2: TEdit
-    Left = 288
+  object LastNameBox: TEdit
+    Left = 328
     Top = 101
-    Width = 121
+    Width = 145
     Height = 23
     TabOrder = 2
-    Text = 'Edit1'
   end
-  object Edit3: TEdit
-    Left = 288
+  object IDNumberBox: TEdit
+    Left = 328
     Top = 130
-    Width = 121
+    Width = 145
     Height = 23
     TabOrder = 3
-    Text = 'Edit1'
   end
-  object Edit4: TEdit
-    Left = 288
+  object EducationBox: TEdit
+    Left = 328
     Top = 159
-    Width = 121
+    Width = 145
     Height = 23
     TabOrder = 4
-    Text = 'Edit1'
   end
-  object Edit5: TEdit
-    Left = 288
+  object AddressBox: TEdit
+    Left = 328
     Top = 188
-    Width = 121
+    Width = 145
     Height = 23
     TabOrder = 5
-    Text = 'Edit1'
   end
-  object Edit6: TEdit
-    Left = 288
+  object DepositAccBox: TEdit
+    Left = 328
     Top = 217
-    Width = 121
+    Width = 145
     Height = 23
     TabOrder = 6
-    Text = 'Edit1'
   end
   object DepartmentLookup: TDBLookupComboBox
-    Left = 288
+    Left = 328
     Top = 246
     Width = 145
     Height = 23
@@ -132,5 +134,20 @@ object Form6: TForm6
     ListField = 'DepartmentName'
     ListSource = DataModule1.DepartmentsDataSource
     TabOrder = 7
+  end
+  object TenureBox: TNumberBox
+    Left = 328
+    Top = 275
+    Width = 129
+    Height = 23
+    TabOrder = 8
+  end
+  object UpDown1: TUpDown
+    Left = 455
+    Top = 275
+    Width = 16
+    Height = 23
+    Associate = TenureBox
+    TabOrder = 9
   end
 end

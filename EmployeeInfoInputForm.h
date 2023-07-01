@@ -8,26 +8,31 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 #include <Vcl.DBCtrls.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.NumberBox.hpp>
 //---------------------------------------------------------------------------
 class TForm6 : public TForm
 {
 __published:	// IDE-managed Components
 	TLabel *Label1;
 	TButton *Button1;
-	TEdit *Edit1;
-	TLabel *Label2;
-	TEdit *Edit2;
-	TLabel *Label3;
-	TEdit *Edit3;
-	TLabel *Label4;
-	TEdit *Edit4;
-	TLabel *Label5;
-	TEdit *Edit5;
-	TLabel *Label6;
-	TEdit *Edit6;
-	TLabel *Label7;
-	TLabel *Label8;
+	TEdit *FirstNameBox;
+	TLabel *FirstNameLabel;
+	TEdit *LastNameBox;
+	TLabel *LastNameLabel;
+	TEdit *IDNumberBox;
+	TLabel *IDNumberLabel;
+	TEdit *EducationBox;
+	TLabel *EducationLabel;
+	TEdit *AddressBox;
+	TLabel *AddressLabel;
+	TEdit *DepositAccBox;
+	TLabel *DepositAccountLabel;
+	TLabel *DepartmentCodeLabel;
 	TDBLookupComboBox *DepartmentLookup;
+	TNumberBox *TenureBox;
+	TLabel *TenureLabel;
+	TUpDown *UpDown1;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm6(TComponent* Owner);
