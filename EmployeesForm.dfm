@@ -70,4 +70,13 @@ object Form4: TForm4
     TabOrder = 2
     OnClick = Button2Click
   end
+  object Button3: TButton
+    Left = 415
+    Top = 190
+    Width = 202
+    Height = 25
+    Caption = 'Edit Selected employee'
+    TabOrder = 3
+    OnClick = Button3Click
+  end
 end

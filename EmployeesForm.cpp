@@ -18,6 +18,7 @@ __fastcall TForm4::TForm4(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button1Click(TObject *Sender)
 {
+	Form6->CreateMode();
 	Form6->ShowModal();
 	DataModule1->EmployeeQuery->Close();
 	DataModule1->EmployeeQuery->Open();
@@ -38,5 +39,13 @@ void __fastcall TForm4::Button2Click(TObject *Sender)
 	DataModule1->EmployeeQuery->Close();
 	DataModule1->EmployeeQuery->Open();
 
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm4::Button3Click(TObject *Sender)
+{
+	Form6->EditMode();
+	Form6->ShowModal();
+	DataModule1->EmployeeQuery->Close();
+	DataModule1->EmployeeQuery->Open();
 }
 //---------------------------------------------------------------------------
