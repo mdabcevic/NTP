@@ -24,7 +24,7 @@ JSONHelper::JSONHelper(){
 	//parse array
 	TJSONArray* clientsArray = (TJSONArray*)TJSONObject::ParseJSONValue(jsonFile->GetValue("clients")->ToString());
     	for(int i = 0; i<clientsArray->Count; i++){
-		//currentClient = new Client();
+		currentClient = new Client();
 		currentClient->CompanyName = clientsArray->Items[i]->GetValue<UnicodeString>("CompanyName");
 		currentClient->Address = clientsArray->Items[i]->GetValue<UnicodeString>("Address");
 		currentClient->IdentificationNumber = clientsArray->Items[i]->GetValue<UnicodeString>("IdentificationNumber");
