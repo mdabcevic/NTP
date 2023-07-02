@@ -83,12 +83,14 @@ void __fastcall TForm4::Sort(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Filter(TObject *Sender)
 {
+	if(FilterBox->Text == "")
+		return;
 	if(FnFilterOption->Checked)
-	DataModule1->EmployeeQuery->Filter = "FirstName = '" + FilterBox->Text + "'";
+		DataModule1->EmployeeQuery->Filter = "FirstName LIKE '%" + FilterBox->Text + "%'";
 else if (LnFilterOption->Checked)
-	DataModule1->EmployeeQuery->Filter = "LastName = '" + FilterBox->Text + "'";
+		DataModule1->EmployeeQuery->Filter = "LastName LIKE '%" + FilterBox->Text + "%'";
 else if (DepartmentFilterOption->Checked)
-    DataModule1->EmployeeQuery->Filter = "DepartmentName = '" + FilterBox->Text + "'";
+		DataModule1->EmployeeQuery->Filter = "DepartmentName LIKE '%" + FilterBox->Text + "%'";
 
 DataModule1->EmployeeQuery->Filtered = true;
 }
