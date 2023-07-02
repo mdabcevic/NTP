@@ -9,6 +9,7 @@
 #include "DepartmentsForm.h"
 #include "ExpensesInputInfoForm.h"
 #include "TravelWarrantInputInfoForm.h"
+#include "TravelWarrantsForm.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -124,6 +125,13 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 void __fastcall TForm1::BClick(TObject *Sender)
 {
     Form7->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+    Form9->ShowModal();
 }
 //---------------------------------------------------------------------------
 

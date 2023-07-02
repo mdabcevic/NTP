@@ -145,4 +145,13 @@ object Form1: TForm1
     TabOrder = 11
     OnClick = BClick
   end
+  object Button4: TButton
+    Left = 472
+    Top = 149
+    Width = 132
+    Height = 25
+    Caption = 'Travel Warrants'
+    TabOrder = 12
+    OnClick = Button4Click
+  end
 end
