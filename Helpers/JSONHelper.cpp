@@ -12,6 +12,10 @@
 #pragma package(smart_init)
 
 JSONHelper::JSONHelper(){
+    LoadClients();
+}
+//---------------------------------------------------------------------------
+void JSONHelper::LoadClients(){
 
 
 	// load file into memory
@@ -23,7 +27,8 @@ JSONHelper::JSONHelper(){
 
 	//parse array
 	TJSONArray* clientsArray = (TJSONArray*)TJSONObject::ParseJSONValue(jsonFile->GetValue("clients")->ToString());
-    	for(int i = 0; i<clientsArray->Count; i++){
+		for(int i = 0; i<clientsArray->Count; i++){
+		//avoid sharing same address space for all clients
 		currentClient = new Client();
 		currentClient->CompanyName = clientsArray->Items[i]->GetValue<UnicodeString>("CompanyName");
 		currentClient->Address = clientsArray->Items[i]->GetValue<UnicodeString>("Address");
@@ -32,8 +37,10 @@ JSONHelper::JSONHelper(){
 		currentClient->ContactPerson = clientsArray->Items[i]->GetValue<UnicodeString>("ContactPerson");
 		allClients.push_back(currentClient);
 	}
-
-	//delete currentClient;
 }
 //---------------------------------------------------------------------------
+void JSONHelper::AddClient(){
+	allClients.push_back(currentClient);
+    currentClient = new Client();
+}
 

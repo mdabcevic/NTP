@@ -22,6 +22,10 @@ public:
 			delete client;
 		}
 	}
+	void LoadClients();
+	void AddClient();
+	void DeleteClient();
+    void EditClient();
 
 };
 //---------------------------------------------------------------------------
