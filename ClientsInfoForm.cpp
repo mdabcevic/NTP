@@ -20,10 +20,26 @@ if(ListView1->Columns->Count > 0)
     for(int i = 0; i < ListView1->Columns->Count; i++)
 	  ListView1->Columns->Items[i]->Width = ColWidth;
   }
+LoadListView();
 
-  //fill the list view
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm10::AddClientClick(TObject *Sender)
+{
+    DataModule1->jsonHelper.currentClient = new Client();
+	DataModule1->jsonHelper.currentClient->CompanyName = CompanyNameBox->Text;
+	DataModule1->jsonHelper.currentClient->Address = AddressBox->Text;
+	DataModule1->jsonHelper.currentClient->IdentificationNumber = IDBox->Text;
+	DataModule1->jsonHelper.currentClient->Email = EmailBox->Text;
+	DataModule1->jsonHelper.currentClient->ContactPerson = ContactPersonBox->Text;
+	DataModule1->jsonHelper.AddClient();
+    LoadListView();
+}
+//---------------------------------------------------------------------------
+void TForm10::LoadListView(){
+//fill the list view
   for(int i = 0; i < DataModule1->jsonHelper.allClients.size(); i++){
-    ListView1->Items->Add();
+	ListView1->Items->Add();
 		ListView1->Items->Item[i]->Caption = DataModule1->jsonHelper.allClients[i]->CompanyName;
 		ListView1->Items->Item[i]->SubItems->Add(DataModule1->jsonHelper.allClients[i]->Address);
 		ListView1->Items->Item[i]->SubItems->Add(DataModule1->jsonHelper.allClients[i]->IdentificationNumber);
@@ -31,4 +47,3 @@ if(ListView1->Columns->Count > 0)
 		ListView1->Items->Item[i]->SubItems->Add(DataModule1->jsonHelper.allClients[i]->ContactPerson);
   }
 }
-//---------------------------------------------------------------------------
