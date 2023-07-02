@@ -15,6 +15,7 @@ TForm8 *Form8;
 __fastcall TForm8::TForm8(TComponent* Owner)
 	: TForm(Owner)
 {
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm8::Button1Click(TObject *Sender)
@@ -27,7 +28,13 @@ void __fastcall TForm8::Button1Click(TObject *Sender)
 		DataModule1->ExpensesQuery->FieldByName("Parking")->AsBoolean = isParking->Checked;
 		DataModule1->ExpensesQuery->FieldByName("Accomodation")->AsBoolean = isAccomodation->Checked;
         DataModule1->ExpensesQuery->FieldByName("Other")->AsBoolean = isOther->Checked;
-        DataModule1->ExpensesQuery->Post();
+		DataModule1->ExpensesQuery->Post();
+		AttachmentPreview->Visible = true;
 	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm8::FormShow(TObject *Sender)
+{
+    	AttachmentPreview->Visible = false;
 }
 //---------------------------------------------------------------------------

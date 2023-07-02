@@ -10,6 +10,7 @@ object Form8: TForm8
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
     Left = 200
@@ -65,68 +66,14 @@ object Form8: TForm8
     Caption = 'Other expenses'
     TabOrder = 4
   end
-  object DBGrid1: TDBGrid
-    Left = 8
-    Top = 336
-    Width = 346
-    Height = 209
-    DataSource = DataModule1.ExpensesDataSource
-    TabOrder = 5
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -12
-    TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'ExpensesID'
-        Title.Caption = 'ID'
-        Width = 25
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'TransportationToll'
-        Title.Caption = 'Toll'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Hospitality'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Parking'
-        Width = 50
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Accomodation'
-        Width = 85
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Other'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Attachments'
-        Visible = True
-      end>
-  end
-  object DBImage1: TDBImage
-    Left = 360
-    Top = 336
+  object AttachmentPreview: TDBImage
+    Left = 200
+    Top = 287
     Width = 256
     Height = 209
     DataField = 'Attachments'
     DataSource = DataModule1.ExpensesDataSource
-    TabOrder = 6
+    TabOrder = 5
   end
   object Button1: TButton
     Left = 200
@@ -134,7 +81,7 @@ object Form8: TForm8
     Width = 249
     Height = 25
     Caption = 'Save receipt'
-    TabOrder = 7
+    TabOrder = 6
     OnClick = Button1Click
   end
 end
