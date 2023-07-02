@@ -2,8 +2,8 @@ object Form5: TForm5
   Left = 0
   Top = 0
   Caption = 'Form5'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 370
+  ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,15 +12,21 @@ object Form5: TForm5
   Font.Style = []
   TextHeight = 15
   object Label1: TLabel
-    Left = 264
-    Top = 16
-    Width = 68
-    Height = 15
+    Left = 248
+    Top = 32
+    Width = 113
+    Height = 25
     Caption = 'Departments'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
   end
   object DepartmentsGrid: TDBGrid
     Left = 8
-    Top = 48
+    Top = 88
     Width = 612
     Height = 120
     DataSource = DataModule1.DepartmentsDataSource
@@ -68,7 +74,7 @@ object Form5: TForm5
   end
   object DBNavigator1: TDBNavigator
     Left = 8
-    Top = 184
+    Top = 224
     Width = 610
     Height = 25
     DataSource = DataModule1.DepartmentsDataSource
