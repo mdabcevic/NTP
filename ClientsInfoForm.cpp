@@ -82,3 +82,18 @@ void __fastcall TForm10::ListView1SelectItem(TObject *Sender, TListItem *Item, b
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm10::EditClientClick(TObject *Sender)
+{
+	if(ListView1->ItemIndex == -1){
+		return;
+	}
+    DataModule1->jsonHelper.currentClient.CompanyName = CompanyNameBox->Text;
+	DataModule1->jsonHelper.currentClient.Address = AddressBox->Text;
+	DataModule1->jsonHelper.currentClient.IdentificationNumber = IDBox->Text;
+	DataModule1->jsonHelper.currentClient.Email = EmailBox->Text;
+	DataModule1->jsonHelper.currentClient.ContactPerson = ContactPersonBox->Text;
+	DataModule1->jsonHelper.EditClient(ListView1->ItemIndex);
+    LoadListView();
+}
+//---------------------------------------------------------------------------
+

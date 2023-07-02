@@ -33,6 +33,7 @@ __published:	// IDE-managed Components
 	void __fastcall AddClientClick(TObject *Sender);
 	void __fastcall DeleteClientClick(TObject *Sender);
 	void __fastcall ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected);
+	void __fastcall EditClientClick(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

@@ -71,6 +71,7 @@ object Form10: TForm10
     Height = 25
     Caption = 'Edit selected client'
     TabOrder = 2
+    OnClick = EditClientClick
   end
   object DeleteClient: TButton
     Left = 414
