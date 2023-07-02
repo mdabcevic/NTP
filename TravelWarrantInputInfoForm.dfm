@@ -214,5 +214,6 @@ object Form7: TForm7
     Height = 33
     Caption = 'Add / Edit Travel Warrant'
     TabOrder = 12
+    OnClick = WarrantActionClick
   end
 end

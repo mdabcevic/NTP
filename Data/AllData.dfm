@@ -102,4 +102,20 @@ object DataModule1: TDataModule1
     Left = 384
     Top = 272
   end
+  object WarrantsQuery: TADOQuery
+    Active = True
+    Connection = Connection
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT *'
+      'FROM TravelWarrants')
+    Left = 256
+    Top = 344
+  end
+  object WarrantsDataSource: TDataSource
+    DataSet = WarrantsQuery
+    Left = 384
+    Top = 344
+  end
 end

@@ -31,6 +31,8 @@ __published:	// IDE-managed Components
 	TOpenDialog *OpenDialog1;
 	TADOQuery *ExpensesQuery;
 	TDataSource *ExpensesDataSource;
+	TADOQuery *WarrantsQuery;
+	TDataSource *WarrantsDataSource;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);

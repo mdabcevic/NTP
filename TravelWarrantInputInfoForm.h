@@ -41,6 +41,7 @@ __published:	// IDE-managed Components
 	TLabel *Label12;
 	TButton *AddAttachments;
 	TButton *WarrantAction;
+	void __fastcall WarrantActionClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm7(TComponent* Owner);

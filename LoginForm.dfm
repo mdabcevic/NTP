@@ -136,4 +136,13 @@ object Form1: TForm1
     TabOrder = 10
     OnClick = Button3Click
   end
+  object B: TButton
+    Left = 472
+    Top = 274
+    Width = 132
+    Height = 25
+    Caption = 'Add warrant'
+    TabOrder = 11
+    OnClick = BClick
+  end
 end
