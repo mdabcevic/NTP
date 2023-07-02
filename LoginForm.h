@@ -30,6 +30,7 @@ __published:	// IDE-managed Components
 	TButton *B;
 	TButton *Button4;
 	TButton *Button5;
+	TButton *Button6;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
@@ -40,6 +41,7 @@ __published:	// IDE-managed Components
 	void __fastcall BClick(TObject *Sender);
 	void __fastcall Button4Click(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
+	void __fastcall Button6Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

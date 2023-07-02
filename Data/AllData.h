@@ -19,6 +19,7 @@
 #include <Vcl.Dialogs.hpp>
 #include "frxClass.hpp"
 #include "frxDBSet.hpp"
+#include "Helpers/CustomPurposesHelper.h"
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
 {
@@ -58,6 +59,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);
+
 	ThemeHelper themeHelper;
 	FontHelper fontHelper;
 	WRSettingsHelper wrSettingsHelper;
@@ -66,6 +68,8 @@ public:		// User declarations
 	_di_IXMLcarType currentCar;
 
 	JSONHelper jsonHelper;
+	CustomPurposesHelper purposesHelper;
+
 
 
 
