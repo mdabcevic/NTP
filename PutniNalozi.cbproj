@@ -58,7 +58,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -113,7 +113,7 @@
         <DynamicRTL>false</DynamicRTL>
         <UsePackages>false</UsePackages>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <LinkPackageStatics>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib</LinkPackageStatics>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <FinalOutputDir>.</FinalOutputDir>
     </PropertyGroup>
@@ -157,6 +157,12 @@
             <DependentOn>EmployeesForm.h</DependentOn>
             <BuildOrder>11</BuildOrder>
         </CppCompile>
+        <CppCompile Include="ExpensesInputInfoForm.cpp">
+            <Form>Form8</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ExpensesInputInfoForm.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Helpers\companycars.cpp">
             <DependentOn>Helpers\companycars.h</DependentOn>
             <BuildOrder>9</BuildOrder>
@@ -196,6 +202,12 @@
             <DependentOn>TestWindow.h</DependentOn>
             <BuildOrder>7</BuildOrder>
         </CppCompile>
+        <CppCompile Include="TravelWarrantInputInfoForm.cpp">
+            <Form>Form7</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>TravelWarrantInputInfoForm.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
         <FormResources Include="LoginForm.dfm"/>
         <FormResources Include="TestWindow.dfm"/>
         <FormResources Include="Data\AllData.dfm"/>
@@ -203,6 +215,8 @@
         <FormResources Include="EmployeesForm.dfm"/>
         <FormResources Include="DepartmentsForm.dfm"/>
         <FormResources Include="EmployeeInfoInputForm.dfm"/>
+        <FormResources Include="TravelWarrantInputInfoForm.dfm"/>
+        <FormResources Include="ExpensesInputInfoForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

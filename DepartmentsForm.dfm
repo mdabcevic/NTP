@@ -2,7 +2,7 @@ object Form5: TForm5
   Left = 0
   Top = 0
   Caption = 'Form5'
-  ClientHeight = 370
+  ClientHeight = 519
   ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -28,7 +28,7 @@ object Form5: TForm5
     Left = 8
     Top = 88
     Width = 612
-    Height = 120
+    Height = 258
     DataSource = DataModule1.DepartmentsDataSource
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -73,8 +73,8 @@ object Form5: TForm5
       end>
   end
   object DBNavigator1: TDBNavigator
-    Left = 8
-    Top = 224
+    Left = 6
+    Top = 352
     Width = 610
     Height = 25
     DataSource = DataModule1.DepartmentsDataSource
