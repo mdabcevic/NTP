@@ -167,29 +167,31 @@ object Form7: TForm7
   object OdometerStart: TNumberBox
     Left = 490
     Top = 321
-    Width = 104
+    Width = 87
     Height = 23
     TabOrder = 6
   end
   object OdometerEnd: TNumberBox
     Left = 490
     Top = 352
-    Width = 104
+    Width = 87
     Height = 23
     TabOrder = 7
   end
   object UpDownStart: TUpDown
-    Left = 594
+    Left = 583
     Top = 319
-    Width = 17
-    Height = 25
+    Width = 16
+    Height = 23
+    Associate = OdometerStart
     TabOrder = 8
   end
   object UpDownEnd: TUpDown
-    Left = 594
-    Top = 350
-    Width = 17
-    Height = 25
+    Left = 583
+    Top = 348
+    Width = 16
+    Height = 23
+    Associate = OdometerEnd
     TabOrder = 9
   end
   object TollInfo: TDBLookupComboBox

@@ -208,15 +208,22 @@
             <DependentOn>TravelWarrantInputInfoForm.h</DependentOn>
             <BuildOrder>14</BuildOrder>
         </CppCompile>
+        <CppCompile Include="TravelWarrantsForm.cpp">
+            <Form>Form9</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>TravelWarrantsForm.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
         <FormResources Include="LoginForm.dfm"/>
+        <FormResources Include="TravelWarrantInputInfoForm.dfm"/>
         <FormResources Include="TestWindow.dfm"/>
+        <FormResources Include="EmployeeInfoInputForm.dfm"/>
+        <FormResources Include="DepartmentsForm.dfm"/>
         <FormResources Include="Data\AllData.dfm"/>
         <FormResources Include="CarInfoInputForm.dfm"/>
-        <FormResources Include="EmployeesForm.dfm"/>
-        <FormResources Include="DepartmentsForm.dfm"/>
-        <FormResources Include="EmployeeInfoInputForm.dfm"/>
-        <FormResources Include="TravelWarrantInputInfoForm.dfm"/>
         <FormResources Include="ExpensesInputInfoForm.dfm"/>
+        <FormResources Include="EmployeesForm.dfm"/>
+        <FormResources Include="TravelWarrantsForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
