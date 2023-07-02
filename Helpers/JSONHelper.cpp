@@ -29,19 +29,20 @@ void JSONHelper::LoadClients(){
 	TJSONArray* clientsArray = (TJSONArray*)TJSONObject::ParseJSONValue(jsonFile->GetValue("clients")->ToString());
 		for(int i = 0; i<clientsArray->Count; i++){
 		//avoid sharing same address space for all clients
-		currentClient = new Client();
-		currentClient->CompanyName = clientsArray->Items[i]->GetValue<UnicodeString>("CompanyName");
-		currentClient->Address = clientsArray->Items[i]->GetValue<UnicodeString>("Address");
-		currentClient->IdentificationNumber = clientsArray->Items[i]->GetValue<UnicodeString>("IdentificationNumber");
-		currentClient->Email = clientsArray->Items[i]->GetValue<UnicodeString>("Email");
-		currentClient->ContactPerson = clientsArray->Items[i]->GetValue<UnicodeString>("ContactPerson");
+		//currentClient = new Client();
+		currentClient.CompanyName = clientsArray->Items[i]->GetValue<UnicodeString>("CompanyName");
+		currentClient.Address = clientsArray->Items[i]->GetValue<UnicodeString>("Address");
+		currentClient.IdentificationNumber = clientsArray->Items[i]->GetValue<UnicodeString>("IdentificationNumber");
+		currentClient.Email = clientsArray->Items[i]->GetValue<UnicodeString>("Email");
+		currentClient.ContactPerson = clientsArray->Items[i]->GetValue<UnicodeString>("ContactPerson");
 		allClients.push_back(currentClient);
 	}
 }
 //---------------------------------------------------------------------------
 void JSONHelper::AddClient(){
 	allClients.push_back(currentClient);
-    currentClient = new Client();
+	//currentClient = new Client();
+    RewriteFile();
 }
 //---------------------------------------------------------------------------
 void JSONHelper::RewriteFile(){
@@ -53,11 +54,11 @@ void JSONHelper::RewriteFile(){
 		for(int i = 0; i < allClients.size(); i++){
 			jsonDoc +=
 			"{"
-				"\"CompanyName\":\"" + allClients[i]->CompanyName + "\"," +
-				"\"Address\":\"" + allClients[i]->Address + "\"," +
-				"\"IdentificationNumber\":\"" + allClients[i]->IdentificationNumber + "\"," +
-				"\"Email\":\"" + allClients[i]->Email + "\"," +
-				"\"ContactPerson\":\"" + allClients[i]->ContactPerson + "\"" +
+				"\"CompanyName\":\"" + allClients[i].CompanyName + "\"," +
+				"\"Address\":\"" + allClients[i].Address + "\"," +
+				"\"IdentificationNumber\":\"" + allClients[i].IdentificationNumber + "\"," +
+				"\"Email\":\"" + allClients[i].Email + "\"," +
+				"\"ContactPerson\":\"" + allClients[i].ContactPerson + "\"" +
 			"}";
 			jsonDoc += (i+1 != allClients.size()) ? "," : "";
 		}
@@ -72,4 +73,11 @@ void JSONHelper::RewriteFile(){
 	ss->WriteString(jsonDoc);
 	ss->SaveToFile("clients.json");
 }
+//---------------------------------------------------------------------------
+void JSONHelper::DeleteClient(int index){
+	//delete allClients[index];
+	allClients.erase(allClients.begin() + index);
+	RewriteFile();
+}
+//---------------------------------------------------------------------------
 

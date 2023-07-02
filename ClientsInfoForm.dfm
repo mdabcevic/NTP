@@ -2,8 +2,8 @@ object Form10: TForm10
   Left = 0
   Top = 0
   Caption = 'Clients'
-  ClientHeight = 493
-  ClientWidth = 624
+  ClientHeight = 492
+  ClientWidth = 620
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -50,6 +50,7 @@ object Form10: TForm10
         Caption = 'Contact Person'
         Width = 120
       end>
+    RowSelect = True
     TabOrder = 0
     ViewStyle = vsReport
   end
@@ -77,6 +78,7 @@ object Form10: TForm10
     Height = 25
     Caption = 'Delete selected client'
     TabOrder = 3
+    OnClick = DeleteClientClick
   end
   object GroupBox1: TGroupBox
     Left = 8

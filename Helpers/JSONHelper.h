@@ -11,22 +11,16 @@ class JSONHelper
 {
 public:
 	//properties
-	Client* currentClient = new Client();
-	std::vector<Client*> allClients;
+	Client currentClient;
+	std::vector<Client> allClients;
 
 	//methods
 	JSONHelper();
-	~JSONHelper(){
-		delete currentClient;
-		for(Client* client : allClients) {
-			delete client;
-		}
-	}
 	void LoadClients();
 	void AddClient();
-	void DeleteClient();
+	void DeleteClient(int index);
 	void EditClient();
-    void RewriteFile();
+	void RewriteFile();
 
 };
 //---------------------------------------------------------------------------
