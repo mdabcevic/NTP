@@ -17,30 +17,30 @@ class TForm7 : public TForm
 {
 __published:	// IDE-managed Components
 	TLabel *Label1;
-	TDateTimePicker *DateTimePicker1;
-	TDateTimePicker *DateTimePicker2;
-	TLabel *Label2;
-	TLabel *Label3;
-	TLabel *Label4;
-	TCheckBox *CheckBox1;
-	TCheckListBox *CheckListBox1;
+	TDateTimePicker *DepartureDateTime;
+	TDateTimePicker *ArrivalDateTime;
+	TLabel *DepartureLabel;
+	TLabel *ArrivalLabel;
+	TLabel *isInternationalLabel;
+	TCheckBox *isInternational;
+	TCheckListBox *PartnersList;
 	TLabel *Label5;
-	TCheckListBox *CheckListBox2;
+	TCheckListBox *PurposesList;
 	TLabel *Label6;
-	TLabel *Label7;
-	TButtonedEdit *ButtonedEdit1;
-	TLabel *Label8;
-	TLabel *Label9;
-	TNumberBox *NumberBox1;
-	TNumberBox *NumberBox2;
-	TUpDown *UpDown1;
-	TUpDown *UpDown2;
+	TLabel *CarSelectionLabel;
+	TButtonedEdit *CarSelection;
+	TLabel *OdometerStartLabel;
+	TLabel *OdometerEndLabel;
+	TNumberBox *OdometerStart;
+	TNumberBox *OdometerEnd;
+	TUpDown *UpDownStart;
+	TUpDown *UpDownEnd;
 	TLabel *Label10;
-	TDBLookupComboBox *DBLookupComboBox1;
-	TLabel *Label11;
+	TDBLookupComboBox *TollInfo;
+	TLabel *TollInfoLabel;
 	TLabel *Label12;
-	TButton *Button1;
-	TButton *Button2;
+	TButton *AddAttachments;
+	TButton *WarrantAction;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm7(TComponent* Owner);
