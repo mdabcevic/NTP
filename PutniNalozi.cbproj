@@ -138,6 +138,14 @@
             <DependentOn>ClientsInfoForm.h</DependentOn>
             <BuildOrder>18</BuildOrder>
         </CppCompile>
+        <CppCompile Include="CustomPurposesHelper.cpp">
+            <DependentOn>CustomPurposesHelper.h</DependentOn>
+            <BuildOrder>21</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="CustomTravelPurposes.cpp">
+            <DependentOn>CustomTravelPurposes.h</DependentOn>
+            <BuildOrder>20</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Data\AllData.cpp">
             <Form>DataModule1</Form>
             <FormType>dfm</FormType>
