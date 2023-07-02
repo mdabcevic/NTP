@@ -25,7 +25,8 @@ public:
 	void LoadClients();
 	void AddClient();
 	void DeleteClient();
-    void EditClient();
+	void EditClient();
+    void RewriteFile();
 
 };
 //---------------------------------------------------------------------------

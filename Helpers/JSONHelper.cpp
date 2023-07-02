@@ -43,4 +43,33 @@ void JSONHelper::AddClient(){
 	allClients.push_back(currentClient);
     currentClient = new Client();
 }
+//---------------------------------------------------------------------------
+void JSONHelper::RewriteFile(){
+    String jsonDoc;
+	jsonDoc = "{";
+		jsonDoc += "\"clients\":";
+		jsonDoc += "[";
+		// add existing contacts...
+		for(int i = 0; i < allClients.size(); i++){
+			jsonDoc +=
+			"{"
+				"\"CompanyName\":\"" + allClients[i]->CompanyName + "\"," +
+				"\"Address\":\"" + allClients[i]->Address + "\"," +
+				"\"IdentificationNumber\":\"" + allClients[i]->IdentificationNumber + "\"," +
+				"\"Email\":\"" + allClients[i]->Email + "\"," +
+				"\"ContactPerson\":\"" + allClients[i]->ContactPerson + "\"" +
+			"}";
+			jsonDoc += (i+1 != allClients.size()) ? "," : "";
+		}
+		jsonDoc += "]";
+	jsonDoc += "}";
+
+	//Application->MessageBoxW(jsonDoc.w_str(), L"", 0);
+	// format json document (line breaks, indents..)
+	jsonDoc = ((TJSONObject*)TJSONObject::ParseJSONValue(jsonDoc))->Format(2);
+
+	std::unique_ptr<TStringStream> ss(new TStringStream);
+	ss->WriteString(jsonDoc);
+	ss->SaveToFile("clients.json");
+}
 
