@@ -138,14 +138,6 @@
             <DependentOn>ClientsInfoForm.h</DependentOn>
             <BuildOrder>18</BuildOrder>
         </CppCompile>
-        <CppCompile Include="CustomPurposesHelper.cpp">
-            <DependentOn>CustomPurposesHelper.h</DependentOn>
-            <BuildOrder>21</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="CustomTravelPurposes.cpp">
-            <DependentOn>CustomTravelPurposes.h</DependentOn>
-            <BuildOrder>20</BuildOrder>
-        </CppCompile>
         <CppCompile Include="Data\AllData.cpp">
             <Form>DataModule1</Form>
             <FormType>dfm</FormType>
@@ -156,6 +148,10 @@
         <CppCompile Include="Data\Client.cpp">
             <DependentOn>Data\Client.h</DependentOn>
             <BuildOrder>17</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Data\CustomTravelPurposes.cpp">
+            <DependentOn>Data\CustomTravelPurposes.h</DependentOn>
+            <BuildOrder>21</BuildOrder>
         </CppCompile>
         <CppCompile Include="DepartmentsForm.cpp">
             <Form>Form5</Form>
@@ -184,6 +180,10 @@
         <CppCompile Include="Helpers\companycars.cpp">
             <DependentOn>Helpers\companycars.h</DependentOn>
             <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Helpers\CustomPurposesHelper.cpp">
+            <DependentOn>Helpers\CustomPurposesHelper.h</DependentOn>
+            <BuildOrder>20</BuildOrder>
         </CppCompile>
         <CppCompile Include="Helpers\FontHelper.cpp">
             <DependentOn>Helpers\FontHelper.h</DependentOn>
@@ -240,13 +240,13 @@
         <FormResources Include="TravelWarrantsForm.dfm"/>
         <FormResources Include="TravelWarrantInputInfoForm.dfm"/>
         <FormResources Include="TestWindow.dfm"/>
-        <FormResources Include="DepartmentsForm.dfm"/>
         <FormResources Include="Data\AllData.dfm"/>
         <FormResources Include="ClientsInfoForm.dfm"/>
         <FormResources Include="CarInfoInputForm.dfm"/>
         <FormResources Include="ExpensesInputInfoForm.dfm"/>
         <FormResources Include="EmployeesForm.dfm"/>
         <FormResources Include="EmployeeInfoInputForm.dfm"/>
+        <FormResources Include="DepartmentsForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
