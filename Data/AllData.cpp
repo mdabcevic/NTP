@@ -4,9 +4,12 @@
 #pragma hdrstop
 
 #include "AllData.h"
+#include "Client.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
+#pragma link "frxClass"
+#pragma link "frxDBSet"
 #pragma resource "*.dfm"
 TDataModule1 *DataModule1;
 //---------------------------------------------------------------------------

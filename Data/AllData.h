@@ -10,12 +10,15 @@
 #include "ThemeHelper.h"
 #include "WRSettingsHelper.h"
 #include "Helpers/companycars.h"  //include for handling companycars.xml
+#include "JSONHelper.h"
 #include <Xml.XMLDoc.hpp>
 #include <Xml.xmldom.hpp>
 #include <Xml.XMLIntf.hpp>
 #include <Data.DB.hpp>
 #include <Data.Win.ADODB.hpp>
 #include <Vcl.Dialogs.hpp>
+#include "frxClass.hpp"
+#include "frxDBSet.hpp"
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
 {
@@ -49,6 +52,8 @@ __published:	// IDE-managed Components
 	TWideStringField *WarrantsQueryLicensePlate;
 	TWideStringField *WarrantsQueryOtherVehicles;
 	TIntegerField *WarrantsQueryAuthorizedBy;
+	TfrxReport *frxReport1;
+	TfrxDBDataset *frxDBEmployee;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -56,8 +61,14 @@ public:		// User declarations
 	ThemeHelper themeHelper;
 	FontHelper fontHelper;
 	WRSettingsHelper wrSettingsHelper;
+
 	_di_IXMLcompanycarsType companycars = Getcompanycars(XmlDoc);
-    _di_IXMLcarType currentCar;
+	_di_IXMLcarType currentCar;
+
+	JSONHelper jsonHelper;
+
+
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;
