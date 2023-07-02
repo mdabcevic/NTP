@@ -80,4 +80,9 @@ void JSONHelper::DeleteClient(int index){
 	RewriteFile();
 }
 //---------------------------------------------------------------------------
+void JSONHelper::EditClient(int index){
+	allClients[index] = currentClient;
+    RewriteFile();
+}
+//---------------------------------------------------------------------------
 

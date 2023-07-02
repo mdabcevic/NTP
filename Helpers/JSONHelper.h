@@ -19,7 +19,7 @@ public:
 	void LoadClients();
 	void AddClient();
 	void DeleteClient(int index);
-	void EditClient();
+	void EditClient(int index);
 	void RewriteFile();
 
 };

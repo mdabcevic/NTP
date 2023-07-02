@@ -61,3 +61,24 @@ void __fastcall TForm10::DeleteClientClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+//---------------------------------------------------------------------------
+
+void __fastcall TForm10::ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected)
+
+{
+	if(ListView1->ItemIndex == -1){
+		DataModule1->jsonHelper.currentClient.CompanyName = "";
+		DataModule1->jsonHelper.currentClient.Address = "";
+		DataModule1->jsonHelper.currentClient.IdentificationNumber = "";
+		DataModule1->jsonHelper.currentClient.Email = "";
+		DataModule1->jsonHelper.currentClient.ContactPerson = "";
+		return;
+	}
+	DataModule1->jsonHelper.currentClient.CompanyName = ListView1->Selected->Caption;
+	DataModule1->jsonHelper.currentClient.Address = ListView1->Selected->SubItems->Strings[0];
+	DataModule1->jsonHelper.currentClient.IdentificationNumber = ListView1->Selected->SubItems->Strings[1];
+	DataModule1->jsonHelper.currentClient.Email = ListView1->Selected->SubItems->Strings[2];
+	DataModule1->jsonHelper.currentClient.ContactPerson = ListView1->Selected->SubItems->Strings[3];
+}
+//---------------------------------------------------------------------------
+

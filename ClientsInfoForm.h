@@ -32,6 +32,8 @@ __published:	// IDE-managed Components
 	TLabel *Label5;
 	void __fastcall AddClientClick(TObject *Sender);
 	void __fastcall DeleteClientClick(TObject *Sender);
+	void __fastcall ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected);
+
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm10(TComponent* Owner);

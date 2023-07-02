@@ -53,6 +53,7 @@ object Form10: TForm10
     RowSelect = True
     TabOrder = 0
     ViewStyle = vsReport
+    OnSelectItem = ListView1SelectItem
   end
   object AddClient: TButton
     Left = 8
