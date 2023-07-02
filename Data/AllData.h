@@ -33,6 +33,23 @@ __published:	// IDE-managed Components
 	TDataSource *ExpensesDataSource;
 	TADOQuery *WarrantsQuery;
 	TDataSource *WarrantsDataSource;
+	TIntegerField *WarrantsQueryMileage;
+	TAutoIncField *WarrantsQueryWarrantID;
+	TIntegerField *WarrantsQueryEmployeeID;
+	TDateTimeField *WarrantsQueryCreatedAt;
+	TDateTimeField *WarrantsQueryDeparture;
+	TDateTimeField *WarrantsQueryArrival;
+	TBooleanField *WarrantsQueryIsInternational;
+	TWideStringField *WarrantsQueryPartners;
+	TWideStringField *WarrantsQueryPurposes;
+	TIntegerField *WarrantsQueryAttachmentID;
+	TIntegerField *WarrantsQueryStartingOdometer;
+	TIntegerField *WarrantsQueryEndingOdometer;
+	TWideStringField *WarrantsQueryToll;
+	TWideStringField *WarrantsQueryLicensePlate;
+	TWideStringField *WarrantsQueryOtherVehicles;
+	TIntegerField *WarrantsQueryAuthorizedBy;
+	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);

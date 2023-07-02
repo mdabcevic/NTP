@@ -3,7 +3,7 @@ object Form9: TForm9
   Top = 0
   Caption = 'Form9'
   ClientHeight = 441
-  ClientWidth = 814
+  ClientWidth = 1119
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -27,7 +27,7 @@ object Form9: TForm9
   object DBGrid1: TDBGrid
     Left = 8
     Top = 60
-    Width = 801
+    Width = 1103
     Height = 120
     DataSource = DataModule1.WarrantsDataSource
     TabOrder = 0
@@ -69,14 +69,19 @@ object Form9: TForm9
       end
       item
         Expanded = False
-        FieldName = 'Toll'
-        Width = 100
+        FieldName = 'LicensePlate'
+        Width = 75
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'LicensePlate'
-        Width = 75
+        FieldName = 'Mileage'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Toll'
+        Width = 100
         Visible = True
       end
       item

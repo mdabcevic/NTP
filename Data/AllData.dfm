@@ -106,12 +106,73 @@ object DataModule1: TDataModule1
     Active = True
     Connection = Connection
     CursorType = ctStatic
+    OnCalcFields = WarrantsQueryCalcFields
     Parameters = <>
     SQL.Strings = (
       'SELECT *'
       'FROM TravelWarrants')
     Left = 256
     Top = 344
+    object WarrantsQueryMileage: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'Mileage'
+      Calculated = True
+    end
+    object WarrantsQueryWarrantID: TAutoIncField
+      FieldName = 'WarrantID'
+      ReadOnly = True
+    end
+    object WarrantsQueryEmployeeID: TIntegerField
+      FieldName = 'EmployeeID'
+    end
+    object WarrantsQueryCreatedAt: TDateTimeField
+      FieldName = 'CreatedAt'
+    end
+    object WarrantsQueryDeparture: TDateTimeField
+      FieldName = 'Departure'
+    end
+    object WarrantsQueryArrival: TDateTimeField
+      FieldName = 'Arrival'
+    end
+    object WarrantsQueryIsInternational: TBooleanField
+      FieldName = 'IsInternational'
+    end
+    object WarrantsQueryPartners: TWideStringField
+      FieldName = 'Partners'
+      FixedChar = True
+      Size = 100
+    end
+    object WarrantsQueryPurposes: TWideStringField
+      FieldName = 'Purposes'
+      FixedChar = True
+      Size = 100
+    end
+    object WarrantsQueryAttachmentID: TIntegerField
+      FieldName = 'AttachmentID'
+    end
+    object WarrantsQueryStartingOdometer: TIntegerField
+      FieldName = 'StartingOdometer'
+    end
+    object WarrantsQueryEndingOdometer: TIntegerField
+      FieldName = 'EndingOdometer'
+    end
+    object WarrantsQueryToll: TWideStringField
+      FieldName = 'Toll'
+      FixedChar = True
+      Size = 50
+    end
+    object WarrantsQueryLicensePlate: TWideStringField
+      FieldName = 'LicensePlate'
+      FixedChar = True
+    end
+    object WarrantsQueryOtherVehicles: TWideStringField
+      FieldName = 'OtherVehicles'
+      FixedChar = True
+      Size = 10
+    end
+    object WarrantsQueryAuthorizedBy: TIntegerField
+      FieldName = 'AuthorizedBy'
+    end
   end
   object WarrantsDataSource: TDataSource
     DataSet = WarrantsQuery
