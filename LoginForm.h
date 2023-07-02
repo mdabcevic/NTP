@@ -26,12 +26,14 @@ __published:	// IDE-managed Components
 	TCheckBox *isRememberMe;
 	TButton *Button1;
 	TButton *Button2;
+	TButton *Button3;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall isRememberMeClick(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

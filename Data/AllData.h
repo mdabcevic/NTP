@@ -15,6 +15,7 @@
 #include <Xml.XMLIntf.hpp>
 #include <Data.DB.hpp>
 #include <Data.Win.ADODB.hpp>
+#include <Vcl.Dialogs.hpp>
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
 {
@@ -27,6 +28,9 @@ __published:	// IDE-managed Components
 	TADOQuery *DepartmentsQuery;
 	TDataSource *DepartmentsDataSource;
 	TADOTable *DepartmentsTable;
+	TOpenDialog *OpenDialog1;
+	TADOQuery *ExpensesQuery;
+	TDataSource *ExpensesDataSource;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);

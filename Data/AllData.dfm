@@ -1,6 +1,6 @@
 object DataModule1: TDataModule1
   Height = 480
-  Width = 640
+  Width = 1084
   object XmlDoc: TXMLDocument
     Active = True
     FileName = 
@@ -81,5 +81,25 @@ object DataModule1: TDataModule1
     TableName = 'Departments'
     Left = 128
     Top = 200
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 128
+    Top = 32
+  end
+  object ExpensesQuery: TADOQuery
+    Active = True
+    Connection = Connection
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT *'
+      'FROM TravelExpenses')
+    Left = 256
+    Top = 272
+  end
+  object ExpensesDataSource: TDataSource
+    DataSet = ExpensesQuery
+    Left = 384
+    Top = 272
   end
 end
