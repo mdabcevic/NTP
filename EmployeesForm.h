@@ -28,10 +28,18 @@ __published:	// IDE-managed Components
 	TRadioButton *FnSortOption;
 	TGroupBox *GroupBox1;
 	TGroupBox *GroupBox2;
+	TGroupBox *GroupBox3;
+	TRadioButton *FnFilterOption;
+	TRadioButton *LnFilterOption;
+	TRadioButton *DepartmentFilterOption;
+	TEdit *FilterBox;
+	TButton *ClearFilter;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall Sort(TObject *Sender);
+    void __fastcall Filter(TObject *Sender);
+	void __fastcall ClearFilterClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm4(TComponent* Owner);

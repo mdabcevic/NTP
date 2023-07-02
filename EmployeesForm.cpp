@@ -81,3 +81,25 @@ void __fastcall TForm4::Sort(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm4::Filter(TObject *Sender)
+{
+	if(FnFilterOption->Checked)
+	DataModule1->EmployeeQuery->Filter = "FirstName = '" + FilterBox->Text + "'";
+else if (LnFilterOption->Checked)
+	DataModule1->EmployeeQuery->Filter = "LastName = '" + FilterBox->Text + "'";
+else if (DepartmentFilterOption->Checked)
+    DataModule1->EmployeeQuery->Filter = "DepartmentName = '" + FilterBox->Text + "'";
+
+DataModule1->EmployeeQuery->Filtered = true;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm4::ClearFilterClick(TObject *Sender)
+{
+	FnFilterOption->Checked = false;
+	LnFilterOption->Checked = false;
+	DepartmentFilterOption->Checked = false;
+    DataModule1->EmployeeQuery->Filtered = false;
+	DataModule1->EmployeeQuery->Filter = "";
+    FilterBox->Text = "";
+}
+//---------------------------------------------------------------------------

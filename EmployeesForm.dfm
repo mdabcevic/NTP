@@ -2,8 +2,8 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Employees'
-  ClientHeight = 441
-  ClientWidth = 1111
+  ClientHeight = 451
+  ClientWidth = 634
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,11 +13,17 @@ object Form4: TForm4
   OnClick = Sort
   TextHeight = 15
   object Label1: TLabel
-    Left = 264
+    Left = 256
     Top = 24
-    Width = 60
-    Height = 15
+    Width = 97
+    Height = 25
     Caption = 'Zaposlenici'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
   end
   object GroupBox1: TGroupBox
     Left = 8
@@ -66,7 +72,7 @@ object Form4: TForm4
   object DBGrid1: TDBGrid
     Left = 8
     Top = 64
-    Width = 1017
+    Width = 609
     Height = 120
     DataSource = DataModule1.EmployeeDataSource
     TabOrder = 0
@@ -79,21 +85,25 @@ object Form4: TForm4
       item
         Expanded = False
         FieldName = 'FirstName'
+        Width = 140
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'LastName'
+        Width = 140
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Email'
+        Width = 140
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'DepartmentName'
+        Width = 140
         Visible = True
       end>
   end
@@ -149,5 +159,57 @@ object Form4: TForm4
       TabOrder = 1
       OnClick = Sort
     end
+  end
+  object GroupBox3: TGroupBox
+    Left = 390
+    Top = 221
+    Width = 227
+    Height = 121
+    Caption = 'Filtering field'
+    TabOrder = 6
+  end
+  object FnFilterOption: TRadioButton
+    Left = 424
+    Top = 249
+    Width = 113
+    Height = 17
+    Caption = 'First Name'
+    TabOrder = 7
+    OnClick = Sort
+  end
+  object LnFilterOption: TRadioButton
+    Left = 424
+    Top = 272
+    Width = 113
+    Height = 17
+    Caption = 'Last Name'
+    TabOrder = 8
+    OnClick = Sort
+  end
+  object DepartmentFilterOption: TRadioButton
+    Left = 424
+    Top = 295
+    Width = 113
+    Height = 17
+    Caption = 'Department Name'
+    TabOrder = 9
+    OnClick = Sort
+  end
+  object FilterBox: TEdit
+    Left = 390
+    Top = 346
+    Width = 121
+    Height = 23
+    TabOrder = 10
+    OnChange = Filter
+  end
+  object ClearFilter: TButton
+    Left = 512
+    Top = 345
+    Width = 105
+    Height = 25
+    Caption = 'Clear filter'
+    TabOrder = 11
+    OnClick = ClearFilterClick
   end
 end
