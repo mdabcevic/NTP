@@ -12,12 +12,15 @@ class CustomPurposesHelper {
 public:
 	TravelPurposes Header;
 	std::vector<Purpose> allPurposes;
-	std::unique_ptr<TFileStream> purposeStream;
+	std::unique_ptr<TFileStream> purposeStreamWrite;
+	std::unique_ptr<TMemoryStream> purposeStreamRead;
+    Purpose currentPurpose;
+
 
 	CustomPurposesHelper();
 	void SaveHardcoded();
     void SaveToFile();
-
+	void ReadFromFile();
 
 
 };

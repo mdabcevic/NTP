@@ -8,7 +8,8 @@
 
 //---------------------------------------------------------------------------
 CustomPurposesHelper::CustomPurposesHelper(){
-	 purposeStream.reset(new TFileStream("purposes.ctp", fmCreate));
+
+
 }
 //---------------------------------------------------------------------------
 
@@ -23,11 +24,33 @@ void CustomPurposesHelper::SaveHardcoded(){
 }
 //---------------------------------------------------------------------------
 void CustomPurposesHelper::SaveToFile(){
+	purposeStreamWrite.reset(new TFileStream("purposes.ctp", fmCreate));
 	//save header
-	purposeStream->Write(&Header, sizeof(TravelPurposes));
-	for(int i; i < allPurposes.size(); i++){
+	purposeStreamWrite->Write(&Header, sizeof(TravelPurposes));
+	for(int i = 0; i < allPurposes.size(); i++){
 		//save current purpose
-		purposeStream->Write(&allPurposes[i], sizeof(Purpose));
+		purposeStreamWrite->Write(&allPurposes[i], sizeof(Purpose));
 	}
+	purposeStreamWrite.reset(); // Close the file
 
+}
+//---------------------------------------------------------------------------
+void CustomPurposesHelper::ReadFromFile(){
+	purposeStreamRead.reset(new TMemoryStream);
+	//load
+	purposeStreamRead->LoadFromFile("purposes.ctp");
+	//get header
+	purposeStreamRead->Read(&Header, sizeof(TravelPurposes));
+	//header validation
+	if(String(Header.name) != "TravelPurposes" || Header.version != 1.0){
+		//do something
+		return;
+	}
+	//read records
+	int purposesCount = (purposeStreamRead->Size - sizeof(Header)) / sizeof(Purpose);
+	for (int i = 0; i < purposesCount; i++) {
+		purposeStreamRead->Read(&currentPurpose, sizeof(Purpose));
+		allPurposes.push_back(currentPurpose);
+	}
+    purposeStreamRead.reset();
 }
