@@ -2,8 +2,8 @@ object Form9: TForm9
   Left = 0
   Top = 0
   Caption = 'Form9'
-  ClientHeight = 442
-  ClientWidth = 818
+  ClientHeight = 441
+  ClientWidth = 814
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -99,6 +99,7 @@ object Form9: TForm9
     Height = 25
     Caption = 'Delete selected warrant'
     TabOrder = 1
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 8
