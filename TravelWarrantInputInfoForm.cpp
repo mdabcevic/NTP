@@ -18,7 +18,7 @@ __fastcall TForm7::TForm7(TComponent* Owner)
 
 void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 {
-	DataModule1->WarrantsQuery->Insert();
+	//DataModule1->WarrantsQuery->Insert();
 	DataModule1->WarrantsQuery->FieldByName("EmployeeID")->AsInteger = 5;
 	DataModule1->WarrantsQuery->FieldByName("CreatedAt")->AsDateTime = Now();
 	DataModule1->WarrantsQuery->FieldByName("Departure")->AsDateTime = DepartureDateTime->Date +  DepartureDateTime->Time;
@@ -36,3 +36,12 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void  TForm7::EditMode(){
+	DataModule1->WarrantsQuery->Edit();
+	WarrantAction->Caption = "Edit selected warrant";
+}
+//---------------------------------------------------------------------------
+void  TForm7::CreateMode(){
+	DataModule1->WarrantsQuery->Insert();
+	WarrantAction->Caption = "Create new warrant";
+}

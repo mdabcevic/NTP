@@ -45,6 +45,8 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm7(TComponent* Owner);
+	void EditMode();
+    void CreateMode();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm7 *Form7;

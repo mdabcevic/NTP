@@ -108,5 +108,6 @@ object Form9: TForm9
     Height = 25
     Caption = 'Edit selected warrant'
     TabOrder = 2
+    OnClick = Button3Click
   end
 end

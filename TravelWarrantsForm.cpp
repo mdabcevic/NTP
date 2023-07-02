@@ -5,6 +5,7 @@
 
 #include "TravelWarrantsForm.h"
 #include "Data\AllData.h"
+#include "TravelWarrantInputInfoForm.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -27,5 +28,11 @@ void __fastcall TForm9::Button2Click(TObject *Sender)
 	delete Query1;
 	DataModule1->WarrantsQuery->Close();
 	DataModule1->WarrantsQuery->Open();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm9::Button3Click(TObject *Sender)
+{
+    Form7->EditMode();
+	Form7->ShowModal();
 }
 //---------------------------------------------------------------------------

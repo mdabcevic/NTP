@@ -124,6 +124,7 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 
 void __fastcall TForm1::BClick(TObject *Sender)
 {
+    Form7->CreateMode();
     Form7->ShowModal();
 }
 //---------------------------------------------------------------------------
@@ -131,6 +132,7 @@ void __fastcall TForm1::BClick(TObject *Sender)
 
 void __fastcall TForm1::Button4Click(TObject *Sender)
 {
+
     Form9->ShowModal();
 }
 //---------------------------------------------------------------------------
