@@ -11,10 +11,11 @@
 class CustomPurposesHelper {
 public:
 	TravelPurposes Header;
+    Purpose currentPurpose;
 	std::vector<Purpose> allPurposes;
 	std::unique_ptr<TFileStream> purposeStreamWrite;
 	std::unique_ptr<TMemoryStream> purposeStreamRead;
-    Purpose currentPurpose;
+
 
 
 	CustomPurposesHelper();

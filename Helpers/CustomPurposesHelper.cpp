@@ -9,6 +9,7 @@
 //---------------------------------------------------------------------------
 CustomPurposesHelper::CustomPurposesHelper(){
 
+	ReadFromFile();
 
 }
 //---------------------------------------------------------------------------
@@ -24,6 +25,7 @@ void CustomPurposesHelper::SaveHardcoded(){
 }
 //---------------------------------------------------------------------------
 void CustomPurposesHelper::SaveToFile(){
+	allPurposes.push_back(currentPurpose);
 	purposeStreamWrite.reset(new TFileStream("purposes.ctp", fmCreate));
 	//save header
 	purposeStreamWrite->Write(&Header, sizeof(TravelPurposes));
@@ -32,10 +34,12 @@ void CustomPurposesHelper::SaveToFile(){
 		purposeStreamWrite->Write(&allPurposes[i], sizeof(Purpose));
 	}
 	purposeStreamWrite.reset(); // Close the file
+    currentPurpose = Purpose();
 
 }
 //---------------------------------------------------------------------------
 void CustomPurposesHelper::ReadFromFile(){
+    allPurposes.clear();
 	purposeStreamRead.reset(new TMemoryStream);
 	//load
 	purposeStreamRead->LoadFromFile("purposes.ctp");
@@ -52,5 +56,6 @@ void CustomPurposesHelper::ReadFromFile(){
 		purposeStreamRead->Read(&currentPurpose, sizeof(Purpose));
 		allPurposes.push_back(currentPurpose);
 	}
-    purposeStreamRead.reset();
+	purposeStreamRead.reset();
+	currentPurpose = Purpose();
 }
