@@ -36,12 +36,13 @@ __published:	// IDE-managed Components
 	TUpDown *UpDownStart;
 	TUpDown *UpDownEnd;
 	TLabel *Label10;
-	TDBLookupComboBox *TollInfo;
 	TLabel *TollInfoLabel;
 	TLabel *Label12;
 	TButton *AddAttachments;
 	TButton *WarrantAction;
+	TComboBox *TollInfo;
 	void __fastcall WarrantActionClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm7(TComponent* Owner);

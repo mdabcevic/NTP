@@ -10,11 +10,12 @@ object Form7: TForm7
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
     Left = 16
     Top = 16
-    Width = 578
+    Width = 194
     Height = 30
     Alignment = taCenter
     Caption = 'General information'
@@ -105,7 +106,7 @@ object Form7: TForm7
   object Label12: TLabel
     Left = 16
     Top = 296
-    Width = 274
+    Width = 229
     Height = 30
     Alignment = taCenter
     Caption = 'Attachment information'
@@ -179,27 +180,20 @@ object Form7: TForm7
     TabOrder = 7
   end
   object UpDownStart: TUpDown
-    Left = 583
-    Top = 319
+    Left = 577
+    Top = 321
     Width = 16
     Height = 23
     Associate = OdometerStart
     TabOrder = 8
   end
   object UpDownEnd: TUpDown
-    Left = 583
-    Top = 348
+    Left = 577
+    Top = 352
     Width = 16
     Height = 23
     Associate = OdometerEnd
     TabOrder = 9
-  end
-  object TollInfo: TDBLookupComboBox
-    Left = 104
-    Top = 256
-    Width = 186
-    Height = 23
-    TabOrder = 10
   end
   object AddAttachments: TButton
     Left = 16
@@ -207,7 +201,7 @@ object Form7: TForm7
     Width = 274
     Height = 25
     Caption = 'Provide attachments'
-    TabOrder = 11
+    TabOrder = 10
   end
   object WarrantAction: TButton
     Left = 16
@@ -215,7 +209,15 @@ object Form7: TForm7
     Width = 595
     Height = 33
     Caption = 'Add / Edit Travel Warrant'
-    TabOrder = 12
+    TabOrder = 11
     OnClick = WarrantActionClick
+  end
+  object TollInfo: TComboBox
+    Left = 104
+    Top = 261
+    Width = 186
+    Height = 23
+    Style = csDropDownList
+    TabOrder = 12
   end
 end

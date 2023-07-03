@@ -13,6 +13,10 @@ TForm7 *Form7;
 __fastcall TForm7::TForm7(TComponent* Owner)
 	: TForm(Owner)
 {
+	TollInfo->Items->Clear();
+	TollInfo->Items->Add("Cash");
+	TollInfo->Items->Add("ENC device");
+	TollInfo->Items->Add("Smart card");
 }
 //---------------------------------------------------------------------------
 
@@ -45,3 +49,15 @@ void  TForm7::CreateMode(){
 	DataModule1->WarrantsQuery->Insert();
 	WarrantAction->Caption = "Create new warrant";
 }
+
+void __fastcall TForm7::FormShow(TObject *Sender)
+{
+	DataModule1->purposesHelper.ReadFromFile();
+	PurposesList->Clear();
+	for(const Purpose& purpose : DataModule1->purposesHelper.allPurposes) {
+		UnicodeString name = purpose.name;
+		PurposesList->Items->Add(name);
+	}
+}
+//---------------------------------------------------------------------------
+
