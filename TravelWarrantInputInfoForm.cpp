@@ -61,3 +61,30 @@ void __fastcall TForm7::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm7::CarSelectClick(TObject *Sender)
+{
+	Form12->ShowModal();
+    CarSelection->Text = DataModule1->currentCar->Get_licenseplate();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm7::PartnersListClick(TObject *Sender)
+{
+    //ShowMessage("clicked");   -- doesn't work on CheckListBox
+	Form10->ShowModal();
+	for(int i = 0; i < PartnersList->Count; i++){
+		if(PartnersList->Items->Strings[i] == DataModule1->jsonHelper.currentClient.CompanyName){
+			return;
+		}
+	}
+	PartnersList->Items->Add(DataModule1->jsonHelper.currentClient.CompanyName);
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm7::AddAttachmentsClick(TObject *Sender)
+{
+    Form8->ShowModal();
+}
+//---------------------------------------------------------------------------
+

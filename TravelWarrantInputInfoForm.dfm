@@ -47,13 +47,6 @@ object Form7: TForm7
     Height = 15
     Caption = 'International travel?'
   end
-  object Label5: TLabel
-    Left = 16
-    Top = 104
-    Width = 46
-    Height = 15
-    Caption = 'Partners:'
-  end
   object Label6: TLabel
     Left = 320
     Top = 104
@@ -196,6 +189,7 @@ object Form7: TForm7
     Height = 25
     Caption = 'Provide attachments'
     TabOrder = 10
+    OnClick = AddAttachmentsClick
   end
   object WarrantAction: TButton
     Left = 16
@@ -221,5 +215,15 @@ object Form7: TForm7
     Height = 25
     Caption = 'Select Car'
     TabOrder = 13
+    OnClick = CarSelectClick
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = 'Partners'
+    TabOrder = 14
+    OnClick = PartnersListClick
   end
 end

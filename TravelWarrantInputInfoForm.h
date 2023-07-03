@@ -12,6 +12,9 @@
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.NumberBox.hpp>
+#include "CompanyCarsForm.h"
+#include "ClientsInfoForm.h"
+#include "ExpensesInputInfoForm.h"
 //---------------------------------------------------------------------------
 class TForm7 : public TForm
 {
@@ -24,7 +27,6 @@ __published:	// IDE-managed Components
 	TLabel *isInternationalLabel;
 	TCheckBox *isInternational;
 	TCheckListBox *PartnersList;
-	TLabel *Label5;
 	TCheckListBox *PurposesList;
 	TLabel *Label6;
 	TButtonedEdit *CarSelection;
@@ -41,8 +43,12 @@ __published:	// IDE-managed Components
 	TButton *WarrantAction;
 	TComboBox *TollInfo;
 	TButton *CarSelect;
+	TButton *Button1;
 	void __fastcall WarrantActionClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
+	void __fastcall CarSelectClick(TObject *Sender);
+	void __fastcall PartnersListClick(TObject *Sender);
+	void __fastcall AddAttachmentsClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm7(TComponent* Owner);
