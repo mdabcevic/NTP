@@ -13,6 +13,20 @@
       "IdentificationNumber": "11111",
       "Email": "slbrod@ljekarne.hr",
       "ContactPerson": "Ivana Rajkovic"
+    },
+    {
+      "CompanyName": "o",
+      "Address": "o",
+      "IdentificationNumber": "o",
+      "Email": "o",
+      "ContactPerson": "o"
+    },
+    {
+      "CompanyName": "p",
+      "Address": "p",
+      "IdentificationNumber": "p",
+      "Email": "pp",
+      "ContactPerson": "p"
     }
   ]
 }

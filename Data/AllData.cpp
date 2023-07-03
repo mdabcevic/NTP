@@ -10,6 +10,9 @@
 #pragma classgroup "Vcl.Controls.TControl"
 #pragma link "frxClass"
 #pragma link "frxDBSet"
+#pragma link "frxExportBaseDialog"
+#pragma link "frxExportPDF"
+#pragma link "frxExportRTF"
 #pragma resource "*.dfm"
 TDataModule1 *DataModule1;
 //---------------------------------------------------------------------------

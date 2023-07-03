@@ -20,6 +20,9 @@
 #include "frxClass.hpp"
 #include "frxDBSet.hpp"
 #include "Helpers/CustomPurposesHelper.h"
+#include "frxExportBaseDialog.hpp"
+#include "frxExportPDF.hpp"
+#include "frxExportRTF.hpp"
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
 {
@@ -55,6 +58,11 @@ __published:	// IDE-managed Components
 	TIntegerField *WarrantsQueryAuthorizedBy;
 	TfrxReport *frxReport1;
 	TfrxDBDataset *frxDBEmployee;
+	TADOQuery *JoinedReport;
+	TfrxDBDataset *WarrantReport;
+	TfrxReport *WarrantLayout;
+	TfrxPDFExport *PDFExport;
+	TfrxRTFExport *RTFExport;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations

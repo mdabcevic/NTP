@@ -53,7 +53,8 @@ private:	// User declarations
 public:		// User declarations
 	__fastcall TForm7(TComponent* Owner);
 	void EditMode();
-    void CreateMode();
+	void CreateMode();
+    UnicodeString MergeIntoString(TCheckListBox* list);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm7 *Form7;

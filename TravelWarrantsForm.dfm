@@ -1,7 +1,7 @@
 object Form9: TForm9
   Left = 0
   Top = 0
-  Caption = 'Form9'
+  Caption = 'Travel Warrants'
   ClientHeight = 441
   ClientWidth = 1119
   Color = clBtnFace
@@ -12,7 +12,7 @@ object Form9: TForm9
   Font.Style = []
   TextHeight = 15
   object Label1: TLabel
-    Left = 336
+    Left = 520
     Top = 24
     Width = 154
     Height = 30
@@ -114,5 +114,14 @@ object Form9: TForm9
     Caption = 'Edit selected warrant'
     TabOrder = 2
     OnClick = Button3Click
+  end
+  object Button1: TButton
+    Left = 815
+    Top = 186
+    Width = 296
+    Height = 25
+    Caption = 'Generate report for selected warrant'
+    TabOrder = 3
+    OnClick = Button1Click
   end
 end

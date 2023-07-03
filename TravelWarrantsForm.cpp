@@ -6,6 +6,8 @@
 #include "TravelWarrantsForm.h"
 #include "Data\AllData.h"
 #include "TravelWarrantInputInfoForm.h"
+#include "frxExportPDF.hpp"
+#include "frxExportRTF.hpp"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -36,3 +38,22 @@ void __fastcall TForm9::Button3Click(TObject *Sender)
 	Form7->ShowModal();
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm9::Button1Click(TObject *Sender)
+{
+	//Pass the ID for single report
+	DataModule1->JoinedReport->SQL->Text = "SELECT * FROM TravelWarrants "
+                           "JOIN Employees ON TravelWarrants.EmployeeID = Employees.EmployeeID "
+                           "JOIN Departments ON Employees.DepartmentCode = Departments.DepartmentCode "
+						   "WHERE TravelWarrants.WarrantID = :WarrantID";
+	int selectedWarrantID = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;
+	DataModule1->JoinedReport->Parameters->ParamByName("WarrantID")->Value = selectedWarrantID;
+	DataModule1->JoinedReport->Open();
+	DataModule1->WarrantLayout->PrepareReport(true);
+	DataModule1->WarrantLayout->FileName = "file.pdf";
+	DataModule1->WarrantLayout->Export(DataModule1->PDFExport);
+    DataModule1->WarrantLayout->PrepareReport(true);
+	DataModule1->WarrantLayout->FileName = "file.rtf";
+	DataModule1->WarrantLayout->Export(DataModule1->RTFExport);
+}
+//---------------------------------------------------------------------------
+
