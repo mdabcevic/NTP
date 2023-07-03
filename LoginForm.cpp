@@ -146,9 +146,7 @@ void __fastcall TForm1::Button5Click(TObject *Sender)
 
 void __fastcall TForm1::Button6Click(TObject *Sender)
 {
-	DataModule1->purposesHelper.SaveHardcoded();
-	DataModule1->purposesHelper.ReadFromFile();
-	ShowMessage(DataModule1->purposesHelper.allPurposes[1].name);
+	Form11->ShowModal();
 }
 //---------------------------------------------------------------------------
 

@@ -15,6 +15,7 @@ USEFORM("ExpensesInputInfoForm.cpp", Form8);
 USEFORM("EmployeesForm.cpp", Form4);
 USEFORM("EmployeeInfoInputForm.cpp", Form6);
 USEFORM("DepartmentsForm.cpp", Form5);
+USEFORM("CustomPurposeInfoInputForm.cpp", Form11);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -33,6 +34,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TForm8), &Form8);
 		Application->CreateForm(__classid(TForm9), &Form9);
 		Application->CreateForm(__classid(TForm10), &Form10);
+		Application->CreateForm(__classid(TForm11), &Form11);
 		Application->Run();
 	}
 	catch (Exception &exception)

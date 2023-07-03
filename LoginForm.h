@@ -7,7 +7,8 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
-#include <Vcl.Graphics.hpp> // Convert from hex to TColor
+#include <Vcl.Graphics.hpp>
+#include "CustomPurposeInfoInputForm.h" // Convert from hex to TColor
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
