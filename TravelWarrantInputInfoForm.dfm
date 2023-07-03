@@ -61,13 +61,6 @@ object Form7: TForm7
     Height = 15
     Caption = 'Purposes:'
   end
-  object CarSelectionLabel: TLabel
-    Left = 337
-    Top = 293
-    Width = 53
-    Height = 15
-    Caption = 'Select car:'
-  end
   object OdometerStartLabel: TLabel
     Left = 337
     Top = 324
@@ -163,6 +156,7 @@ object Form7: TForm7
     Top = 290
     Width = 104
     Height = 23
+    ReadOnly = True
     TabOrder = 5
   end
   object OdometerStart: TNumberBox
@@ -219,5 +213,13 @@ object Form7: TForm7
     Height = 23
     Style = csDropDownList
     TabOrder = 12
+  end
+  object CarSelect: TButton
+    Left = 337
+    Top = 290
+    Width = 130
+    Height = 25
+    Caption = 'Select Car'
+    TabOrder = 13
   end
 end

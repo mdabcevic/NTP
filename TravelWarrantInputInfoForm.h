@@ -27,7 +27,6 @@ __published:	// IDE-managed Components
 	TLabel *Label5;
 	TCheckListBox *PurposesList;
 	TLabel *Label6;
-	TLabel *CarSelectionLabel;
 	TButtonedEdit *CarSelection;
 	TLabel *OdometerStartLabel;
 	TLabel *OdometerEndLabel;
@@ -41,6 +40,7 @@ __published:	// IDE-managed Components
 	TButton *AddAttachments;
 	TButton *WarrantAction;
 	TComboBox *TollInfo;
+	TButton *CarSelect;
 	void __fastcall WarrantActionClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations

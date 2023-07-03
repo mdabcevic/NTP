@@ -90,7 +90,7 @@ void __fastcall TForm2::Button6Click(TObject *Sender)
 	//delete car based on index
 	DataModule1->companycars->Delete(ListView1->ItemIndex);
 	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
-    //avoid double click deleting next node in line
+	//avoid double click deleting next node in line
 	ListView1->ItemIndex = -1;
 	FillListView();
 

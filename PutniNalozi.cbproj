@@ -138,6 +138,12 @@
             <DependentOn>ClientsInfoForm.h</DependentOn>
             <BuildOrder>18</BuildOrder>
         </CppCompile>
+        <CppCompile Include="CompanyCarsForm.cpp">
+            <Form>Form12</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>CompanyCarsForm.h</DependentOn>
+            <BuildOrder>23</BuildOrder>
+        </CppCompile>
         <CppCompile Include="CustomPurposeInfoInputForm.cpp">
             <Form>Form11</Form>
             <FormType>dfm</FormType>
@@ -247,13 +253,14 @@
         <FormResources Include="TravelWarrantInputInfoForm.dfm"/>
         <FormResources Include="TestWindow.dfm"/>
         <FormResources Include="Data\AllData.dfm"/>
+        <FormResources Include="CustomPurposeInfoInputForm.dfm"/>
         <FormResources Include="ClientsInfoForm.dfm"/>
         <FormResources Include="CarInfoInputForm.dfm"/>
         <FormResources Include="ExpensesInputInfoForm.dfm"/>
         <FormResources Include="EmployeesForm.dfm"/>
         <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <FormResources Include="DepartmentsForm.dfm"/>
-        <FormResources Include="CustomPurposeInfoInputForm.dfm"/>
+        <FormResources Include="CompanyCarsForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
