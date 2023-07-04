@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3A412434-44CC-4818-B4AE-353C291C08F9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Server\Server.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PutniNalozi.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Server">
+        <MSBuild Projects="Server\Server.cbproj"/>
+    </Target>
+    <Target Name="Server:Clean">
+        <MSBuild Projects="Server\Server.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Server:Make">
+        <MSBuild Projects="Server\Server.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="PutniNalozi">
+        <MSBuild Projects="PutniNalozi.cbproj"/>
+    </Target>
+    <Target Name="PutniNalozi:Clean">
+        <MSBuild Projects="PutniNalozi.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PutniNalozi:Make">
+        <MSBuild Projects="PutniNalozi.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Server;PutniNalozi"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Server:Clean;PutniNalozi:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Server:Make;PutniNalozi:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
