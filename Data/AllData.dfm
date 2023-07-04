@@ -956,7 +956,8 @@ object DataModule1: TDataModule1
   end
   object TCPClient: TIdTCPClient
     ConnectTimeout = 0
-    Port = 0
+    Host = '127.0.0.1'
+    Port = 26138
     ReadTimeout = -1
     Left = 40
     Top = 472
