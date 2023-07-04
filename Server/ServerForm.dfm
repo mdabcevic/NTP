@@ -29,4 +29,15 @@ object Form1: TForm1
     Left = 40
     Top = 96
   end
+  object UDPServer: TIdUDPServer
+    Active = True
+    Bindings = <
+      item
+        IP = '0.0.0.0'
+        Port = 16138
+      end>
+    DefaultPort = 0
+    Left = 128
+    Top = 32
+  end
 end

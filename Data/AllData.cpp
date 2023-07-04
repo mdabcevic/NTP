@@ -97,3 +97,5 @@ void TDataModule1::RequestXMLFile(){
    TCPClient->Disconnect();
    //ShowMessage("All OK");
 }
+//---------------------------------------------------------------------------
+

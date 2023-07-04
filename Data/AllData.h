@@ -27,6 +27,8 @@
 #include <IdComponent.hpp>
 #include <IdTCPClient.hpp>
 #include <IdTCPConnection.hpp>
+#include <IdUDPBase.hpp>
+#include <IdUDPClient.hpp>
 
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
@@ -71,6 +73,7 @@ __published:	// IDE-managed Components
 	TfrxDBDataset *WarrantDetail;
 	TADOTable *WarrantsTable;
 	TIdTCPClient *TCPClient;
+	TIdUDPClient *UDPClient;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -88,7 +91,8 @@ public:		// User declarations
 
 	//ClientRequests
 	void AddToXmlRequest();
-    void RequestXMLFile();
+	void RequestXMLFile();
+    void AddToJsonRequest();
 
 
 

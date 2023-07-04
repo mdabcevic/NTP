@@ -962,4 +962,11 @@ object DataModule1: TDataModule1
     Left = 40
     Top = 472
   end
+  object UDPClient: TIdUDPClient
+    Active = True
+    Host = '127.0.0.1'
+    Port = 16138
+    Left = 128
+    Top = 472
+  end
 end
