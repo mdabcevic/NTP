@@ -40,11 +40,8 @@ void __fastcall TForm9::Button3Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm9::Button1Click(TObject *Sender)
 {
-	//Pass the ID for single report
-	DataModule1->JoinedReport->SQL->Text = "SELECT * FROM TravelWarrants "
-                           "JOIN Employees ON TravelWarrants.EmployeeID = Employees.EmployeeID "
-                           "JOIN Departments ON Employees.DepartmentCode = Departments.DepartmentCode "
-						   "WHERE TravelWarrants.WarrantID = :WarrantID";
+
+
 	int selectedWarrantID = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;
 	DataModule1->JoinedReport->Parameters->ParamByName("WarrantID")->Value = selectedWarrantID;
 	DataModule1->JoinedReport->Open();

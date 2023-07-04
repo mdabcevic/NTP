@@ -336,10 +336,17 @@ object DataModule1: TDataModule1
     Top = 144
   end
   object JoinedReport: TADOQuery
-    Active = True
     Connection = Connection
     CursorType = ctStatic
-    Parameters = <>
+    Parameters = <
+      item
+        Name = 'WarrantID'
+        Attributes = [paSigned, paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Size = 4
+        Value = Null
+      end>
     SQL.Strings = (
       
         'SELECT'#9'ISNULL(e.FirstName + '#39' '#39', '#39#39') + ISNULL(e.LastName, '#39#39') AS' +
@@ -356,6 +363,7 @@ object DataModule1: TDataModule1
       
         'INNER JOIN Departments as d on e.DepartmentCode = d.DepartmentCo' +
         'de'
+      'WHERE t.WarrantID = :WarrantID'
       '')
     Left = 880
     Top = 80
