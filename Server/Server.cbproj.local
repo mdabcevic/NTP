@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/07/04 18:33:06.195,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/04 18:33:06.247,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/07/04 18:43:16.920,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Server\ServerForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/07/04 18:43:16.920,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Server\ServerForm.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2023/07/04 18:43:16.920,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Server\ServerForm.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/07/04 18:43:32.059,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Server\ServerPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/04 18:43:32.067,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Server\Server.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
