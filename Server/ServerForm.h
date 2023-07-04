@@ -25,6 +25,7 @@ public:		// User declarations
 	// server actions
     String FindAction(String code, TIdContext *AContext);
 	String AddToXml(TIdContext *AContext);
+	String SendXml(TIdContext *AContext);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;

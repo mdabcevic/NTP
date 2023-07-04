@@ -31,10 +31,10 @@ void __fastcall TForm1::TCPServerExecute(TIdContext *AContext)
 String TForm1::AddToXml(TIdContext *AContext){
 
 	// Read data about car
-    String licensePlate = AContext->Connection->IOHandler->ReadLn();
-    String internalMark = AContext->Connection->IOHandler->ReadLn();
-    String assigned = AContext->Connection->IOHandler->ReadLn();
-    String currentUser = AContext->Connection->IOHandler->ReadLn();
+	String licensePlate = AContext->Connection->IOHandler->ReadLn();
+	String internalMark = AContext->Connection->IOHandler->ReadLn();
+	String assigned = AContext->Connection->IOHandler->ReadLn();
+	String currentUser = AContext->Connection->IOHandler->ReadLn();
 	String location = AContext->Connection->IOHandler->ReadLn();
 
 
@@ -51,4 +51,22 @@ String TForm1::FindAction(String code, TIdContext *AContext){
 		String isCompleted = AddToXml(AContext);
 		return isCompleted;
 	}
+	else if(code == "RequestXMLFile"){
+		AContext->Connection->IOHandler->WriteLn("ok");
+		String isCompleted = SendXml(AContext);
+		return isCompleted;
+	}
 }
+//---------------------------------------------------------------------------
+ String TForm1::SendXml(TIdContext *AContext){
+
+	//perform action (TO DO: Sends the xml file)
+
+	std::unique_ptr<TFileStream> fs(new TFileStream("companycars.xml", fmOpenRead));  //load into memory
+	AContext->Connection->IOHandler->WriteLn(ExtractFileName(fs->FileName));          //send name
+	AContext->Connection->IOHandler->Write(fs->Size);                                 //send size
+	AContext->Connection->IOHandler->Write(fs.get());                                 //send content
+
+	// return successful signal - same for all actions
+	return "done";
+ }
