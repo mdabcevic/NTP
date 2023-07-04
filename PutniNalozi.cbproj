@@ -189,6 +189,10 @@
             <DependentOn>ExpensesInputInfoForm.h</DependentOn>
             <BuildOrder>15</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Helpers\ClientRequests.cpp">
+            <DependentOn>Helpers\ClientRequests.h</DependentOn>
+            <BuildOrder>24</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Helpers\companycars.cpp">
             <DependentOn>Helpers\companycars.h</DependentOn>
             <BuildOrder>9</BuildOrder>
