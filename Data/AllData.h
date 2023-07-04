@@ -23,6 +23,10 @@
 #include "frxExportBaseDialog.hpp"
 #include "frxExportPDF.hpp"
 #include "frxExportRTF.hpp"
+#include <IdBaseComponent.hpp>
+#include <IdComponent.hpp>
+#include <IdTCPClient.hpp>
+#include <IdTCPConnection.hpp>
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
 {
@@ -65,6 +69,7 @@ __published:	// IDE-managed Components
 	TfrxRTFExport *RTFExport;
 	TfrxDBDataset *WarrantDetail;
 	TADOTable *WarrantsTable;
+	TIdTCPClient *TCPClient;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations

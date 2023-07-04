@@ -1,5 +1,5 @@
 object DataModule1: TDataModule1
-  Height = 480
+  Height = 680
   Width = 1084
   object XmlDoc: TXMLDocument
     Active = True
@@ -194,7 +194,7 @@ object DataModule1: TDataModule1
       'begin'
       ''
       'end.')
-    Left = 776
+    Left = 672
     Top = 216
     Datasets = <
       item
@@ -919,8 +919,8 @@ object DataModule1: TDataModule1
     PdfA = False
     PDFStandard = psNone
     PDFVersion = pv17
-    Left = 880
-    Top = 288
+    Left = 776
+    Top = 296
   end
   object RTFExport: TfrxRTFExport
     UseFileCache = True
@@ -935,7 +935,7 @@ object DataModule1: TDataModule1
     HeaderFooterMode = hfText
     AutoSize = False
     Left = 776
-    Top = 288
+    Top = 360
   end
   object WarrantDetail: TfrxDBDataset
     UserName = 'Warrants'
@@ -953,5 +953,12 @@ object DataModule1: TDataModule1
     TableName = 'TravelWarrants'
     Left = 128
     Top = 272
+  end
+  object TCPClient: TIdTCPClient
+    ConnectTimeout = 0
+    Port = 0
+    ReadTimeout = -1
+    Left = 40
+    Top = 472
   end
 end
