@@ -105,3 +105,11 @@ void __fastcall TForm4::ClearFilterClick(TObject *Sender)
     FilterBox->Text = "";
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm4::ReportPrintClick(TObject *Sender)
+{
+	DataModule1->EmployeeLayout->PrepareReport(true);
+	DataModule1->EmployeeLayout->FileName = "EmployeeReport.pdf";
+	DataModule1->EmployeeLayout->Export(DataModule1->PDFExport);
+}
+//---------------------------------------------------------------------------
+

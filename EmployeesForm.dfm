@@ -212,4 +212,13 @@ object Form4: TForm4
     TabOrder = 11
     OnClick = ClearFilterClick
   end
+  object ReportPrint: TButton
+    Left = 8
+    Top = 376
+    Width = 609
+    Height = 25
+    Caption = 'Print reports for selected employee'
+    TabOrder = 12
+    OnClick = ReportPrintClick
+  end
 end

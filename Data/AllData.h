@@ -56,13 +56,15 @@ __published:	// IDE-managed Components
 	TWideStringField *WarrantsQueryLicensePlate;
 	TWideStringField *WarrantsQueryOtherVehicles;
 	TIntegerField *WarrantsQueryAuthorizedBy;
-	TfrxReport *frxReport1;
+	TfrxReport *EmployeeLayout;
 	TfrxDBDataset *frxDBEmployee;
 	TADOQuery *JoinedReport;
 	TfrxDBDataset *WarrantReport;
 	TfrxReport *WarrantLayout;
 	TfrxPDFExport *PDFExport;
 	TfrxRTFExport *RTFExport;
+	TfrxDBDataset *WarrantDetail;
+	TADOTable *WarrantsTable;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
