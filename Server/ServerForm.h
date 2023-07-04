@@ -12,11 +12,15 @@
 #include <IdCustomTCPServer.hpp>
 #include <IdTCPServer.hpp>
 #include <IdContext.hpp>
+#include <Xml.XMLDoc.hpp>
+#include <Xml.xmldom.hpp>
+#include <Xml.XMLIntf.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
 	TIdTCPServer *TCPServer;
+	TXMLDocument *XmlDoc;
 	void __fastcall TCPServerExecute(TIdContext *AContext);
 private:	// User declarations
 public:		// User declarations

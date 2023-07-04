@@ -3,6 +3,7 @@ __history/
 __recovery/
 Helpers/__recovery/
 Win32/Debug/
+Server/Win32/Debug/
 
 # Exclude intermediate language files
 *.ilc

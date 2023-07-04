@@ -8,5 +8,8 @@
     <Transaction>2023/07/04 18:43:16.920,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Server\ServerForm.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2023/07/04 18:43:32.059,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Server\ServerPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>2023/07/04 18:43:32.067,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Server\Server.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2023/07/04 22:18:48.364,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\companycars.cpp</Transaction>
+    <Transaction>2023/07/04 22:19:21.200,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Helpers\JSONHelper.cpp</Transaction>
+    <Transaction>2023/07/04 22:20:19.709,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\Data\Client.cpp</Transaction>
   </Transactions>
 </BorlandProject>

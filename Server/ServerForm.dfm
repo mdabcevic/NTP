@@ -23,4 +23,10 @@ object Form1: TForm1
     Left = 40
     Top = 32
   end
+  object XmlDoc: TXMLDocument
+    Active = True
+    Options = [doNodeAutoCreate, doNodeAutoIndent, doAttrNull, doAutoPrefix, doNamespaceDecl]
+    Left = 40
+    Top = 96
+  end
 end
