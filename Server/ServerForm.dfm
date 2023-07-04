@@ -37,6 +37,7 @@ object Form1: TForm1
         Port = 16138
       end>
     DefaultPort = 0
+    OnUDPRead = UDPServerUDPRead
     Left = 128
     Top = 32
   end

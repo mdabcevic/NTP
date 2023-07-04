@@ -17,6 +17,10 @@
 #include <Xml.XMLIntf.hpp>
 #include <IdUDPBase.hpp>
 #include <IdUDPServer.hpp>
+#include <IdGlobal.hpp>
+#include <IdSocketHandle.hpp>
+#include "../Helpers/JSONHelper.h"
+#include "../Data/Client.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -25,6 +29,8 @@ __published:	// IDE-managed Components
 	TXMLDocument *XmlDoc;
 	TIdUDPServer *UDPServer;
 	void __fastcall TCPServerExecute(TIdContext *AContext);
+	void __fastcall UDPServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
+          TIdSocketHandle *ABinding);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

@@ -7,6 +7,10 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
+#include <System.Classes.hpp>
+#include <System.SysUtils.hpp>
+
+
 TForm1 *Form1;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -70,3 +74,27 @@ String TForm1::FindAction(String code, TIdContext *AContext){
 	// return successful signal - same for all actions
 	return "done";
  }
+ //---------------------------------------------------------------------------
+void __fastcall TForm1::UDPServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
+          TIdSocketHandle *ABinding)
+{
+	String unpacked = BytesToString(AData);
+
+	// Separate code for action from actual payload
+	int firstPos = unpacked.Pos("##");
+	String actionCode;
+	actionCode += unpacked.SubString(firstPos, 2);
+	unpacked = unpacked.Delete(firstPos, 2);
+	int secondPos = unpacked.Pos("##");
+	actionCode += unpacked.SubString(1, secondPos + 1);
+	unpacked = unpacked.Delete(1, secondPos + 2);
+    //ShowMessage(actionCode);
+    //execute action upon payload depending on extracted code
+	if(actionCode == "##ADD##"){
+		Client client;
+		client = client.DeserializeNode(unpacked);
+		ShowMessage(client.CompanyName);
+	}
+}
+//---------------------------------------------------------------------------
+

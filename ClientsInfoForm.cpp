@@ -33,6 +33,7 @@ void __fastcall TForm10::AddClientClick(TObject *Sender)
 	DataModule1->jsonHelper.currentClient.Email = EmailBox->Text;
 	DataModule1->jsonHelper.currentClient.ContactPerson = ContactPersonBox->Text;
 	DataModule1->jsonHelper.AddClient();
+    DataModule1->AddToJsonRequest();
     //DataModule1->jsonHelper.RewriteFile();
 	LoadListView();
 }
