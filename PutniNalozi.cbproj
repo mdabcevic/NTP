@@ -58,7 +58,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib;frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib;frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib;soaprtl.lib;inet.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -113,7 +113,7 @@
         <DynamicRTL>false</DynamicRTL>
         <UsePackages>false</UsePackages>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <LinkPackageStatics>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib;frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib;frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib;soaprtl.lib;inet.lib</LinkPackageStatics>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <FinalOutputDir>.</FinalOutputDir>
     </PropertyGroup>
@@ -143,6 +143,10 @@
             <FormType>dfm</FormType>
             <DependentOn>CompanyCarsForm.h</DependentOn>
             <BuildOrder>23</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="CountryInfoService.cpp">
+            <DependentOn>CountryInfoService.h</DependentOn>
+            <BuildOrder>25</BuildOrder>
         </CppCompile>
         <CppCompile Include="CustomPurposeInfoInputForm.cpp">
             <Form>Form11</Form>

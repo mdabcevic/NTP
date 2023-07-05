@@ -93,6 +93,8 @@ public:		// User declarations
 	void AddToXmlRequest();
 	void RequestXMLFile();
 
+    _di_CountryInfoServiceSoapType service = GetCountryInfoServiceSoapType();
+
 	void DeleteFromXml(int index);
 };
 //---------------------------------------------------------------------------
