@@ -35,7 +35,7 @@ void __fastcall TDataModule1::WarrantsQueryCalcFields(TDataSet *DataSet)
 
 void TDataModule1::AddToXmlRequest(){
 	DataModule1->TCPClient->Connect();
-
+	XmlDoc->Active = false;
 	// send request code - needed for server to figure out which action to perform
 	DataModule1->TCPClient->IOHandler->WriteLn("AddToXML");
 
@@ -62,20 +62,21 @@ void TDataModule1::AddToXmlRequest(){
 		// TODO: Handle server not responding with 'ok'
 	}
 	// Disconnect from the server
+	XmlDoc->Active = true;
    DataModule1->TCPClient->Disconnect();
 
 }
 //---------------------------------------------------------------------------
 void TDataModule1::RequestXMLFile(){
 	TCPClient->Connect();
-
+	XmlDoc->Active = false;
 	// send request code - needed for server to figure out which action to perform
 	DataModule1->TCPClient->IOHandler->WriteLn("RequestXMLFile");
 
 	// wait for server to find that action
 	String response = DataModule1->TCPClient->IOHandler->ReadLn();
 
-    // if it's found, send specific data for action
+	// if it's found, send specific data for action
 	if (response == "ok"){
 		UnicodeString filename = TCPClient->IOHandler->ReadLn();
 		int filesize =  TCPClient->IOHandler->ReadInt64();              //9.2GB max
@@ -93,6 +94,7 @@ void TDataModule1::RequestXMLFile(){
 	{
 		// TODO: Handle server not responding with 'ok'
 	}
+    XmlDoc->Active = true;
 	// Disconnect from the server
    TCPClient->Disconnect();
    //ShowMessage("All OK");
@@ -101,4 +103,7 @@ void TDataModule1::RequestXMLFile(){
 void TDataModule1::DeleteFromXml(int index){
 
 	UDPClient->SendBuffer(RawToBytes(&index, sizeof(index)));
+    RequestXMLFile();
 }
+//---------------------------------------------------------------------------
+

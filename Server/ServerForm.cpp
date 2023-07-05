@@ -9,6 +9,7 @@
 #pragma resource "*.dfm"
 #include <System.Classes.hpp>
 #include <System.SysUtils.hpp>
+#include <windows.h>
 
 
 TForm1 *Form1;
@@ -28,8 +29,6 @@ void __fastcall TForm1::TCPServerExecute(TIdContext *AContext)
 
 	// after all specific communication, all requests wait for this confirmation
 	AContext->Connection->IOHandler->WriteLn(isDone);
-
-
 }
 //---------------------------------------------------------------------------
 String TForm1::AddToXml(TIdContext *AContext){
@@ -65,12 +64,12 @@ String TForm1::FindAction(String code, TIdContext *AContext){
  String TForm1::SendXml(TIdContext *AContext){
 
 	//perform action (TO DO: Sends the xml file)
-
+	CriticalSection->Enter();
 	std::unique_ptr<TFileStream> fs(new TFileStream("companycars.xml", fmOpenRead));  //load into memory
 	AContext->Connection->IOHandler->WriteLn(ExtractFileName(fs->FileName));          //send name
 	AContext->Connection->IOHandler->Write(fs->Size);                                 //send size
 	AContext->Connection->IOHandler->Write(fs.get());                                 //send content
-
+    CriticalSection->Leave();
 	// return successful signal - same for all actions
 	return "done";
  }
@@ -92,6 +91,7 @@ CriticalSection->Enter();
 
 }
 	XmlDoc->Active = false;
+	CriticalSection->Leave();
 }
 //---------------------------------------------------------------------------
 

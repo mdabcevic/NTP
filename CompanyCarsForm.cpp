@@ -82,6 +82,7 @@ void __fastcall TForm12::ListView1SelectItem(TObject *Sender, TListItem *Item, b
 //---------------------------------------------------------------------------
 void __fastcall TForm12::Button1Click(TObject *Sender)
 {
+    DataModule1->RequestXMLFile();
     FillListView();
 }
 //---------------------------------------------------------------------------
