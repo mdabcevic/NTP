@@ -75,6 +75,7 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 
 void __fastcall TForm1::FormShow(TObject *Sender)
 {
+    DataModule1->RequestXMLFile();
 	//load theme and font for window (INI)
 	DataModule1->themeHelper.LoadSection("CURRENT THEME");
 	Form1->Color = DataModule1->themeHelper.backgroundColour;

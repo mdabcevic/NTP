@@ -56,9 +56,15 @@ void __fastcall TForm12::Button3Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm12::Button4Click(TObject *Sender)
 {
+	DataModule1->XmlDoc->Active = false;
+	DataModule1->DeleteFromXml(ListView1->ItemIndex);
+	DataModule1->XmlDoc->Active = true;
+	DataModule1->XmlDoc->Active = false;
+	DataModule1->RequestXMLFile();
+	DataModule1->XmlDoc->Active = true;
 	//delete car based on index
-	DataModule1->companycars->Delete(ListView1->ItemIndex);
-	DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
+	//DataModule1->companycars->Delete(ListView1->ItemIndex);
+	//DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
 	//avoid double click deleting next node in line
 	ListView1->ItemIndex = -1;
 	FillListView();
