@@ -92,11 +92,8 @@ public:		// User declarations
 	//ClientRequests
 	void AddToXmlRequest();
 	void RequestXMLFile();
-    void AddToJsonRequest();
 
-
-
-
+	void DeleteFromXml(int index);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;

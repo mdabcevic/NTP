@@ -98,7 +98,7 @@ void TDataModule1::RequestXMLFile(){
    //ShowMessage("All OK");
 }
 //---------------------------------------------------------------------------
-void TDataModule1::AddToJsonRequest(){
-	String packet = "##ADD##" + jsonHelper.currentClient.SerializeNode();
-	UDPClient->Send(packet);
+void TDataModule1::DeleteFromXml(int index){
+
+	UDPClient->SendBuffer(RawToBytes(&index, sizeof(index)));
 }
