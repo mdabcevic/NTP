@@ -21,6 +21,7 @@
 #include <IdSocketHandle.hpp>
 #include "../Helpers/JSONHelper.h"
 #include "../Data/Client.h"
+#include "companycars.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -35,10 +36,16 @@ private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 
+	TCriticalSection *CriticalSection = new TCriticalSection;
 	// server actions
 	String FindAction(String code, TIdContext *AContext);
 	String AddToXml(TIdContext *AContext);
 	String SendXml(TIdContext *AContext);
+
+    __fastcall TForm1::~TForm1()
+{
+	delete CriticalSection;
+}
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;

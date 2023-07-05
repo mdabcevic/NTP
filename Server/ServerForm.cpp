@@ -76,25 +76,22 @@ String TForm1::FindAction(String code, TIdContext *AContext){
  }
  //---------------------------------------------------------------------------
 void __fastcall TForm1::UDPServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
-          TIdSocketHandle *ABinding)
+		  TIdSocketHandle *ABinding)
 {
-	String unpacked = BytesToString(AData);
+CriticalSection->Enter();
+	int recordToDelete;
+	BytesToRaw(AData, &recordToDelete, sizeof(recordToDelete));
+	XmlDoc->FileName = "companycars.xml";
+	XmlDoc->Active = true;
+	_di_IXMLcompanycarsType companycars = Getcompanycars(XmlDoc);
+	companycars = Getcompanycars(XmlDoc);
+	if (companycars->Count > recordToDelete)
+{
+	companycars->Delete(recordToDelete);
+	XmlDoc->SaveToFile(XmlDoc->FileName);
 
-	// Separate code for action from actual payload
-	int firstPos = unpacked.Pos("##");
-	String actionCode;
-	actionCode += unpacked.SubString(firstPos, 2);
-	unpacked = unpacked.Delete(firstPos, 2);
-	int secondPos = unpacked.Pos("##");
-	actionCode += unpacked.SubString(1, secondPos + 1);
-	unpacked = unpacked.Delete(1, secondPos + 2);
-    //ShowMessage(actionCode);
-    //execute action upon payload depending on extracted code
-	if(actionCode == "##ADD##"){
-		Client client;
-		client = client.DeserializeNode(unpacked);
-		ShowMessage(client.CompanyName);
-	}
+}
+	XmlDoc->Active = false;
 }
 //---------------------------------------------------------------------------
 
