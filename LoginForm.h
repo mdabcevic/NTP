@@ -9,7 +9,8 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.Graphics.hpp>
 #include "CustomPurposeInfoInputForm.h"
-#include "CompanyCarsForm.h" // Convert from hex to TColor
+#include "CompanyCarsForm.h"
+#include "DownloadResourcesForm.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -34,6 +35,7 @@ __published:	// IDE-managed Components
 	TButton *Button5;
 	TButton *Button6;
 	TButton *Button7;
+	TButton *Button8;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
@@ -46,6 +48,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button5Click(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Button7Click(TObject *Sender);
+	void __fastcall Button8Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

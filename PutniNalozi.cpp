@@ -13,10 +13,11 @@ USEFORM("Data\AllData.cpp", DataModule1); /* TDataModule: File Type */
 USEFORM("CarInfoInputForm.cpp", Form3);
 USEFORM("ClientsInfoForm.cpp", Form10);
 USEFORM("CompanyCarsForm.cpp", Form12);
+USEFORM("EmployeeInfoInputForm.cpp", Form6);
 USEFORM("EmployeesForm.cpp", Form4);
 USEFORM("ExpensesInputInfoForm.cpp", Form8);
 USEFORM("DepartmentsForm.cpp", Form5);
-USEFORM("EmployeeInfoInputForm.cpp", Form6);
+USEFORM("DownloadResourcesForm.cpp", Form13);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -37,6 +38,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TForm10), &Form10);
 		Application->CreateForm(__classid(TForm11), &Form11);
 		Application->CreateForm(__classid(TForm12), &Form12);
+		Application->CreateForm(__classid(TForm13), &Form13);
 		Application->Run();
 	}
 	catch (Exception &exception)
