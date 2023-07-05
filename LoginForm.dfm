@@ -42,6 +42,14 @@ object Form1: TForm1
     Caption = 'e-mail'
     Visible = False
   end
+  object ImgHr: TImage
+    Left = 480
+    Top = 376
+    Width = 31
+    Height = 25
+    Center = True
+    Stretch = True
+  end
   object usernameBox: TEdit
     Left = 208
     Top = 53
@@ -111,7 +119,7 @@ object Form1: TForm1
   end
   object Button1: TButton
     Left = 472
-    Top = 180
+    Top = 63
     Width = 132
     Height = 25
     Caption = 'Employees'
@@ -120,7 +128,7 @@ object Form1: TForm1
   end
   object Button2: TButton
     Left = 472
-    Top = 212
+    Top = 95
     Width = 132
     Height = 25
     Caption = 'Departments'
@@ -129,7 +137,7 @@ object Form1: TForm1
   end
   object Button3: TButton
     Left = 472
-    Top = 243
+    Top = 126
     Width = 132
     Height = 25
     Caption = 'Add expenses'
@@ -138,7 +146,7 @@ object Form1: TForm1
   end
   object B: TButton
     Left = 472
-    Top = 274
+    Top = 157
     Width = 132
     Height = 25
     Caption = 'Add warrant'
@@ -147,7 +155,7 @@ object Form1: TForm1
   end
   object Button4: TButton
     Left = 472
-    Top = 149
+    Top = 32
     Width = 132
     Height = 25
     Caption = 'Travel Warrants'
@@ -156,7 +164,7 @@ object Form1: TForm1
   end
   object Button5: TButton
     Left = 472
-    Top = 305
+    Top = 188
     Width = 132
     Height = 25
     Caption = 'Clients'

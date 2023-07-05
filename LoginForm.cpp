@@ -47,6 +47,13 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::loginButtonClick(TObject *Sender)
 {
+
+	String link = DataModule1->service->CountryFlag("HR");
+	TMemoryStream *picture = new TMemoryStream();
+	DataModule1->HTTP->Get(DataModule1->service->CountryFlag("HR"), picture);
+    picture->Position = 0;
+	ImgHr->Picture->LoadFromStream(picture);
+//ShowMessage(DataModule1->service->CountryFlag("HR"));
 //TO DO:
 
 //grananje:
@@ -75,7 +82,9 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 
 void __fastcall TForm1::FormShow(TObject *Sender)
 {
-    DataModule1->RequestXMLFile();
+	DataModule1->RequestXMLFile();
+
+
 	//load theme and font for window (INI)
 	DataModule1->themeHelper.LoadSection("CURRENT THEME");
 	Form1->Color = DataModule1->themeHelper.backgroundColour;

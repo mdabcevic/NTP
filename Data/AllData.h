@@ -29,6 +29,12 @@
 #include <IdTCPConnection.hpp>
 #include <IdUDPBase.hpp>
 #include <IdUDPClient.hpp>
+#include <IdHTTP.hpp>
+#include <IdIOHandler.hpp>
+#include <IdIOHandlerSocket.hpp>
+#include <IdIOHandlerStack.hpp>
+#include <IdSSL.hpp>
+#include <IdSSLOpenSSL.hpp>
 
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
@@ -74,6 +80,8 @@ __published:	// IDE-managed Components
 	TADOTable *WarrantsTable;
 	TIdTCPClient *TCPClient;
 	TIdUDPClient *UDPClient;
+	TIdHTTP *HTTP;
+	TIdSSLIOHandlerSocketOpenSSL *SSLHandler;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -89,12 +97,12 @@ public:		// User declarations
 	JSONHelper jsonHelper;
 	CustomPurposesHelper purposesHelper;
 
+	_di_CountryInfoServiceSoapType service = GetCountryInfoServiceSoapType();
+
+
 	//ClientRequests
 	void AddToXmlRequest();
 	void RequestXMLFile();
-
-    _di_CountryInfoServiceSoapType service = GetCountryInfoServiceSoapType();
-
 	void DeleteFromXml(int index);
 };
 //---------------------------------------------------------------------------

@@ -12,6 +12,9 @@
 #include "CustomPurposeInfoInputForm.h"
 #include "CompanyCarsForm.h"
 #include "DownloadResourcesForm.h"
+#include "AllData.h"
+#include <Vcl.ExtCtrls.hpp>
+
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -37,6 +40,7 @@ __published:	// IDE-managed Components
 	TButton *Button6;
 	TButton *Button7;
 	TButton *Button8;
+	TImage *ImgHr;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
