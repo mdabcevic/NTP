@@ -51,10 +51,10 @@ typedef DynamicArray<double>  TDoubleArray;
 __interface INTERFACE_UUID("{D28FE197-E1F8-4DF7-8512-DB1436E3A0C2}") ICarValidation : public IInvokable
 {
 public:
-    virtual SampleEnum     echoEnum(SampleEnum eValue) = 0;
-    virtual TDoubleArray   echoDoubleArray(const TDoubleArray daValue) = 0;
-    virtual TSampleStruct* echoStruct(const TSampleStruct* pEmployee) = 0;
-    virtual double         echoDouble(double dValue) = 0;
+	//virtual SampleEnum     echoEnum(SampleEnum eValue) = 0;
+	//virtual TDoubleArray   echoDoubleArray(const TDoubleArray daValue) = 0;
+	//virtual TSampleStruct* echoStruct(const TSampleStruct* pEmployee) = 0;
+    //virtual double         echoDouble(double dValue) = 0;
 };
 typedef DelphiInterface<ICarValidation> _di_ICarValidation;
 

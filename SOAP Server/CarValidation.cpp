@@ -16,10 +16,10 @@ class TCarValidationImpl : public TInvokableClass, public ICarValidation
 {
 public:
     /* Sample methods of ICarValidation */
-  SampleEnum     echoEnum(SampleEnum eValue);
-  TDoubleArray   echoDoubleArray(const TDoubleArray daValue);
-  TSampleStruct* echoStruct(const TSampleStruct* pStruct);
-  double         echoDouble(double dValue);
+  //SampleEnum     echoEnum(SampleEnum eValue);
+  //TDoubleArray   echoDoubleArray(const TDoubleArray daValue);
+  //TSampleStruct* echoStruct(const TSampleStruct* pStruct);
+ // double         echoDouble(double dValue);
 
   /* IUnknown */
   HRESULT STDMETHODCALLTYPE QueryInterface(const GUID& IID, void **Obj)
@@ -29,29 +29,7 @@ public:
 };
 
 
-SampleEnum TCarValidationImpl::echoEnum(SampleEnum eValue)
-{
-  /* TODO : Implement method echoEnum */
-  return eValue;
-}
 
-TDoubleArray TCarValidationImpl::echoDoubleArray(TDoubleArray daValue)
-{
-  /* TODO : Implement method echoDoubleArray */
-  return daValue;
-}
-
-TSampleStruct* TCarValidationImpl::echoStruct(const TSampleStruct* pEmployee)
-{
-  /* TODO : Implement method echoMyEmployee */
-  return new TSampleStruct();
-}
-
-double TCarValidationImpl::echoDouble(const double dValue)
-{
-  /* TODO : Implement method echoDouble */
-  return dValue;
-}
 
 
 static void __fastcall CarValidationFactory(System::TObject* &obj)
