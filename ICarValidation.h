@@ -1,9 +1,9 @@
 // ************************************************************************ //
 // The types declared in this file were generated from data read from the
 // WSDL File described below:
-// WSDL     : C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\ICarValidation.xml
+// WSDL     : http://localhost/SOAPISAPI.dll/wsdl/ICarValidation
 // Version  : 1.0
-// (06/07/2023 11:00:37 - - $Rev: 108085 $)
+// (06/07/2023 23:25:56 - - $Rev: 108085 $)
 // ************************************************************************ //
 
 #ifndef   ICarValidationH
@@ -40,7 +40,7 @@ namespace NS_ICarValidation {
 // binding   : ICarValidationbinding
 // service   : ICarValidationservice
 // port      : ICarValidationPort
-// URL       : http://localhost:8080/soap/ICarValidation
+// URL       : http://localhost/SOAPISAPI.dll/soap/ICarValidation
 // ************************************************************************ //
 __interface INTERFACE_UUID("{75CC4ACF-7120-1868-D8B3-AF6607EA8031}") ICarValidation : public IInvokable
 {

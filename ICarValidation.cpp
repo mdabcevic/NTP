@@ -1,9 +1,9 @@
 // ************************************************************************ //
 // The types declared in this file were generated from data read from the
 // WSDL File described below:
-// WSDL     : C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\ICarValidation.xml
+// WSDL     : http://localhost/SOAPISAPI.dll/wsdl/ICarValidation
 // Version  : 1.0
-// (06/07/2023 11:00:37 - - $Rev: 108085 $)
+// (06/07/2023 23:25:56 - - $Rev: 108085 $)
 // ************************************************************************ //
 
 #include <System.hpp>
@@ -17,8 +17,8 @@ namespace NS_ICarValidation {
 
 _di_ICarValidation GetICarValidation(bool useWSDL, System::String addr, Soaphttpclient::THTTPRIO* HTTPRIO)
 {
-  static const char* defWSDL= "C:\\Users\\Maja\\Documents\\Embarcadero\\Studio\\Projects\\NTP projekt\\ICarValidation.xml";
-  static const char* defURL = "http://localhost:8080/soap/ICarValidation";
+  static const char* defWSDL= "http://localhost/SOAPISAPI.dll/wsdl/ICarValidation";
+  static const char* defURL = "http://localhost/SOAPISAPI.dll/soap/ICarValidation";
   static const char* defSvc = "ICarValidationservice";
   static const char* defPrt = "ICarValidationPort";
   if (addr=="")
