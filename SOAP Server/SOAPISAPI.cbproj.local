@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/07/06 22:51:33.696,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 22:51:33.879,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/06 22:53:14.325,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\CarValidation.cpp</Transaction>
+    <Transaction>2023/07/06 22:53:14.417,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPMainForm.cpp</Transaction>
+    <Transaction>2023/07/06 22:53:14.440,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPServer.cpp</Transaction>
+    <Transaction>2023/07/06 22:53:14.503,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 22:54:02.453,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPISAPIPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/06 22:54:02.482,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPISAPI.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
