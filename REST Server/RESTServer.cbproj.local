@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/07/06 19:15:18.649,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 19:15:18.885,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 19:15:18.929,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/06 19:15:38.070,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\FormUnit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 19:15:38.070,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\FormUnit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.dfm</Transaction>
+    <Transaction>2023/07/06 19:15:38.070,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\FormUnit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.h</Transaction>
+    <Transaction>2023/07/06 19:15:38.079,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\WebModuleUnit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 19:15:38.079,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\WebModuleUnit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2023/07/06 19:15:38.079,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\WebModuleUnit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.h</Transaction>
+    <Transaction>2023/07/06 19:15:38.084,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\RESTServerPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/06 19:15:38.092,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\RESTServer.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2023/07/06 19:15:46.828,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\RESTMainForm.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\FormUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 19:15:46.828,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\RESTMainForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\FormUnit1.dfm</Transaction>
+    <Transaction>2023/07/06 19:15:46.828,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\RESTMainForm.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\FormUnit1.h</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/07/06 19:11:57.729,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.pas</Transaction>
+    <Transaction>2023/07/06 19:11:58.039,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.pas</Transaction>
+    <Transaction>2023/07/06 19:13:36.986,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\RestServerMainForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.dfm</Transaction>
+    <Transaction>2023/07/06 19:13:36.986,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\RestServerMainForm.pas=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.pas</Transaction>
+    <Transaction>2023/07/06 19:13:39.143,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\WebModuleUnit1.pas=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.pas</Transaction>
+    <Transaction>2023/07/06 19:13:39.143,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\WebModuleUnit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2023/07/06 19:14:18.463,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\REST Server\RESTServer.dproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
