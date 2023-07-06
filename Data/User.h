@@ -16,6 +16,7 @@ public:
 	UnicodeString Password;
 	UnicodeString Email;
 	UnicodeString Phone;
+    UnicodeString AuthToken;
 };
 
 //---------------------------------------------------------------------------
