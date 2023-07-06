@@ -9,6 +9,9 @@
         <Projects Include="PutniNalozi.cbproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="SOAP Server\SOAPServer.cbproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="PutniNalozi:Make">
         <MSBuild Projects="PutniNalozi.cbproj" Targets="Make"/>
     </Target>
+    <Target Name="SOAPServer">
+        <MSBuild Projects="SOAP Server\SOAPServer.cbproj"/>
+    </Target>
+    <Target Name="SOAPServer:Clean">
+        <MSBuild Projects="SOAP Server\SOAPServer.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SOAPServer:Make">
+        <MSBuild Projects="SOAP Server\SOAPServer.cbproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Server;PutniNalozi"/>
+        <CallTarget Targets="Server;PutniNalozi;SOAPServer"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Server:Clean;PutniNalozi:Clean"/>
+        <CallTarget Targets="Server:Clean;PutniNalozi:Clean;SOAPServer:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Server:Make;PutniNalozi:Make"/>
+        <CallTarget Targets="Server:Make;PutniNalozi:Make;SOAPServer:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

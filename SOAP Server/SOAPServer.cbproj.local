@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2023/07/06 09:37:06.685,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.cpp</Transaction>
-    <Transaction>2023/07/06 09:37:06.922,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
-    <Transaction>2023/07/06 09:37:06.978,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2023/07/06 09:37:20.918,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\CarValidation.cpp</Transaction>
-    <Transaction>2023/07/06 09:38:58.130,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.h</Transaction>
-    <Transaction>2023/07/06 09:38:58.130,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.cpp</Transaction>
-    <Transaction>2023/07/06 09:38:58.130,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.dfm</Transaction>
-    <Transaction>2023/07/06 09:38:58.138,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\WebModuleUnit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
-    <Transaction>2023/07/06 09:38:58.138,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\WebModuleUnit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.h</Transaction>
-    <Transaction>2023/07/06 09:38:58.138,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\WebModuleUnit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.dfm</Transaction>
-    <Transaction>2023/07/06 09:38:58.143,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPServerPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2023/07/06 09:38:58.151,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\CarValidation.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\CarValidation.h</Transaction>
-    <Transaction>2023/07/06 09:38:58.151,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\CarValidation.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\CarValidation.cpp</Transaction>
-    <Transaction>2023/07/06 09:38:58.158,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPServer.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>2023/07/06 09:39:14.210,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPMainForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.dfm</Transaction>
-    <Transaction>2023/07/06 09:39:14.210,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPMainForm.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.h</Transaction>
-    <Transaction>2023/07/06 09:39:14.210,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPMainForm.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.cpp</Transaction>
+	<Transactions>
+    <Transaction>2023/07/06 09:37:06.000.978,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/06 09:37:06.000.685,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 09:37:06.000.922,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 09:37:20.000.918,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\CarValidation.cpp</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.130,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.h</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.151,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\CarValidation.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\CarValidation.h</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.158,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPServer.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.138,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\WebModuleUnit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.h</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.143,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPServerPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.130,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.138,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\WebModuleUnit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.151,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\CarValidation.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\CarValidation.cpp</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.130,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\FormUnit1.dfm</Transaction>
+    <Transaction>2023/07/06 09:38:58.000.138,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\WebModuleUnit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2023/07/06 09:39:14.000.210,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPMainForm.dfm=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.dfm</Transaction>
+    <Transaction>2023/07/06 09:39:14.000.210,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPMainForm.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.h</Transaction>
+    <Transaction>2023/07/06 09:39:14.000.210,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\SOAPMainForm.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\SOAP Server\FormUnit1.cpp</Transaction>
   </Transactions>
 </BorlandProject>
