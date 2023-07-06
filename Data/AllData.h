@@ -11,6 +11,7 @@
 #include "WRSettingsHelper.h"
 #include "Helpers/companycars.h"  //include for handling companycars.xml
 #include "JSONHelper.h"
+#include "ICarValidation.h"
 #include <Xml.XMLDoc.hpp>
 #include <Xml.xmldom.hpp>
 #include <Xml.XMLIntf.hpp>
