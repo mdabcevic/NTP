@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ICarValidationservice" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/">
+  <message name="validateLicensePlate0Request">
+    <part name="plate" type="xs:string"/>
+  </message>
+  <message name="validateLicensePlate0Response">
+    <part name="return" type="xs:boolean"/>
+  </message>
+  <message name="isValidCityCode1Request">
+    <part name="plate" type="xs:string"/>
+  </message>
+  <message name="isValidCityCode1Response">
+    <part name="return" type="xs:boolean"/>
+  </message>
+  <portType name="ICarValidation">
+    <operation name="validateLicensePlate">
+      <input message="tns:validateLicensePlate0Request"/>
+      <output message="tns:validateLicensePlate0Response"/>
+    </operation>
+    <operation name="isValidCityCode">
+      <input message="tns:isValidCityCode1Request"/>
+      <output message="tns:isValidCityCode1Response"/>
+    </operation>
+  </portType>
+  <binding name="ICarValidationbinding" type="tns:ICarValidation">
+    <binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="validateLicensePlate">
+      <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:CarValidation-ICarValidation#validateLicensePlate" style="rpc"/>
+      <input>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:CarValidation-ICarValidation"/>
+      </input>
+      <output>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:CarValidation-ICarValidation"/>
+      </output>
+    </operation>
+    <operation name="isValidCityCode">
+      <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:CarValidation-ICarValidation#isValidCityCode" style="rpc"/>
+      <input>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:CarValidation-ICarValidation"/>
+      </input>
+      <output>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:CarValidation-ICarValidation"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ICarValidationservice">
+    <port name="ICarValidationPort" binding="tns:ICarValidationbinding">
+      <address xmlns="http://schemas.xmlsoap.org/wsdl/soap/" location="http://localhost:8080/soap/ICarValidation"/>
+    </port>
+  </service>
+</definitions>
+
