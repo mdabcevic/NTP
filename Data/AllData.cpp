@@ -136,3 +136,20 @@ void TDataModule1::Registration(UnicodeString username, UnicodeString password, 
 	EmployeeTable->FieldByName("Password")->AsString = hashedpw;
 	EmployeeTable->Post();
 }
+//---------------------------------------------------------------------------
+void TDataModule1::Login(UnicodeString username, UnicodeString password){
+	//get pw
+	UnicodeString hashedpw = GeneratePassword(username, password);
+	//handle check
+	MultiQuery->SQL->Clear(); // Clear previous query
+	//TO DO: upgrade query for joined search in order to get more info? Namely deparment name
+	MultiQuery->SQL->Add("SELECT * FROM Employees WHERE Username = :username AND Password = :password");
+	MultiQuery->Parameters->ParamByName("Username")->Value = username;
+	MultiQuery->Parameters->ParamByName("Password")->Value = hashedpw;
+    MultiQuery->Open();
+	//get user info
+	currentUser.Username = MultiQuery->FieldByName("Username")->AsString;
+	//TO DO: handle password? what about other info?
+	//currentUser.Username = MultiQuery->FieldByName("Username")->AsString;
+	MultiQuery->SQL->Clear(); // clear it for next query just in case
+}

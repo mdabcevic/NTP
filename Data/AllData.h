@@ -39,6 +39,7 @@
 #include "uTPLb_BaseNonVisualComponent.hpp"
 #include "uTPLb_CryptographicLibrary.hpp"
 #include "uTPLb_Hash.hpp"
+#include "User.h"
 
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
@@ -88,7 +89,7 @@ __published:	// IDE-managed Components
 	TIdSSLIOHandlerSocketOpenSSL *SSLHandler;
 	THash *HashIt;
 	TCryptographicLibrary *CryptLib;
-	TADOQuery *ADOQuery1;
+	TADOQuery *MultiQuery;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -121,7 +122,11 @@ public:		// User declarations
 	//HASH and encryption
 	UnicodeString GeneratePassword(UnicodeString username, UnicodeString password);
 
+	//current user
+    User currentUser;
+
 	void Registration(UnicodeString username, UnicodeString password, UnicodeString email);
+    void Login(UnicodeString username, UnicodeString password);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;

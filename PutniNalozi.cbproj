@@ -169,6 +169,10 @@
             <DependentOn>Data\CustomTravelPurposes.h</DependentOn>
             <BuildOrder>21</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Data\User.cpp">
+            <DependentOn>Data\User.h</DependentOn>
+            <BuildOrder>28</BuildOrder>
+        </CppCompile>
         <CppCompile Include="DepartmentsForm.cpp">
             <Form>Form5</Form>
             <FormType>dfm</FormType>
@@ -277,12 +281,12 @@
         <FormResources Include="CarInfoInputForm.dfm"/>
         <FormResources Include="ClientsInfoForm.dfm"/>
         <FormResources Include="CompanyCarsForm.dfm"/>
-        <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <FormResources Include="EmployeesForm.dfm"/>
         <FormResources Include="ExpensesInputInfoForm.dfm"/>
+        <FormResources Include="FuelPricingForm.dfm"/>
+        <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <FormResources Include="DepartmentsForm.dfm"/>
         <FormResources Include="DownloadResourcesForm.dfm"/>
-        <FormResources Include="FuelPricingForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

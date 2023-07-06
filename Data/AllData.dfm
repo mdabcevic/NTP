@@ -1006,9 +1006,10 @@ object DataModule1: TDataModule1
     Left = 704
     Top = 568
   end
-  object ADOQuery1: TADOQuery
+  object MultiQuery: TADOQuery
+    Connection = Connection
     Parameters = <>
     Left = 256
-    Top = 440
+    Top = 416
   end
 end

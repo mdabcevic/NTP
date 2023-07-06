@@ -13,12 +13,12 @@ USEFORM("Data\AllData.cpp", DataModule1); /* TDataModule: File Type */
 USEFORM("CarInfoInputForm.cpp", Form3);
 USEFORM("ClientsInfoForm.cpp", Form10);
 USEFORM("CompanyCarsForm.cpp", Form12);
-USEFORM("EmployeeInfoInputForm.cpp", Form6);
 USEFORM("EmployeesForm.cpp", Form4);
 USEFORM("ExpensesInputInfoForm.cpp", Form8);
+USEFORM("FuelPricingForm.cpp", Form14);
+USEFORM("EmployeeInfoInputForm.cpp", Form6);
 USEFORM("DepartmentsForm.cpp", Form5);
 USEFORM("DownloadResourcesForm.cpp", Form13);
-USEFORM("FuelPricingForm.cpp", Form14);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
