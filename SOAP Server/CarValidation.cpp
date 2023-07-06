@@ -42,7 +42,7 @@ bool TCarValidationImpl::validateLicensePlate(String plate){
 }
 
 bool TCarValidationImpl::isValidCityCode(String plate){
-	TStringList *validCityCodes;
+	TStringList *validCityCodes = new TStringList();
 	validCityCodes->CommaText = "BJ,ZG,SB,OS,RI,BM,DA,DU,KR,KT,NG,PU,SK,ST,ZD";
 	String extractedCode = plate.SubString(1, 2);
 	bool result = validCityCodes->IndexOf(extractedCode) != -1;
