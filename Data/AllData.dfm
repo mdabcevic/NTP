@@ -996,13 +996,7 @@ object DataModule1: TDataModule1
     Left = 40
     Top = 592
   end
-  object HashIt: THash
-    CryptoLibrary = CryptLib
-    Left = 624
-    Top = 568
-    HashId = 'native.hash.SHA-256'
-  end
-  object CryptLib: TCryptographicLibrary
+  object AsymCryptLib: TCryptographicLibrary
     Left = 704
     Top = 568
   end
@@ -1011,5 +1005,20 @@ object DataModule1: TDataModule1
     Parameters = <>
     Left = 256
     Top = 416
+  end
+  object AsymSign: TSignatory
+    Codec = AsymCodec
+    Left = 704
+    Top = 512
+  end
+  object AsymCodec: TCodec
+    AsymetricKeySizeInBits = 512
+    AdvancedOptions2 = []
+    CryptoLibrary = AsymCryptLib
+    Left = 704
+    Top = 456
+    StreamCipherId = 'native.RSA'
+    BlockCipherId = ''
+    ChainId = ''
   end
 end

@@ -11,6 +11,7 @@
 #include <idhashsha.hpp>
 #include <System.NetEncoding.hpp>
 #include <System.StrUtils.hpp>
+#include <System.SysUtils.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
@@ -24,6 +25,8 @@
 #pragma link "uTPLb_Codec"
 #pragma link "uTPLb_Hash"
 #pragma link "uTPLb_Signatory"
+#pragma link "uTPLb_Signatory"
+#pragma link "uTPLb_Codec"
 #pragma resource "*.dfm"
 
 TDataModule1 *DataModule1;
@@ -169,3 +172,29 @@ void TDataModule1::Login(UnicodeString username, UnicodeString password){
 	HTTP = new TIdHTTP(NULL);
 
  }
+  //---------------------------------------------------------------------------
+  void TDataModule1::GenerateAsymKeys(){
+
+
+	AsymSign->GenerateKeys();
+
+	privateStream.reset(new TMemoryStream());
+	publicStream.reset(new TMemoryStream());
+	AsymSign->StoreKeysToStream(privateStream.get(), TKeyStoragePartSet() << partPrivate);
+	AsymSign->StoreKeysToStream(publicStream.get(), TKeyStoragePartSet() << partPublic);
+
+	privateStream->Position = 0;
+	publicStream->Position = 0;
+
+	std::unique_ptr<TIdMultiPartFormDataStream> Stream(new TIdMultiPartFormDataStream());
+	UnicodeString publicKeyFile = "asympublic.bin";
+	publicStream->SaveToFile(publicKeyFile);
+	Stream->AddFile('publickey', publicKeyFile, 'application/octet-stream');
+
+	UnicodeString url = "http://localhost:8085/getsymmetric";
+    HTTP->Request->ContentType = "application/octet-stream";
+	HTTP->Post(url, binaryStream);
+	HTTP = new TIdHTTP(NULL);
+
+
+  }

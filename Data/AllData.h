@@ -40,6 +40,9 @@
 #include "uTPLb_CryptographicLibrary.hpp"
 #include "uTPLb_Hash.hpp"
 #include "User.h"
+#include "uTPLb_Signatory.hpp"
+#include "uTPLb_Codec.hpp"
+#include <System.SysUtils.hpp>
 
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
@@ -87,9 +90,10 @@ __published:	// IDE-managed Components
 	TIdUDPClient *UDPClient;
 	TIdHTTP *HTTP;
 	TIdSSLIOHandlerSocketOpenSSL *SSLHandler;
-	THash *HashIt;
-	TCryptographicLibrary *CryptLib;
+	TCryptographicLibrary *AsymCryptLib;
 	TADOQuery *MultiQuery;
+	TSignatory *AsymSign;
+	TCodec *AsymCodec;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -132,7 +136,12 @@ public:		// User declarations
 	void Login(UnicodeString username, UnicodeString password);
 
 	//REST requests
-    int Authentification();
+	int Authentification();
+
+	//Asymetric encryption
+	std::unique_ptr<TMemoryStream> privateStream;
+	std::unique_ptr<TMemoryStream> publicStream;
+	void GenerateAsymKeys();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;
