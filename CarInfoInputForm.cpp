@@ -54,7 +54,7 @@ void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 	DataModule1->currentCar->location = Form3->Location_Box->Text;
 	//DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
 
-    //CheckPlates();
+    CheckPlates();
 	DataModule1->AddToXmlRequest();
 	DataModule1->XmlDoc->Active = false;
 	DataModule1->RequestXMLFile();
