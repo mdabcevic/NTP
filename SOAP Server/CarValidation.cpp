@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <vcl.h>
 #include <regex>
+#include <unordered_set>
 #pragma hdrstop
 
 #if !defined(__CarValidation_h__)
@@ -22,6 +23,7 @@ public:
   //TSampleStruct* echoStruct(const TSampleStruct* pStruct);
  // double         echoDouble(double dValue);
 	bool         validateLicensePlate(String plate);
+    bool         isValidCityCode(String plate);
 
   /* IUnknown */
   HRESULT STDMETHODCALLTYPE QueryInterface(const GUID& IID, void **Obj)
@@ -37,6 +39,15 @@ bool TCarValidationImpl::validateLicensePlate(String plate){
     std::regex pattern("^[A-Z]{2}-\\d{3,4}-[A-Z]{2}$");
 	std::string licensePlateStr = AnsiString(plate).c_str();
 	return std::regex_match(licensePlateStr, pattern);
+}
+
+bool TCarValidationImpl::isValidCityCode(String plate){
+	TStringList *validCityCodes;
+	validCityCodes->CommaText = "BJ,ZG,SB,OS,RI,BM,DA,DU,KR,KT,NG,PU,SK,ST,ZD";
+	String extractedCode = plate.SubString(1, 2);
+	bool result = validCityCodes->IndexOf(extractedCode) != -1;
+	delete validCityCodes;
+	return result;
 }
 
 

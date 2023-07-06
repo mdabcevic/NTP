@@ -54,8 +54,10 @@ public:
 	//virtual SampleEnum     echoEnum(SampleEnum eValue) = 0;
 	//virtual TDoubleArray   echoDoubleArray(const TDoubleArray daValue) = 0;
 	//virtual TSampleStruct* echoStruct(const TSampleStruct* pEmployee) = 0;
-    //virtual double         echoDouble(double dValue) = 0;
+	//virtual double         echoDouble(double dValue) = 0;
 	virtual   bool      	 validateLicensePlate(String plate) = 0;
+    virtual   bool           isValidCityCode(String plate) = 0;
+
 };
 typedef DelphiInterface<ICarValidation> _di_ICarValidation;
 
