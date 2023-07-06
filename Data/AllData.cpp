@@ -9,6 +9,8 @@
 #include <System.Hash.hpp>
 #include <idhashmessagedigest.hpp>
 #include <idhashsha.hpp>
+#include <System.NetEncoding.hpp>
+#include <System.StrUtils.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
@@ -150,6 +152,20 @@ void TDataModule1::Login(UnicodeString username, UnicodeString password){
 	//get user info
 	currentUser.Username = MultiQuery->FieldByName("Username")->AsString;
 	//TO DO: handle password? what about other info?
-	//currentUser.Username = MultiQuery->FieldByName("Username")->AsString;
+	currentUser.Password = MultiQuery->FieldByName("Password")->AsString;
 	MultiQuery->SQL->Clear(); // clear it for next query just in case
 }
+
+ //---------------------------------------------------------------------------
+ int TDataModule1::Authentification(){
+	//just in case
+	HTTP = new TIdHTTP(NULL);
+	UnicodeString auth = "Basic" + TNetEncoding::Base64->Encode(currentUser.Username + ":" + currentUser.Password);
+	UnicodeString url = "http://localhost:8085/auth";
+	HTTP->Request->CustomHeaders->Values["Authorization"] = auth;
+	UnicodeString token = HTTP->Get(url);
+
+    //just in case again
+	HTTP = new TIdHTTP(NULL);
+
+ }

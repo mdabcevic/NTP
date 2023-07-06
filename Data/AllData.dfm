@@ -983,7 +983,7 @@ object DataModule1: TDataModule1
     Request.Ranges.Units = 'bytes'
     Request.Ranges = <>
     HTTPOptions = [hoForceEncodeParams]
-    Left = 128
+    Left = 112
     Top = 592
   end
   object SSLHandler: TIdSSLIOHandlerSocketOpenSSL

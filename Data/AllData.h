@@ -113,9 +113,11 @@ public:		// User declarations
     _di_ICarValidation carValidation = GetICarValidation();
 
 
-	//ClientRequests
+	//TCP requests
 	void AddToXmlRequest();
 	void RequestXMLFile();
+
+	//UDP requests
 	void DeleteFromXml(int index);
 	//to do: send client files to the server
 
@@ -125,8 +127,12 @@ public:		// User declarations
 	//current user
     User currentUser;
 
+	//App login - checks against DB
 	void Registration(UnicodeString username, UnicodeString password, UnicodeString email);
-    void Login(UnicodeString username, UnicodeString password);
+	void Login(UnicodeString username, UnicodeString password);
+
+	//REST requests
+    int Authentification();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;
