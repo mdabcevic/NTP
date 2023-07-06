@@ -65,7 +65,10 @@ void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 
 void TForm3::CheckPlates(){
 	if(DataModule1->carValidation->validateLicensePlate(DataModule1->currentCar->licenseplate)){
-        ShowMessage("good license plate format");
+		//ShowMessage("good license plate format");
+		if(DataModule1->carValidation->isValidCityCode(DataModule1->currentCar->licenseplate)){
+			ShowMessage("valid");
+		}
 	}
 
 }
