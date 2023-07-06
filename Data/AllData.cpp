@@ -160,10 +160,10 @@ void TDataModule1::Login(UnicodeString username, UnicodeString password){
  int TDataModule1::Authentification(){
 	//just in case
 	HTTP = new TIdHTTP(NULL);
-	UnicodeString auth = "Basic" + TNetEncoding::Base64->Encode(currentUser.Username + ":" + currentUser.Password);
+	UnicodeString auth = "Basic " + TNetEncoding::Base64->Encode(currentUser.Username + ":" + currentUser.Password);
 	UnicodeString url = "http://localhost:8085/auth";
 	HTTP->Request->CustomHeaders->Values["Authorization"] = auth;
-	UnicodeString token = HTTP->Get(url);
+	currentUser.AuthToken  = HTTP->Get(url);
 
     //just in case again
 	HTTP = new TIdHTTP(NULL);
