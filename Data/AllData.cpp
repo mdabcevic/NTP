@@ -134,4 +134,5 @@ void TDataModule1::Registration(UnicodeString username, UnicodeString password, 
 	EmployeeTable->Append();
 	EmployeeTable->FieldByName("Username")->AsString = username;
 	EmployeeTable->FieldByName("Password")->AsString = hashedpw;
+	EmployeeTable->Post();
 }

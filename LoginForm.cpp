@@ -54,7 +54,11 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 //TO DO:
 
 //grananje:
-
+	if(isRegister->Checked){
+		if(pwBox->Text == pwConfirmBox->Text){
+            DataModule1->Registration(usernameBox->Text, pwBox->Text, emailBox->Text);
+		}
+	}
 //1. registracija:
 //1.1 provjerava dostupnost info (username i pw)
 //a) false > warning message: username/email vec u uporabi
@@ -72,7 +76,7 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 	TForm2 *testwindow = new TForm2(this);
 
     // Show Window2
-	testwindow->Show();
+	//testwindow->Show();
 
 }
 //---------------------------------------------------------------------------
