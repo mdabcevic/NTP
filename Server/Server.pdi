@@ -1,5 +1,6 @@
 IndyCore280.bpl
-xmlrtl280.bpl
 IndySystem280.bpl
+IndyProtocols280.bpl
+xmlrtl280.bpl
 vcl280.bpl
 rtl280.bpl

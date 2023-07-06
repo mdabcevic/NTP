@@ -41,6 +41,7 @@ __published:	// IDE-managed Components
 	TButton *Button7;
 	TButton *Button8;
 	TImage *ImgHr;
+	TImage *ImgEn;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);

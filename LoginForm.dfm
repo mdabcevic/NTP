@@ -43,11 +43,18 @@ object Form1: TForm1
     Visible = False
   end
   object ImgHr: TImage
-    Left = 480
+    Left = 512
     Top = 376
     Width = 31
     Height = 25
     Center = True
+    Stretch = True
+  end
+  object ImgEn: TImage
+    Left = 561
+    Top = 376
+    Width = 31
+    Height = 25
     Stretch = True
   end
   object usernameBox: TEdit
