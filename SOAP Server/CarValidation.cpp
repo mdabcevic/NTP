@@ -3,6 +3,7 @@
 // ************************************************************************ //
 #include <stdio.h>
 #include <vcl.h>
+#include <regex>
 #pragma hdrstop
 
 #if !defined(__CarValidation_h__)
@@ -20,6 +21,7 @@ public:
   //TDoubleArray   echoDoubleArray(const TDoubleArray daValue);
   //TSampleStruct* echoStruct(const TSampleStruct* pStruct);
  // double         echoDouble(double dValue);
+	bool         validateLicensePlate(String plate);
 
   /* IUnknown */
   HRESULT STDMETHODCALLTYPE QueryInterface(const GUID& IID, void **Obj)
@@ -30,6 +32,12 @@ public:
 
 
 
+bool TCarValidationImpl::validateLicensePlate(String plate){
+	//ruleset: 2letters - 3/4digits - 2letters
+    std::regex pattern("^[A-Z]{2}-\\d{3,4}-[A-Z]{2}$");
+	std::string licensePlateStr = AnsiString(plate).c_str();
+	return std::regex_match(licensePlateStr, pattern);
+}
 
 
 static void __fastcall CarValidationFactory(System::TObject* &obj)
