@@ -1006,4 +1006,9 @@ object DataModule1: TDataModule1
     Left = 704
     Top = 568
   end
+  object ADOQuery1: TADOQuery
+    Parameters = <>
+    Left = 256
+    Top = 440
+  end
 end

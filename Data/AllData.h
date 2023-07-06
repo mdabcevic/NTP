@@ -88,6 +88,7 @@ __published:	// IDE-managed Components
 	TIdSSLIOHandlerSocketOpenSSL *SSLHandler;
 	THash *HashIt;
 	TCryptographicLibrary *CryptLib;
+	TADOQuery *ADOQuery1;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -118,7 +119,9 @@ public:		// User declarations
 	//to do: send client files to the server
 
 	//HASH and encryption
-    UnicodeString GeneratePassword(UnicodeString username, UnicodeString password);
+	UnicodeString GeneratePassword(UnicodeString username, UnicodeString password);
+
+	void Registration(UnicodeString username, UnicodeString password, UnicodeString email);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;

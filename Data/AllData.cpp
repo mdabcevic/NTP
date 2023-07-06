@@ -121,11 +121,17 @@ void TDataModule1::DeleteFromXml(int index){
 UnicodeString TDataModule1::GeneratePassword(UnicodeString username, UnicodeString password){
 	TIdHashMessageDigest5* md5 = new TIdHashMessageDigest5;
 	UnicodeString first = md5->HashStringAsHex(password);
-	UnicodeString next = password + "somesupersuperlenghtystaticsalt" + username;
 	TIdHashSHA1* sha1 = new TIdHashSHA1;
+    // dynamic salt + static salt + dynamic salt
 	UnicodeString final = sha1->HashStringAsHex(first + "somesupersuperlenghtystaticsalt" + username);
 	delete md5;
 	delete sha1;
 	return final;
 }
 //---------------------------------------------------------------------------
+void TDataModule1::Registration(UnicodeString username, UnicodeString password, UnicodeString email){
+	UnicodeString hashedpw = GeneratePassword(username, password);
+	EmployeeTable->Append();
+	EmployeeTable->FieldByName("Username")->AsString = username;
+	EmployeeTable->FieldByName("Password")->AsString = hashedpw;
+}
