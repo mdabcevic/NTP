@@ -50,7 +50,7 @@ void __fastcall TWebModule1::WebModule1AuthActAction(TObject *Sender, TWebReques
 	login = StringOf(bytes);
 	username = SplitString(login, ":")[0];
 	password = SplitString(login, ":")[0];
-	Response->Content = 8129;
+	Response->Content = "8129";
 
 	//use given code to avoid logging in on other res.
 
