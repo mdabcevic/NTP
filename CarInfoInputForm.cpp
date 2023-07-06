@@ -41,6 +41,9 @@ void TForm3::EditCarMode()
 void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 {
 	if(Form3->SaveCarChanges_Button->Caption == "Add car"){
+		DataModule1->XmlDoc->Active = false;
+		DataModule1->XmlDoc->Active = true;
+        DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
 		DataModule1->currentCar = DataModule1->companycars->Add();
 
 	}
@@ -51,6 +54,7 @@ void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 	DataModule1->currentCar->location = Form3->Location_Box->Text;
 	//DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
 
+    //CheckPlates();
 	DataModule1->AddToXmlRequest();
 	DataModule1->XmlDoc->Active = false;
 	DataModule1->RequestXMLFile();
@@ -58,3 +62,10 @@ void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 	Form3->Close();
 }
 //---------------------------------------------------------------------------
+
+void TForm3::CheckPlates(){
+	if(DataModule1->carValidation->validateLicensePlate(DataModule1->currentCar->licenseplate)){
+        ShowMessage("good license plate format");
+	}
+
+}

@@ -28,7 +28,8 @@ public:		// User declarations
 
 	__fastcall TForm3(TComponent* Owner);
 	void AddCarMode();
-    void EditCarMode();
+	void EditCarMode();
+    void CheckPlates();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm3 *Form3;

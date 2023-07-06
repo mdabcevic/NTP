@@ -2,8 +2,8 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = 'Car information'
-  ClientHeight = 433
-  ClientWidth = 444
+  ClientHeight = 432
+  ClientWidth = 440
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -93,7 +93,7 @@ object Form3: TForm3
   end
   object SaveCarChanges_Button: TButton
     Left = 144
-    Top = 330
+    Top = 322
     Width = 169
     Height = 25
     Caption = 'Add / Edit '
