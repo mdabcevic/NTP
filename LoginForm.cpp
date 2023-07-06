@@ -179,3 +179,9 @@ void __fastcall TForm1::Button8Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::Button9Click(TObject *Sender)
+{
+    Form14->ShowModal();
+}
+//---------------------------------------------------------------------------
+

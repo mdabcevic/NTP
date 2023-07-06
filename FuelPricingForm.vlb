@@ -1,6 +1,18 @@
 ﻿[Memo1]
-Coordinates=175,136,53,51
+Coordinates=210,230,53,51
 
 []
 Coordinates=114,188,82,33
+
+[RESTRequest1]
+Coordinates=350,20,88,159
+
+[RESTResponse1]
+Coordinates=75,88,96,303
+
+[RESTClient1]
+Coordinates=0,0,76,69
+
+[BindingsList1]
+Coordinates=95,1,82,33
 

@@ -24,6 +24,8 @@ __published:	// IDE-managed Components
 	TRESTClient *RESTClient1;
 	TRESTRequest *RESTRequest1;
 	TRESTResponse *RESTResponse1;
+	TBindingsList *BindingsList1;
+	TLinkControlToField *LinkControlToField1;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm14(TComponent* Owner);

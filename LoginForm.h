@@ -14,6 +14,7 @@
 #include "DownloadResourcesForm.h"
 #include "AllData.h"
 #include <Vcl.ExtCtrls.hpp>
+#include "FuelPricingForm.h"
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
@@ -42,6 +43,7 @@ __published:	// IDE-managed Components
 	TButton *Button8;
 	TImage *ImgHr;
 	TImage *ImgEn;
+	TButton *Button9;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
@@ -55,6 +57,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall Button8Click(TObject *Sender);
+	void __fastcall Button9Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
