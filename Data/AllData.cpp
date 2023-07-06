@@ -5,6 +5,10 @@
 
 #include "AllData.h"
 #include "Client.h"
+#include <memory>
+#include <System.Hash.hpp>
+#include <idhashmessagedigest.hpp>
+#include <idhashsha.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
@@ -13,7 +17,13 @@
 #pragma link "frxExportBaseDialog"
 #pragma link "frxExportPDF"
 #pragma link "frxExportRTF"
+#pragma link "uTPLb_BaseNonVisualComponent"
+#pragma link "uTPLb_CryptographicLibrary"
+#pragma link "uTPLb_Codec"
+#pragma link "uTPLb_Hash"
+#pragma link "uTPLb_Signatory"
 #pragma resource "*.dfm"
+
 TDataModule1 *DataModule1;
 //---------------------------------------------------------------------------
 __fastcall TDataModule1::TDataModule1(TComponent* Owner)
@@ -108,3 +118,14 @@ void TDataModule1::DeleteFromXml(int index){
 }
 //---------------------------------------------------------------------------
 
+UnicodeString TDataModule1::GeneratePassword(UnicodeString username, UnicodeString password){
+	TIdHashMessageDigest5* md5 = new TIdHashMessageDigest5;
+	UnicodeString first = md5->HashStringAsHex(password);
+	UnicodeString next = password + "somesupersuperlenghtystaticsalt" + username;
+	TIdHashSHA1* sha1 = new TIdHashSHA1;
+	UnicodeString final = sha1->HashStringAsHex(first + "somesupersuperlenghtystaticsalt" + username);
+	delete md5;
+	delete sha1;
+	return final;
+}
+//---------------------------------------------------------------------------

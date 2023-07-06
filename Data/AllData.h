@@ -36,6 +36,9 @@
 #include <IdIOHandlerStack.hpp>
 #include <IdSSL.hpp>
 #include <IdSSLOpenSSL.hpp>
+#include "uTPLb_BaseNonVisualComponent.hpp"
+#include "uTPLb_CryptographicLibrary.hpp"
+#include "uTPLb_Hash.hpp"
 
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
@@ -83,21 +86,27 @@ __published:	// IDE-managed Components
 	TIdUDPClient *UDPClient;
 	TIdHTTP *HTTP;
 	TIdSSLIOHandlerSocketOpenSSL *SSLHandler;
+	THash *HashIt;
+	TCryptographicLibrary *CryptLib;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);
 
+	//INI and REG
 	ThemeHelper themeHelper;
 	FontHelper fontHelper;
 	WRSettingsHelper wrSettingsHelper;
 
+	//XML
 	_di_IXMLcompanycarsType companycars = Getcompanycars(XmlDoc);
 	_di_IXMLcarType currentCar;
 
+	//JSON
 	JSONHelper jsonHelper;
 	CustomPurposesHelper purposesHelper;
 
+	//SOAP
 	_di_CountryInfoServiceSoapType service = GetCountryInfoServiceSoapType();
     _di_ICarValidation carValidation = GetICarValidation();
 
@@ -106,6 +115,10 @@ public:		// User declarations
 	void AddToXmlRequest();
 	void RequestXMLFile();
 	void DeleteFromXml(int index);
+	//to do: send client files to the server
+
+	//HASH and encryption
+    UnicodeString GeneratePassword(UnicodeString username, UnicodeString password);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;

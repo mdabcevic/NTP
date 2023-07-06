@@ -996,4 +996,14 @@ object DataModule1: TDataModule1
     Left = 40
     Top = 592
   end
+  object HashIt: THash
+    CryptoLibrary = CryptLib
+    Left = 624
+    Top = 568
+    HashId = 'native.hash.SHA-256'
+  end
+  object CryptLib: TCryptographicLibrary
+    Left = 704
+    Top = 568
+  end
 end
