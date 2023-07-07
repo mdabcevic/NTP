@@ -9,9 +9,6 @@
         <Projects Include="PutniNalozi.cbproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="SOAP Server\SOAPServer.cbproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="REST Server\RESTServer.cbproj">
             <Dependencies/>
         </Projects>
@@ -41,15 +38,6 @@
     <Target Name="PutniNalozi:Make">
         <MSBuild Projects="PutniNalozi.cbproj" Targets="Make"/>
     </Target>
-    <Target Name="SOAPServer">
-        <MSBuild Projects="SOAP Server\SOAPServer.cbproj"/>
-    </Target>
-    <Target Name="SOAPServer:Clean">
-        <MSBuild Projects="SOAP Server\SOAPServer.cbproj" Targets="Clean"/>
-    </Target>
-    <Target Name="SOAPServer:Make">
-        <MSBuild Projects="SOAP Server\SOAPServer.cbproj" Targets="Make"/>
-    </Target>
     <Target Name="RESTServer">
         <MSBuild Projects="REST Server\RESTServer.cbproj"/>
     </Target>
@@ -60,13 +48,13 @@
         <MSBuild Projects="REST Server\RESTServer.cbproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="Server;PutniNalozi;SOAPServer;RESTServer"/>
+        <CallTarget Targets="Server;PutniNalozi;RESTServer"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Server:Clean;PutniNalozi:Clean;SOAPServer:Clean;RESTServer:Clean"/>
+        <CallTarget Targets="Server:Clean;PutniNalozi:Clean;RESTServer:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Server:Make;PutniNalozi:Make;SOAPServer:Make;RESTServer:Make"/>
+        <CallTarget Targets="Server:Make;PutniNalozi:Make;RESTServer:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
