@@ -4,3 +4,4 @@
 #include "ICarValidation.h"
 #include "Client.h"
 #include "JSONHelper.h"
+#include "Helpers/WRSettingsHelper.h"
