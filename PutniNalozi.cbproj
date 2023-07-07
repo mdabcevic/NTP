@@ -78,6 +78,7 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <BCC_PCHName_Clang>PutniNaloziPCH1.h</BCC_PCHName_Clang>
+        <ILINK_LibraryPath>C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\StaticLib\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibmonitor;ibxbindings;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -110,12 +111,11 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)$(CC_SUFFIX)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <DynamicRTL>false</DynamicRTL>
-        <UsePackages>false</UsePackages>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <LinkPackageStatics>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib;frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib;soaprtl.lib;inet.lib;bindcomp.lib;bindcompvcl.lib;RESTComponents.lib;CustomIPTransport.lib;LockBox3CR.lib</LinkPackageStatics>
+        <LinkPackageStatics>frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;LockBox3CR.lib</LinkPackageStatics>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <FinalOutputDir>.</FinalOutputDir>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;xmlrtl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclwinx.bpi;vclimg.bpi;bindengine.bpi;vclx.bpi;IndySystem.bpi;IndyCore.bpi;IndyProtocols.bpi;soaprtl.bpi;inet.bpi;bindcomp.bpi;bindcompvcl.bpi;RESTComponents.bpi;CustomIPTransport.bpi</LinkPackageImports>
         <Debugger_DebugSourcePath>C:\Users\Maja\Downloads\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -161,10 +161,6 @@
             <DesignClass>TDataModule</DesignClass>
             <DependentOn>Data\AllData.h</DependentOn>
             <BuildOrder>8</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Data\Client.cpp">
-            <DependentOn>Data\Client.h</DependentOn>
-            <BuildOrder>17</BuildOrder>
         </CppCompile>
         <CppCompile Include="Data\CustomTravelPurposes.cpp">
             <DependentOn>Data\CustomTravelPurposes.h</DependentOn>
@@ -226,10 +222,6 @@
             <DependentOn>Helpers\IniSettingsHelper.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Helpers\JSONHelper.cpp">
-            <DependentOn>Helpers\JSONHelper.h</DependentOn>
-            <BuildOrder>19</BuildOrder>
-        </CppCompile>
         <CppCompile Include="Helpers\ThemeHelper.cpp">
             <DependentOn>Helpers\ThemeHelper.h</DependentOn>
             <BuildOrder>4</BuildOrder>
@@ -255,6 +247,10 @@
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <LibFiles Include="StaticLib\StaticLibrary.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>27</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
         <CppCompile Include="TestWindow.cpp">
             <Form>Form2</Form>
             <FormType>dfm</FormType>
@@ -277,17 +273,17 @@
         <FormResources Include="TravelWarrantInputInfoForm.dfm"/>
         <FormResources Include="TravelWarrantsForm.dfm"/>
         <FormResources Include="LoginForm.dfm"/>
-        <FormResources Include="FuelPricingForm.dfm"/>
         <FormResources Include="CustomPurposeInfoInputForm.dfm"/>
         <FormResources Include="Data\AllData.dfm"/>
         <FormResources Include="CarInfoInputForm.dfm"/>
         <FormResources Include="ClientsInfoForm.dfm"/>
         <FormResources Include="CompanyCarsForm.dfm"/>
-        <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <FormResources Include="EmployeesForm.dfm"/>
         <FormResources Include="ExpensesInputInfoForm.dfm"/>
-        <FormResources Include="DownloadResourcesForm.dfm"/>
+        <FormResources Include="FuelPricingForm.dfm"/>
+        <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <FormResources Include="DepartmentsForm.dfm"/>
+        <FormResources Include="DownloadResourcesForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -385,6 +381,12 @@
                 <DeployFile LocalName=".\PutniNalozi.tds" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="Win32">
                         <RemoteName>PutniNalozi.tds</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="StaticLib\StaticLibrary.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
