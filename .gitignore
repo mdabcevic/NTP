@@ -6,6 +6,7 @@ Win32/Debug/
 Server/Win32/Debug/
 SOAP Server/WIn32/Debug/
 REST Server/WIn32/Debug/
+Staticlib/Win32/Debug/
 
 # Exclude intermediate language files
 *.ilc
