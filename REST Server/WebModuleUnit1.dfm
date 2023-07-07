@@ -9,11 +9,15 @@ object WebModule1: TWebModule1
     item
       Name = 'AuthAct'
       PathInfo = '/auth'
-      OnAction = WebModule1AuthActAction
     end
     item
       Name = 'ReportAct'
       PathInfo = '/reports'
+    end
+    item
+      Name = 'ActEmployees'
+      PathInfo = '/employees'
+      OnAction = WebModule1ActEmployeesAction
     end>
   Height = 230
   Width = 415
@@ -36,7 +40,7 @@ object WebModule1: TWebModule1
     BlockCipherId = ''
     ChainId = ''
   end
-  object ADOConnection1: TADOConnection
+  object Connection: TADOConnection
     ConnectionString = 
       'Provider=SQLNCLI11.1;Integrated Security=SSPI;Persist Security I' +
       'nfo=False;User ID="";Initial Catalog=PutniNaloziDB;Data Source=l' +
@@ -45,8 +49,8 @@ object WebModule1: TWebModule1
     Left = 40
     Top = 32
   end
-  object ADOQuery1: TADOQuery
-    Connection = ADOConnection1
+  object MultiQuery: TADOQuery
+    Connection = Connection
     Parameters = <>
     Left = 40
     Top = 96

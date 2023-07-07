@@ -34,10 +34,12 @@ void __fastcall TWebModule1::WebModule1DefaultHandlerAction(TObject *Sender, TWe
 //---------------------------------------------------------------------------
 
 
-void __fastcall TWebModule1::WebModule1AuthActAction(TObject *Sender, TWebRequest *Request,
-		  TWebResponse *Response, bool &Handled)
+
+
+void __fastcall TWebModule1::WebModule1ActEmployeesAction(TObject *Sender, TWebRequest *Request,
+          TWebResponse *Response, bool &Handled)
 {
-	TBytes bytes;
+TBytes bytes;
 	UnicodeString login;
 	UnicodeString username;
 	UnicodeString password;
@@ -56,15 +58,34 @@ void __fastcall TWebModule1::WebModule1AuthActAction(TObject *Sender, TWebReques
 	login = StringOf(bytes);
 	username = SplitString(login, ":")[0];
 	password = SplitString(login, ":")[0];
-	Response->Content = "Successfully Authenticated";
+	//Response->Content = "Successfully Authenticated";
 
-	//use given code to avoid logging in on other res.
+	if(Request->MethodType == mtGet){
+		int employee = Request->QueryFields->Values["emp"].ToInt();
+		MultiQuery->SQL->Clear();
+		MultiQuery->SQL->Add("SELECT EmployeeID, FirstName, LastName FROM Employees WHERE EmployeeID = :id");
+		 MultiQuery->Parameters->ParamByName("id")->Value = employee;
+		MultiQuery->Open();
 
-	//auth either by departments (racunovodstvo to have more control in app)
-	//or by personnel
+		String firstName = MultiQuery->FieldByName("FirstName")->AsString;
+		String lastName = MultiQuery->FieldByName("LastName")->AsString;
+		//String department = MultiQuery->FieldByName("DepartmentID")->AsI;
+		String email = MultiQuery->FieldByName("email")->AsString;
 
 
-}
+	}
+	else if(Request->MethodType ==mtDelete) {
+	int employee = Request->QueryFields->Values["emp"].ToInt();
+		if(username != "mdabcevic" || password != "test"){
+			Response->Content = "You're not authorized to perform this action";
+		}
+        MultiQuery->SQL->Clear();
+		MultiQuery->SQL->Add("DELETE FROM Employee WHERE EmployeeID = :id");
+		MultiQuery->Parameters->ParamByName("EmployeeID")->Value = employee;
+		MultiQuery->ExecSQL();
+        Response->Content = "Employee with ID: " + IntToStr(employee) + " has been deleted.";
+	}
+	}
+
 //---------------------------------------------------------------------------
-
 

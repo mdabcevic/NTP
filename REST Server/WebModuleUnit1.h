@@ -19,12 +19,12 @@ __published:	// IDE-managed Components
 	TCryptographicLibrary *CryptographicLibrary1;
 	TSignatory *AsymSign;
 	TCodec *AsymCodec;
-	TADOConnection *ADOConnection1;
-	TADOQuery *ADOQuery1;
+	TADOConnection *Connection;
+	TADOQuery *MultiQuery;
 	void __fastcall WebModule1DefaultHandlerAction(TObject *Sender, TWebRequest *Request,
           TWebResponse *Response, bool &Handled);
-	void __fastcall WebModule1AuthActAction(TObject *Sender, TWebRequest *Request, TWebResponse *Response,
-          bool &Handled);
+	void __fastcall WebModule1ActEmployeesAction(TObject *Sender, TWebRequest *Request,
+          TWebResponse *Response, bool &Handled);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TWebModule1(TComponent* Owner);
