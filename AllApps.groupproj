@@ -9,9 +9,6 @@
         <Projects Include="PutniNalozi.cbproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="REST Server\RESTServer.cbproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -38,23 +35,14 @@
     <Target Name="PutniNalozi:Make">
         <MSBuild Projects="PutniNalozi.cbproj" Targets="Make"/>
     </Target>
-    <Target Name="RESTServer">
-        <MSBuild Projects="REST Server\RESTServer.cbproj"/>
-    </Target>
-    <Target Name="RESTServer:Clean">
-        <MSBuild Projects="REST Server\RESTServer.cbproj" Targets="Clean"/>
-    </Target>
-    <Target Name="RESTServer:Make">
-        <MSBuild Projects="REST Server\RESTServer.cbproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Server;PutniNalozi;RESTServer"/>
+        <CallTarget Targets="Server;PutniNalozi"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Server:Clean;PutniNalozi:Clean;RESTServer:Clean"/>
+        <CallTarget Targets="Server:Clean;PutniNalozi:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Server:Make;PutniNalozi:Make;RESTServer:Make"/>
+        <CallTarget Targets="Server:Make;PutniNalozi:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
