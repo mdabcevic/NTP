@@ -19,6 +19,7 @@ TComponentClass WebModuleClass = __classid(TWebModule1);
 __fastcall TWebModule1::TWebModule1(TComponent* Owner)
 	: TWebModule(Owner)
 {
+    MessageList = new TStringList();
 }
 //---------------------------------------------------------------------------
 
@@ -51,6 +52,7 @@ TBytes bytes;
 		Response->Content = "You have to log in before accessing resources!";
 		Response->WWWAuthenticate = "Basic realm=\"MyRest login";
 		Response->SendResponse();
+		return;
 	}
 
 	//get and check user credentials
@@ -59,33 +61,20 @@ TBytes bytes;
 	username = SplitString(login, ":")[0];
 	password = SplitString(login, ":")[1];
 	//Response->Content = "Successfully Authenticated";
-
 	if(Request->MethodType == mtGet){
-		int employee = Request->QueryFields->Values["emp"].ToInt();
-		MultiQuery->SQL->Clear();
-		MultiQuery->SQL->Add("SELECT EmployeeID, FirstName, LastName FROM Employees WHERE EmployeeID = :id");
-		 MultiQuery->Parameters->ParamByName("id")->Value = employee;
-		MultiQuery->Open();
-
-		String firstName = MultiQuery->FieldByName("FirstName")->AsString;
-		String lastName = MultiQuery->FieldByName("LastName")->AsString;
-		//String department = MultiQuery->FieldByName("DepartmentID")->AsI;
-		String email = MultiQuery->FieldByName("email")->AsString;
-
-
+		Response->Content = "Message: " + MessageList->Text;
 	}
+
 	else if(Request->MethodType ==mtDelete) {
-	int employee = Request->QueryFields->Values["emp"].ToInt();
-		if(username != "mdabcevic" || password != "test"){
+		if(username != "mdabcevic" || password != "FF22DC28DBEDD5D9064C8A3B75D16E3B99EBDCBD"){
 			Response->Content = "You're not authorized to perform this action";
+            return;
 		}
-        MultiQuery->SQL->Clear();
-		MultiQuery->SQL->Add("DELETE FROM Employee WHERE EmployeeID = :id");
-		MultiQuery->Parameters->ParamByName("EmployeeID")->Value = employee;
-		MultiQuery->ExecSQL();
-        Response->Content = "Employee with ID: " + IntToStr(employee) + " has been deleted.";
+		MessageList->Add(Request->ContentFields->Values["message"]);
+        Response->StatusCode = 200;
+		Response->Content = "Message added successfully";
 	}
-	}
+}
 
 //---------------------------------------------------------------------------
 

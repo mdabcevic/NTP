@@ -31,9 +31,11 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
     {
       WebRequestHandler()->WebModuleClass = WebModuleClass;
     }
-    Application->Initialize();
+	Application->Initialize();
+	CoInitializeEx(NULL, COINIT_MULTITHREADED); // COM initialization
     Application->CreateForm(__classid(TForm1), &Form1);
 		Application->Run();
+	CoUninitialize(); // Cleaning up the COM initialization
   }
   catch (Exception &exception)
   {

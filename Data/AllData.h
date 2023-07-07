@@ -43,6 +43,11 @@
 #include "uTPLb_Signatory.hpp"
 #include "uTPLb_Codec.hpp"
 #include <System.SysUtils.hpp>
+#include <Data.Bind.Components.hpp>
+#include <Data.Bind.ObjectScope.hpp>
+#include <REST.Authenticator.Basic.hpp>
+#include <REST.Client.hpp>
+#include <REST.Types.hpp>
 
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
@@ -95,6 +100,10 @@ __published:	// IDE-managed Components
 	TSignatory *AsymSign;
 	TCodec *AsymCodec;
 	TCodec *SymCodec;
+	THTTPBasicAuthenticator *HTTPBaseAuth;
+	TRESTClient *RClient;
+	TRESTRequest *RRequest;
+	TRESTResponse *RResponse;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -139,6 +148,9 @@ public:		// User declarations
 
 	//REST requests
 	int Authentification();
+	void CheckAuthentication();
+	void CheckForAnnouncement();
+    void MakeAnnouncement(String message);
 
 	//Encryption
 	std::unique_ptr<TMemoryStream> privateStream;

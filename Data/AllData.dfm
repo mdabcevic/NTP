@@ -1031,4 +1031,28 @@ object DataModule1: TDataModule1
     BlockCipherId = 'native.AES-128'
     ChainId = 'native.CBC'
   end
+  object HTTPBaseAuth: THTTPBasicAuthenticator
+    Left = 336
+    Top = 592
+  end
+  object RClient: TRESTClient
+    Authenticator = HTTPBaseAuth
+    BaseURL = 'http://localhost:8085/employee'
+    Params = <>
+    SynchronizedEvents = False
+    Left = 424
+    Top = 592
+  end
+  object RRequest: TRESTRequest
+    Client = RClient
+    Params = <>
+    Response = RResponse
+    SynchronizedEvents = False
+    Left = 496
+    Top = 592
+  end
+  object RResponse: TRESTResponse
+    Left = 576
+    Top = 592
+  end
 end

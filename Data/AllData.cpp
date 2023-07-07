@@ -156,6 +156,7 @@ void TDataModule1::Login(UnicodeString username, UnicodeString password){
 	currentUser.Username = MultiQuery->FieldByName("Username")->AsString;
 	//TO DO: handle password? what about other info?
 	currentUser.Password = MultiQuery->FieldByName("Password")->AsString;
+    currentUser.ID = MultiQuery->FieldByName("EmployeeID")->AsInteger;
 	MultiQuery->SQL->Clear(); // clear it for next query just in case
 }
 
@@ -259,4 +260,36 @@ void TDataModule1::SendPublicKey(){
     UDPClient->SendBuffer(buffer);
   }
   //---------------------------------------------------------------------------
+  void TDataModule1::CheckAuthentication(){
+	HTTPBaseAuth->Username = currentUser.Username;
+	HTTPBaseAuth->Password = currentUser.Password;
+    RClient->Authenticator = HTTPBaseAuth;
+  }
 
+  //---------------------------------------------------------------------------
+
+ void TDataModule1::CheckForAnnouncement(){
+	RRequest->Method = rmGET;
+    RRequest->Params->Clear();
+
+    RRequest->Execute();
+
+	ShowMessage(" Latest announcement: " + RResponse->Content);
+ }
+
+ //---------------------------------------------------------------------------
+
+ void TDataModule1::MakeAnnouncement(String message){
+    RRequest->Method = rmPOST;
+    RRequest->Params->Clear();
+
+    RRequest->Params->AddItem()->Name = "message";
+    RRequest->Params->Items[0]->Value = message;
+
+    RRequest->Execute();
+    if (RResponse->StatusCode == 200) {
+        ShowMessage("Message posted successfully!");
+    } else {
+        ShowMessage("Failed to post message: " + RResponse->Content);
+	}
+ }

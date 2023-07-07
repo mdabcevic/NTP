@@ -28,6 +28,8 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Button2Click(TObject *Sender)
 {
+	DataModule1->CheckAuthentication();
+
     int employeeID = DBGrid1->DataSource->DataSet->FieldByName("EmployeeID")->AsInteger;
 	//AnsiString temp = DataModule1->EmployeeQuery->SQL->Text;
 	//DataModule1->EmployeeQuery->Clear();

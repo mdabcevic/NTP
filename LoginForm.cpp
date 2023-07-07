@@ -70,6 +70,9 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 		//ShowMessage(DataModule1->currentUser.AuthToken);
 		DataModule1->SendPublicKey();
 		ShowMessage(DataModule1->SymKey);
+		DataModule1->CheckAuthentication();
+		DataModule1->MakeAnnouncement("test");
+        DataModule1->CheckForAnnouncement();
 	}
     DataModule1->SendJSON();
 //1. registracija:

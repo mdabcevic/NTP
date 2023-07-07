@@ -16,11 +16,6 @@
 class TWebModule1 : public TWebModule
 {
 __published:	// IDE-managed Components
-	TCryptographicLibrary *CryptographicLibrary1;
-	TSignatory *AsymSign;
-	TCodec *AsymCodec;
-	TADOConnection *Connection;
-	TADOQuery *MultiQuery;
 	void __fastcall WebModule1DefaultHandlerAction(TObject *Sender, TWebRequest *Request,
           TWebResponse *Response, bool &Handled);
 	void __fastcall WebModule1ActEmployeesAction(TObject *Sender, TWebRequest *Request,
@@ -28,6 +23,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TWebModule1(TComponent* Owner);
+    TStringList* MessageList = new TStringList();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TWebModule1 *WebModule1;
