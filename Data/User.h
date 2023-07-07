@@ -8,6 +8,7 @@
 class User
 {
 public:
+    int ID;
 	UnicodeString FirstName;
 	UnicodeString LastName;
 	UnicodeString IDNum;

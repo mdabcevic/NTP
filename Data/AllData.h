@@ -142,6 +142,7 @@ public:		// User declarations
 	std::unique_ptr<TMemoryStream> privateStream;
 	std::unique_ptr<TMemoryStream> publicStream;
 	void GenerateAsymKeys();
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDataModule1 *DataModule1;

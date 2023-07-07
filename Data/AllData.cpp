@@ -189,12 +189,6 @@ void TDataModule1::Login(UnicodeString username, UnicodeString password){
 	std::unique_ptr<TIdMultiPartFormDataStream> Stream(new TIdMultiPartFormDataStream());
 	UnicodeString publicKeyFile = "asympublic.bin";
 	publicStream->SaveToFile(publicKeyFile);
-	Stream->AddFile('publickey', publicKeyFile, 'application/octet-stream');
-
-	UnicodeString url = "http://localhost:8085/getsymmetric";
-    HTTP->Request->ContentType = "application/octet-stream";
-	HTTP->Post(url, binaryStream);
-	HTTP = new TIdHTTP(NULL);
-
-
   }
+  //---------------------------------------------------------------------------
+

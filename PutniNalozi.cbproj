@@ -276,17 +276,17 @@
         <FormResources Include="TravelWarrantInputInfoForm.dfm"/>
         <FormResources Include="TravelWarrantsForm.dfm"/>
         <FormResources Include="LoginForm.dfm"/>
+        <FormResources Include="FuelPricingForm.dfm"/>
         <FormResources Include="CustomPurposeInfoInputForm.dfm"/>
         <FormResources Include="Data\AllData.dfm"/>
         <FormResources Include="CarInfoInputForm.dfm"/>
         <FormResources Include="ClientsInfoForm.dfm"/>
         <FormResources Include="CompanyCarsForm.dfm"/>
+        <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <FormResources Include="EmployeesForm.dfm"/>
         <FormResources Include="ExpensesInputInfoForm.dfm"/>
-        <FormResources Include="FuelPricingForm.dfm"/>
-        <FormResources Include="EmployeeInfoInputForm.dfm"/>
-        <FormResources Include="DepartmentsForm.dfm"/>
         <FormResources Include="DownloadResourcesForm.dfm"/>
+        <FormResources Include="DepartmentsForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

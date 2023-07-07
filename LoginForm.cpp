@@ -54,6 +54,9 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 //TO DO:
 
 //grananje:
+	DataModule1->GenerateAsymKeys();
+	//ShowMessage(DataModule1->publicKey);
+	//ShowMessage(DataModule1->privateKey);
 	if(isRegister->Checked){
 		if(pwBox->Text == pwConfirmBox->Text){
 			DataModule1->Registration(usernameBox->Text, pwBox->Text, emailBox->Text);
