@@ -63,7 +63,7 @@ String TForm1::FindAction(String code, TIdContext *AContext){
 //---------------------------------------------------------------------------
  String TForm1::SendXml(TIdContext *AContext){
 
-	//perform action (TO DO: Sends the xml file)
+	//critical section - avoids multiple users meddling with file at same time
 	CriticalSection->Enter();
 	std::unique_ptr<TFileStream> fs(new TFileStream("companycars.xml", fmOpenRead));  //load into memory
 	AContext->Connection->IOHandler->WriteLn(ExtractFileName(fs->FileName));          //send name
