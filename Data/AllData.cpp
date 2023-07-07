@@ -205,4 +205,19 @@ void TDataModule1::SendPublicKey(){
 	//expecting 'done'
 	TCPClient->IOHandler->ReadLn();
 	TCPClient->Disconnect();
+    RequestSymKey();
 }
+  //---------------------------------------------------------------------------
+  void TDataModule1::RequestSymKey(){
+	TCPClient->Connect();
+	TCPClient->IOHandler->WriteLn("RequestSymKey");
+	//ok
+	String response = TCPClient->IOHandler->ReadLn();
+
+	SymKey = TCPClient->IOHandler->ReadLn();
+
+	//done
+	TCPClient->IOHandler->ReadLn();
+	TCPClient->Disconnect();
+
+  }

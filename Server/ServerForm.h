@@ -22,6 +22,11 @@
 #include "../Helpers/JSONHelper.h"
 #include "../Data/Client.h"
 #include "companycars.h"
+#include "uTPLb_BaseNonVisualComponent.hpp"
+#include "uTPLb_Codec.hpp"
+#include "uTPLb_CryptographicLibrary.hpp"
+#include <System.SysUtils.hpp>
+#include "uTPLb_Signatory.hpp"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -29,6 +34,9 @@ __published:	// IDE-managed Components
 	TIdTCPServer *TCPServer;
 	TXMLDocument *XmlDoc;
 	TIdUDPServer *UDPServer;
+	TCodec *AsymCodec;
+	TCryptographicLibrary *AsymLib;
+	TSignatory *AsymSign;
 	void __fastcall TCPServerExecute(TIdContext *AContext);
 	void __fastcall UDPServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
           TIdSocketHandle *ABinding);
@@ -42,6 +50,7 @@ public:		// User declarations
 	String AddToXml(TIdContext *AContext);
 	String SendXml(TIdContext *AContext);
 	String ReceivePublicKey(TIdContext *AContext);
+	String SendSymKey(TIdContext *AContext);
 
     __fastcall TForm1::~TForm1()
 {

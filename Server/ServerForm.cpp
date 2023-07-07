@@ -6,6 +6,10 @@
 #include "ServerForm.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "uTPLb_BaseNonVisualComponent"
+#pragma link "uTPLb_Codec"
+#pragma link "uTPLb_CryptographicLibrary"
+#pragma link "uTPLb_Signatory"
 #pragma resource "*.dfm"
 #include <System.Classes.hpp>
 #include <System.SysUtils.hpp>
@@ -64,6 +68,11 @@ String TForm1::FindAction(String code, TIdContext *AContext){
 		String isCompleted = ReceivePublicKey(AContext);
 		return isCompleted;
 	}
+	else if(code == "RequestSymKey"){
+		AContext->Connection->IOHandler->WriteLn("ok");
+		String isCompleted = SendSymKey(AContext);
+		return isCompleted;
+	}
 }
 //---------------------------------------------------------------------------
  String TForm1::SendXml(TIdContext *AContext){
@@ -101,8 +110,21 @@ CriticalSection->Enter();
 //---------------------------------------------------------------------------
  String TForm1::ReceivePublicKey(TIdContext *AContext){
 	TMemoryStream *publicKeyStream = new TMemoryStream();
+	//receive
 	AContext->Connection->IOHandler->ReadStream(publicKeyStream, -1, false);
-    publicKeyStream->Position = 0; // Reset the stream's position before saving
+
+    publicKeyStream->Position = 0;
 	publicKeyStream->SaveToFile("publickey.bin");
+	return "done";
+ }
+ //---------------------------------------------------------------------------
+ String TForm1::SendSymKey(TIdContext *AContext){
+	std::unique_ptr<TMemoryStream> publickey (new TMemoryStream);
+	String result;
+	publickey->LoadFromFile("publickey.bin");
+	AsymSign->LoadKeysFromStream(publickey.get(), TKeyStoragePartSet() << partPublic);
+	AsymCodec->EncryptString("somereallylongandcomplicatedsymstringkey", result, TEncoding::UTF8);
+    //send
+	AContext->Connection->IOHandler->WriteLn(result);
 	return "done";
  }

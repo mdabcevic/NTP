@@ -141,9 +141,10 @@ public:		// User declarations
 	//Asymetric encryption
 	std::unique_ptr<TMemoryStream> privateStream;
 	std::unique_ptr<TMemoryStream> publicStream;
+    UnicodeString SymKey;
 	void GenerateAsymKeys();
 	void SendPublicKey();
-
+    void RequestSymKey();
 
 };
 //---------------------------------------------------------------------------

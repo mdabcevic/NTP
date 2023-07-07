@@ -68,6 +68,7 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 		//DataModule1->Authentification();
 		//ShowMessage(DataModule1->currentUser.AuthToken);
 		DataModule1->SendPublicKey();
+        ShowMessage(DataModule1->SymKey);
     }
 //1. registracija:
 //1.1 provjerava dostupnost info (username i pw)
