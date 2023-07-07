@@ -142,6 +142,8 @@ public:		// User declarations
 	std::unique_ptr<TMemoryStream> privateStream;
 	std::unique_ptr<TMemoryStream> publicStream;
 	void GenerateAsymKeys();
+	void SendPublicKey();
+
 
 };
 //---------------------------------------------------------------------------

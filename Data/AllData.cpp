@@ -191,4 +191,18 @@ void TDataModule1::Login(UnicodeString username, UnicodeString password){
 	publicStream->SaveToFile(publicKeyFile);
   }
   //---------------------------------------------------------------------------
+void TDataModule1::SendPublicKey(){
+	TCPClient->Connect();
+	TCPClient->IOHandler->WriteLn("SendPublicKey");
+	//expecting 'ok'
+	String response = TCPClient->IOHandler->ReadLn();
 
+	std::unique_ptr<TMemoryStream> publicKeyStream(new TMemoryStream());
+	AsymSign->StoreKeysToStream(publicKeyStream.get(), TKeyStoragePartSet() << partPublic);
+	publicKeyStream->Position = 0;
+	TCPClient->IOHandler->Write(publicKeyStream.get(), 0, true);
+
+	//expecting 'done'
+	TCPClient->IOHandler->ReadLn();
+	TCPClient->Disconnect();
+}

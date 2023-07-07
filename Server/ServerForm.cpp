@@ -59,6 +59,11 @@ String TForm1::FindAction(String code, TIdContext *AContext){
 		String isCompleted = SendXml(AContext);
 		return isCompleted;
 	}
+	else if(code == "SendPublicKey"){
+		AContext->Connection->IOHandler->WriteLn("ok");
+		String isCompleted = ReceivePublicKey(AContext);
+		return isCompleted;
+	}
 }
 //---------------------------------------------------------------------------
  String TForm1::SendXml(TIdContext *AContext){
@@ -94,4 +99,10 @@ CriticalSection->Enter();
 	CriticalSection->Leave();
 }
 //---------------------------------------------------------------------------
-
+ String TForm1::ReceivePublicKey(TIdContext *AContext){
+	TMemoryStream *publicKeyStream = new TMemoryStream();
+	AContext->Connection->IOHandler->ReadStream(publicKeyStream, -1, false);
+    publicKeyStream->Position = 0; // Reset the stream's position before saving
+	publicKeyStream->SaveToFile("publickey.bin");
+	return "done";
+ }

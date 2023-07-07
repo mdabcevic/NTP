@@ -41,6 +41,7 @@ public:		// User declarations
 	String FindAction(String code, TIdContext *AContext);
 	String AddToXml(TIdContext *AContext);
 	String SendXml(TIdContext *AContext);
+	String ReceivePublicKey(TIdContext *AContext);
 
     __fastcall TForm1::~TForm1()
 {
