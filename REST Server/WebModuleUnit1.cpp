@@ -57,7 +57,7 @@ TBytes bytes;
 	bytes = TNetEncoding::Base64->DecodeStringToBytes(&Request->Authorization[6]);
 	login = StringOf(bytes);
 	username = SplitString(login, ":")[0];
-	password = SplitString(login, ":")[0];
+	password = SplitString(login, ":")[1];
 	//Response->Content = "Successfully Authenticated";
 
 	if(Request->MethodType == mtGet){
