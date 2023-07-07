@@ -1019,6 +1019,6 @@ object DataModule1: TDataModule1
     Top = 456
     StreamCipherId = 'native.RSA'
     BlockCipherId = ''
-    ChainId = ''
+    ChainId = 'native.CBC'
   end
 end

@@ -144,7 +144,8 @@ public:		// User declarations
     UnicodeString SymKey;
 	void GenerateAsymKeys();
 	void SendPublicKey();
-    void RequestSymKey();
+	void RequestSymKey();
+    void DecryptAsym();
 
 };
 //---------------------------------------------------------------------------

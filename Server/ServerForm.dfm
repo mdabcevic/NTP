@@ -42,14 +42,14 @@ object Form1: TForm1
     Top = 32
   end
   object AsymCodec: TCodec
-    AsymetricKeySizeInBits = 1024
+    AsymetricKeySizeInBits = 512
     AdvancedOptions2 = []
     CryptoLibrary = AsymLib
     Left = 536
     Top = 96
     StreamCipherId = 'native.RSA'
     BlockCipherId = ''
-    ChainId = ''
+    ChainId = 'native.CBC'
   end
   object AsymLib: TCryptographicLibrary
     Left = 536

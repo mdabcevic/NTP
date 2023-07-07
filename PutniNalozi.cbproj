@@ -116,6 +116,7 @@
         <LinkPackageStatics>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib;frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib;soaprtl.lib;inet.lib;bindcomp.lib;bindcompvcl.lib;RESTComponents.lib;CustomIPTransport.lib;LockBox3CR.lib</LinkPackageStatics>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <FinalOutputDir>.</FinalOutputDir>
+        <Debugger_DebugSourcePath>C:\Users\Maja\Downloads\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>

@@ -189,6 +189,9 @@ void TDataModule1::Login(UnicodeString username, UnicodeString password){
 	std::unique_ptr<TIdMultiPartFormDataStream> Stream(new TIdMultiPartFormDataStream());
 	UnicodeString publicKeyFile = "asympublic.bin";
 	publicStream->SaveToFile(publicKeyFile);
+
+	UnicodeString privateKeyFile = "asymprivate.bin";
+    privateStream->SaveToFile(privateKeyFile);
   }
   //---------------------------------------------------------------------------
 void TDataModule1::SendPublicKey(){
@@ -205,7 +208,8 @@ void TDataModule1::SendPublicKey(){
 	//expecting 'done'
 	TCPClient->IOHandler->ReadLn();
 	TCPClient->Disconnect();
-    RequestSymKey();
+	RequestSymKey();
+
 }
   //---------------------------------------------------------------------------
   void TDataModule1::RequestSymKey(){
@@ -219,5 +223,16 @@ void TDataModule1::SendPublicKey(){
 	//done
 	TCPClient->IOHandler->ReadLn();
 	TCPClient->Disconnect();
-
+	if (SymKey.Length() > 0) {
+		DecryptAsym();
+	}
+  }
+  //---------------------------------------------------------------------------
+  void TDataModule1::DecryptAsym(){
+	String key;
+	std::unique_ptr<TMemoryStream> privatekey (new TMemoryStream);
+	privatekey->LoadFromFile("asymprivate.bin");
+	AsymSign->LoadKeysFromStream(privatekey.get(), TKeyStoragePartSet() << partPrivate);
+	AsymCodec->DecryptString(key, SymKey, TEncoding::UTF8);
+	SymKey = key;
   }

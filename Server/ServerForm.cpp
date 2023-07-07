@@ -124,6 +124,7 @@ CriticalSection->Enter();
 	publickey->LoadFromFile("publickey.bin");
 	AsymSign->LoadKeysFromStream(publickey.get(), TKeyStoragePartSet() << partPublic);
 	AsymCodec->EncryptString("somereallylongandcomplicatedsymstringkey", result, TEncoding::UTF8);
+    ShowMessage(result);
     //send
 	AContext->Connection->IOHandler->WriteLn(result);
 	return "done";
