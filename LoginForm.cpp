@@ -54,6 +54,7 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 //TO DO:
 
 //grananje:
+
 	DataModule1->GenerateAsymKeys();
 	//ShowMessage(DataModule1->publicKey);
 	//ShowMessage(DataModule1->privateKey);
@@ -69,7 +70,8 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 		//ShowMessage(DataModule1->currentUser.AuthToken);
 		DataModule1->SendPublicKey();
 		ShowMessage(DataModule1->SymKey);
-    }
+	}
+    DataModule1->SendJSON();
 //1. registracija:
 //1.1 provjerava dostupnost info (username i pw)
 //a) false > warning message: username/email vec u uporabi

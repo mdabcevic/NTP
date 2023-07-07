@@ -72,4 +72,14 @@ object Form1: TForm1
     Left = 128
     Top = 96
   end
+  object SymCodec: TCodec
+    AsymetricKeySizeInBits = 1024
+    AdvancedOptions2 = []
+    CryptoLibrary = AsymLib
+    Left = 440
+    Top = 96
+    StreamCipherId = 'native.StreamToBlock'
+    BlockCipherId = 'native.AES-128'
+    ChainId = 'native.CBC'
+  end
 end

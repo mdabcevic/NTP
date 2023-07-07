@@ -115,6 +115,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <LinkPackageStatics>LockBox3CR.lib</LinkPackageStatics>
+        <Debugger_DebugSourcePath>C:\Users\Maja\Downloads\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>

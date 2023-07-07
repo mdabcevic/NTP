@@ -123,7 +123,7 @@ CriticalSection->Enter();
 	String result;
 	publickey->LoadFromFile("publickey.bin");
 	AsymSign->LoadKeysFromStream(publickey.get(), TKeyStoragePartSet() << partPublic);
-	AsymCodec->EncryptString("somereallylongandcomplicatedsymstringkey", result, TEncoding::UTF8);
+	AsymCodec->EncryptString(SymKey, result, TEncoding::UTF8);
     ShowMessage(result);
     //send
 	AContext->Connection->IOHandler->WriteLn(result);
@@ -136,8 +136,18 @@ void __fastcall TForm1::UDPFileServerUDPRead(TIdUDPListenerThread *AThread, cons
 		  TIdSocketHandle *ABinding)
 {
 	 std::unique_ptr<TMemoryStream> fileStream(new TMemoryStream());
-    fileStream->WriteBuffer(&AData[0], AData.Length);
-    fileStream->SaveToFile("clients.json");
+	fileStream->WriteBuffer(&AData[0], AData.Length);
+	fileStream->SaveToFile("clients.json.encrypted");
+
+	SymCodec->Password = SymKey;
+	std::unique_ptr<TMemoryStream> encrypted (new TMemoryStream);
+	encrypted->LoadFromFile("clients.json.encrypted");
+	std::unique_ptr<TFileStream> decrypted (new TFileStream("clients.json", fmCreate));
+	decrypted->Position = 0;
+	SymCodec->DecryptStream(decrypted.get(), encrypted.get());
+	//decrypte
+
+	//decrypted->SaveToFile("clients.json");
 
 }
 //---------------------------------------------------------------------------

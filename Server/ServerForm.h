@@ -38,6 +38,7 @@ __published:	// IDE-managed Components
 	TCryptographicLibrary *AsymLib;
 	TSignatory *AsymSign;
 	TIdUDPServer *UDPFileServer;
+	TCodec *SymCodec;
 	void __fastcall TCPServerExecute(TIdContext *AContext);
 	void __fastcall UDPServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
           TIdSocketHandle *ABinding);
@@ -46,6 +47,8 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
+
+	String SymKey = "somereallylongandcomplicatedsymstringkey";
 
 	TCriticalSection *CriticalSection = new TCriticalSection;
 	// server actions
