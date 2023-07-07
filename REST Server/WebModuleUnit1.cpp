@@ -3,9 +3,15 @@
 #include "WebModuleUnit1.h"
 #include <System.NetEncoding.hpp>
 #include <System.StrUtils.hpp>
+#include <System.JSON.hpp>
+
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "uTPLb_BaseNonVisualComponent"
+#pragma link "uTPLb_CryptographicLibrary"
+#pragma link "uTPLb_Signatory"
+#pragma link "uTPLb_Codec"
 #pragma resource "*.dfm"
 
 TComponentClass WebModuleClass = __classid(TWebModule1);
@@ -50,7 +56,7 @@ void __fastcall TWebModule1::WebModule1AuthActAction(TObject *Sender, TWebReques
 	login = StringOf(bytes);
 	username = SplitString(login, ":")[0];
 	password = SplitString(login, ":")[0];
-	Response->Content = "8129";
+	Response->Content = "Successfully Authenticated";
 
 	//use given code to avoid logging in on other res.
 
@@ -60,3 +66,5 @@ void __fastcall TWebModule1::WebModule1AuthActAction(TObject *Sender, TWebReques
 
 }
 //---------------------------------------------------------------------------
+
+
