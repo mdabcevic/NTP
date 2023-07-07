@@ -6,6 +6,7 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
+
 // Constructor
 WRSettingsHelper::WRSettingsHelper()
 {

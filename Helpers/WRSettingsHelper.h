@@ -11,7 +11,13 @@ Registry.
 *
 *
 */
- class WRSettingsHelper
+#ifdef EXPORTS
+	#define DLL_EXPORT __declspec(dllexport)
+#else
+	#define DLL_EXPORT __declspec(dllimport)
+#endif
+
+ class DLL_EXPORT WRSettingsHelper
 {
 public:
 	TRegistry *registry = new TRegistry;
