@@ -997,8 +997,8 @@ object DataModule1: TDataModule1
     Top = 592
   end
   object AsymCryptLib: TCryptographicLibrary
-    Left = 704
-    Top = 568
+    Left = 1016
+    Top = 560
   end
   object MultiQuery: TADOQuery
     Connection = Connection
@@ -1008,17 +1008,27 @@ object DataModule1: TDataModule1
   end
   object AsymSign: TSignatory
     Codec = AsymCodec
-    Left = 704
-    Top = 512
+    Left = 1016
+    Top = 504
   end
   object AsymCodec: TCodec
     AsymetricKeySizeInBits = 512
     AdvancedOptions2 = []
     CryptoLibrary = AsymCryptLib
-    Left = 704
-    Top = 456
+    Left = 1016
+    Top = 448
     StreamCipherId = 'native.RSA'
     BlockCipherId = ''
+    ChainId = 'native.CBC'
+  end
+  object SymCodec: TCodec
+    AsymetricKeySizeInBits = 1024
+    AdvancedOptions2 = []
+    CryptoLibrary = AsymCryptLib
+    Left = 1016
+    Top = 616
+    StreamCipherId = 'native.StreamToBlock'
+    BlockCipherId = 'native.AES-128'
     ChainId = 'native.CBC'
   end
 end

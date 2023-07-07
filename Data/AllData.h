@@ -94,6 +94,7 @@ __published:	// IDE-managed Components
 	TADOQuery *MultiQuery;
 	TSignatory *AsymSign;
 	TCodec *AsymCodec;
+	TCodec *SymCodec;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -139,7 +140,7 @@ public:		// User declarations
 	//REST requests
 	int Authentification();
 
-	//Asymetric encryption
+	//Encryption
 	std::unique_ptr<TMemoryStream> privateStream;
 	std::unique_ptr<TMemoryStream> publicStream;
     UnicodeString SymKey;
@@ -147,6 +148,7 @@ public:		// User declarations
 	void SendPublicKey();
 	void RequestSymKey();
 	void DecryptAsym();
+    //void SymEncryptFile();
 
 
 };

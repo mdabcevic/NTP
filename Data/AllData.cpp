@@ -238,9 +238,19 @@ void TDataModule1::SendPublicKey(){
   }
   //---------------------------------------------------------------------------
   void TDataModule1::SendJSON(){
-    UDPClient->Port = 16686;
+
+	//encrypt - extract to another method?
+	SymCodec->Password = SymKey;
+	std::unique_ptr<TMemoryStream> original (new TMemoryStream);
+	original->LoadFromFile("clients.json");
+	std::unique_ptr<TFileStream> encrypted (new TFileStream("clients.json.encrypted", fmCreate));
+    SymCodec->EncryptStream(original.get(), encrypted.get());
+	encrypted.reset();
+    //original.reset();
+
+	UDPClient->Port = 16686;
 	TMemoryStream* fileStream = new TMemoryStream();
-	fileStream->LoadFromFile("clients.json");
+	fileStream->LoadFromFile("clients.json.encrypted");
 	fileStream->Position = 0;
 	int size = fileStream->Size;
 	TIdBytes buffer;
@@ -248,3 +258,5 @@ void TDataModule1::SendPublicKey(){
 	fileStream->ReadBuffer(&buffer[0], size);
     UDPClient->SendBuffer(buffer);
   }
+  //---------------------------------------------------------------------------
+
