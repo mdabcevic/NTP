@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/07/07 21:51:31.501,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/07/07 21:54:39.684,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\StaticLib\Unit1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2023/07/07 21:54:39.684,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\StaticLib\Unit1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/07/07 21:54:39.686,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\StaticLib\StaticLibrary.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2023/07/07 21:54:47.938,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\StaticLib\Sample.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\StaticLib\Unit1.h</Transaction>
+    <Transaction>2023/07/07 21:54:47.938,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\StaticLib\Sample.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\StaticLib\Unit1.cpp</Transaction>
+  </Transactions>
+</BorlandProject>
