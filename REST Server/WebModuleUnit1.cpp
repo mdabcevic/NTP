@@ -8,10 +8,6 @@
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
-#pragma link "uTPLb_BaseNonVisualComponent"
-#pragma link "uTPLb_CryptographicLibrary"
-#pragma link "uTPLb_Signatory"
-#pragma link "uTPLb_Codec"
 #pragma resource "*.dfm"
 
 TComponentClass WebModuleClass = __classid(TWebModule1);
