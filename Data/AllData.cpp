@@ -117,9 +117,9 @@ void TDataModule1::RequestXMLFile(){
 }
 //---------------------------------------------------------------------------
 void TDataModule1::DeleteFromXml(int index){
-
+	UDPClient->Port = 16138;
 	UDPClient->SendBuffer(RawToBytes(&index, sizeof(index)));
-    RequestXMLFile();
+	RequestXMLFile();
 }
 //---------------------------------------------------------------------------
 
@@ -235,4 +235,16 @@ void TDataModule1::SendPublicKey(){
 	AsymSign->LoadKeysFromStream(privatekey.get(), TKeyStoragePartSet() << partPrivate);
 	AsymCodec->DecryptString(key, SymKey, TEncoding::UTF8);
 	SymKey = key;
+  }
+  //---------------------------------------------------------------------------
+  void TDataModule1::SendJSON(){
+    UDPClient->Port = 16686;
+	TMemoryStream* fileStream = new TMemoryStream();
+	fileStream->LoadFromFile("clients.json");
+	fileStream->Position = 0;
+	int size = fileStream->Size;
+	TIdBytes buffer;
+	buffer.Length = size;
+	fileStream->ReadBuffer(&buffer[0], size);
+    UDPClient->SendBuffer(buffer);
   }

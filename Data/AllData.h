@@ -124,6 +124,7 @@ public:		// User declarations
 	//UDP requests
 	void DeleteFromXml(int index);
 	//to do: send client files to the server
+	void SendJSON();
 
 	//HASH and encryption
 	UnicodeString GeneratePassword(UnicodeString username, UnicodeString password);
@@ -145,7 +146,8 @@ public:		// User declarations
 	void GenerateAsymKeys();
 	void SendPublicKey();
 	void RequestSymKey();
-    void DecryptAsym();
+	void DecryptAsym();
+
 
 };
 //---------------------------------------------------------------------------

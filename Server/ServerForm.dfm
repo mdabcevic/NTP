@@ -60,4 +60,16 @@ object Form1: TForm1
     Left = 536
     Top = 160
   end
+  object UDPFileServer: TIdUDPServer
+    Active = True
+    Bindings = <
+      item
+        IP = '0.0.0.0'
+        Port = 16686
+      end>
+    DefaultPort = 0
+    OnUDPRead = UDPFileServerUDPRead
+    Left = 128
+    Top = 96
+  end
 end

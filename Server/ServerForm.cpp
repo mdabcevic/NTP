@@ -129,3 +129,17 @@ CriticalSection->Enter();
 	AContext->Connection->IOHandler->WriteLn(result);
 	return "done";
  }
+
+
+
+void __fastcall TForm1::UDPFileServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
+		  TIdSocketHandle *ABinding)
+{
+	 std::unique_ptr<TMemoryStream> fileStream(new TMemoryStream());
+    fileStream->WriteBuffer(&AData[0], AData.Length);
+    fileStream->SaveToFile("clients.json");
+
+}
+//---------------------------------------------------------------------------
+
+

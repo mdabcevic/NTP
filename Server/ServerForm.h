@@ -37,8 +37,11 @@ __published:	// IDE-managed Components
 	TCodec *AsymCodec;
 	TCryptographicLibrary *AsymLib;
 	TSignatory *AsymSign;
+	TIdUDPServer *UDPFileServer;
 	void __fastcall TCPServerExecute(TIdContext *AContext);
 	void __fastcall UDPServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
+          TIdSocketHandle *ABinding);
+	void __fastcall UDPFileServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
           TIdSocketHandle *ABinding);
 private:	// User declarations
 public:		// User declarations

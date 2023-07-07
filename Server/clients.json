@@ -1,0 +1,67 @@
+{
+  "clients": [
+    {
+      "CompanyName": "KBC Rebro",
+      "Address": "Hrusevecka 7 Zagreb",
+      "IdentificationNumber": "12345",
+      "Email": "rebro@bolnica.hr",
+      "ContactPerson": "Pero Krokanic"
+    },
+    {
+      "CompanyName": "Ljekarna Slavonski Brod",
+      "Address": "Vjekoslava Klaica 10 Slavonski Brod",
+      "IdentificationNumber": "11111",
+      "Email": "slbrod@ljekarne.hr",
+      "ContactPerson": "Ivana Rajkovic"
+    },
+    {
+      "CompanyName": "o",
+      "Address": "o",
+      "IdentificationNumber": "o",
+      "Email": "o",
+      "ContactPerson": "o"
+    },
+    {
+      "CompanyName": "p",
+      "Address": "p",
+      "IdentificationNumber": "p",
+      "Email": "pp",
+      "ContactPerson": "p"
+    },
+    {
+      "CompanyName": "g",
+      "Address": "g",
+      "IdentificationNumber": "g",
+      "Email": "g",
+      "ContactPerson": "g"
+    },
+    {
+      "CompanyName": "asf",
+      "Address": "asf",
+      "IdentificationNumber": "sdggb",
+      "Email": "dfg",
+      "ContactPerson": "fdh"
+    },
+    {
+      "CompanyName": "p",
+      "Address": "p",
+      "IdentificationNumber": "p",
+      "Email": "p",
+      "ContactPerson": "p"
+    },
+    {
+      "CompanyName": "k",
+      "Address": "k",
+      "IdentificationNumber": "k",
+      "Email": "k",
+      "ContactPerson": "k"
+    },
+    {
+      "CompanyName": "l",
+      "Address": "l",
+      "IdentificationNumber": "l",
+      "Email": "l",
+      "ContactPerson": "l"
+    }
+  ]
+}
