@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Login'
   ClientHeight = 633
-  ClientWidth = 566
+  ClientWidth = 1033
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -50,6 +50,7 @@ object Form1: TForm1
     Height = 25
     Center = True
     Stretch = True
+    OnClick = ImgHrClick
   end
   object ImgEn: TImage
     Left = 293
@@ -61,8 +62,8 @@ object Form1: TForm1
   object ActionLabel: TLabel
     Left = 696
     Top = 48
-    Width = 314
-    Height = 34
+    Width = 260
+    Height = 30
     Alignment = taCenter
     Caption = 'What would you like to do?'
     Font.Charset = ANSI_CHARSET
@@ -3720,7 +3721,7 @@ object Form1: TForm1
     object WelcomeLabel: TLabel
       Left = 24
       Top = 3
-      Width = 145
+      Width = 95
       Height = 30
       Alignment = taCenter
       Caption = 'Welcome!'
@@ -3734,56 +3735,56 @@ object Form1: TForm1
     object Username2Label: TLabel
       Left = 16
       Top = 216
-      Width = 145
+      Width = 59
       Height = 15
       Caption = 'Username: '
     end
     object FirstNameLabel: TLabel
       Left = 16
       Top = 253
-      Width = 145
+      Width = 63
       Height = 15
       Caption = 'First Name: '
     end
     object SecondNameLabel: TLabel
       Left = 16
       Top = 292
-      Width = 145
+      Width = 62
       Height = 15
       Caption = 'Last Name: '
     end
     object Email2Label: TLabel
       Left = 16
       Top = 333
-      Width = 145
+      Width = 32
       Height = 15
       Caption = 'Email:'
     end
     object PhoneLabel: TLabel
       Left = 16
       Top = 374
-      Width = 145
+      Width = 37
       Height = 15
       Caption = 'Phone:'
     end
     object DepartmentLabel: TLabel
       Left = 16
       Top = 411
-      Width = 145
+      Width = 66
       Height = 15
       Caption = 'Department:'
     end
     object PIDLabel: TLabel
       Left = 16
       Top = 448
-      Width = 145
+      Width = 21
       Height = 15
       Caption = 'PID:'
     end
     object EmployeeIDLabel: TLabel
       Left = 16
       Top = 479
-      Width = 145
+      Width = 31
       Height = 15
       Caption = 'Code:'
     end

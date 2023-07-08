@@ -17,6 +17,7 @@
 #include "AvatarGeneration.h"
 #include <Vcl.Menus.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
+#include <map>
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
@@ -115,11 +116,13 @@ __published:	// IDE-managed Components
 	void __fastcall SeeDepartmentsClick(TObject *Sender);
 	void __fastcall AllCarsClick(TObject *Sender);
 	void __fastcall SeeClientsClick(TObject *Sender);
+	void __fastcall ImgHrClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 	//TMemoryStream* picture;
 	void ShowImg(TImage* image, TMemoryStream* memory);
+	std::map<String, std::map<String, String>> translation;
 
 	void ApplySettings();
 	void VisualChangeLogin();

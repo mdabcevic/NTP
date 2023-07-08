@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 #include "CountryInfoService.h"
 #include <vcl.h>
 #pragma hdrstop
@@ -47,6 +47,257 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 {
     //move this to onShow + set isRegister to false
 	loginButton->Top = 224;
+
+	translation["ActionLabel"] = {
+		{
+			{"EN", "What would you like to do?"},
+			{"HR", "Odaberite željenu radnju:"}
+
+		}
+	};
+
+	translation["AddExpensesButton"] = {
+		{
+			{"EN", "Something else..."},
+			{"HR", "Ostale radnje"}
+		}
+	};
+
+	translation["AddExpensesButton"] = {
+		{
+			{"EN", "Upload travel expenses"},
+			{"HR", "Priložite skenirane račune"}
+		}
+	};
+
+	translation["AddPurposeButton"] = {
+		{
+			{"EN", "Add a purpose"},
+			{"HR", "Dodajte svrhu službenog putovanja"}
+		}
+	};
+
+	translation["CreateAvatarButton"] = {
+		{
+			{"EN", "Create new profile picture"},
+			{"HR", "Izradite novu profilnu sličicu"}
+		}
+	};
+
+	translation["DownloadButton"] = {
+		{
+			{"EN", "Download company resources"},
+			{"HR", "Preuzmite dodatne materijale"}
+		}
+	};
+
+	translation["SeeDepartments"] = {
+		{
+			{"EN", "All departments"},
+			{"HR", "Pregled svih odjela"}
+		}
+	};
+
+	translation["EmployeesBox"] = {
+		{
+			{"EN", "Employees, clients and cars"},
+			{"HR", "Zaposlenici, klijenti i automobili"}
+		}
+	};
+
+    translation["AddPurposeButton"] = {
+		{
+			{"EN", "Add new company car"},
+			{"HR", "Upišite vozilo na popis"}
+		}
+	};
+
+	translation["AddClient"] = {
+		{
+			{"EN", "Add new client"},
+			{"HR", "Upišite klijenta na popis"}
+		}
+	};
+
+	translation["AddEmployee"] = {
+		{
+			{"EN", "Add new employee"},
+			{"HR", "Upišite novog zaposlenika"}
+		}
+	};
+
+	translation["AllCars"] = {
+		{
+			{"EN", "See all company cars"},
+			{"HR", "Pregled svih službenih vozila"}
+		}
+	};
+
+	translation["AllEmployees"] = {
+		{
+			{"EN", "See all employees"},
+			{"HR", "Pregled svih zaposlenika"}
+		}
+	};
+
+	translation["SeeClients"] = {
+		{
+			{"EN", "See all clients"},
+			{"HR", "Pregled svih klijenata"}
+		}
+	};
+
+	translation["isRegister"] = {
+		{
+			{"EN", "I'd like to register"},
+			{"HR", "Želim se registrirati"}
+		}
+	};
+
+	translation["isRememberMe"] = {
+		{
+			{"EN", "Remember me"},
+			{"HR", "Zapamti postavke za prijavu"}
+		}
+	};
+
+	translation["loginButton"] = {
+		{
+			{"EN", "Login"},
+			{"HR", "Prijava"}
+		}
+	};
+
+	translation["pwConfirmLabel"] = {
+		{
+			{"EN", "Password confirmation:"},
+			{"HR", "Potvrdite lozinku:"}
+		}
+	};
+
+	translation["pwLabel"] = {
+		{
+			{"EN", "Password"},
+			{"HR", "Lozinka"}
+		}
+	};
+
+	translation["usernameLabel"] = {
+		{
+			{"EN", "Username: "},
+			{"HR", "Korisničko ime: "}
+		}
+	};
+
+	translation["DepartmentLabel"] = {
+		{
+			{"EN", "Department: "},
+			{"HR", "Odjel: "}
+		}
+	};
+
+	translation["EmployeeIDLabel"] = {
+		{
+			{"EN", "Code: "},
+			{"HR", "Šifra radnika: "}
+		}
+	};
+
+	translation["FirstNameLabel"] = {
+		{
+			{"EN", "First Name: "},
+			{"HR", "Ime: "}
+		}
+	};
+
+	translation["SecondNameLabel"] = {
+		{
+			{"EN", "Last Name: "},
+			{"HR", "Prezime: "}
+		}
+	};
+
+	translation["PhoneLabel"] = {
+		{
+			{"EN", "Phone: "},
+			{"HR", "Broj mobitela: "}
+		}
+	};
+
+	translation["PID"] = {
+		{
+			{"EN", "PID"},
+			{"HR", "OIB"}
+		}
+	};
+
+    translation["AddPurposeButton"] = {
+		{
+			{"EN", "Add a purpose"},
+			{"HR", "Dodajte svrhu službenog putovanja"}
+		}
+	};
+
+	translation["Username2Label"] = {
+		{
+			{"EN", "Username: "},
+			{"HR", "Korisničko ime: "}
+		}
+	};
+
+	translation["WelcomeLabel"] = {
+		{
+			{"EN", "Welcome!"},
+			{"HR", "Dobrodošli!"}
+		}
+	};
+
+	translation["WarrantsBox"] = {
+		{
+			{"EN", "Warrants..."},
+			{"HR", "Putni nalozi..."}
+		}
+	};
+
+	translation["AllWarrants"] = {
+		{
+			{"EN", "See all"},
+			{"HR", "Pregled svih putnih naloga"}
+		}
+	};
+
+	translation["AuthorizeBox"] = {
+		{
+			{"EN", "Authorize"},
+			{"HR", "Potpišite nalog"}
+		}
+	};
+
+	translation["NewWarrant"] = {
+		{
+			{"EN", "Add new"},
+			{"HR", "Kreirajte novi putni nalog"}
+		}
+	};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::loginButtonClick(TObject *Sender)
@@ -362,4 +613,10 @@ void __fastcall TForm1::SeeClientsClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::ImgHrClick(TObject *Sender)
+{
+    DataModule1->translateForm(this, "HR", translation);
+}
+//---------------------------------------------------------------------------
 
