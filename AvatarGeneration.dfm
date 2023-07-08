@@ -2,7 +2,7 @@ object Form14: TForm14
   Left = 0
   Top = 0
   Caption = 'Avatar generation (Stickers)'
-  ClientHeight = 441
+  ClientHeight = 386
   ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,15 +13,15 @@ object Form14: TForm14
   OnShow = FormShow
   TextHeight = 15
   object Memo1: TMemo
-    Left = 8
-    Top = 190
+    Left = 9
+    Top = 134
     Width = 633
     Height = 244
     TabOrder = 0
   end
   object LabeledEdit1: TLabeledEdit
-    Left = 8
-    Top = 159
+    Left = 9
+    Top = 103
     Width = 241
     Height = 23
     EditLabel.Width = 175
@@ -31,16 +31,16 @@ object Form14: TForm14
     Text = 'enNn3xpnTW2n5dVNy_gLZA'
   end
   object Button1: TButton
-    Left = 487
-    Top = 159
+    Left = 488
+    Top = 103
     Width = 154
     Height = 25
     Caption = 'Go'
     TabOrder = 2
   end
   object LabeledEdit2: TLabeledEdit
-    Left = 255
-    Top = 159
+    Left = 256
+    Top = 103
     Width = 226
     Height = 23
     EditLabel.Width = 107

@@ -101,7 +101,7 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 void __fastcall TForm1::FormShow(TObject *Sender)
 {
 	//move into thread with keygen, sendkey & sendJSON
-
+    Inconvenient();
     LoadIcons *threadedLoad = new LoadIcons(false);
 
 
@@ -139,9 +139,9 @@ void __fastcall TForm1::isRememberMeClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Button1Click(TObject *Sender)
+void __fastcall TForm1::AddPurposeButtonClick(TObject *Sender)
 {
-	Form4->ShowModal();
+	Form11->ShowModal();
 
 }
 //---------------------------------------------------------------------------
@@ -166,7 +166,7 @@ void __fastcall TForm1::BClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TForm1::Button4Click(TObject *Sender)
+void __fastcall TForm1::WarrantsButtonClick(TObject *Sender)
 {
 
     Form9->ShowModal();
@@ -175,7 +175,7 @@ void __fastcall TForm1::Button4Click(TObject *Sender)
 
 void __fastcall TForm1::Button5Click(TObject *Sender)
 {
-    Form10->ShowModal();
+	Form10->ShowModal();
 }
 //---------------------------------------------------------------------------
 
@@ -195,7 +195,7 @@ void __fastcall TForm1::Button8Click(TObject *Sender)
 {
 	//Form13->ShowModal();       moved to dll
 	TForm13 *Download = new TForm13(this);
-    Download->ShowModal();
+	Download->ShowModal();
 
 
 }
@@ -290,3 +290,62 @@ void TForm1::VisualChangeLogin()
 	isRegister->Visible = false;
     isRememberMe->Visible = false;
 }
+//---------------------------------------------------------------------------
+void TForm1::Inconvenient()
+{
+	WarrantsBox->SendToBack();
+	//NewWarrantButton->BringToFront();
+    //WarrantsButton->BringToFront();
+
+}
+void __fastcall TForm1::AllWarrantsClick(TObject *Sender)
+{
+    Form9->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::NewWarrantClick(TObject *Sender)
+{
+    Form7->CreateMode();
+    Form7->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::AllEmployeesClick(TObject *Sender)
+{
+	Form4->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::DownloadButtonClick(TObject *Sender)
+{
+	TForm13 *Download = new TForm13(this);
+	Download->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CreateAvatarButtonClick(TObject *Sender)
+{
+	TForm14 *Avatars = new TForm14(this);
+	Avatars->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SeeDepartmentsClick(TObject *Sender)
+{
+	Form5->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::AllCarsClick(TObject *Sender)
+{
+	Form12->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SeeClientsClick(TObject *Sender)
+{
+	Form10->ShowModal();
+}
+//---------------------------------------------------------------------------
+

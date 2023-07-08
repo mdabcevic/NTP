@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Login'
-  ClientHeight = 479
-  ClientWidth = 624
+  ClientHeight = 633
+  ClientWidth = 1070
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -57,6 +57,55 @@ object Form1: TForm1
     Width = 31
     Height = 25
     Stretch = True
+  end
+  object ActionLabel: TLabel
+    Left = 16
+    Top = 382
+    Width = 314
+    Height = 30
+    Alignment = taCenter
+    Caption = 'What would you like to do?'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object WarrantsBox: TGroupBox
+    Left = 24
+    Top = 418
+    Width = 314
+    Height = 69
+    Caption = 'Warrants...'
+    TabOrder = 8
+    object AuthorizeButton: TButton
+      Left = 207
+      Top = 25
+      Width = 90
+      Height = 25
+      Caption = 'Authorize'
+      Enabled = False
+      TabOrder = 0
+    end
+    object AllWarrants: TButton
+      Left = 16
+      Top = 24
+      Width = 91
+      Height = 25
+      Caption = 'See all'
+      TabOrder = 1
+      OnClick = AllWarrantsClick
+    end
+    object NewWarrant: TButton
+      Left = 113
+      Top = 24
+      Width = 88
+      Height = 25
+      Caption = 'Add new'
+      TabOrder = 2
+      OnClick = NewWarrantClick
+    end
   end
   object usernameBox: TEdit
     Left = 208
@@ -117,112 +166,12 @@ object Form1: TForm1
     TabOrder = 6
     OnClick = isRememberMeClick
   end
-  object Button1: TButton
-    Left = 8
-    Top = 42
-    Width = 132
-    Height = 25
-    Caption = 'Employees'
-    TabOrder = 7
-    Visible = False
-    OnClick = Button1Click
-  end
-  object Button2: TButton
-    Left = 8
-    Top = 74
-    Width = 132
-    Height = 25
-    Caption = 'Departments'
-    TabOrder = 8
-    Visible = False
-    OnClick = Button2Click
-  end
-  object Button3: TButton
-    Left = 8
-    Top = 105
-    Width = 132
-    Height = 25
-    Caption = 'Add expenses'
-    TabOrder = 9
-    Visible = False
-    OnClick = Button3Click
-  end
-  object B: TButton
-    Left = 8
-    Top = 136
-    Width = 132
-    Height = 25
-    Caption = 'Add warrant'
-    TabOrder = 10
-    Visible = False
-    OnClick = BClick
-  end
-  object Button4: TButton
-    Left = 8
-    Top = 11
-    Width = 132
-    Height = 25
-    Caption = 'Travel Warrants'
-    TabOrder = 11
-    Visible = False
-    OnClick = Button4Click
-  end
-  object Button5: TButton
-    Left = 8
-    Top = 167
-    Width = 132
-    Height = 25
-    Caption = 'Clients'
-    TabOrder = 12
-    Visible = False
-    OnClick = Button5Click
-  end
-  object Button6: TButton
-    Left = 8
-    Top = 198
-    Width = 132
-    Height = 25
-    Caption = 'Button6'
-    TabOrder = 13
-    Visible = False
-    OnClick = Button6Click
-  end
-  object Button7: TButton
-    Left = 8
-    Top = 230
-    Width = 132
-    Height = 25
-    Caption = 'Button7'
-    TabOrder = 14
-    Visible = False
-    OnClick = Button7Click
-  end
-  object Button8: TButton
-    Left = 8
-    Top = 261
-    Width = 132
-    Height = 25
-    Caption = 'Button8'
-    TabOrder = 15
-    Visible = False
-    OnClick = Button8Click
-  end
-  object Button9: TButton
-    Left = 8
-    Top = 292
-    Width = 132
-    Height = 25
-    Caption = 'Button9'
-    TabOrder = 16
-    Visible = False
-    OnClick = Button9Click
-  end
   object UserInfoRibbon: TGroupBox
-    Left = 624
-    Top = 8
+    Left = 608
+    Top = 72
     Width = 193
     Height = 526
-    TabOrder = 17
+    TabOrder = 7
     Visible = False
     object Image1: TImage
       Left = 16
@@ -233,8 +182,9 @@ object Form1: TForm1
     object Label1: TLabel
       Left = 16
       Top = 20
-      Width = 95
+      Width = 145
       Height = 30
+      Alignment = taCenter
       Caption = 'Welcome!'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -246,58 +196,171 @@ object Form1: TForm1
     object Label2: TLabel
       Left = 16
       Top = 216
-      Width = 59
+      Width = 145
       Height = 15
       Caption = 'Username: '
     end
     object Label3: TLabel
       Left = 16
-      Top = 255
-      Width = 63
+      Top = 253
+      Width = 145
       Height = 15
       Caption = 'First Name: '
     end
     object Label4: TLabel
       Left = 16
       Top = 290
-      Width = 62
+      Width = 145
       Height = 15
       Caption = 'Last Name: '
     end
     object Label5: TLabel
       Left = 16
       Top = 333
-      Width = 32
+      Width = 145
       Height = 15
       Caption = 'Email:'
     end
     object Label6: TLabel
       Left = 16
       Top = 374
-      Width = 37
+      Width = 145
       Height = 15
       Caption = 'Phone:'
     end
     object Label7: TLabel
       Left = 16
       Top = 411
-      Width = 66
+      Width = 145
       Height = 15
       Caption = 'Department:'
     end
     object Label8: TLabel
       Left = 16
       Top = 448
-      Width = 21
+      Width = 145
       Height = 15
       Caption = 'PID:'
     end
     object Label9: TLabel
       Left = 16
       Top = 479
-      Width = 31
+      Width = 145
       Height = 15
       Caption = 'Code:'
+    end
+  end
+  object EmployeesBox: TGroupBox
+    Left = 24
+    Top = 493
+    Width = 314
+    Height = 132
+    Caption = 'Employees, clients and cars'
+    TabOrder = 9
+    object AllEmployees: TButton
+      Left = 16
+      Top = 30
+      Width = 138
+      Height = 25
+      Caption = 'See all employees'
+      TabOrder = 0
+      OnClick = AllEmployeesClick
+    end
+    object Button1: TButton
+      Left = 160
+      Top = 30
+      Width = 143
+      Height = 25
+      Caption = 'Add new employee'
+      TabOrder = 1
+    end
+    object SeeClients: TButton
+      Left = 16
+      Top = 64
+      Width = 138
+      Height = 25
+      Caption = 'See all clients'
+      TabOrder = 2
+      OnClick = SeeClientsClick
+    end
+    object AddClient: TButton
+      Left = 160
+      Top = 64
+      Width = 143
+      Height = 25
+      Caption = 'Add new client'
+      TabOrder = 3
+    end
+    object AllCars: TButton
+      Left = 16
+      Top = 95
+      Width = 138
+      Height = 25
+      Caption = 'See all company cars'
+      TabOrder = 4
+      OnClick = AllCarsClick
+    end
+    object Button6: TButton
+      Left = 160
+      Top = 95
+      Width = 143
+      Height = 25
+      Caption = 'Add new company car'
+      TabOrder = 5
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 344
+    Top = 418
+    Width = 258
+    Height = 207
+    Caption = 'Something else...'
+    TabOrder = 10
+    object AddPurposeButton: TButton
+      Left = 11
+      Top = 32
+      Width = 238
+      Height = 25
+      Caption = 'Add a purpose'
+      TabOrder = 0
+      OnClick = AddPurposeButtonClick
+    end
+    object DownloadButton: TButton
+      Left = 11
+      Top = 63
+      Width = 238
+      Height = 25
+      Caption = 'Download company resources'
+      TabOrder = 1
+      OnClick = DownloadButtonClick
+    end
+    object CreateAvatarButton: TButton
+      Left = 11
+      Top = 94
+      Width = 238
+      Height = 25
+      Caption = 'Create new profile picture'
+      TabOrder = 2
+      OnClick = CreateAvatarButtonClick
+    end
+    object AddExpensesButton: TButton
+      Left = 11
+      Top = 125
+      Width = 238
+      Height = 25
+      Caption = 'Upload travel expenses'
+      Enabled = False
+      TabOrder = 3
+      OnClick = CreateAvatarButtonClick
+    end
+    object SeeDepartments: TButton
+      Left = 11
+      Top = 156
+      Width = 238
+      Height = 25
+      Caption = 'See all departments'
+      TabOrder = 4
+      OnClick = SeeDepartmentsClick
     end
   end
   object MainMenu1: TMainMenu

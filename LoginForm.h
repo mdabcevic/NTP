@@ -32,18 +32,8 @@ __published:	// IDE-managed Components
 	TEdit *emailBox;
 	TButton *loginButton;
 	TCheckBox *isRememberMe;
-	TButton *Button1;
-	TButton *Button2;
-	TButton *Button3;
-	TButton *B;
-	TButton *Button4;
-	TButton *Button5;
-	TButton *Button6;
-	TButton *Button7;
-	TButton *Button8;
 	TImage *ImgHr;
 	TImage *ImgEn;
-	TButton *Button9;
 	TMainMenu *MainMenu1;
 	TMenuItem *Settings1;
 	TMenuItem *hemeSettings1;
@@ -75,15 +65,33 @@ __published:	// IDE-managed Components
 	TMenuItem *Announcements1;
 	TMenuItem *Checkforannouncements1;
 	TMenuItem *Makeanannouncement1;
+	TLabel *ActionLabel;
+	TGroupBox *WarrantsBox;
+	TButton *AuthorizeButton;
+	TButton *AllWarrants;
+	TButton *NewWarrant;
+	TGroupBox *EmployeesBox;
+	TButton *AllEmployees;
+	TGroupBox *GroupBox1;
+	TButton *AddPurposeButton;
+	TButton *DownloadButton;
+	TButton *CreateAvatarButton;
+	TButton *AddExpensesButton;
+	TButton *SeeDepartments;
+	TButton *Button1;
+	TButton *SeeClients;
+	TButton *AddClient;
+	TButton *AllCars;
+	TButton *Button6;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall isRememberMeClick(TObject *Sender);
-	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall AddPurposeButtonClick(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall BClick(TObject *Sender);
-	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall WarrantsButtonClick(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Button7Click(TObject *Sender);
@@ -98,6 +106,14 @@ __published:	// IDE-managed Components
 	void __fastcall Medium2Click(TObject *Sender);
 	void __fastcall ResetTheme1Click(TObject *Sender);
 	void __fastcall ResetFont1Click(TObject *Sender);
+	void __fastcall AllWarrantsClick(TObject *Sender);
+	void __fastcall NewWarrantClick(TObject *Sender);
+	void __fastcall AllEmployeesClick(TObject *Sender);
+	void __fastcall DownloadButtonClick(TObject *Sender);
+	void __fastcall CreateAvatarButtonClick(TObject *Sender);
+	void __fastcall SeeDepartmentsClick(TObject *Sender);
+	void __fastcall AllCarsClick(TObject *Sender);
+	void __fastcall SeeClientsClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
@@ -105,8 +121,8 @@ public:		// User declarations
 	void ShowImg(TImage* image, TMemoryStream* memory);
 
 	void ApplySettings();
-    void VisualChangeLogin();
-
+	void VisualChangeLogin();
+    void Inconvenient();
 
 
 
