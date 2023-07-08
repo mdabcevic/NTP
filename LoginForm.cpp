@@ -212,3 +212,4 @@ void __fastcall TForm1::Button9Click(TObject *Sender)
 void TForm1::ShowImg(TImage* image, TMemoryStream* memory){
 	image->Picture->LoadFromStream(memory);
 }
+

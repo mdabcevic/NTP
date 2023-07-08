@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Menu = MainMenu1
   OnShow = FormShow
   TextHeight = 15
   object usernameLabel: TLabel
@@ -213,5 +214,57 @@ object Form1: TForm1
     Caption = 'Button9'
     TabOrder = 17
     OnClick = Button9Click
+  end
+  object MainMenu1: TMainMenu
+    Left = 96
+    Top = 56
+    object Settings1: TMenuItem
+      Caption = 'Settings...'
+      object hemeSettings1: TMenuItem
+        Caption = 'Theme Settings'
+        object Dark1: TMenuItem
+          Caption = 'Dark'
+        end
+        object Light1: TMenuItem
+          Caption = 'Light'
+        end
+        object Default1: TMenuItem
+          Caption = 'Default'
+        end
+      end
+      object FontSettings1: TMenuItem
+        Caption = 'Font Settings'
+        object Small1: TMenuItem
+          Caption = 'Small'
+        end
+        object Medium1: TMenuItem
+          Caption = 'Medium'
+        end
+        object Medium2: TMenuItem
+          Caption = 'Large'
+        end
+      end
+    end
+    object ResetOptions1: TMenuItem
+      Caption = 'Reset Options'
+      object ResetTheme1: TMenuItem
+        Caption = 'Reset Theme'
+      end
+      object ResetFont1: TMenuItem
+        Caption = 'Reset Font'
+      end
+      object ResetFont2: TMenuItem
+        Caption = 'Reset Everything'
+      end
+    end
+    object Reset: TMenuItem
+      Caption = 'Other'
+      object Help1: TMenuItem
+        Caption = 'Help'
+      end
+      object About1: TMenuItem
+        Caption = 'About'
+      end
+    end
   end
 end

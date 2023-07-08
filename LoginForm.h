@@ -15,6 +15,7 @@
 #include "AllData.h"
 #include <Vcl.ExtCtrls.hpp>
 #include "AvatarGeneration.h"
+#include <Vcl.Menus.hpp>
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
@@ -44,6 +45,23 @@ __published:	// IDE-managed Components
 	TImage *ImgHr;
 	TImage *ImgEn;
 	TButton *Button9;
+	TMainMenu *MainMenu1;
+	TMenuItem *Settings1;
+	TMenuItem *hemeSettings1;
+	TMenuItem *Dark1;
+	TMenuItem *Light1;
+	TMenuItem *Default1;
+	TMenuItem *FontSettings1;
+	TMenuItem *Small1;
+	TMenuItem *Medium1;
+	TMenuItem *Medium2;
+	TMenuItem *Reset;
+	TMenuItem *ResetOptions1;
+	TMenuItem *ResetTheme1;
+	TMenuItem *ResetFont1;
+	TMenuItem *ResetFont2;
+	TMenuItem *Help1;
+	TMenuItem *About1;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
