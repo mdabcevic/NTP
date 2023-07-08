@@ -16,6 +16,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include "AvatarGeneration.h"
 #include <Vcl.Menus.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
@@ -52,7 +53,7 @@ __published:	// IDE-managed Components
 	TMenuItem *Help1;
 	TMenuItem *About1;
 	TGroupBox *UserInfoRibbon;
-	TImage *Image1;
+	TImage *Avatar;
 	TLabel *Label1;
 	TLabel *Label2;
 	TLabel *Label3;
@@ -72,17 +73,17 @@ __published:	// IDE-managed Components
 	TButton *NewWarrant;
 	TGroupBox *EmployeesBox;
 	TButton *AllEmployees;
-	TGroupBox *GroupBox1;
+	TGroupBox *ElseBox;
 	TButton *AddPurposeButton;
 	TButton *DownloadButton;
 	TButton *CreateAvatarButton;
 	TButton *AddExpensesButton;
 	TButton *SeeDepartments;
-	TButton *Button1;
+	TButton *AddEmployee;
 	TButton *SeeClients;
 	TButton *AddClient;
 	TButton *AllCars;
-	TButton *Button6;
+	TButton *AddCar;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);

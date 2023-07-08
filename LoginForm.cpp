@@ -276,8 +276,21 @@ void __fastcall TForm1::ResetFont1Click(TObject *Sender)
 void TForm1::VisualChangeLogin()
 {
 	Form1->UserInfoRibbon->Visible = true;
-	Form1->UserInfoRibbon->Top = 15;
+	Form1->UserInfoRibbon->Top = 48;
 	Form1->UserInfoRibbon->Left = 15;
+	ActionLabel->Visible = true;
+	ActionLabel->Top = 48;
+	ActionLabel->Left = 248;
+	WarrantsBox->Visible = true;
+	WarrantsBox->Top = 82;
+	WarrantsBox->Left = 248;
+	EmployeesBox->Visible = true;
+	EmployeesBox->Top = 163;
+	EmployeesBox->Left = 248;
+    ElseBox->Visible = true;
+	ElseBox->Top = 301;
+    ElseBox->Left = 248;
+
 
 	//hide login stuff
 	usernameLabel->Visible = false;
