@@ -12,6 +12,7 @@
 #include <System.NetEncoding.hpp>
 #include <System.StrUtils.hpp>
 #include <System.SysUtils.hpp>
+#include <map>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
@@ -27,6 +28,15 @@
 #pragma link "uTPLb_Signatory"
 #pragma link "uTPLb_Signatory"
 #pragma link "uTPLb_Codec"
+#pragma link "frxClass"
+#pragma link "frxDBSet"
+#pragma link "frxExportBaseDialog"
+#pragma link "frxExportPDF"
+#pragma link "frxExportRTF"
+#pragma link "uTPLb_BaseNonVisualComponent"
+#pragma link "uTPLb_Codec"
+#pragma link "uTPLb_CryptographicLibrary"
+#pragma link "uTPLb_Signatory"
 #pragma resource "*.dfm"
 
 TDataModule1 *DataModule1;
@@ -291,10 +301,22 @@ void TDataModule1::SendPublicKey(){
     RRequest->Params->AddItem()->Name = "message";
     RRequest->Params->Items[0]->Value = message;
 
-    RRequest->Execute();
+	RRequest->Execute();
     if (RResponse->StatusCode == 200) {
         ShowMessage("Message posted successfully!");
     } else {
         ShowMessage("Failed to post message: " + RResponse->Content);
 	}
  }
+
+//---------------------------------------------------------------------------
+ void TDataModule1::translateForm(TForm* Form, String Language, const std::map<String, std::map<String, String>>& translation){
+	for(int i = 0; i < Form->ComponentCount; i++) // iterate though all components on the form
+		for(auto it_ComponentName = translation.begin(); it_ComponentName != translation.end(); it_ComponentName++)
+			if(Form->Components[i]->Name == it_ComponentName->first) // find component by name
+				for(auto it_Language = it_ComponentName->second.begin(); it_Language != it_ComponentName->second.end(); it_Language++)
+					if(it_Language->first == Language) // find translation for the target language
+						if(IsPublishedProp(Form->Components[i], "Caption"))
+							SetPropValue(Form->Components[i], "Caption", it_Language->second);
+}
+

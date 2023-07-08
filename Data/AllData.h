@@ -5,6 +5,40 @@
 
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
+#include "frxClass.hpp"
+#include "frxDBSet.hpp"
+#include "frxExportBaseDialog.hpp"
+#include "frxExportPDF.hpp"
+#include "frxExportRTF.hpp"
+#include "uTPLb_BaseNonVisualComponent.hpp"
+#include "uTPLb_Codec.hpp"
+#include "uTPLb_CryptographicLibrary.hpp"
+#include "uTPLb_Signatory.hpp"
+#include <Data.Bind.Components.hpp>
+#include <Data.Bind.ObjectScope.hpp>
+#include <Data.DB.hpp>
+#include <Data.Win.ADODB.hpp>
+#include <IdBaseComponent.hpp>
+#include <IdComponent.hpp>
+#include <IdHTTP.hpp>
+#include <IdIOHandler.hpp>
+#include <IdIOHandlerSocket.hpp>
+#include <IdIOHandlerStack.hpp>
+#include <IdSSL.hpp>
+#include <IdSSLOpenSSL.hpp>
+#include <IdTCPClient.hpp>
+#include <IdTCPConnection.hpp>
+#include <IdUDPBase.hpp>
+#include <IdUDPClient.hpp>
+#include <REST.Authenticator.Basic.hpp>
+#include <REST.Client.hpp>
+#include <REST.Types.hpp>
+#include <System.SysUtils.hpp>
+#include <Vcl.Dialogs.hpp>
+#include <Xml.XMLDoc.hpp>
+#include <Xml.xmldom.hpp>
+#include <Xml.XMLIntf.hpp>
+#include <map>
 #include "FontHelper.h"
 #include "IniSettingsHelper.h"
 #include "ThemeHelper.h"
@@ -160,7 +194,9 @@ public:		// User declarations
 	void SendPublicKey();
 	void RequestSymKey();
 	void DecryptAsym();
-    //void SymEncryptFile();
+	//void SymEncryptFile();
+
+    void translateForm(TForm* Form, String Language, const std::map<String, std::map<String, String>>& translation);
 
 
 };
