@@ -14,6 +14,7 @@
 #include "AvatarGeneration.h"
 #include "DownloadResourcesForm.h"
 #include "PreparationThread.h"
+#include "LoadIconsThread.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -104,21 +105,8 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 {
 	//move into thread with keygen, sendkey & sendJSON
 
+    LoadIcons *threadedLoad = new LoadIcons(false);
 
-	//place all in one thread?
-	TMemoryStream *picture = new TMemoryStream();
-	DataModule1->HTTP->Get(DataModule1->service->CountryFlag("HR"), picture);
-	picture->Position = 0;
-	//function - for sync
-	//ImgHr->Picture->LoadFromStream(picture);
-	ShowImg(ImgHr, picture);
-
-	picture = new TMemoryStream();
-	DataModule1->HTTP->Get(DataModule1->service->CountryFlag("GB"), picture);
-	picture->Position = 0;
-	//function - for sync
-	//ImgEn->Picture->LoadFromStream(picture);
-    ShowImg(ImgEn, picture);
 
 
 	//load theme and font for window (INI)

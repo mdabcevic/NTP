@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Login'
-  ClientHeight = 426
-  ClientWidth = 616
+  ClientHeight = 542
+  ClientWidth = 608
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -43,8 +43,8 @@ object Form1: TForm1
     Visible = False
   end
   object ImgHr: TImage
-    Left = 512
-    Top = 376
+    Left = 504
+    Top = 22
     Width = 31
     Height = 25
     Center = True
@@ -52,7 +52,7 @@ object Form1: TForm1
   end
   object ImgEn: TImage
     Left = 561
-    Top = 376
+    Top = 22
     Width = 31
     Height = 25
     Stretch = True
@@ -125,8 +125,8 @@ object Form1: TForm1
     OnClick = isRememberMeClick
   end
   object Button1: TButton
-    Left = 472
-    Top = 63
+    Left = 432
+    Top = 251
     Width = 132
     Height = 25
     Caption = 'Employees'
@@ -134,8 +134,8 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 472
-    Top = 95
+    Left = 432
+    Top = 283
     Width = 132
     Height = 25
     Caption = 'Departments'
@@ -143,8 +143,8 @@ object Form1: TForm1
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 472
-    Top = 126
+    Left = 432
+    Top = 314
     Width = 132
     Height = 25
     Caption = 'Add expenses'
@@ -152,8 +152,8 @@ object Form1: TForm1
     OnClick = Button3Click
   end
   object B: TButton
-    Left = 472
-    Top = 157
+    Left = 432
+    Top = 345
     Width = 132
     Height = 25
     Caption = 'Add warrant'
@@ -161,8 +161,8 @@ object Form1: TForm1
     OnClick = BClick
   end
   object Button4: TButton
-    Left = 472
-    Top = 32
+    Left = 432
+    Top = 220
     Width = 132
     Height = 25
     Caption = 'Travel Warrants'
@@ -170,8 +170,8 @@ object Form1: TForm1
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 472
-    Top = 188
+    Left = 432
+    Top = 376
     Width = 132
     Height = 25
     Caption = 'Clients'

@@ -226,6 +226,10 @@
             <DependentOn>ICarValidation.h</DependentOn>
             <BuildOrder>26</BuildOrder>
         </CppCompile>
+        <CppCompile Include="LoadIconsThread.cpp">
+            <DependentOn>LoadIconsThread.h</DependentOn>
+            <BuildOrder>28</BuildOrder>
+        </CppCompile>
         <CppCompile Include="LoginForm.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
