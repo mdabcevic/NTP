@@ -69,9 +69,10 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 	}
 	//Login
 	else{
-		//start login process
+		//try to log in
 		if(DataModule1->Login(usernameBox->Text, pwBox->Text)){
 			VisualChangeLogin();
+            //save settings - move to its own function
 			if(isRememberMe->Checked){
                 DataModule1->wrSettingsHelper.isRememberMe = true;
 				DataModule1->wrSettingsHelper.username = usernameBox->Text;
@@ -79,18 +80,13 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 				DataModule1->wrSettingsHelper.SaveSettings();
 			}
 		}
-		//ShowMessage(DataModule1->currentUser.Username);
-		//DataModule1->SendPublicKey();
-		//ShowMessage(DataModule1->SymKey);
+		else{
+            return;
+        }
+
 
 		//thread here!
 		Preparation *threadedPrep = new Preparation(false);
-		//DataModule1->RequestXMLFile();
-		//DataModule1->GenerateAsymKeys();    //thread, move after success login
-		//DataModule1->SendPublicKey();
-		//DataModule1->SendJSON();
-		//DataModule1->CheckAuthentication();
-
 		DataModule1->CheckAuthentication();     //move to thread after UI makeover
 		//move to toolbar
 		DataModule1->MakeAnnouncement("test");
@@ -286,5 +282,7 @@ void __fastcall TForm1::ResetFont1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm1::VisualChangeLogin()
 {
-    Form1->UserInfoRibbon->Visible = true;
+	Form1->UserInfoRibbon->Visible = true;
+	Form1->UserInfoRibbon->Top = 15;
+    Form1->UserInfoRibbon->Left = 15;
 }

@@ -73,6 +73,9 @@ __published:	// IDE-managed Components
 	TLabel *Label7;
 	TLabel *Label8;
 	TLabel *Label9;
+	TMenuItem *Announcements1;
+	TMenuItem *Checkforannouncements1;
+	TMenuItem *Makeanannouncement1;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);

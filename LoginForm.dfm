@@ -349,6 +349,15 @@ object Form1: TForm1
         OnClick = ResetFont2Click
       end
     end
+    object Announcements1: TMenuItem
+      Caption = 'Announcements'
+      object Checkforannouncements1: TMenuItem
+        Caption = 'Check for announcements'
+      end
+      object Makeanannouncement1: TMenuItem
+        Caption = 'Make an announcement'
+      end
+    end
     object Reset: TMenuItem
       Caption = 'Other'
       object Help1: TMenuItem
