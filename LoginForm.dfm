@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Login'
   ClientHeight = 542
-  ClientWidth = 608
+  ClientWidth = 991
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -180,43 +180,126 @@ object Form1: TForm1
     OnClick = Button5Click
   end
   object Button6: TButton
-    Left = 24
-    Top = 148
-    Width = 137
+    Left = 432
+    Top = 407
+    Width = 132
     Height = 25
     Caption = 'Button6'
     TabOrder = 14
     OnClick = Button6Click
   end
   object Button7: TButton
-    Left = 24
-    Top = 180
-    Width = 137
+    Left = 432
+    Top = 439
+    Width = 132
     Height = 25
     Caption = 'Button7'
     TabOrder = 15
     OnClick = Button7Click
   end
   object Button8: TButton
-    Left = 24
-    Top = 211
-    Width = 137
+    Left = 432
+    Top = 470
+    Width = 132
     Height = 25
     Caption = 'Button8'
     TabOrder = 16
     OnClick = Button8Click
   end
   object Button9: TButton
-    Left = 24
-    Top = 242
-    Width = 137
+    Left = 432
+    Top = 501
+    Width = 132
     Height = 25
     Caption = 'Button9'
     TabOrder = 17
     OnClick = Button9Click
   end
+  object UserInfoRibbon: TGroupBox
+    Left = 624
+    Top = 8
+    Width = 193
+    Height = 526
+    TabOrder = 18
+    Visible = False
+    object Image1: TImage
+      Left = 16
+      Top = 66
+      Width = 145
+      Height = 135
+    end
+    object Label1: TLabel
+      Left = 16
+      Top = 20
+      Width = 95
+      Height = 30
+      Caption = 'Welcome!'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -21
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 16
+      Top = 216
+      Width = 59
+      Height = 15
+      Caption = 'Username: '
+    end
+    object Label3: TLabel
+      Left = 16
+      Top = 255
+      Width = 63
+      Height = 15
+      Caption = 'First Name: '
+    end
+    object Label4: TLabel
+      Left = 16
+      Top = 290
+      Width = 62
+      Height = 15
+      Caption = 'Last Name: '
+    end
+    object Label5: TLabel
+      Left = 16
+      Top = 333
+      Width = 32
+      Height = 15
+      Caption = 'Email:'
+    end
+    object Label6: TLabel
+      Left = 16
+      Top = 374
+      Width = 37
+      Height = 15
+      Caption = 'Phone:'
+    end
+    object Label7: TLabel
+      Left = 16
+      Top = 411
+      Width = 66
+      Height = 15
+      Caption = 'Department:'
+    end
+    object Label8: TLabel
+      Left = 16
+      Top = 448
+      Width = 21
+      Height = 15
+      Caption = 'PID:'
+    end
+    object Label9: TLabel
+      Left = 16
+      Top = 479
+      Width = 31
+      Height = 15
+      Caption = 'Code:'
+    end
+  end
   object MainMenu1: TMainMenu
-    Left = 96
+    Left = 544
     Top = 56
     object Settings1: TMenuItem
       Caption = 'Settings...'

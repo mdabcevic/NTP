@@ -70,7 +70,9 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 	//Login
 	else{
 		//start login process
-		DataModule1->Login(usernameBox->Text, pwBox->Text);
+		if(DataModule1->Login(usernameBox->Text, pwBox->Text)){
+            VisualChangeLogin();
+		}
 		//ShowMessage(DataModule1->currentUser.Username);
 		//DataModule1->SendPublicKey();
 		//ShowMessage(DataModule1->SymKey);
@@ -276,4 +278,7 @@ void __fastcall TForm1::ResetFont1Click(TObject *Sender)
     DataModule1->fontHelper.ResetToDefault();
 }
 //---------------------------------------------------------------------------
-
+void TForm1::VisualChangeLogin()
+{
+    Form1->UserInfoRibbon->Visible = true;
+}

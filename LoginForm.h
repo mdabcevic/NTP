@@ -62,6 +62,17 @@ __published:	// IDE-managed Components
 	TMenuItem *ResetFont2;
 	TMenuItem *Help1;
 	TMenuItem *About1;
+	TGroupBox *UserInfoRibbon;
+	TImage *Image1;
+	TLabel *Label1;
+	TLabel *Label2;
+	TLabel *Label3;
+	TLabel *Label4;
+	TLabel *Label5;
+	TLabel *Label6;
+	TLabel *Label7;
+	TLabel *Label8;
+	TLabel *Label9;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
@@ -90,6 +101,9 @@ public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 	//TMemoryStream* picture;
 	void ShowImg(TImage* image, TMemoryStream* memory);
+
+	void ApplySettings();
+    void VisualChangeLogin();
 
 
 
