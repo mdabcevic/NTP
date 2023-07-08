@@ -7,6 +7,7 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include <map>
 //---------------------------------------------------------------------------
 class TForm3 : public TForm
 {
@@ -29,7 +30,9 @@ public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);
 	void AddCarMode();
 	void EditCarMode();
-    void CheckPlates();
+	void CheckPlates();
+
+	std::map<String, std::map<String, String>> translation;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm3 *Form3;

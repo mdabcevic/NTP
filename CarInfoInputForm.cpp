@@ -14,11 +14,52 @@ TForm3 *Form3;
 __fastcall TForm3::TForm3(TComponent* Owner)
 	: TForm(Owner)
 {
+	translation["Assigned_Label"] = {
+		{
+			{"EN", "Officially assigned to "},
+			{"HR", "Zaduženik:"}
+
+		}
+	};
+
+	translation["InternalName_Label"] = {
+		{
+			{"EN", "Internal Name "},
+			{"HR", "Ime vozila:"}
+
+		}
+	};
+
+	translation["LicensePlate_Label"] = {
+		{
+			{"EN", "License plate"},
+			{"HR", "Registracijske tablice"}
+
+		}
+	};
+
+	translation["Location_Label"] = {
+		{
+			{"EN", "Location"},
+			{"HR", "Mjesto"}
+
+		}
+	};
+
+		translation["User_Label"] = {
+		{
+			{"EN", "Currently used by"},
+			{"HR", "Trenutno korisnik"}
+
+		}
+	};
+
+
 }
 //---------------------------------------------------------------------------
 void TForm3::AddCarMode()
 {
-	Form3->SaveCarChanges_Button->Caption = "Add car";
+	Form3->SaveCarChanges_Button->Caption = "Add";
 	Form3->LicensePlate_Box->Text = "";
 	Form3->InternalName_Box->Text = "";
 	Form3->Assigned_Box->Text = "";

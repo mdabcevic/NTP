@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Login'
   ClientHeight = 633
-  ClientWidth = 632
+  ClientWidth = 1061
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -58,6 +58,7 @@ object Form1: TForm1
     Width = 31
     Height = 25
     Stretch = True
+    OnClick = ImgEnClick
   end
   object ActionLabel: TLabel
     Left = 696
@@ -3847,6 +3848,7 @@ object Form1: TForm1
       Height = 25
       Caption = 'Add new company car'
       TabOrder = 5
+      OnClick = AddCarClick
     end
   end
   object ElseBox: TGroupBox

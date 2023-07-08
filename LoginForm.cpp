@@ -540,9 +540,6 @@ void TForm1::VisualChangeLogin()
 void TForm1::Inconvenient()
 {
 	WarrantsBox->SendToBack();
-	//NewWarrantButton->BringToFront();
-    //WarrantsButton->BringToFront();
-
 }
 void __fastcall TForm1::AllWarrantsClick(TObject *Sender)
 {
@@ -598,7 +595,22 @@ void __fastcall TForm1::SeeClientsClick(TObject *Sender)
 
 void __fastcall TForm1::ImgHrClick(TObject *Sender)
 {
-    DataModule1->translateForm(this, "HR", translation);
+	DataModule1->translateForm(this, "HR", translation);
+	DataModule1->translateForm(Form3, "HR", Form3->translation);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ImgEnClick(TObject *Sender)
+{
+	DataModule1->translateForm(this, "EN", translation);
+    DataModule1->translateForm(Form3, "EN", Form3->translation);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::AddCarClick(TObject *Sender)
+{
+    Form3->AddCarMode();
+    Form3->ShowModal();
 }
 //---------------------------------------------------------------------------
 
