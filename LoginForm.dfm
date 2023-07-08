@@ -3717,7 +3717,7 @@ object Form1: TForm1
         1E5786D0E0FF02F1760D03ADFC6CF30000000049454E44AE426082}
       Proportional = True
     end
-    object Label1: TLabel
+    object WelcomeLabel: TLabel
       Left = 24
       Top = 3
       Width = 145
@@ -3731,56 +3731,56 @@ object Form1: TForm1
       Font.Style = [fsBold, fsItalic]
       ParentFont = False
     end
-    object Label2: TLabel
+    object Username2Label: TLabel
       Left = 16
       Top = 216
       Width = 145
       Height = 15
       Caption = 'Username: '
     end
-    object Label3: TLabel
+    object FirstNameLabel: TLabel
       Left = 16
       Top = 253
       Width = 145
       Height = 15
       Caption = 'First Name: '
     end
-    object Label4: TLabel
+    object SecondNameLabel: TLabel
       Left = 16
       Top = 292
       Width = 145
       Height = 15
       Caption = 'Last Name: '
     end
-    object Label5: TLabel
+    object Email2Label: TLabel
       Left = 16
       Top = 333
       Width = 145
       Height = 15
       Caption = 'Email:'
     end
-    object Label6: TLabel
+    object PhoneLabel: TLabel
       Left = 16
       Top = 374
       Width = 145
       Height = 15
       Caption = 'Phone:'
     end
-    object Label7: TLabel
+    object DepartmentLabel: TLabel
       Left = 16
       Top = 411
       Width = 145
       Height = 15
       Caption = 'Department:'
     end
-    object Label8: TLabel
+    object PIDLabel: TLabel
       Left = 16
       Top = 448
       Width = 145
       Height = 15
       Caption = 'PID:'
     end
-    object Label9: TLabel
+    object EmployeeIDLabel: TLabel
       Left = 16
       Top = 479
       Width = 145
