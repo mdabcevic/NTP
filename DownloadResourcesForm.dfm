@@ -2,7 +2,7 @@ object Form13: TForm13
   Left = 0
   Top = 0
   Caption = 'Downloader'
-  ClientHeight = 488
+  ClientHeight = 345
   ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -119,8 +119,8 @@ object Form13: TForm13
     Request.Ranges.Units = 'bytes'
     Request.Ranges = <>
     HTTPOptions = [hoForceEncodeParams]
-    Left = 512
-    Top = 368
+    Left = 184
+    Top = 280
   end
   object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
     Intercept = Throttler
@@ -130,14 +130,14 @@ object Form13: TForm13
     SSLOptions.Mode = sslmUnassigned
     SSLOptions.VerifyMode = []
     SSLOptions.VerifyDepth = 0
-    Left = 512
-    Top = 424
+    Left = 296
+    Top = 280
   end
   object Throttler: TIdInterceptThrottler
     BitsPerSec = 0
     RecvBitsPerSec = 0
     SendBitsPerSec = 0
-    Left = 512
-    Top = 312
+    Left = 416
+    Top = 280
   end
 end

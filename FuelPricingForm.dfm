@@ -1,7 +1,7 @@
 object Form14: TForm14
   Left = 0
   Top = 0
-  Caption = 'Form14'
+  Caption = 'Avatar generation (Stickers)'
   ClientHeight = 441
   ClientWidth = 650
   Color = clBtnFace
@@ -17,20 +17,13 @@ object Form14: TForm14
     Top = 190
     Width = 633
     Height = 244
-    Lines.Strings = (
-      
-        '{"ok":true,"url":"https://f.mirror-ai.net/x/NW_J5FhqBVHNylW-EKNk' +
-        'BqtP0rgSyOgItyDnXxyQGN-'
-      
-        'fJ8AtkWg66ygQACiTEfWKB5ge0kpVo_lS_n62K8UwzPh76e1mw4-XJTL0F0c4L1y' +
-        '9S9cZ3Qxqu-dyxck9OSaR"}')
     TabOrder = 0
   end
   object LabeledEdit1: TLabeledEdit
     Left = 8
     Top = 159
     Width = 241
-    Height = 25
+    Height = 23
     EditLabel.Width = 175
     EditLabel.Height = 15
     EditLabel.Caption = 'Enter face ID to get avatar sticker:'
@@ -49,7 +42,7 @@ object Form14: TForm14
     Left = 255
     Top = 159
     Width = 226
-    Height = 25
+    Height = 23
     EditLabel.Width = 107
     EditLabel.Height = 15
     EditLabel.Caption = 'Enter type of sticker:'

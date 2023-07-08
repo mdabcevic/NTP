@@ -21,7 +21,14 @@
 #include <IdIntercept.hpp>
 #include <IdInterceptThrottler.hpp>
 //---------------------------------------------------------------------------
-class TForm13 : public TForm
+
+#ifdef EXPORTS
+	#define DLL_EXPORT __declspec(dllexport)
+#else
+	#define DLL_EXPORT __declspec(dllimport)
+#endif
+
+class DLL_EXPORT TForm13 : public TForm
 {
 __published:	// IDE-managed Components
 	TButton *Download;
@@ -50,6 +57,6 @@ public:		// User declarations
 
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm13 *Form13;
+extern TForm13 *Form13;
 //---------------------------------------------------------------------------
 #endif

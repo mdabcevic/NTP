@@ -176,12 +176,10 @@
             <DependentOn>DepartmentsForm.h</DependentOn>
             <BuildOrder>12</BuildOrder>
         </CppCompile>
-        <CppCompile Include="DownloadResourcesForm.cpp">
-            <Form>Form13</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>DownloadResourcesForm.h</DependentOn>
-            <BuildOrder>24</BuildOrder>
-        </CppCompile>
+        <LibFiles Include="DynamicLib\RestDownloadDynLib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>27</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
         <LibFiles Include="DynamicLib\WRDynamicLib.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>27</BuildOrder>
             <IgnorePath>true</IgnorePath>
@@ -203,12 +201,6 @@
             <FormType>dfm</FormType>
             <DependentOn>ExpensesInputInfoForm.h</DependentOn>
             <BuildOrder>15</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="FuelPricingForm.cpp">
-            <Form>Form14</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>FuelPricingForm.h</DependentOn>
-            <BuildOrder>27</BuildOrder>
         </CppCompile>
         <CppCompile Include="Helpers\companycars.cpp">
             <DependentOn>Helpers\companycars.h</DependentOn>
@@ -278,12 +270,10 @@
         <FormResources Include="CarInfoInputForm.dfm"/>
         <FormResources Include="ClientsInfoForm.dfm"/>
         <FormResources Include="CompanyCarsForm.dfm"/>
+        <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <FormResources Include="EmployeesForm.dfm"/>
         <FormResources Include="ExpensesInputInfoForm.dfm"/>
-        <FormResources Include="FuelPricingForm.dfm"/>
-        <FormResources Include="EmployeeInfoInputForm.dfm"/>
         <FormResources Include="DepartmentsForm.dfm"/>
-        <FormResources Include="DownloadResourcesForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -381,6 +371,12 @@
                 <DeployFile LocalName=".\PutniNalozi.tds" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="Win32">
                         <RemoteName>PutniNalozi.tds</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="DynamicLib\RestDownloadDynLib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

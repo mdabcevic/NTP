@@ -11,6 +11,8 @@
 #include "TravelWarrantInputInfoForm.h"
 #include "TravelWarrantsForm.h"
 #include "ClientsInfoForm.h"
+#include "FuelPricingForm.h"
+#include "DownloadResourcesForm.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -196,7 +198,8 @@ void __fastcall TForm1::Button7Click(TObject *Sender)
 
 void __fastcall TForm1::Button8Click(TObject *Sender)
 {
-    Form13->ShowModal();
+	//Form13->ShowModal();       moved to dll
+
 }
 //---------------------------------------------------------------------------
 
