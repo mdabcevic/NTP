@@ -76,6 +76,15 @@ __published:	// IDE-managed Components
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall Button8Click(TObject *Sender);
 	void __fastcall Button9Click(TObject *Sender);
+	void __fastcall ResetFont2Click(TObject *Sender);
+	void __fastcall Dark1Click(TObject *Sender);
+	void __fastcall Light1Click(TObject *Sender);
+	void __fastcall Default1Click(TObject *Sender);
+	void __fastcall Small1Click(TObject *Sender);
+	void __fastcall Medium1Click(TObject *Sender);
+	void __fastcall Medium2Click(TObject *Sender);
+	void __fastcall ResetTheme1Click(TObject *Sender);
+	void __fastcall ResetFont1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

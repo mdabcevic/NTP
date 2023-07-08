@@ -124,6 +124,9 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 		Form1->usernameBox->Text = DataModule1->wrSettingsHelper.username;
 		Form1->pwBox->Text = DataModule1->wrSettingsHelper.password;
 	}
+	else {
+        DataModule1->wrSettingsHelper.DeleteSettings();
+    }
 
 }
 //---------------------------------------------------------------------------
@@ -212,4 +215,65 @@ void __fastcall TForm1::Button9Click(TObject *Sender)
 void TForm1::ShowImg(TImage* image, TMemoryStream* memory){
 	image->Picture->LoadFromStream(memory);
 }
+
+void __fastcall TForm1::ResetFont2Click(TObject *Sender)
+{
+	DataModule1->wrSettingsHelper.DeleteSettings();
+	DataModule1->fontHelper.ResetToDefault();
+	DataModule1->themeHelper.ResetToDefault();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Dark1Click(TObject *Sender)
+{
+	DataModule1->themeHelper.LoadSection("DARK THEME");
+	DataModule1->themeHelper.SaveCurrent();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Light1Click(TObject *Sender)
+{
+	DataModule1->themeHelper.LoadSection("LIGHT THEME");
+    DataModule1->themeHelper.SaveCurrent();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Default1Click(TObject *Sender)
+{
+    DataModule1->themeHelper.ResetToDefault();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Small1Click(TObject *Sender)
+{
+	DataModule1->fontHelper.LoadSection("SMALL FONT");
+	DataModule1->fontHelper.SaveCurrent();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Medium1Click(TObject *Sender)
+{
+	DataModule1->fontHelper.LoadSection("MEDIUM FONT");
+	DataModule1->fontHelper.SaveCurrent();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Medium2Click(TObject *Sender)
+{
+    DataModule1->fontHelper.LoadSection("LARGE FONT");
+	DataModule1->fontHelper.SaveCurrent();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ResetTheme1Click(TObject *Sender)
+{
+    DataModule1->themeHelper.ResetToDefault();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ResetFont1Click(TObject *Sender)
+{
+    DataModule1->fontHelper.ResetToDefault();
+}
+//---------------------------------------------------------------------------
 

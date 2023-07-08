@@ -44,7 +44,7 @@ object Form1: TForm1
     Visible = False
   end
   object ImgHr: TImage
-    Left = 504
+    Left = 524
     Top = 22
     Width = 31
     Height = 25
@@ -224,24 +224,30 @@ object Form1: TForm1
         Caption = 'Theme Settings'
         object Dark1: TMenuItem
           Caption = 'Dark'
+          OnClick = Dark1Click
         end
         object Light1: TMenuItem
           Caption = 'Light'
+          OnClick = Light1Click
         end
         object Default1: TMenuItem
           Caption = 'Default'
+          OnClick = Default1Click
         end
       end
       object FontSettings1: TMenuItem
         Caption = 'Font Settings'
         object Small1: TMenuItem
           Caption = 'Small'
+          OnClick = Small1Click
         end
         object Medium1: TMenuItem
           Caption = 'Medium'
+          OnClick = Medium1Click
         end
         object Medium2: TMenuItem
           Caption = 'Large'
+          OnClick = Medium2Click
         end
       end
     end
@@ -249,12 +255,15 @@ object Form1: TForm1
       Caption = 'Reset Options'
       object ResetTheme1: TMenuItem
         Caption = 'Reset Theme'
+        OnClick = ResetTheme1Click
       end
       object ResetFont1: TMenuItem
         Caption = 'Reset Font'
+        OnClick = ResetFont1Click
       end
       object ResetFont2: TMenuItem
         Caption = 'Reset Everything'
+        OnClick = ResetFont2Click
       end
     end
     object Reset: TMenuItem
