@@ -13,6 +13,7 @@
 #include "ClientsInfoForm.h"
 #include "AvatarGeneration.h"
 #include "DownloadResourcesForm.h"
+#include "PreparationThread.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -57,39 +58,39 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 
 //grananje:
 
-	DataModule1->GenerateAsymKeys();
-	//ShowMessage(DataModule1->publicKey);
-	//ShowMessage(DataModule1->privateKey);
+
+	//Registration
 	if(isRegister->Checked){
 		if(pwBox->Text == pwConfirmBox->Text){
+			//start Registration process
 			DataModule1->Registration(usernameBox->Text, pwBox->Text, emailBox->Text);
 		}
 	}
+	//Login
 	else{
+		//start login process
 		DataModule1->Login(usernameBox->Text, pwBox->Text);
-		ShowMessage(DataModule1->currentUser.Username);
-		//DataModule1->Authentification();
-		//ShowMessage(DataModule1->currentUser.AuthToken);
-		DataModule1->SendPublicKey();
-		ShowMessage(DataModule1->SymKey);
-		DataModule1->CheckAuthentication();
+		//ShowMessage(DataModule1->currentUser.Username);
+		//DataModule1->SendPublicKey();
+		//ShowMessage(DataModule1->SymKey);
+
+		//thread here!
+		Preparation *threadedPrep = new Preparation(false);
+		//DataModule1->RequestXMLFile();
+		//DataModule1->GenerateAsymKeys();    //thread, move after success login
+		//DataModule1->SendPublicKey();
+		//DataModule1->SendJSON();
+		//DataModule1->CheckAuthentication();
+
+		DataModule1->CheckAuthentication();     //move to thread after UI makeover
+		//move to toolbar
 		DataModule1->MakeAnnouncement("test");
         DataModule1->CheckForAnnouncement();
 	}
-    DataModule1->SendJSON();
-//1. registracija:
-//1.1 provjerava dostupnost info (username i pw)
-//a) false > warning message: username/email vec u uporabi
-//b) true > pw i confirm match (false > warning msg: password mismatch
-//true > 1.2 INSERT INTO radnik (username, email, HASHED pw)
-//1.3 pokreni LOGIN nakon uspjesne registracije, instant login
+	//DataModule1->SendJSON();
 
-//2. login:
-//2.1 pronadji username (false > wm: pogresan unos)
-//2.1.1 isAdmin polje checked => usporedi u bazi: (false > wm: niste administrator)
-//2.2 HASH pw unos i usporedi u bazi (sol + dinamicka + papar)
-//2.3 pokreni LOGIN
 
+	//izbaciti nakon sto se presele funkcionalnosti!
 // Create an instance of Window2
 	TForm2 *testwindow = new TForm2(this);
 
@@ -101,17 +102,23 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 
 void __fastcall TForm1::FormShow(TObject *Sender)
 {
-	DataModule1->RequestXMLFile();
+	//move into thread with keygen, sendkey & sendJSON
 
+
+	//place all in one thread?
 	TMemoryStream *picture = new TMemoryStream();
 	DataModule1->HTTP->Get(DataModule1->service->CountryFlag("HR"), picture);
 	picture->Position = 0;
-	ImgHr->Picture->LoadFromStream(picture);
+	//function - for sync
+	//ImgHr->Picture->LoadFromStream(picture);
+	ShowImg(ImgHr, picture);
 
 	picture = new TMemoryStream();
 	DataModule1->HTTP->Get(DataModule1->service->CountryFlag("GB"), picture);
 	picture->Position = 0;
-	ImgEn->Picture->LoadFromStream(picture);
+	//function - for sync
+	//ImgEn->Picture->LoadFromStream(picture);
+    ShowImg(ImgEn, picture);
 
 
 	//load theme and font for window (INI)
@@ -214,3 +221,6 @@ void __fastcall TForm1::Button9Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void TForm1::ShowImg(TImage* image, TMemoryStream* memory){
+	image->Picture->LoadFromStream(memory);
+}

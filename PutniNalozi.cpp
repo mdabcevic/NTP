@@ -4,10 +4,11 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
+USEFORM("LoginForm.cpp", Form1);
 USEFORM("TestWindow.cpp", Form2);
 USEFORM("TravelWarrantInputInfoForm.cpp", Form7);
 USEFORM("TravelWarrantsForm.cpp", Form9);
-USEFORM("LoginForm.cpp", Form1);
+USEFORM("ExpensesInputInfoForm.cpp", Form8);
 USEFORM("CustomPurposeInfoInputForm.cpp", Form11);
 USEFORM("Data\AllData.cpp", DataModule1); /* TDataModule: File Type */
 USEFORM("CarInfoInputForm.cpp", Form3);
@@ -15,7 +16,6 @@ USEFORM("ClientsInfoForm.cpp", Form10);
 USEFORM("CompanyCarsForm.cpp", Form12);
 USEFORM("EmployeeInfoInputForm.cpp", Form6);
 USEFORM("EmployeesForm.cpp", Form4);
-USEFORM("ExpensesInputInfoForm.cpp", Form8);
 USEFORM("DepartmentsForm.cpp", Form5);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
