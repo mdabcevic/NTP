@@ -199,13 +199,18 @@ void __fastcall TForm1::Button7Click(TObject *Sender)
 void __fastcall TForm1::Button8Click(TObject *Sender)
 {
 	//Form13->ShowModal();       moved to dll
+	TForm13 *Download = new TForm13(this);
+    Download->ShowModal();
+
 
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Button9Click(TObject *Sender)
 {
-    Form14->ShowModal();
+	//Form14->ShowModal();      moved to dll
+	TForm14 *Avatars = new TForm14(this);
+    Avatars->ShowModal();
 }
 //---------------------------------------------------------------------------
 

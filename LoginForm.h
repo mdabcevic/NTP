@@ -14,7 +14,7 @@
 #include "DownloadResourcesForm.h"
 #include "AllData.h"
 #include <Vcl.ExtCtrls.hpp>
-#include "FuelPricingForm.h"
+#include "AvatarGeneration.h"
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm

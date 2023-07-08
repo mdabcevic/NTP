@@ -1,0 +1,50 @@
+API key: 306f8bab7c75449ea6750e67c4e187dd
+
+
+face ids (anime)
+
+hkH51RWxRXS86CpkoHib5Q
+PXJuNz4HR3iYnkZso35DZw
+nu7ixLZ8SY-z7b4m5qo2pQ
+
+
+face ids (mau)
+qJA6rnWvQMqcGm4MN2xxKQ
+sLre0G_TTtu09IJ3UU_Log
+SrF2CNk6Q32CyhRm2Qr_ig
+
+
+anime stickers
+sadness_anime
+sorrow_anime
+wrath_anime
+angel_anime
+evil_laugh_anime
+hello_anime
+im_very_angry_anime
+melancholy_anime
+ok_anime
+food_anime
+no_anime
+computer_anime
+anxiety_anime
+anger_anime
+dreamy_anime
+grief_anime
+rage_anime
+
+
+mau stickers
+
+this_is_fine
+shocked_pose_mau
+sadness_emotion_mau
+pose_mau
+ok_mau
+money_mau
+laptop_busy_mau
+hello_mau
+good_morning_mau
+celebrate_mau
+avocado_mau
+angel_mau
