@@ -95,15 +95,6 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
         DataModule1->CheckForAnnouncement();
 	}
 
-
-
-	//izbaciti nakon sto se presele funkcionalnosti!
-// Create an instance of Window2
-	TForm2 *testwindow = new TForm2(this);
-
-    // Show Window2
-	testwindow->Show();
-
 }
 //---------------------------------------------------------------------------
 

@@ -251,12 +251,6 @@
             <BuildOrder>27</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <CppCompile Include="TestWindow.cpp">
-            <Form>Form2</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>TestWindow.h</DependentOn>
-            <BuildOrder>7</BuildOrder>
-        </CppCompile>
         <CppCompile Include="TravelWarrantInputInfoForm.cpp">
             <Form>Form7</Form>
             <FormType>dfm</FormType>
@@ -270,7 +264,6 @@
             <BuildOrder>16</BuildOrder>
         </CppCompile>
         <FormResources Include="LoginForm.dfm"/>
-        <FormResources Include="TestWindow.dfm"/>
         <FormResources Include="TravelWarrantInputInfoForm.dfm"/>
         <FormResources Include="TravelWarrantsForm.dfm"/>
         <FormResources Include="ExpensesInputInfoForm.dfm"/>

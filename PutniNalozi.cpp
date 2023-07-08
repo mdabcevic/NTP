@@ -5,7 +5,6 @@
 #include <tchar.h>
 //---------------------------------------------------------------------------
 USEFORM("LoginForm.cpp", Form1);
-USEFORM("TestWindow.cpp", Form2);
 USEFORM("TravelWarrantInputInfoForm.cpp", Form7);
 USEFORM("TravelWarrantsForm.cpp", Form9);
 USEFORM("ExpensesInputInfoForm.cpp", Form8);
@@ -25,7 +24,6 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
 		Application->CreateForm(__classid(TForm1), &Form1);
-		Application->CreateForm(__classid(TForm2), &Form2);
 		Application->CreateForm(__classid(TDataModule1), &DataModule1);
 		Application->CreateForm(__classid(TForm3), &Form3);
 		Application->CreateForm(__classid(TForm4), &Form4);

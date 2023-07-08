@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Login'
-  ClientHeight = 561
-  ClientWidth = 991
+  ClientHeight = 479
+  ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -118,93 +118,103 @@ object Form1: TForm1
     OnClick = isRememberMeClick
   end
   object Button1: TButton
-    Left = 432
-    Top = 251
+    Left = 8
+    Top = 42
     Width = 132
     Height = 25
     Caption = 'Employees'
     TabOrder = 7
+    Visible = False
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 432
-    Top = 283
+    Left = 8
+    Top = 74
     Width = 132
     Height = 25
     Caption = 'Departments'
     TabOrder = 8
+    Visible = False
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 432
-    Top = 314
+    Left = 8
+    Top = 105
     Width = 132
     Height = 25
     Caption = 'Add expenses'
     TabOrder = 9
+    Visible = False
     OnClick = Button3Click
   end
   object B: TButton
-    Left = 432
-    Top = 345
+    Left = 8
+    Top = 136
     Width = 132
     Height = 25
     Caption = 'Add warrant'
     TabOrder = 10
+    Visible = False
     OnClick = BClick
   end
   object Button4: TButton
-    Left = 432
-    Top = 220
+    Left = 8
+    Top = 11
     Width = 132
     Height = 25
     Caption = 'Travel Warrants'
     TabOrder = 11
+    Visible = False
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 432
-    Top = 376
+    Left = 8
+    Top = 167
     Width = 132
     Height = 25
     Caption = 'Clients'
     TabOrder = 12
+    Visible = False
     OnClick = Button5Click
   end
   object Button6: TButton
-    Left = 432
-    Top = 407
+    Left = 8
+    Top = 198
     Width = 132
     Height = 25
     Caption = 'Button6'
     TabOrder = 13
+    Visible = False
     OnClick = Button6Click
   end
   object Button7: TButton
-    Left = 432
-    Top = 439
+    Left = 8
+    Top = 230
     Width = 132
     Height = 25
     Caption = 'Button7'
     TabOrder = 14
+    Visible = False
     OnClick = Button7Click
   end
   object Button8: TButton
-    Left = 432
-    Top = 470
+    Left = 8
+    Top = 261
     Width = 132
     Height = 25
     Caption = 'Button8'
     TabOrder = 15
+    Visible = False
     OnClick = Button8Click
   end
   object Button9: TButton
-    Left = 432
-    Top = 501
+    Left = 8
+    Top = 292
     Width = 132
     Height = 25
     Caption = 'Button9'
     TabOrder = 16
+    Visible = False
     OnClick = Button9Click
   end
   object UserInfoRibbon: TGroupBox
