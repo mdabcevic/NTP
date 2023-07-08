@@ -56,7 +56,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 		}
 	};
 
-	translation["AddExpensesButton"] = {
+	translation["ElseBox"] = {
 		{
 			{"EN", "Something else..."},
 			{"HR", "Ostale radnje"}
@@ -66,28 +66,28 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	translation["AddExpensesButton"] = {
 		{
 			{"EN", "Upload travel expenses"},
-			{"HR", "Priložite skenirane račune"}
+			{"HR", "Priložite račune"}
 		}
 	};
 
 	translation["AddPurposeButton"] = {
 		{
 			{"EN", "Add a purpose"},
-			{"HR", "Dodajte svrhu službenog putovanja"}
+			{"HR", "Dodajte svrhu putovanja"}
 		}
 	};
 
 	translation["CreateAvatarButton"] = {
 		{
 			{"EN", "Create new profile picture"},
-			{"HR", "Izradite novu profilnu sličicu"}
+			{"HR", "Izradite profilnu sliku"}
 		}
 	};
 
 	translation["DownloadButton"] = {
 		{
 			{"EN", "Download company resources"},
-			{"HR", "Preuzmite dodatne materijale"}
+			{"HR", "Preuzmite materijale"}
 		}
 	};
 
@@ -105,10 +105,10 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 		}
 	};
 
-    translation["AddPurposeButton"] = {
+    translation["AddCar"] = {
 		{
 			{"EN", "Add new company car"},
-			{"HR", "Upišite vozilo na popis"}
+			{"HR", "Upišite vozilo"}
 		}
 	};
 
@@ -122,14 +122,14 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	translation["AddEmployee"] = {
 		{
 			{"EN", "Add new employee"},
-			{"HR", "Upišite novog zaposlenika"}
+			{"HR", "Upišite zaposlenika"}
 		}
 	};
 
 	translation["AllCars"] = {
 		{
 			{"EN", "See all company cars"},
-			{"HR", "Pregled svih službenih vozila"}
+			{"HR", "Pregled svih vozila"}
 		}
 	};
 
@@ -234,7 +234,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     translation["AddPurposeButton"] = {
 		{
 			{"EN", "Add a purpose"},
-			{"HR", "Dodajte svrhu službenog putovanja"}
+			{"HR", "Dodajte svrhu putovanja"}
 		}
 	};
 
@@ -262,41 +262,23 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	translation["AllWarrants"] = {
 		{
 			{"EN", "See all"},
-			{"HR", "Pregled svih putnih naloga"}
+			{"HR", "Pregled..."}
 		}
 	};
 
-	translation["AuthorizeBox"] = {
+	translation["AuthorizeButton"] = {
 		{
 			{"EN", "Authorize"},
-			{"HR", "Potpišite nalog"}
+			{"HR", "Potpišite..."}
 		}
 	};
 
 	translation["NewWarrant"] = {
 		{
 			{"EN", "Add new"},
-			{"HR", "Kreirajte novi putni nalog"}
+			{"HR", "Kreirajte nalog"}
 		}
 	};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 //---------------------------------------------------------------------------
