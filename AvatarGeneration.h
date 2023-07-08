@@ -26,7 +26,7 @@
 	#define DLL_EXPORT __declspec(dllimport)
 #endif
 
-class TForm14 : public TForm
+class DLL_EXPORT TForm14 : public TForm
 {
 __published:	// IDE-managed Components
 	TMemo *Memo1;

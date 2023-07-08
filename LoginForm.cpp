@@ -11,7 +11,7 @@
 #include "TravelWarrantInputInfoForm.h"
 #include "TravelWarrantsForm.h"
 #include "ClientsInfoForm.h"
-#include "FuelPricingForm.h"
+#include "AvatarGeneration.h"
 #include "DownloadResourcesForm.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
