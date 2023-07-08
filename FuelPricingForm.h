@@ -16,6 +16,8 @@
 #include <System.Rtti.hpp>
 #include <Vcl.Bind.DBEngExt.hpp>
 #include <Vcl.Bind.Editors.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Mask.hpp>
 //---------------------------------------------------------------------------
 class TForm14 : public TForm
 {
@@ -26,6 +28,12 @@ __published:	// IDE-managed Components
 	TRESTResponse *RESTResponse1;
 	TBindingsList *BindingsList1;
 	TLinkControlToField *LinkControlToField1;
+	TLabeledEdit *LabeledEdit1;
+	TButton *Button1;
+	TLabeledEdit *LabeledEdit2;
+	TLinkControlToField *LinkControlToField2;
+	TLinkControlToField *LinkControlToField3;
+	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm14(TComponent* Owner);

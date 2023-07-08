@@ -1,18 +1,28 @@
 ﻿[Memo1]
-Coordinates=210,230,53,51
+Coordinates=210,230,64,58
 
 []
 Coordinates=114,188,82,33
 
 [RESTRequest1]
-Coordinates=350,20,88,159
+Coordinates=350,20,103,212
 
 [RESTResponse1]
-Coordinates=75,88,96,303
+Coordinates=75,88,113,366
 
 [RESTClient1]
-Coordinates=0,0,76,69
+Coordinates=0,0,89,80
 
 [BindingsList1]
-Coordinates=95,1,82,33
+Coordinates=95,1,91,36
+Visible=True
+
+[LabeledEdit1]
+Coordinates=226,1,90,58
+
+[Button1]
+Coordinates=226,78,59,58
+
+[LabeledEdit2]
+Coordinates=226,155,90,58
 
