@@ -31,7 +31,7 @@ void __fastcall Preparation::Execute()
     FreeOnTerminate = true;
 	//---- Place thread code here ----
 	DataModule1->RequestXMLFile();
-	DataModule1->GenerateAsymKeys();    //thread, move after success login
+	DataModule1->GenerateAsymKeys();
 	DataModule1->SendPublicKey();
 	DataModule1->SendJSON();
 

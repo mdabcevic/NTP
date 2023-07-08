@@ -26,7 +26,6 @@ __published:	// IDE-managed Components
 	TEdit *usernameBox;
 	TEdit *pwBox;
 	TCheckBox *isRegister;
-	TCheckBox *isAdmin;
 	TLabel *pwConfirmLabel;
 	TEdit *pwConfirmBox;
 	TLabel *emailLabel;

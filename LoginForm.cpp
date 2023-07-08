@@ -28,7 +28,7 @@ if (isRegister->Checked) {
 		pwConfirmBox->Visible = true;
 		emailLabel->Visible = true;
 		emailBox->Visible = true;
-		loginButton->Top = 376;
+		loginButton->Top = 350;
 		loginButton->Caption = "Register";
 	}
 //Hide additional input information needed for registering.
@@ -37,7 +37,7 @@ if (isRegister->Checked) {
 		pwConfirmBox->Visible = false;
 		emailLabel->Visible = false;
 		emailBox->Visible = false;
-		loginButton->Top = 256;
+		loginButton->Top = 225;
         loginButton->Caption = "Login";
 	}
 }
@@ -46,7 +46,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
     //move this to onShow + set isRegister to false
-	loginButton->Top = 256;
+	loginButton->Top = 224;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::loginButtonClick(TObject *Sender)
@@ -65,6 +65,8 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 		if(pwBox->Text == pwConfirmBox->Text){
 			//start Registration process
 			DataModule1->Registration(usernameBox->Text, pwBox->Text, emailBox->Text);
+            isRegister->Checked = false;
+            return;
 		}
 	}
 	//Login
@@ -84,15 +86,15 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
             return;
         }
 
-
 		//thread here!
 		Preparation *threadedPrep = new Preparation(false);
-		DataModule1->CheckAuthentication();     //move to thread after UI makeover
+        //move to thread after UI makeover
+		DataModule1->CheckAuthentication();
 		//move to toolbar
 		DataModule1->MakeAnnouncement("test");
         DataModule1->CheckForAnnouncement();
 	}
-	//DataModule1->SendJSON();
+
 
 
 	//izbaciti nakon sto se presele funkcionalnosti!
@@ -284,5 +286,16 @@ void TForm1::VisualChangeLogin()
 {
 	Form1->UserInfoRibbon->Visible = true;
 	Form1->UserInfoRibbon->Top = 15;
-    Form1->UserInfoRibbon->Left = 15;
+	Form1->UserInfoRibbon->Left = 15;
+
+	//hide login stuff
+	usernameLabel->Visible = false;
+	usernameBox->Visible = false;
+	pwLabel->Visible = false;
+	pwBox->Visible = false;
+	pwConfirmLabel->Visible = false;
+	pwConfirmBox->Visible = false;
+	loginButton->Visible = false;
+	isRegister->Visible = false;
+    isRememberMe->Visible = false;
 }

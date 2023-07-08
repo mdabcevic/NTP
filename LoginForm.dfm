@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Login'
-  ClientHeight = 542
+  ClientHeight = 561
   ClientWidth = 991
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -29,7 +29,7 @@ object Form1: TForm1
   end
   object pwConfirmLabel: TLabel
     Left = 208
-    Top = 256
+    Top = 224
     Width = 122
     Height = 15
     Caption = 'password confirmation'
@@ -37,7 +37,7 @@ object Form1: TForm1
   end
   object emailLabel: TLabel
     Left = 208
-    Top = 312
+    Top = 280
     Width = 34
     Height = 15
     Caption = 'e-mail'
@@ -82,47 +82,39 @@ object Form1: TForm1
     TabOrder = 2
     OnClick = isRegisterClick
   end
-  object isAdmin: TCheckBox
-    Left = 208
-    Top = 184
-    Width = 185
-    Height = 17
-    Caption = 'I'#39'm an administrator'
-    TabOrder = 3
-  end
   object pwConfirmBox: TEdit
     Left = 208
-    Top = 277
+    Top = 245
     Width = 185
     Height = 23
     PasswordChar = '*'
-    TabOrder = 4
+    TabOrder = 3
     Visible = False
   end
   object emailBox: TEdit
     Left = 208
-    Top = 333
+    Top = 301
     Width = 185
     Height = 23
-    TabOrder = 5
+    TabOrder = 4
     Visible = False
   end
   object loginButton: TButton
     Left = 208
-    Top = 376
+    Top = 344
     Width = 185
     Height = 25
     Caption = 'Login'
-    TabOrder = 6
+    TabOrder = 5
     OnClick = loginButtonClick
   end
   object isRememberMe: TCheckBox
     Left = 208
-    Top = 216
+    Top = 185
     Width = 185
     Height = 18
     Caption = 'Remember me'
-    TabOrder = 7
+    TabOrder = 6
     OnClick = isRememberMeClick
   end
   object Button1: TButton
@@ -131,7 +123,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Employees'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -140,7 +132,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Departments'
-    TabOrder = 9
+    TabOrder = 8
     OnClick = Button2Click
   end
   object Button3: TButton
@@ -149,7 +141,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Add expenses'
-    TabOrder = 10
+    TabOrder = 9
     OnClick = Button3Click
   end
   object B: TButton
@@ -158,7 +150,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Add warrant'
-    TabOrder = 11
+    TabOrder = 10
     OnClick = BClick
   end
   object Button4: TButton
@@ -167,7 +159,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Travel Warrants'
-    TabOrder = 12
+    TabOrder = 11
     OnClick = Button4Click
   end
   object Button5: TButton
@@ -176,7 +168,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Clients'
-    TabOrder = 13
+    TabOrder = 12
     OnClick = Button5Click
   end
   object Button6: TButton
@@ -185,7 +177,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Button6'
-    TabOrder = 14
+    TabOrder = 13
     OnClick = Button6Click
   end
   object Button7: TButton
@@ -194,7 +186,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Button7'
-    TabOrder = 15
+    TabOrder = 14
     OnClick = Button7Click
   end
   object Button8: TButton
@@ -203,7 +195,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Button8'
-    TabOrder = 16
+    TabOrder = 15
     OnClick = Button8Click
   end
   object Button9: TButton
@@ -212,7 +204,7 @@ object Form1: TForm1
     Width = 132
     Height = 25
     Caption = 'Button9'
-    TabOrder = 17
+    TabOrder = 16
     OnClick = Button9Click
   end
   object UserInfoRibbon: TGroupBox
@@ -220,7 +212,7 @@ object Form1: TForm1
     Top = 8
     Width = 193
     Height = 526
-    TabOrder = 18
+    TabOrder = 17
     Visible = False
     object Image1: TImage
       Left = 16
