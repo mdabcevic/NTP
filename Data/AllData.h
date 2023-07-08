@@ -144,7 +144,7 @@ public:		// User declarations
 
 	//App login - checks against DB
 	void Registration(UnicodeString username, UnicodeString password, UnicodeString email);
-	void Login(UnicodeString username, UnicodeString password);
+	bool Login(UnicodeString username, UnicodeString password);
 
 	//REST requests
 	int Authentification();
