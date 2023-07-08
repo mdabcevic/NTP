@@ -7,38 +7,4 @@
 		<currentuser>X.X.</currentuser>
 		<location>Zagreb</location>
 	</car>
-	<car>
-		<licenseplate>ppp </licenseplate>
-		<internalmark>Toyota-02-yar</internalmark>
-		<assigned>X. X.</assigned>
-		<currentuser>X.X.</currentuser>
-		<location>Zagreb</location>
-	</car>
-	<car>
-		<licenseplate> yyy </licenseplate>
-		<internalmark> Toyota-03-yar </internalmark>
-		<assigned>X. X.</assigned>
-		<currentuser>X.X.</currentuser>
-		<location>Zagreb</location>
-	</car>
-	<car>
-		<licenseplate>added</licenseplate>
-		<internalmark>Peugeot-508-01</internalmark>
-		<assigned>K. D.</assigned>
-		<currentuser>K. S.</currentuser>
-		<location>Zagreb</location>
-	</car>
-	<car>
-		<licenseplate>xyxy</licenseplate>
-		<internalmark>Peugeot-508-02</internalmark>
-		<assigned>K. D.</assigned>
-		<currentuser>K. S.</currentuser>
-		<location>Zagreb</location>
-	</car>  <car>
-    <licenseplate>xzxz</licenseplate>
-    <internalmark>Peugeot-508-03</internalmark>
-    <assigned>K. D.</assigned>
-    <currentuser>K. S.</currentuser>
-    <location>Zagreb</location>
-  </car>
 </companycars>
