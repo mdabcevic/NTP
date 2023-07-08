@@ -1,0 +1,11 @@
+IndySystem280.bpl
+bindcomp280.bpl
+bindengine280.bpl
+IndyCore280.bpl
+IndyProtocols280.bpl
+CustomIPTransport280.bpl
+RESTComponents280.bpl
+bindcompvcl280.bpl
+dbrtl280.bpl
+vcl280.bpl
+rtl280.bpl
