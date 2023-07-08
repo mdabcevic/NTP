@@ -71,7 +71,13 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 	else{
 		//start login process
 		if(DataModule1->Login(usernameBox->Text, pwBox->Text)){
-            VisualChangeLogin();
+			VisualChangeLogin();
+			if(isRememberMe->Checked){
+                DataModule1->wrSettingsHelper.isRememberMe = true;
+				DataModule1->wrSettingsHelper.username = usernameBox->Text;
+				DataModule1->wrSettingsHelper.password = pwBox->Text;
+				DataModule1->wrSettingsHelper.SaveSettings();
+			}
 		}
 		//ShowMessage(DataModule1->currentUser.Username);
 		//DataModule1->SendPublicKey();
