@@ -121,6 +121,12 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="..\AvatarGeneration.cpp">
+            <Form>Form14</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>..\AvatarGeneration.h</DependentOn>
+            <BuildOrder>1</BuildOrder>
+        </CppCompile>
         <CppCompile Include="..\DownloadResourcesForm.cpp">
             <Form>Form13</Form>
             <FormType>dfm</FormType>
@@ -131,13 +137,7 @@
             <BuildOrder>0</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="..\FuelPricingForm.cpp">
-            <Form>Form14</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>..\FuelPricingForm.h</DependentOn>
-            <BuildOrder>1</BuildOrder>
-        </CppCompile>
-        <FormResources Include="..\FuelPricingForm.dfm"/>
+        <FormResources Include="..\AvatarGeneration.dfm"/>
         <FormResources Include="..\DownloadResourcesForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
