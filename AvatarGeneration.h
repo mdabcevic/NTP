@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef FuelPricingFormH
-#define FuelPricingFormH
+#ifndef AvatarGenerationH
+#define AvatarGenerationH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
@@ -19,6 +19,13 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Mask.hpp>
 //---------------------------------------------------------------------------
+
+#ifdef EXPORTS
+	#define DLL_EXPORT __declspec(dllexport)
+#else
+	#define DLL_EXPORT __declspec(dllimport)
+#endif
+
 class TForm14 : public TForm
 {
 __published:	// IDE-managed Components
@@ -39,6 +46,6 @@ public:		// User declarations
 	__fastcall TForm14(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm14 *Form14;
+extern TForm14 *Form14;
 //---------------------------------------------------------------------------
 #endif
