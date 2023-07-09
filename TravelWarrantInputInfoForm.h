@@ -15,11 +15,12 @@
 #include "CompanyCarsForm.h"
 #include "ClientsInfoForm.h"
 #include "ExpensesInputInfoForm.h"
+#include <map>
 //---------------------------------------------------------------------------
 class TForm7 : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label1;
+	TLabel *TitleGeneral;
 	TDateTimePicker *DepartureDateTime;
 	TDateTimePicker *ArrivalDateTime;
 	TLabel *DepartureLabel;
@@ -28,7 +29,7 @@ __published:	// IDE-managed Components
 	TCheckBox *isInternational;
 	TCheckListBox *PartnersList;
 	TCheckListBox *PurposesList;
-	TLabel *Label6;
+	TLabel *PurposeLabel;
 	TButtonedEdit *CarSelection;
 	TLabel *OdometerStartLabel;
 	TLabel *OdometerEndLabel;
@@ -36,14 +37,14 @@ __published:	// IDE-managed Components
 	TNumberBox *OdometerEnd;
 	TUpDown *UpDownStart;
 	TUpDown *UpDownEnd;
-	TLabel *Label10;
+	TLabel *CarTitle;
 	TLabel *TollInfoLabel;
-	TLabel *Label12;
+	TLabel *AttachmentTitle;
 	TButton *AddAttachments;
 	TButton *WarrantAction;
 	TComboBox *TollInfo;
 	TButton *CarSelect;
-	TButton *Button1;
+	TButton *PartnersButton;
 	void __fastcall WarrantActionClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall CarSelectClick(TObject *Sender);
@@ -54,7 +55,8 @@ public:		// User declarations
 	__fastcall TForm7(TComponent* Owner);
 	void EditMode();
 	void CreateMode();
-    UnicodeString MergeIntoString(TCheckListBox* list);
+	UnicodeString MergeIntoString(TCheckListBox* list);
+	std::map<String, std::map<String, String>> translation;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm7 *Form7;

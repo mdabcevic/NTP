@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -17,6 +17,94 @@ __fastcall TForm7::TForm7(TComponent* Owner)
 	TollInfo->Items->Add("Cash");
 	TollInfo->Items->Add("ENC device");
 	TollInfo->Items->Add("Smart card");
+
+	translation["AddAttachments"] = {
+		{
+			{"EN", "Provide attachments"},
+			{"HR", "Priložite račune"}
+
+		}
+	};
+
+	translation["ArrivalLabel"] = {
+		{
+			{"EN", "Arrival"},
+			{"HR", "Dolazak"}
+
+		}
+	};
+
+	translation["PartnersButton"] = {
+		{
+			{"EN", "Partners"},
+			{"HR", "Partneri"}
+
+		}
+	};
+
+	translation["CarSelect"] = {
+		{
+			{"EN", "Select car"},
+			{"HR", "Odaberite vozilo"}
+
+		}
+	};
+
+	translation["DepartureLabel"] = {
+		{
+			{"EN", "Departure"},
+			{"HR", "Polazak"}
+
+		}
+	};
+
+	translation["isInternationalLabel"] = {
+		{
+			{"EN", "International Travel"},
+			{"HR", "Inozemno Putovanje"}
+
+		}
+	};
+
+	translation["TitleGeneral"] = {
+		{
+			{"EN", "General Information"},
+			{"HR", "Općenite informacije"}
+
+		}
+	};
+
+	translation["CarTitle"] = {
+		{
+			{"EN", "Company car information"},
+			{"HR", "Podaci o službenom vozilu"}
+
+		}
+	};
+
+	translation["AttachmentTitle"] = {
+		{
+			{"EN", "Attachment information"},
+			{"HR", "Podaci o računima"}
+
+		}
+	};
+
+	translation["PurposeLabel"] = {
+		{
+			{"EN", "Purposes"},
+			{"HR", "Razlozi"}
+
+		}
+	};
+
+	translation["TollInfoLabel"] = {
+		{
+			{"EN", "Toll paid with"},
+			{"HR", "Cestarina plaćena putem"}
+
+		}
+	};
 }
 //---------------------------------------------------------------------------
 

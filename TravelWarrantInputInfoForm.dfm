@@ -2,8 +2,8 @@ object Form7: TForm7
   Left = 0
   Top = 0
   Caption = 'Travel Warrant Information'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 439
+  ClientWidth = 616
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,7 +12,7 @@ object Form7: TForm7
   Font.Style = []
   OnShow = FormShow
   TextHeight = 15
-  object Label1: TLabel
+  object TitleGeneral: TLabel
     Left = 16
     Top = 16
     Width = 194
@@ -47,7 +47,7 @@ object Form7: TForm7
     Height = 15
     Caption = 'International travel?'
   end
-  object Label6: TLabel
+  object PurposeLabel: TLabel
     Left = 320
     Top = 104
     Width = 51
@@ -68,7 +68,7 @@ object Form7: TForm7
     Height = 15
     Caption = 'Ending odometer value:'
   end
-  object Label10: TLabel
+  object CarTitle: TLabel
     Left = 337
     Top = 240
     Width = 245
@@ -89,7 +89,7 @@ object Form7: TForm7
     Height = 15
     Caption = 'Toll paid with:'
   end
-  object Label12: TLabel
+  object AttachmentTitle: TLabel
     Left = 16
     Top = 296
     Width = 229
@@ -217,7 +217,7 @@ object Form7: TForm7
     TabOrder = 13
     OnClick = CarSelectClick
   end
-  object Button1: TButton
+  object PartnersButton: TButton
     Left = 8
     Top = 104
     Width = 75
