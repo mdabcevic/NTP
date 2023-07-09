@@ -11,6 +11,8 @@
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.DBGrids.hpp>
 #include <Vcl.Grids.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Mask.hpp>
 #include <map>
 //---------------------------------------------------------------------------
 class TForm8 : public TForm
@@ -24,6 +26,8 @@ __published:	// IDE-managed Components
 	TLabel *Title;
 	TDBImage *AttachmentPreview;
 	TButton *Upload;
+	TDBEdit *ExpenseIDVal;
+	TLabel *ExpenseID;
 	void __fastcall UploadClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations

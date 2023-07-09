@@ -76,11 +76,15 @@ void __fastcall TForm8::UploadClick(TObject *Sender)
         DataModule1->ExpensesQuery->FieldByName("Other")->AsBoolean = isOther->Checked;
 		DataModule1->ExpensesQuery->Post();
 		AttachmentPreview->Visible = true;
+		ExpenseIDVal->Visible = true;
+		ExpenseID->Visible = true;
 	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm8::FormShow(TObject *Sender)
 {
-    	AttachmentPreview->Visible = false;
+		AttachmentPreview->Visible = false;
+		ExpenseIDVal->Visible = false;
+		ExpenseID->Visible = false;
 }
 //---------------------------------------------------------------------------
