@@ -27,6 +27,7 @@
 #include "uTPLb_CryptographicLibrary.hpp"
 #include <System.SysUtils.hpp>
 #include "uTPLb_Signatory.hpp"
+#include <Xml.adomxmldom.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {

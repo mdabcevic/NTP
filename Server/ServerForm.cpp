@@ -37,6 +37,7 @@ void __fastcall TForm1::TCPServerExecute(TIdContext *AContext)
 //---------------------------------------------------------------------------
 String TForm1::AddToXml(TIdContext *AContext){
 
+	CriticalSection->Enter();
 	// Read data about car
 	String licensePlate = AContext->Connection->IOHandler->ReadLn();
 	String internalMark = AContext->Connection->IOHandler->ReadLn();
@@ -44,14 +45,28 @@ String TForm1::AddToXml(TIdContext *AContext){
 	String currentUser = AContext->Connection->IOHandler->ReadLn();
 	String location = AContext->Connection->IOHandler->ReadLn();
 
+    //crit section should start here I think
+    XmlDoc->FileName = "companycars.xml";
+	XmlDoc->Active = true;
+	_di_IXMLcompanycarsType companycars = Getcompanycars(XmlDoc);
+	companycars = Getcompanycars(XmlDoc);
+	_di_IXMLcarType currentCar = companycars->Add();
+	currentCar->licenseplate = licensePlate;
+	currentCar->internalmark = internalMark;
+	currentCar->assigned = assigned;
+	currentCar->currentuser = currentUser;
+	currentCar->location = location;
+	XmlDoc->SaveToFile(XmlDoc->FileName);
+    XmlDoc->Active = false;
+    CriticalSection->Leave();
 
 	//perform action (TO DO: add to xml hosted on server)
-	ShowMessage(licensePlate);
+	//ShowMessage(licensePlate);
 
 	// return successful signal - same for all actions
 	return "done";
 }
-
+//---------------------------------------------------------------------------
 String TForm1::FindAction(String code, TIdContext *AContext){
 	if(code == "AddToXML"){
 		AContext->Connection->IOHandler->WriteLn("ok");
@@ -83,7 +98,7 @@ String TForm1::FindAction(String code, TIdContext *AContext){
 	AContext->Connection->IOHandler->WriteLn(ExtractFileName(fs->FileName));          //send name
 	AContext->Connection->IOHandler->Write(fs->Size);                                 //send size
 	AContext->Connection->IOHandler->Write(fs.get());                                 //send content
-    CriticalSection->Leave();
+	CriticalSection->Leave();
 	// return successful signal - same for all actions
 	return "done";
  }
@@ -124,14 +139,14 @@ CriticalSection->Enter();
 	publickey->LoadFromFile("publickey.bin");
 	AsymSign->LoadKeysFromStream(publickey.get(), TKeyStoragePartSet() << partPublic);
 	AsymCodec->EncryptString(SymKey, result, TEncoding::UTF8);
-    ShowMessage(result);
+	//ShowMessage(result);
     //send
 	AContext->Connection->IOHandler->WriteLn(result);
 	return "done";
  }
 
 
-
+//---------------------------------------------------------------------------
 void __fastcall TForm1::UDPFileServerUDPRead(TIdUDPListenerThread *AThread, const TIdBytes AData,
 		  TIdSocketHandle *ABinding)
 {
