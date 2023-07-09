@@ -307,11 +307,12 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 				DataModule1->wrSettingsHelper.SaveSettings();
                 //thread here!
 				Preparation *threadedPrep = new Preparation(false);
+                //ne radi make announcement
 				//DataModule1->CheckAuthentication();
                 //DataModule1->Authentification();
 				//move to toolbar
-				DataModule1->MakeAnnouncement("test");
-				DataModule1->CheckForAnnouncement();
+				//DataModule1->MakeAnnouncement("test");
+				//DataModule1->CheckForAnnouncement();
 			}
 
 		}

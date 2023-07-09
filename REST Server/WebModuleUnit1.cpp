@@ -57,6 +57,7 @@ void __fastcall TWebModule1::WebModule1ActEmployeesAction(TObject *Sender, TWebR
 		Response->Content = "You have to log in to access the resources!";
 		Response->ContentType = "text/plain; charset=UTF-8";
 		Response->SendResponse();
+        return;
 	}
 
 	//get and check user credentials
@@ -66,25 +67,29 @@ void __fastcall TWebModule1::WebModule1ActEmployeesAction(TObject *Sender, TWebR
 	if(Request->MethodType == mtGet){
 		//Response->Content = "Message: " + MessageList->Text;
 		Response->StatusCode = 200;
-		Response->Content = login;
+		Response->Content = MessageList->Text;
 		Response->ContentType = "text/plain; charset=UTF-8";
 		Response->SendResponse();
 		return;
 	}
 
 	else if(Request->MethodType == mtPost) {
-		if(username != "mdabcevic" || password != "FF22DC28DBEDD5D9064C8A3B75D16E3B99EBDCBD"){
+		if(login == "mdabcevic:FF22DC28DBEDD5D9064C8A3B75D16E3B99EBDCBD"){
+            MessageList->Add(Request->ContentFields->Values[0]);
+			Response->StatusCode = 200;
+			Response->Content = "Message added successfully";
+			Response->ContentType = "text/plain; charset=UTF-8";
+			Response->SendResponse();
+			return;
+		}
+
+		else{
 			Response->StatusCode = 401;
 			Response->Content = "You're not authorized to perform this action";
-			Response->ContentType = "text/plain; charset=UTF-8";
+			Response->ContentType = "xml; charset=UTF-8";
 			Response->SendResponse();
             return;
 		}
-		MessageList->Add(Request->ContentFields->Values["message"]);
-		Response->StatusCode = 200;
-		Response->Content = "Message added successfully";
-		Response->ContentType = "text/plain; charset=UTF-8";
-		Response->SendResponse();
 	}
 }
 
