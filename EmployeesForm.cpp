@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -16,9 +16,152 @@ __fastcall TForm4::TForm4(TComponent* Owner)
 {
 	//GroupBox1->SendToBack();
 	//RadioButton1->BringToFront();
+	translation["AddButton"] = {
+		{
+			{"EN", "Add new employee "},
+			{"HR", "Unesite novog zaposlenika"}
+
+		}
+	};
+
+	translation["ClearFilter"] = {
+		{
+			{"EN", "Clear Filter "},
+			{"HR", "Očistite filtere"}
+
+		}
+	};
+
+	translation["DeleteButton"] = {
+		{
+			{"EN", "Delete selected employee "},
+			{"HR", "Izbrišite odabranog zaposlenika"}
+
+		}
+	};
+
+	translation["DepartmentFilterOption"] = {
+		{
+			{"EN", "Department Name"},
+			{"HR", "Ime odjela"}
+
+		}
+	};
+
+	translation["EditButton"] = {
+		{
+			{"EN", "Edit selected employee"},
+			{"HR", "Ažurirajte odabranog zaposlenika"}
+
+		}
+	};
+
+	translation["FilteringBox"] = {
+		{
+			{"EN", "Filtering field"},
+			{"HR", "Stupac za filtriranje"}
+
+		}
+	};
+
+	translation["FnFilterOption"] = {
+		{
+			{"EN", "First Name"},
+			{"HR", "Ime"}
+
+		}
+	};
+
+    translation["Title"] = {
+		{
+			{"EN", "Employees"},
+			{"HR", "Zaposlenici"}
+
+		}
+	};
+
+	translation["LnFilterOption"] = {
+		{
+			{"EN", "Last Name"},
+			{"HR", "Prezime"}
+
+		}
+	};
+
+	translation["ReportPrint"] = {
+		{
+			{"EN", "Print report for selected employee"},
+			{"HR", "Ispišite izvješće za odabranog zaposlenika"}
+
+		}
+	};
+
+	translation["Sorting2Box"] = {
+		{
+			{"EN", "Sorting Direction"},
+			{"HR", "Smjer sortiranja"}
+
+		}
+	};
+
+	translation["AscSortOption"] = {
+		{
+			{"EN", "Ascending"},
+			{"HR", "Uzlazno"}
+
+		}
+	};
+
+	translation["DescSortOption"] = {
+		{
+			{"EN", "Descending"},
+			{"HR", "Silazno"}
+
+		}
+	};
+
+	translation["SortingBox"] = {
+		{
+			{"EN", "Sorting Field"},
+			{"HR", "Stupac za sortiranje"}
+
+		}
+	};
+
+	translation["DepartmentSortOption"] = {
+		{
+			{"EN", "Department"},
+			{"HR", "Odjel"}
+
+		}
+	};
+
+	translation["FnSortOption"] = {
+		{
+			{"EN", "First Name"},
+			{"HR", "Ime"}
+
+		}
+	};
+
+	translation["LnSortOption"] = {
+		{
+			{"EN", "Last Name"},
+			{"HR", "Prezime"}
+
+		}
+	};
+
+	translation["NoSortOption"] = {
+		{
+			{"EN", "None"},
+			{"HR", "Bez sortiranja"}
+
+		}
+	};
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm4::Button1Click(TObject *Sender)
+void __fastcall TForm4::AddButtonClick(TObject *Sender)
 {
 	Form6->CreateMode();
 	Form6->ShowModal();
@@ -26,7 +169,7 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
 	DataModule1->EmployeeQuery->Open();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm4::Button2Click(TObject *Sender)
+void __fastcall TForm4::DeleteButtonClick(TObject *Sender)
 {
 	DataModule1->CheckAuthentication();
 
@@ -45,7 +188,7 @@ void __fastcall TForm4::Button2Click(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm4::Button3Click(TObject *Sender)
+void __fastcall TForm4::EditButtonClick(TObject *Sender)
 {
 	Form6->EditMode();
 	Form6->ShowModal();

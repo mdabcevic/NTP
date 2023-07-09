@@ -12,7 +12,7 @@ object Form4: TForm4
   Font.Style = []
   OnClick = Sort
   TextHeight = 15
-  object Label1: TLabel
+  object Title: TLabel
     Left = 256
     Top = 24
     Width = 92
@@ -25,7 +25,7 @@ object Form4: TForm4
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
   end
-  object GroupBox1: TGroupBox
+  object SortingBox: TGroupBox
     Left = 8
     Top = 221
     Width = 185
@@ -107,34 +107,34 @@ object Form4: TForm4
         Visible = True
       end>
   end
-  object Button1: TButton
+  object AddButton: TButton
     Left = 8
     Top = 190
     Width = 193
     Height = 25
     Caption = 'Add employee'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = AddButtonClick
   end
-  object Button2: TButton
+  object DeleteButton: TButton
     Left = 207
     Top = 190
     Width = 202
     Height = 25
     Caption = 'Delete selected employee'
     TabOrder = 2
-    OnClick = Button2Click
+    OnClick = DeleteButtonClick
   end
-  object Button3: TButton
+  object EditButton: TButton
     Left = 415
     Top = 190
     Width = 202
     Height = 25
     Caption = 'Edit Selected employee'
     TabOrder = 3
-    OnClick = Button3Click
+    OnClick = EditButtonClick
   end
-  object GroupBox2: TGroupBox
+  object Sorting2Box: TGroupBox
     Left = 199
     Top = 221
     Width = 185
@@ -160,7 +160,7 @@ object Form4: TForm4
       OnClick = Sort
     end
   end
-  object GroupBox3: TGroupBox
+  object FilteringBox: TGroupBox
     Left = 390
     Top = 221
     Width = 227
@@ -189,7 +189,7 @@ object Form4: TForm4
   object DepartmentFilterOption: TRadioButton
     Left = 424
     Top = 295
-    Width = 113
+    Width = 129
     Height = 17
     Caption = 'Department Name'
     TabOrder = 9
