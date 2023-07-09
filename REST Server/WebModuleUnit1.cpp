@@ -1,4 +1,4 @@
- 
+
 //---------------------------------------------------------------------------
 #include "WebModuleUnit1.h"
 #include <System.NetEncoding.hpp>
@@ -36,39 +36,55 @@ void __fastcall TWebModule1::WebModule1DefaultHandlerAction(TObject *Sender, TWe
 void __fastcall TWebModule1::WebModule1ActEmployeesAction(TObject *Sender, TWebRequest *Request,
           TWebResponse *Response, bool &Handled)
 {
-TBytes bytes;
-	UnicodeString login;
-	UnicodeString username;
-	UnicodeString password;
+	TBytes bytes;
 	//meaning user hasn't yet logged in
 	if(Request->Authorization == ""){
 		Response->StatusCode = 401;
 		Response->ReasonString = "Unauthorized";
 		Response->ContentType = "text/plain; charset=UTF-8";
-		Response->Content = "You have to log in before accessing resources!";
+		Response->Content = "You have to log in to access the resources!";
 		Response->WWWAuthenticate = "Basic realm=\"MyRest login";
 		Response->SendResponse();
 		return;
 	}
 
-	//get and check user credentials
+	//meaning user hasn't logged in yet
 	bytes = TNetEncoding::Base64->DecodeStringToBytes(&Request->Authorization[6]);
-	login = StringOf(bytes);
-	username = SplitString(login, ":")[0];
-	password = SplitString(login, ":")[1];
-	//Response->Content = "Successfully Authenticated";
-	if(Request->MethodType == mtGet){
-		Response->Content = "Message: " + MessageList->Text;
+	UnicodeString login = StringOf(bytes);
+	if (login == ":") {
+		Response->StatusCode = 401;
+        Response->ReasonString = "Unauthorized";
+		Response->Content = "You have to log in to access the resources!";
+		Response->ContentType = "text/plain; charset=UTF-8";
+		Response->SendResponse();
 	}
 
-	else if(Request->MethodType ==mtDelete) {
+	//get and check user credentials
+	UnicodeString username = SplitString(login, ":")[0];
+	UnicodeString password = SplitString(login, ":")[1];
+	//Response->Content = "Successfully Authenticated";
+	if(Request->MethodType == mtGet){
+		//Response->Content = "Message: " + MessageList->Text;
+		Response->StatusCode = 200;
+		Response->Content = login;
+		Response->ContentType = "text/plain; charset=UTF-8";
+		Response->SendResponse();
+		return;
+	}
+
+	else if(Request->MethodType == mtPost) {
 		if(username != "mdabcevic" || password != "FF22DC28DBEDD5D9064C8A3B75D16E3B99EBDCBD"){
+			Response->StatusCode = 401;
 			Response->Content = "You're not authorized to perform this action";
+			Response->ContentType = "text/plain; charset=UTF-8";
+			Response->SendResponse();
             return;
 		}
 		MessageList->Add(Request->ContentFields->Values["message"]);
-        Response->StatusCode = 200;
+		Response->StatusCode = 200;
 		Response->Content = "Message added successfully";
+		Response->ContentType = "text/plain; charset=UTF-8";
+		Response->SendResponse();
 	}
 }
 
