@@ -114,7 +114,6 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 	UnicodeString partners = MergeIntoString(PartnersList);
 	UnicodeString purposes = MergeIntoString(PurposesList);
 
-
 	//DataModule1->WarrantsQuery->Insert();
 	//DataModule1->WarrantsQuery->FieldByName("EmployeeID")->AsInteger = 5;
 	if(WarrantAction->Caption == "Create new warrant"){
