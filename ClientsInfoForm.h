@@ -10,6 +10,7 @@
 #include <Vcl.ComCtrls.hpp>
 #include <System.Classes.hpp>
 #include <System.JSON.hpp>
+#include <map>
 //---------------------------------------------------------------------------
 class TForm10 : public TForm
 {
@@ -25,11 +26,11 @@ __published:	// IDE-managed Components
 	TEdit *IDBox;
 	TEdit *EmailBox;
 	TEdit *ContactPersonBox;
-	TLabel *Label1;
-	TLabel *Label2;
-	TLabel *Label3;
-	TLabel *Label4;
-	TLabel *Label5;
+	TLabel *CompanyLabel;
+	TLabel *ContactPersonLabel;
+	TLabel *EmailLabel;
+	TLabel *IDLabel;
+	TLabel *AddressLabel;
 	void __fastcall AddClientClick(TObject *Sender);
 	void __fastcall DeleteClientClick(TObject *Sender);
 	void __fastcall ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected);
@@ -38,7 +39,8 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm10(TComponent* Owner);
-    void LoadListView();
+	void LoadListView();
+    std::map<String, std::map<String, String>> translation;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm10 *Form10;

@@ -20,7 +20,9 @@ __fastcall TForm12::TForm12(TComponent* Owner)
 		ListView1->Columns->Items[i]->Width = ColWidth;
 	}
     DataModule1->RequestXMLFile();
-    FillListView();
+	FillListView();
+
+
 
 }
 //---------------------------------------------------------------------------

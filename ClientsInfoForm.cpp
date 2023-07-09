@@ -22,6 +22,78 @@ if(ListView1->Columns->Count > 0)
   }
 LoadListView();
 
+	translation["AddClient"] = {
+		{
+			{"EN", "Add new client"},
+			{"HR", "Dodaj novog klijenta na popis"}
+
+		}
+	};
+
+	translation["DeleteClient"] = {
+		{
+			{"EN", "Delete selected client"},
+			{"HR", "Izbrišite odabranog klijenta"}
+
+		}
+	};
+
+	translation["EditClient"] = {
+		{
+			{"EN", "Edit selected client"},
+			{"HR", "Ažurirajte odabranog klijenta"}
+
+		}
+	};
+
+	translation["GroupBox1"] = {
+		{
+			{"EN", "Enter information about client"},
+			{"HR", "Unesite podatke o klijentu"}
+
+		}
+	};
+
+	translation["CompanyLabel"] = {
+		{
+			{"EN", "Company"},
+			{"HR", "Tvrtka"}
+
+		}
+	};
+
+	translation["ContactPersonLabel"] = {
+		{
+			{"EN", "Contact Person"},
+			{"HR", "Osoba za kontakt"}
+
+		}
+	};
+
+	translation["IDLabel"] = {
+		{
+			{"EN", "ID Number"},
+			{"HR", "OIB"}
+
+		}
+	};
+
+	translation["AddressLabel"] = {
+		{
+			{"EN", "Address"},
+			{"HR", "Sjedište"}
+
+		}
+	};
+
+	translation["Title"] = {
+		{
+			{"EN", "Information about clients"},
+			{"HR", "Podaci o svim klijentima"}
+
+		}
+	};
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm10::AddClientClick(TObject *Sender)
@@ -96,4 +168,5 @@ void __fastcall TForm10::EditClientClick(TObject *Sender)
     LoadListView();
 }
 //---------------------------------------------------------------------------
+
 

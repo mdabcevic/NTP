@@ -10,6 +10,7 @@
 #include <Vcl.ComCtrls.hpp>
 #include "Data\AllData.h"
 #include "CarInfoInputForm.h"
+#include <map>
 //---------------------------------------------------------------------------
 class TForm12 : public TForm
 {
@@ -30,6 +31,7 @@ private:	// User declarations
 public:		// User declarations
 	__fastcall TForm12(TComponent* Owner);
 	void __fastcall FillListView();
+	std::map<String, std::map<String, String>> translation;
 };
 
 //---------------------------------------------------------------------------

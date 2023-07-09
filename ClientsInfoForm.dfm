@@ -2,8 +2,8 @@ object Form10: TForm10
   Left = 0
   Top = 0
   Caption = 'Clients'
-  ClientHeight = 492
-  ClientWidth = 620
+  ClientHeight = 491
+  ClientWidth = 616
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -89,35 +89,35 @@ object Form10: TForm10
     Height = 198
     Caption = 'Enter client information'
     TabOrder = 4
-    object Label1: TLabel
+    object CompanyLabel: TLabel
       Left = 40
       Top = 24
       Width = 52
       Height = 15
       Caption = 'Company'
     end
-    object Label2: TLabel
+    object ContactPersonLabel: TLabel
       Left = 40
       Top = 140
       Width = 81
       Height = 15
       Caption = 'Contact Person'
     end
-    object Label3: TLabel
+    object EmailLabel: TLabel
       Left = 40
       Top = 111
       Width = 29
       Height = 15
       Caption = 'Email'
     end
-    object Label4: TLabel
+    object IDLabel: TLabel
       Left = 40
       Top = 82
       Width = 70
       Height = 15
       Caption = 'Identification'
     end
-    object Label5: TLabel
+    object AddressLabel: TLabel
       Left = 40
       Top = 53
       Width = 42
