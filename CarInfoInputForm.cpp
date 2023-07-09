@@ -81,7 +81,7 @@ void TForm3::EditCarMode()
 //---------------------------------------------------------------------------
 void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 {
-	if(Form3->SaveCarChanges_Button->Caption == "Add car"){
+	if(Form3->SaveCarChanges_Button->Caption == "Add"){
 		DataModule1->XmlDoc->Active = false;
 		DataModule1->XmlDoc->Active = true;
         DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
@@ -95,7 +95,7 @@ void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 	DataModule1->currentCar->location = Form3->Location_Box->Text;
 	//DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
 
-    CheckPlates();
+    CheckPlates();    //my own custom SOAP validation
 	DataModule1->AddToXmlRequest();
 	DataModule1->XmlDoc->Active = false;
 	DataModule1->RequestXMLFile();
