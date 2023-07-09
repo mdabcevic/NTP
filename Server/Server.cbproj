@@ -130,12 +130,6 @@
             <DependentOn>..\Data\Client.h</DependentOn>
             <BuildOrder>5</BuildOrder>
         </CppCompile>
-        <CppCompile Include="..\DownloadResourcesForm.cpp">
-            <Form>Form13</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>..\DownloadResourcesForm.h</DependentOn>
-            <BuildOrder>6</BuildOrder>
-        </CppCompile>
         <CppCompile Include="..\Helpers\companycars.cpp">
             <DependentOn>..\Helpers\companycars.h</DependentOn>
             <BuildOrder>3</BuildOrder>
@@ -158,7 +152,6 @@
             <PCH>true</PCH>
         </PCHCompile>
         <FormResources Include="ServerForm.dfm"/>
-        <FormResources Include="..\DownloadResourcesForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
