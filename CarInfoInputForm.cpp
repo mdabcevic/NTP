@@ -70,7 +70,7 @@ void TForm3::AddCarMode()
 //---------------------------------------------------------------------------
 void TForm3::EditCarMode()
 {
-	Form3->SaveCarChanges_Button->Caption = "Edit car";
+	Form3->SaveCarChanges_Button->Caption = "Edit";
 	Form3->LicensePlate_Box->Text = DataModule1->currentCar->licenseplate;
 	Form3->InternalName_Box->Text = DataModule1->currentCar->internalmark;
 	Form3->Assigned_Box->Text = DataModule1->currentCar->assigned;
@@ -95,21 +95,31 @@ void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 	DataModule1->currentCar->location = Form3->Location_Box->Text;
 	//DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
 
-    CheckPlates();    //my own custom SOAP validation
-	DataModule1->AddToXmlRequest();
-	DataModule1->XmlDoc->Active = false;
-	DataModule1->RequestXMLFile();
-    DataModule1->XmlDoc->Active = true;
-	Form3->Close();
+	if(CheckPlates()){
+		if(Form3->SaveCarChanges_Button->Caption == "Add"){
+            DataModule1->AddToXmlRequest();
+		}
+		else if(Form3->SaveCarChanges_Button->Caption == "Edit"){
+			//TO DO: add request for editing!
+		}
+        DataModule1->XmlDoc->Active = false;
+		DataModule1->RequestXMLFile();
+		DataModule1->XmlDoc->Active = true;
+		Form3->Close();
+	}
+	else{
+        ShowMessage("Invalid license plate!");
+    }
 }
 //---------------------------------------------------------------------------
 
-void TForm3::CheckPlates(){
+bool TForm3::CheckPlates(){
 	if(DataModule1->carValidation->validateLicensePlate(DataModule1->currentCar->licenseplate)){
 		//ShowMessage("good license plate format");
 		if(DataModule1->carValidation->isValidCityCode(DataModule1->currentCar->licenseplate)){
-			ShowMessage("valid");
+			//ShowMessage("valid");
+			return true;
 		}
 	}
-
+	return false;
 }

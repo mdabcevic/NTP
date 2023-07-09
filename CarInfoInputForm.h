@@ -30,7 +30,7 @@ public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);
 	void AddCarMode();
 	void EditCarMode();
-	void CheckPlates();
+	bool CheckPlates();
 
 	std::map<String, std::map<String, String>> translation;
 };
