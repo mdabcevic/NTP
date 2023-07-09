@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -16,9 +16,41 @@ TForm9 *Form9;
 __fastcall TForm9::TForm9(TComponent* Owner)
 	: TForm(Owner)
 {
+	translation["ReportWarrant"] = {
+		{
+			{"EN", "Generate report for selected warrant"},
+			{"HR", "Ispišite izvještaj za označeni nalog"}
+
+		}
+	};
+
+	translation["DeleteButton"] = {
+		{
+			{"EN", "Delete selected warrant"},
+			{"HR", "Izbrišite označeni nalog"}
+
+		}
+	};
+
+	translation["Title"] = {
+		{
+			{"EN", "Travel Warrants"},
+			{"HR", "Putni nalozi"}
+
+		}
+	};
+
+	translation["EditButton"] = {
+		{
+			{"EN", "Edit selected warrant"},
+			{"HR", "Ažurirajte označeni nalog"}
+
+		}
+	};
+
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm9::Button2Click(TObject *Sender)
+void __fastcall TForm9::DeleteButtonClick(TObject *Sender)
 {
 	int warrantID = DBGrid1->DataSource->DataSet->FieldByName("WarrantID")->AsInteger;
     TADOQuery *Query1 = new TADOQuery(NULL);
@@ -32,13 +64,13 @@ void __fastcall TForm9::Button2Click(TObject *Sender)
 	DataModule1->WarrantsQuery->Open();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm9::Button3Click(TObject *Sender)
+void __fastcall TForm9::EditButtonClick(TObject *Sender)
 {
     Form7->EditMode();
 	Form7->ShowModal();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm9::Button1Click(TObject *Sender)
+void __fastcall TForm9::ReportWarrantClick(TObject *Sender)
 {
 
 

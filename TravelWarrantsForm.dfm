@@ -2,8 +2,8 @@ object Form9: TForm9
   Left = 0
   Top = 0
   Caption = 'Travel Warrants'
-  ClientHeight = 441
-  ClientWidth = 1119
+  ClientHeight = 440
+  ClientWidth = 1115
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,7 +11,7 @@ object Form9: TForm9
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object Title: TLabel
     Left = 520
     Top = 24
     Width = 154
@@ -97,31 +97,31 @@ object Form9: TForm9
         Visible = True
       end>
   end
-  object Button2: TButton
+  object DeleteButton: TButton
     Left = 423
     Top = 186
     Width = 386
     Height = 25
     Caption = 'Delete selected warrant'
     TabOrder = 1
-    OnClick = Button2Click
+    OnClick = DeleteButtonClick
   end
-  object Button3: TButton
+  object EditButton: TButton
     Left = 8
     Top = 186
     Width = 409
     Height = 25
     Caption = 'Edit selected warrant'
     TabOrder = 2
-    OnClick = Button3Click
+    OnClick = EditButtonClick
   end
-  object Button1: TButton
+  object ReportWarrant: TButton
     Left = 815
     Top = 186
     Width = 296
     Height = 25
     Caption = 'Generate report for selected warrant'
     TabOrder = 3
-    OnClick = Button1Click
+    OnClick = ReportWarrantClick
   end
 end

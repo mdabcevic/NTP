@@ -604,6 +604,7 @@ void __fastcall TForm1::ImgHrClick(TObject *Sender)
 	DataModule1->translateForm(Form6, "HR", Form6->translation);
 	DataModule1->translateForm(Form4, "HR", Form4->translation);
 	DataModule1->translateForm(Form7, "HR", Form7->translation);
+	DataModule1->translateForm(Form9, "HR", Form9->translation);
 }
 //---------------------------------------------------------------------------
 
@@ -617,7 +618,8 @@ void __fastcall TForm1::ImgEnClick(TObject *Sender)
 	DataModule1->translateForm(Form5, "EN", Form5->translation);
 	DataModule1->translateForm(Form6, "EN", Form6->translation);
 	DataModule1->translateForm(Form4, "EN", Form4->translation);
-    DataModule1->translateForm(Form7, "EN", Form7->translation);
+	DataModule1->translateForm(Form7, "EN", Form7->translation);
+    DataModule1->translateForm(Form9, "EN", Form9->translation);
 }
 //---------------------------------------------------------------------------
 
