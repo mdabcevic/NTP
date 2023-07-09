@@ -203,8 +203,8 @@ bool TDataModule1::Login(UnicodeString username, UnicodeString password){
 	}
 	//get user info
 	currentUser.Username = MultiQuery->FieldByName("Username")->AsString;
-	//TO DO: handle password? what about other info?
 	currentUser.Password = MultiQuery->FieldByName("Password")->AsString;
+    ShowMessage(currentUser.Username + " " + currentUser.Password);
     currentUser.ID = MultiQuery->FieldByName("EmployeeID")->AsInteger;
 	MultiQuery->SQL->Clear(); // clear it for next query just in case
     return true;
@@ -213,14 +213,15 @@ bool TDataModule1::Login(UnicodeString username, UnicodeString password){
  //---------------------------------------------------------------------------
  int TDataModule1::Authentification(){
 	//just in case
-	HTTP = new TIdHTTP(NULL);
+	//HTTP = new TIdHTTP(NULL);
 	UnicodeString auth = "Basic " + TNetEncoding::Base64->Encode(currentUser.Username + ":" + currentUser.Password);
-	UnicodeString url = "http://localhost:8085/auth";
-	HTTP->Request->CustomHeaders->Values["Authorization"] = auth;
-	currentUser.AuthToken  = HTTP->Get(url);
+	UnicodeString url = "http://localhost/RESTISAPI.dll/employees";
+	//RClient->Request->CustomHeaders->Values["Authorization"] = auth;
+
+   //	currentUser.AuthToken  = HTTP->Get(url);
 
     //just in case again
-	HTTP = new TIdHTTP(NULL);
+	//HTTP = new TIdHTTP(NULL);
 
  }
   //---------------------------------------------------------------------------
@@ -331,10 +332,9 @@ void TDataModule1::SendPublicKey(){
 
  void TDataModule1::MakeAnnouncement(String message){
     RRequest->Method = rmPOST;
-    RRequest->Params->Clear();
-
-    RRequest->Params->AddItem()->Name = "message";
-    RRequest->Params->Items[0]->Value = message;
+	RRequest->Params->Clear();
+	RRequest->Params->AddItem()->Name = "message";
+	RRequest->Params->Items[0]->Value = message;
 
 	RRequest->Execute();
     if (RResponse->StatusCode == 200) {

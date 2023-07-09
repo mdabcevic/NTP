@@ -285,14 +285,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 void __fastcall TForm1::loginButtonClick(TObject *Sender)
 {
 
-
-
-//ShowMessage(DataModule1->service->CountryFlag("HR"));
-//TO DO:
-
-//grananje:
-
-
 	//Registration
 	if(isRegister->Checked){
 		if(pwBox->Text == pwConfirmBox->Text){
@@ -313,19 +305,21 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 				DataModule1->wrSettingsHelper.username = usernameBox->Text;
 				DataModule1->wrSettingsHelper.password = pwBox->Text;
 				DataModule1->wrSettingsHelper.SaveSettings();
+                //thread here!
+				Preparation *threadedPrep = new Preparation(false);
+				//DataModule1->CheckAuthentication();
+                //DataModule1->Authentification();
+				//move to toolbar
+				DataModule1->MakeAnnouncement("test");
+				DataModule1->CheckForAnnouncement();
 			}
+
 		}
 		else{
             return;
         }
 
-		//thread here!
-		Preparation *threadedPrep = new Preparation(false);
-        //move to thread after UI makeover
-		DataModule1->CheckAuthentication();
-		//move to toolbar
-		DataModule1->MakeAnnouncement("test");
-        DataModule1->CheckForAnnouncement();
+
 	}
 
 }
@@ -379,58 +373,10 @@ void __fastcall TForm1::AddPurposeButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Button2Click(TObject *Sender)
-{
-    Form5->ShowModal();
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::Button3Click(TObject *Sender)
-{
-    Form8->ShowModal();
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::BClick(TObject *Sender)
-{
-    Form7->CreateMode();
-    Form7->ShowModal();
-}
-//---------------------------------------------------------------------------
-
-
 void __fastcall TForm1::WarrantsButtonClick(TObject *Sender)
 {
 
     Form9->ShowModal();
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::Button5Click(TObject *Sender)
-{
-	Form10->ShowModal();
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::Button6Click(TObject *Sender)
-{
-	Form11->ShowModal();
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::Button7Click(TObject *Sender)
-{
-    Form12->ShowModal();
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::Button8Click(TObject *Sender)
-{
-	//Form13->ShowModal();       moved to dll
-	TForm13 *Download = new TForm13(this);
-	Download->ShowModal();
-
-
 }
 //---------------------------------------------------------------------------
 

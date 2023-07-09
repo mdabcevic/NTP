@@ -91,14 +91,7 @@ __published:	// IDE-managed Components
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall isRememberMeClick(TObject *Sender);
 	void __fastcall AddPurposeButtonClick(TObject *Sender);
-	void __fastcall Button2Click(TObject *Sender);
-	void __fastcall Button3Click(TObject *Sender);
-	void __fastcall BClick(TObject *Sender);
 	void __fastcall WarrantsButtonClick(TObject *Sender);
-	void __fastcall Button5Click(TObject *Sender);
-	void __fastcall Button6Click(TObject *Sender);
-	void __fastcall Button7Click(TObject *Sender);
-	void __fastcall Button8Click(TObject *Sender);
 	void __fastcall Button9Click(TObject *Sender);
 	void __fastcall ResetFont2Click(TObject *Sender);
 	void __fastcall Dark1Click(TObject *Sender);

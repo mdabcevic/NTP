@@ -1102,7 +1102,7 @@ object DataModule1: TDataModule1
   end
   object RClient: TRESTClient
     Authenticator = HTTPBaseAuth
-    BaseURL = 'http://localhost/RESTISAPI.dll/employee'
+    BaseURL = 'http://localhost/RESTISAPI.dll/employees'
     Params = <>
     SynchronizedEvents = False
     Left = 424
