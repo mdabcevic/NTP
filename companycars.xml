@@ -7,4 +7,14 @@
 		<currentuser>X.X.</currentuser>
 		<location>Zagreb</location>
 	</car>
+  
+  
+  
+  <car>
+    <licenseplate>ZG-9142-UQ</licenseplate>
+    <internalmark>Toyota-Yaris-01</internalmark>
+    <assigned>Safi Hajjo</assigned>
+    <currentuser>Safi Hajjo</currentuser>
+    <location>Zagreb</location>
+  </car>
 </companycars>
