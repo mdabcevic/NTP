@@ -355,3 +355,4 @@ void TDataModule1::SendPublicKey(){
 							SetPropValue(Form->Components[i], "Caption", it_Language->second);
 }
 
+

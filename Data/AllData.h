@@ -138,6 +138,22 @@ __published:	// IDE-managed Components
 	TRESTClient *RClient;
 	TRESTRequest *RRequest;
 	TRESTResponse *RResponse;
+	TAutoIncField *EmployeeQueryEmployeeID;
+	TWideStringField *EmployeeQueryFirstName;
+	TWideStringField *EmployeeQueryLastName;
+	TWideStringField *EmployeeQueryIdentificationNumber;
+	TIntegerField *EmployeeQueryDepartmentCode;
+	TIntegerField *EmployeeQueryJobID;
+	TWideStringField *EmployeeQueryEducation;
+	TBooleanField *EmployeeQueryDriverLicense;
+	TWideStringField *EmployeeQueryAddress;
+	TWideStringField *EmployeeQueryDepositAccountNumber;
+	TIntegerField *EmployeeQueryTenure;
+	TWideStringField *EmployeeQueryUsername;
+	TWideStringField *EmployeeQueryPassword;
+	TWideStringField *EmployeeQueryEmail;
+	TWideStringField *EmployeeQueryPhone;
+	TStringField *EmployeeQueryEmployeeDepartment;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations

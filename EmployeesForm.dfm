@@ -75,6 +75,7 @@ object Form4: TForm4
     Width = 609
     Height = 120
     DataSource = DataModule1.EmployeeDataSource
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -102,8 +103,7 @@ object Form4: TForm4
       end
       item
         Expanded = False
-        FieldName = 'DepartmentName'
-        Width = 140
+        FieldName = 'EmployeeDepartment'
         Visible = True
       end>
   end

@@ -40,15 +40,80 @@ object DataModule1: TDataModule1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      
-        'SELECT e.EmployeeID, e.FirstName, e.LastName, e.Email, d.Departm' +
-        'entName'
-      'FROM Employees as e'
-      
-        'INNER JOIN Departments as d ON e.DepartmentCode = d.DepartmentCo' +
-        'de')
+      'select *'
+      'from Employees;')
     Left = 256
     Top = 120
+    object EmployeeQueryEmployeeID: TAutoIncField
+      FieldName = 'EmployeeID'
+      ReadOnly = True
+    end
+    object EmployeeQueryFirstName: TWideStringField
+      FieldName = 'FirstName'
+      FixedChar = True
+    end
+    object EmployeeQueryLastName: TWideStringField
+      FieldName = 'LastName'
+      FixedChar = True
+    end
+    object EmployeeQueryIdentificationNumber: TWideStringField
+      FieldName = 'IdentificationNumber'
+      FixedChar = True
+    end
+    object EmployeeQueryDepartmentCode: TIntegerField
+      FieldName = 'DepartmentCode'
+    end
+    object EmployeeQueryJobID: TIntegerField
+      FieldName = 'JobID'
+    end
+    object EmployeeQueryEducation: TWideStringField
+      FieldName = 'Education'
+      FixedChar = True
+      Size = 50
+    end
+    object EmployeeQueryDriverLicense: TBooleanField
+      FieldName = 'DriverLicense'
+    end
+    object EmployeeQueryAddress: TWideStringField
+      FieldName = 'Address'
+      FixedChar = True
+      Size = 50
+    end
+    object EmployeeQueryDepositAccountNumber: TWideStringField
+      FieldName = 'DepositAccountNumber'
+      FixedChar = True
+      Size = 50
+    end
+    object EmployeeQueryTenure: TIntegerField
+      FieldName = 'Tenure'
+    end
+    object EmployeeQueryUsername: TWideStringField
+      FieldName = 'Username'
+      FixedChar = True
+    end
+    object EmployeeQueryPassword: TWideStringField
+      FieldName = 'Password'
+      FixedChar = True
+      Size = 100
+    end
+    object EmployeeQueryEmail: TWideStringField
+      FieldName = 'Email'
+      FixedChar = True
+      Size = 50
+    end
+    object EmployeeQueryPhone: TWideStringField
+      FieldName = 'Phone'
+      FixedChar = True
+    end
+    object EmployeeQueryEmployeeDepartment: TStringField
+      FieldKind = fkLookup
+      FieldName = 'EmployeeDepartment'
+      LookupDataSet = DepartmentsTable
+      LookupKeyFields = 'DepartmentCode'
+      LookupResultField = 'DepartmentName'
+      KeyFields = 'DepartmentCode'
+      Lookup = True
+    end
   end
   object DepartmentsQuery: TADOQuery
     Active = True

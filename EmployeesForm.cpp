@@ -192,8 +192,8 @@ void __fastcall TForm4::EditButtonClick(TObject *Sender)
 {
 	Form6->EditMode();
 	Form6->ShowModal();
-	DataModule1->EmployeeQuery->Close();
-	DataModule1->EmployeeQuery->Open();
+	//DataModule1->EmployeeQuery->Close();
+	//DataModule1->EmployeeQuery->Open();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm4::Sort(TObject *Sender)
