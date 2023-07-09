@@ -42,8 +42,8 @@ __fastcall TForm4::TForm4(TComponent* Owner)
 
 	translation["DepartmentFilterOption"] = {
 		{
-			{"EN", "Department Name"},
-			{"HR", "Ime odjela"}
+			{"EN", "Department Code"},
+			{"HR", "Šifra odjela"}
 
 		}
 	};
@@ -130,8 +130,8 @@ __fastcall TForm4::TForm4(TComponent* Owner)
 
 	translation["DepartmentSortOption"] = {
 		{
-			{"EN", "Department"},
-			{"HR", "Odjel"}
+			{"EN", "Department Code"},
+			{"HR", "Šifra odjela"}
 
 		}
 	};
@@ -207,7 +207,7 @@ void __fastcall TForm4::Sort(TObject *Sender)
 	else if(LnSortOption->Checked)
 		field = "LastName";
     else if(DepartmentSortOption->Checked)
-		field = "DepartmentName";
+		field = "DepartmentCode";
 	else{
 		// if there is no sorting, go out
 		DataModule1->EmployeeQuery->Sort = "";
@@ -235,7 +235,7 @@ void __fastcall TForm4::Filter(TObject *Sender)
 else if (LnFilterOption->Checked)
 		DataModule1->EmployeeQuery->Filter = "LastName LIKE '%" + FilterBox->Text + "%'";
 else if (DepartmentFilterOption->Checked)
-		DataModule1->EmployeeQuery->Filter = "DepartmentName LIKE '%" + FilterBox->Text + "%'";
+		DataModule1->EmployeeQuery->Filter = "DepartmentCode LIKE '%" + FilterBox->Text + "%'";
 
 DataModule1->EmployeeQuery->Filtered = true;
 }
@@ -253,8 +253,16 @@ void __fastcall TForm4::ClearFilterClick(TObject *Sender)
 void __fastcall TForm4::ReportPrintClick(TObject *Sender)
 {
 	DataModule1->EmployeeLayout->PrepareReport(true);
-	DataModule1->EmployeeLayout->FileName = "EmployeeReport.pdf";
-	DataModule1->EmployeeLayout->Export(DataModule1->PDFExport);
+	//TO DO: change name to name od the employee
+	if (PDFRadio->Checked) {
+		DataModule1->EmployeeLayout->FileName = "EmployeeReport.pdf";
+		DataModule1->EmployeeLayout->Export(DataModule1->PDFExport);
+		return;
+	}
+	else
+	DataModule1->EmployeeLayout->FileName = "EmployeeReport.rtf";
+    DataModule1->EmployeeLayout->Export(DataModule1->RTFExport);
+
 }
 //---------------------------------------------------------------------------
 

@@ -36,6 +36,9 @@ __published:	// IDE-managed Components
 	TEdit *FilterBox;
 	TButton *ClearFilter;
 	TButton *ReportPrint;
+	TGroupBox *ReportBox;
+	TRadioButton *PDFRadio;
+	TRadioButton *RDFRadio;
 	void __fastcall AddButtonClick(TObject *Sender);
 	void __fastcall DeleteButtonClick(TObject *Sender);
 	void __fastcall EditButtonClick(TObject *Sender);

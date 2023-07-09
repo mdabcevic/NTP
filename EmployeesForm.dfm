@@ -215,10 +215,35 @@ object Form4: TForm4
   object ReportPrint: TButton
     Left = 8
     Top = 376
-    Width = 609
+    Width = 376
     Height = 25
     Caption = 'Print reports for selected employee'
     TabOrder = 12
     OnClick = ReportPrintClick
+  end
+  object ReportBox: TGroupBox
+    Left = 390
+    Top = 375
+    Width = 227
+    Height = 26
+    TabOrder = 13
+    object PDFRadio: TRadioButton
+      Left = 40
+      Top = 6
+      Width = 57
+      Height = 17
+      Caption = 'PDF'
+      Checked = True
+      TabOrder = 0
+      TabStop = True
+    end
+    object RDFRadio: TRadioButton
+      Left = 135
+      Top = 6
+      Width = 50
+      Height = 17
+      Caption = 'RTF'
+      TabOrder = 1
+    end
   end
 end
