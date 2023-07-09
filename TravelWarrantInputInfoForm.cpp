@@ -17,6 +17,7 @@ __fastcall TForm7::TForm7(TComponent* Owner)
 	TollInfo->Items->Add("Cash");
 	TollInfo->Items->Add("ENC device");
 	TollInfo->Items->Add("Smart card");
+	//ExpensesID = 0;
 
 	translation["AddAttachments"] = {
 		{
@@ -112,9 +113,20 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 {
 	UnicodeString partners = MergeIntoString(PartnersList);
 	UnicodeString purposes = MergeIntoString(PurposesList);
+
+
 	//DataModule1->WarrantsQuery->Insert();
-	DataModule1->WarrantsQuery->FieldByName("EmployeeID")->AsInteger = 5;
+	//DataModule1->WarrantsQuery->FieldByName("EmployeeID")->AsInteger = 5;
+	if(WarrantAction->Caption == "Create new warrant"){
+		DataModule1->WarrantsQuery->FieldByName("EmployeeID")->AsInteger = DataModule1->currentUser.ID;
+		if(ExpensesID == 0){
+		ShowMessage("Please upload recepits file before proceeding!");
+		return;
+		}
+        DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger = ExpensesID;
+	}
 	DataModule1->WarrantsQuery->FieldByName("CreatedAt")->AsDateTime = Now();
+	//time is always now, there is no selection :/
 	DataModule1->WarrantsQuery->FieldByName("Departure")->AsDateTime = DepartureDateTime->Date +  DepartureDateTime->Time;
 	DataModule1->WarrantsQuery->FieldByName("Arrival")->AsDateTime = ArrivalDateTime->Date +  ArrivalDateTime->Time;
 	DataModule1->WarrantsQuery->FieldByName("IsInternational")->AsBoolean = isInternational->Checked;
@@ -124,8 +136,8 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 	DataModule1->WarrantsQuery->FieldByName("EndingOdometer")->AsInteger = OdometerEnd->Value;
 	DataModule1->WarrantsQuery->FieldByName("Toll")->AsString = TollInfo->Text;
 	DataModule1->WarrantsQuery->FieldByName("LicensePlate")->AsString = CarSelection->Text;
-	DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger = 1;
 	DataModule1->WarrantsQuery->Post();
+    ExpensesID = 0;
 
 }
 //---------------------------------------------------------------------------
@@ -133,15 +145,18 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 void  TForm7::EditMode(){
 	DataModule1->WarrantsQuery->Edit();
 	WarrantAction->Caption = "Edit selected warrant";
+	ExpensesID = DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger;
 }
 //---------------------------------------------------------------------------
 void  TForm7::CreateMode(){
 	DataModule1->WarrantsQuery->Insert();
 	WarrantAction->Caption = "Create new warrant";
+    ExpensesID = 0;
 }
 
 void __fastcall TForm7::FormShow(TObject *Sender)
 {
+    ExpensesID = 0;
 	DataModule1->purposesHelper.ReadFromFile();
 	PurposesList->Clear();
 	for(const Purpose& purpose : DataModule1->purposesHelper.allPurposes) {

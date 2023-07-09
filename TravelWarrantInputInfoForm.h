@@ -57,6 +57,7 @@ public:		// User declarations
 	void CreateMode();
 	UnicodeString MergeIntoString(TCheckListBox* list);
 	std::map<String, std::map<String, String>> translation;
+    int ExpensesID;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm7 *Form7;

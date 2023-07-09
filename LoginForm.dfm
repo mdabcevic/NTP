@@ -3831,6 +3831,7 @@ object Form1: TForm1
       Width = 129
       Height = 25
       Caption = 'Add new client'
+      Enabled = False
       TabOrder = 3
     end
     object AllCars: TButton

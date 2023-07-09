@@ -13,6 +13,7 @@
 #include <Vcl.Grids.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Mask.hpp>
+#include "TravelWarrantInputInfoForm.h"
 #include <map>
 //---------------------------------------------------------------------------
 class TForm8 : public TForm

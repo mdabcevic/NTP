@@ -78,6 +78,8 @@ void __fastcall TForm8::UploadClick(TObject *Sender)
 		AttachmentPreview->Visible = true;
 		ExpenseIDVal->Visible = true;
 		ExpenseID->Visible = true;
+		Form7->ExpensesID = DataModule1->ExpensesQuery->FieldByName("ExpensesID")->AsInteger;
+
 	}
 }
 //---------------------------------------------------------------------------
