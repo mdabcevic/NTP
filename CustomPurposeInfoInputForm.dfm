@@ -11,14 +11,14 @@ object Form11: TForm11
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object CodeLabel: TLabel
     Left = 24
     Top = 165
     Width = 26
     Height = 15
     Caption = 'code'
   end
-  object Label2: TLabel
+  object Title: TLabel
     Left = 24
     Top = 24
     Width = 153
@@ -78,13 +78,13 @@ object Form11: TForm11
     Caption = 'classified'
     TabOrder = 4
   end
-  object Button1: TButton
+  object SubmitButton: TButton
     Left = 24
     Top = 264
     Width = 369
     Height = 25
     Caption = 'Submit'
     TabOrder = 5
-    OnClick = Button1Click
+    OnClick = SubmitButtonClick
   end
 end
