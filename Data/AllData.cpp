@@ -93,6 +93,41 @@ void TDataModule1::AddToXmlRequest(){
 
 }
 //---------------------------------------------------------------------------
+void TDataModule1::EditXMLRequest(int index){
+	DataModule1->TCPClient->Connect();
+	XmlDoc->Active = false;
+	// send request code - needed for server to figure out which action to perform
+	DataModule1->TCPClient->IOHandler->WriteLn("EditXML");
+
+	// wait for server to find that action
+	String response = DataModule1->TCPClient->IOHandler->ReadLn();
+
+	// if it's found, send specific data for action
+	if (response == "ok"){
+		DataModule1->TCPClient->IOHandler->Write(index);
+		DataModule1->TCPClient->IOHandler->WriteLn(DataModule1->currentCar->licenseplate);
+		DataModule1->TCPClient->IOHandler->WriteLn(DataModule1->currentCar->internalmark);
+		DataModule1->TCPClient->IOHandler->WriteLn(DataModule1->currentCar->assigned);
+		DataModule1->TCPClient->IOHandler->WriteLn(DataModule1->currentCar->currentuser);
+		DataModule1->TCPClient->IOHandler->WriteLn(DataModule1->currentCar->location);
+
+		// wait for server to confirm successful action
+		response = DataModule1->TCPClient->IOHandler->ReadLn();
+		if(response != "done")
+		{
+			// TODO: Handle server not confirming end of operation
+		}
+	}
+	else
+	{
+		// TODO: Handle server not responding with 'ok'
+	}
+	// Disconnect from the server
+	XmlDoc->Active = true;
+   DataModule1->TCPClient->Disconnect();
+}
+
+//---------------------------------------------------------------------------
 void TDataModule1::RequestXMLFile(){
 	TCPClient->Connect();
 	XmlDoc->Active = false;

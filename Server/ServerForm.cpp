@@ -45,8 +45,8 @@ String TForm1::AddToXml(TIdContext *AContext){
 	String currentUser = AContext->Connection->IOHandler->ReadLn();
 	String location = AContext->Connection->IOHandler->ReadLn();
 
-    //crit section should start here I think
-    XmlDoc->FileName = "companycars.xml";
+	//crit section should start here I think
+	XmlDoc->FileName = "companycars.xml";
 	XmlDoc->Active = true;
 	_di_IXMLcompanycarsType companycars = Getcompanycars(XmlDoc);
 	companycars = Getcompanycars(XmlDoc);
@@ -57,11 +57,41 @@ String TForm1::AddToXml(TIdContext *AContext){
 	currentCar->currentuser = currentUser;
 	currentCar->location = location;
 	XmlDoc->SaveToFile(XmlDoc->FileName);
-    XmlDoc->Active = false;
-    CriticalSection->Leave();
+	XmlDoc->Active = false;
+	CriticalSection->Leave();
 
 	//perform action (TO DO: add to xml hosted on server)
 	//ShowMessage(licensePlate);
+
+	// return successful signal - same for all actions
+	return "done";
+}
+//---------------------------------------------------------------------------
+String TForm1::EditXml(TIdContext *AContext){
+
+	CriticalSection->Enter();
+	// Read data about car
+	int carindex = AContext->Connection->IOHandler->ReadInt32();
+	String licensePlate = AContext->Connection->IOHandler->ReadLn();
+	String internalMark = AContext->Connection->IOHandler->ReadLn();
+	String assigned = AContext->Connection->IOHandler->ReadLn();
+	String currentUser = AContext->Connection->IOHandler->ReadLn();
+	String location = AContext->Connection->IOHandler->ReadLn();
+
+	//crit section should start here I think
+	XmlDoc->FileName = "companycars.xml";
+	XmlDoc->Active = true;
+	_di_IXMLcompanycarsType companycars = Getcompanycars(XmlDoc);
+	companycars = Getcompanycars(XmlDoc);
+	_di_IXMLcarType currentCar = companycars->car[carindex];
+	currentCar->licenseplate = licensePlate;
+	currentCar->internalmark = internalMark;
+	currentCar->assigned = assigned;
+	currentCar->currentuser = currentUser;
+	currentCar->location = location;
+	XmlDoc->SaveToFile(XmlDoc->FileName);
+	XmlDoc->Active = false;
+	CriticalSection->Leave();
 
 	// return successful signal - same for all actions
 	return "done";
@@ -73,6 +103,11 @@ String TForm1::FindAction(String code, TIdContext *AContext){
 		String isCompleted = AddToXml(AContext);
 		return isCompleted;
 	}
+	else if (code == "EditXML") {
+		AContext->Connection->IOHandler->WriteLn("ok");
+		String isCompleted = EditXml(AContext);
+		return isCompleted;
+		 }
 	else if(code == "RequestXMLFile"){
 		AContext->Connection->IOHandler->WriteLn("ok");
 		String isCompleted = SendXml(AContext);

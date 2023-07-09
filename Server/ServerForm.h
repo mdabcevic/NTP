@@ -55,6 +55,7 @@ public:		// User declarations
 	// server actions
 	String FindAction(String code, TIdContext *AContext);
 	String AddToXml(TIdContext *AContext);
+	String EditXml(TIdContext *AContext);
 	String SendXml(TIdContext *AContext);
 	String ReceivePublicKey(TIdContext *AContext);
 	String SendSymKey(TIdContext *AContext);

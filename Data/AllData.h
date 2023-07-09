@@ -163,6 +163,7 @@ public:		// User declarations
 
 	//TCP requests
 	void AddToXmlRequest();
+    void EditXMLRequest(int index);
 	void RequestXMLFile();
 
 	//UDP requests

@@ -68,8 +68,9 @@ void TForm3::AddCarMode()
 
 }
 //---------------------------------------------------------------------------
-void TForm3::EditCarMode()
+void TForm3::EditCarMode(int index)
 {
+    carIndex = index;
 	Form3->SaveCarChanges_Button->Caption = "Edit";
 	Form3->LicensePlate_Box->Text = DataModule1->currentCar->licenseplate;
 	Form3->InternalName_Box->Text = DataModule1->currentCar->internalmark;
@@ -81,27 +82,31 @@ void TForm3::EditCarMode()
 //---------------------------------------------------------------------------
 void __fastcall TForm3::SaveCarChanges_ButtonClick(TObject *Sender)
 {
+	//it's already in the Edit mode, so change only if Add is specified
 	if(Form3->SaveCarChanges_Button->Caption == "Add"){
 		DataModule1->XmlDoc->Active = false;
 		DataModule1->XmlDoc->Active = true;
         DataModule1->companycars = Getcompanycars(DataModule1->XmlDoc);
 		DataModule1->currentCar = DataModule1->companycars->Add();
-
 	}
+	//this part is the same for both actions
 	DataModule1->currentCar->licenseplate = Form3->LicensePlate_Box->Text;
 	DataModule1->currentCar->internalmark = Form3->InternalName_Box->Text;
 	DataModule1->currentCar->assigned = Form3->Assigned_Box->Text;
 	DataModule1->currentCar->currentuser = Form3->User_Box->Text;
 	DataModule1->currentCar->location = Form3->Location_Box->Text;
-	//DataModule1->XmlDoc->SaveToFile(DataModule1->XmlDoc->FileName);
 
+
+	//SOAP validation for license plates
 	if(CheckPlates()){
 		if(Form3->SaveCarChanges_Button->Caption == "Add"){
             DataModule1->AddToXmlRequest();
 		}
 		else if(Form3->SaveCarChanges_Button->Caption == "Edit"){
-			//TO DO: add request for editing!
+			DataModule1->EditXMLRequest(carIndex);
+            carIndex = -1;
 		}
+		//for automatic refresh
         DataModule1->XmlDoc->Active = false;
 		DataModule1->RequestXMLFile();
 		DataModule1->XmlDoc->Active = true;

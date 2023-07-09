@@ -95,7 +95,7 @@ void __fastcall TForm12::AddNewCarClick(TObject *Sender)
 void __fastcall TForm12::EditCarClick(TObject *Sender)
 {
 	//open separate window for entering car info with selected info
-	Form3->EditCarMode();
+	Form3->EditCarMode(ListView1->ItemIndex);
 	Form3->ShowModal();
 	FillListView();
 }
