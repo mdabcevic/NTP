@@ -2,8 +2,8 @@ object Form12: TForm12
   Left = 0
   Top = 0
   Caption = 'Company cars'
-  ClientHeight = 441
-  ClientWidth = 677
+  ClientHeight = 440
+  ClientWidth = 673
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,7 +11,7 @@ object Form12: TForm12
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object Title: TLabel
     Left = 208
     Top = 32
     Width = 311
@@ -50,40 +50,40 @@ object Form12: TForm12
     ViewStyle = vsReport
     OnSelectItem = ListView1SelectItem
   end
-  object Button1: TButton
+  object LoadAll: TButton
     Left = 8
     Top = 240
     Width = 161
     Height = 25
     Caption = 'Load all cars'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = LoadAllClick
   end
-  object Button2: TButton
+  object AddNewCar: TButton
     Left = 175
     Top = 240
     Width = 161
     Height = 25
     Caption = 'Add new car'
     TabOrder = 2
-    OnClick = Button2Click
+    OnClick = AddNewCarClick
   end
-  object Button3: TButton
+  object EditCar: TButton
     Left = 342
     Top = 240
     Width = 161
     Height = 25
     Caption = 'Edit selected car'
     TabOrder = 3
-    OnClick = Button3Click
+    OnClick = EditCarClick
   end
-  object Button4: TButton
+  object RemoveCar: TButton
     Left = 509
     Top = 240
     Width = 161
     Height = 25
     Caption = 'Remove selected car'
     TabOrder = 4
-    OnClick = Button4Click
+    OnClick = RemoveCarClick
   end
 end

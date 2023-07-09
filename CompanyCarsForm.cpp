@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -38,8 +38,52 @@ void __fastcall TForm12::FillListView(){
 		Item->SubItems->Add(DataModule1->companycars->car[i]->currentuser);
 		Item->SubItems->Add(DataModule1->companycars->car[i]->location);
 	}
+
+	translation["LoadAll"] = {
+		{
+			{"EN", "Load all cars"},
+			{"HR", "Učitajte sve podatke "}
+
+		}
+	};
+
+	translation["AddNewCar"] = {
+		{
+			{"EN", "Add new car"},
+			{"HR", "Unesite novo vozilo "}
+
+		}
+	};
+
+	translation["EditCar"] = {
+		{
+			{"EN", "Edit selected car"},
+			{"HR", "Ažurirajte odabrano vozilo "}
+
+		}
+	};
+
+	translation["RemoveCar"] = {
+		{
+			{"EN", "Remove selected car"},
+			{"HR", "Izbrišite odabrano vozilo "}
+
+		}
+	};
+
+	translation["Title"] = {
+		{
+			{"EN", "Information about company cars"},
+			{"HR", "Podaci o službenim vozilima "}
+
+		}
+	};
+
+
+
+
 }
-void __fastcall TForm12::Button2Click(TObject *Sender)
+void __fastcall TForm12::AddNewCarClick(TObject *Sender)
 {
 	//open separate window for entering car info
 	Form3->AddCarMode();
@@ -48,7 +92,7 @@ void __fastcall TForm12::Button2Click(TObject *Sender)
 	FillListView();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm12::Button3Click(TObject *Sender)
+void __fastcall TForm12::EditCarClick(TObject *Sender)
 {
 	//open separate window for entering car info with selected info
 	Form3->EditCarMode();
@@ -56,7 +100,7 @@ void __fastcall TForm12::Button3Click(TObject *Sender)
 	FillListView();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm12::Button4Click(TObject *Sender)
+void __fastcall TForm12::RemoveCarClick(TObject *Sender)
 {
 	DataModule1->XmlDoc->Active = false;
 	DataModule1->DeleteFromXml(ListView1->ItemIndex);
@@ -82,7 +126,7 @@ void __fastcall TForm12::ListView1SelectItem(TObject *Sender, TListItem *Item, b
 	DataModule1->currentCar = DataModule1->companycars->car[ListView1->ItemIndex];
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm12::Button1Click(TObject *Sender)
+void __fastcall TForm12::LoadAllClick(TObject *Sender)
 {
     DataModule1->RequestXMLFile();
     FillListView();

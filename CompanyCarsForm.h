@@ -16,16 +16,16 @@ class TForm12 : public TForm
 {
 __published:	// IDE-managed Components
 	TListView *ListView1;
-	TLabel *Label1;
-	TButton *Button1;
-	TButton *Button2;
-	TButton *Button3;
-	TButton *Button4;
-	void __fastcall Button2Click(TObject *Sender);
-	void __fastcall Button3Click(TObject *Sender);
-	void __fastcall Button4Click(TObject *Sender);
+	TLabel *Title;
+	TButton *LoadAll;
+	TButton *AddNewCar;
+	TButton *EditCar;
+	TButton *RemoveCar;
+	void __fastcall AddNewCarClick(TObject *Sender);
+	void __fastcall EditCarClick(TObject *Sender);
+	void __fastcall RemoveCarClick(TObject *Sender);
 	void __fastcall ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected);
-	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall LoadAllClick(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations
