@@ -12,10 +12,10 @@ object Form8: TForm8
   Font.Style = []
   OnShow = FormShow
   TextHeight = 15
-  object Label1: TLabel
+  object Title: TLabel
     Left = 200
     Top = 32
-    Width = 249
+    Width = 205
     Height = 30
     Alignment = taCenter
     Caption = 'Expenses information'
@@ -75,13 +75,13 @@ object Form8: TForm8
     DataSource = DataModule1.ExpensesDataSource
     TabOrder = 5
   end
-  object Button1: TButton
+  object Upload: TButton
     Left = 200
     Top = 256
     Width = 249
     Height = 25
     Caption = 'Save receipt'
     TabOrder = 6
-    OnClick = Button1Click
+    OnClick = UploadClick
   end
 end

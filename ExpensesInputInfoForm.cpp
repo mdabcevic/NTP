@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -15,10 +15,56 @@ TForm8 *Form8;
 __fastcall TForm8::TForm8(TComponent* Owner)
 	: TForm(Owner)
 {
+	translation["Upload"] = {
+		{
+			{"EN", "Upload merged recepits"},
+			{"HR", "Spremite spojene račune"}
+		}
+	};
+
+	translation["isAccomodation"] = {
+		{
+			{"EN", "Accomodation"},
+			{"HR", "Smještaj"}
+
+		}
+	};
+
+	translation["isHospitality"] = {
+		{
+			{"EN", "Hospitality (Entertainment)"},
+			{"HR", "Ugošćavanje (Reprezentacija)"}
+
+		}
+	};
+
+	translation["isOther"] = {
+		{
+			{"EN", "Other expenses"},
+			{"HR", "Ostali troškovi"}
+
+		}
+	};
+
+	translation["isToll"] = {
+		{
+			{"EN", "Toll (Road, Tunnel, Ferry, Vignette)"},
+			{"HR", "Cestarina (Tunelarina, Vinjeta, Trajekt)"}
+
+		}
+	};
+
+	translation["Title"] = {
+		{
+			{"EN", "Travel expenses information"},
+			{"HR", "Podaci o putnim troškovima"}
+
+		}
+	};
 
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm8::Button1Click(TObject *Sender)
+void __fastcall TForm8::UploadClick(TObject *Sender)
 {
 	if(DataModule1->OpenDialog1->Execute()){
 		DataModule1->ExpensesQuery->Insert();
