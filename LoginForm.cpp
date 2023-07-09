@@ -539,16 +539,19 @@ void TForm1::VisualChangeLogin()
 //---------------------------------------------------------------------------
 void TForm1::Inconvenient()
 {
+    //doesn't work
 	WarrantsBox->SendToBack();
 }
 void __fastcall TForm1::AllWarrantsClick(TObject *Sender)
 {
+	// all warrants
     Form9->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::NewWarrantClick(TObject *Sender)
 {
+	//create warrant
     Form7->CreateMode();
     Form7->ShowModal();
 }
@@ -556,12 +559,14 @@ void __fastcall TForm1::NewWarrantClick(TObject *Sender)
 
 void __fastcall TForm1::AllEmployeesClick(TObject *Sender)
 {
+	//all employees
 	Form4->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::DownloadButtonClick(TObject *Sender)
 {
+	//download resources
 	TForm13 *Download = new TForm13(this);
 	Download->ShowModal();
 }
@@ -569,6 +574,7 @@ void __fastcall TForm1::DownloadButtonClick(TObject *Sender)
 
 void __fastcall TForm1::CreateAvatarButtonClick(TObject *Sender)
 {
+	//create new profile picture
 	TForm14 *Avatars = new TForm14(this);
 	Avatars->ShowModal();
 }
@@ -576,23 +582,27 @@ void __fastcall TForm1::CreateAvatarButtonClick(TObject *Sender)
 
 void __fastcall TForm1::SeeDepartmentsClick(TObject *Sender)
 {
+	//all departments
 	Form5->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::AllCarsClick(TObject *Sender)
 {
+	//all cars
 	Form12->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::SeeClientsClick(TObject *Sender)
 {
+	//all clients
 	Form10->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 
+//translation to Croatian on flag click - all forms
 void __fastcall TForm1::ImgHrClick(TObject *Sender)
 {
 	DataModule1->translateForm(this, "HR", translation);
@@ -609,6 +619,7 @@ void __fastcall TForm1::ImgHrClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+// translation to English on flag click - all forms
 void __fastcall TForm1::ImgEnClick(TObject *Sender)
 {
 	DataModule1->translateForm(this, "EN", translation);

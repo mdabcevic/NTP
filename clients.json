@@ -15,53 +15,39 @@
       "ContactPerson": "Ivana Rajkovic"
     },
     {
-      "CompanyName": "o",
-      "Address": "o",
-      "IdentificationNumber": "o",
-      "Email": "o",
-      "ContactPerson": "o"
+      "CompanyName": "KBC Dubrava",
+      "Address": "Ilica 33",
+      "IdentificationNumber": "33333",
+      "Email": "dubrava@bolnice.hr",
+      "ContactPerson": "Pero Peric"
     },
     {
-      "CompanyName": "p",
-      "Address": "p",
-      "IdentificationNumber": "p",
-      "Email": "pp",
-      "ContactPerson": "p"
+      "CompanyName": "Lj. Joukhadar",
+      "Address": "Ozaljska 12",
+      "IdentificationNumber": "32323",
+      "Email": "ozaljska@joukhadar.hr",
+      "ContactPerson": "Kristina Bernardic"
     },
     {
-      "CompanyName": "g",
-      "Address": "g",
-      "IdentificationNumber": "g",
-      "Email": "g",
-      "ContactPerson": "g"
+      "CompanyName": "Pablo",
+      "Address": "Selska 112",
+      "IdentificationNumber": "11211",
+      "Email": "hello@pablo.hr",
+      "ContactPerson": "Ivan Vukojevic"
     },
     {
-      "CompanyName": "asf",
-      "Address": "asf",
-      "IdentificationNumber": "sdggb",
-      "Email": "dfg",
-      "ContactPerson": "fdh"
+      "CompanyName": "Jagric d.o.o.",
+      "Address": "Vrbik 13",
+      "IdentificationNumber": "32131",
+      "Email": "zjagric@gmail.com",
+      "ContactPerson": "Zlatko Jagric"
     },
     {
-      "CompanyName": "p",
-      "Address": "p",
-      "IdentificationNumber": "p",
-      "Email": "p",
-      "ContactPerson": "p"
-    },
-    {
-      "CompanyName": "k",
-      "Address": "k",
-      "IdentificationNumber": "k",
-      "Email": "k",
-      "ContactPerson": "k"
-    },
-    {
-      "CompanyName": "l",
-      "Address": "l",
-      "IdentificationNumber": "l",
-      "Email": "l",
-      "ContactPerson": "l"
+      "CompanyName": "Belupo",
+      "Address": "Slavonska avenija 55",
+      "IdentificationNumber": "46812",
+      "Email": "hello@belupo.hr",
+      "ContactPerson": "Anita Brakus"
     }
   ]
 }
