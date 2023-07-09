@@ -11,10 +11,10 @@ object Form6: TForm6
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object Title: TLabel
     Left = 176
     Top = 32
-    Width = 295
+    Width = 184
     Height = 15
     Alignment = taCenter
     Caption = 'Please enter employee information'
@@ -151,7 +151,7 @@ object Form6: TForm6
     TabOrder = 8
   end
   object UpDown1: TUpDown
-    Left = 455
+    Left = 457
     Top = 275
     Width = 16
     Height = 23

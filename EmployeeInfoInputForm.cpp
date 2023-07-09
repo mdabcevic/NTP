@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -15,6 +15,102 @@ TForm6 *Form6;
 __fastcall TForm6::TForm6(TComponent* Owner)
 	: TForm(Owner)
 {
+		translation["AddressLabel"] = {
+		{
+			{"EN", "Address: "},
+			{"HR", "Adresa:"}
+
+		}
+	};
+
+		translation["DepartmentCodeLabel"] = {
+		{
+			{"EN", "Department: "},
+			{"HR", "Odjel:"}
+
+		}
+	};
+
+		translation["DepositAccountLabel"] = {
+		{
+			{"EN", "Deposit Account Number: "},
+			{"HR", "Broj tekućeg računa:"}
+
+		}
+	};
+
+		translation["DriverLicenseLabel"] = {
+		{
+			{"EN", "Driver License: "},
+			{"HR", "Vozačka dozvola:"}
+
+		}
+	};
+
+	translation["EducationLabel"] = {
+		{
+			{"EN", "Qualifications: "},
+			{"HR", "Stručna sprema:"}
+
+		}
+	};
+
+	translation["FirstNameLabel"] = {
+		{
+			{"EN", "First Name: "},
+			{"HR", "Ime:"}
+
+		}
+	};
+
+	translation["IDNumberLabel"] = {
+		{
+			{"EN", "Identification Number: "},
+			{"HR", "OIB:"}
+
+		}
+	};
+
+	translation["Title"] = {
+		{
+			{"EN", "Fill employee information: "},
+			{"HR", "Ispunite podatke o zaposleniku:"}
+
+		}
+	};
+
+	translation["Form6"] = {
+		{
+			{"EN", "Employee Information "},
+			{"HR", "Podaci o zaposleniku"}
+
+		}
+	};
+
+	translation["LastNameLabel"] = {
+		{
+			{"EN", "Last Name: "},
+			{"HR", "Prezime:"}
+
+		}
+	};
+
+    translation["Form6"] = {
+		{
+			{"EN", "Employee Information "},
+			{"HR", "Podaci o zaposleniku"}
+
+		}
+	};
+
+	translation["TenureLabel"] = {
+		{
+			{"EN", "Tenure: "},
+			{"HR", "Radni staž:"}
+
+		}
+	};
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::EmployeeActionButtonClick(TObject *Sender)

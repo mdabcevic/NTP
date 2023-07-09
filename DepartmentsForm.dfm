@@ -11,7 +11,7 @@ object Form5: TForm5
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object Title: TLabel
     Left = 248
     Top = 32
     Width = 113

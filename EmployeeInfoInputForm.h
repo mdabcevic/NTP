@@ -10,11 +10,12 @@
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.ComCtrls.hpp>
 #include <Vcl.NumberBox.hpp>
+#include <map>
 //---------------------------------------------------------------------------
 class TForm6 : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label1;
+	TLabel *Title;
 	TButton *EmployeeActionButton;
 	TEdit *FirstNameBox;
 	TLabel *FirstNameLabel;
@@ -40,7 +41,8 @@ private:	// User declarations
 public:		// User declarations
 	__fastcall TForm6(TComponent* Owner);
 	void CreateMode();
-    void EditMode();
+	void EditMode();
+	std::map<String, std::map<String, String>> translation;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm6 *Form6;

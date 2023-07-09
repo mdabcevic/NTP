@@ -600,6 +600,8 @@ void __fastcall TForm1::ImgHrClick(TObject *Sender)
 	DataModule1->translateForm(Form10, "HR", Form10->translation);
 	DataModule1->translateForm(Form12, "HR", Form12->translation);
 	DataModule1->translateForm(Form11, "HR", Form11->translation);
+	DataModule1->translateForm(Form5, "HR", Form5->translation);
+	DataModule1->translateForm(Form6, "HR", Form6->translation);
 }
 //---------------------------------------------------------------------------
 
@@ -609,7 +611,9 @@ void __fastcall TForm1::ImgEnClick(TObject *Sender)
     DataModule1->translateForm(Form3, "EN", Form3->translation);
 	DataModule1->translateForm(Form10, "EN", Form10->translation);
 	DataModule1->translateForm(Form12, "EN", Form12->translation);
-    DataModule1->translateForm(Form11, "EN", Form12->translation);
+	DataModule1->translateForm(Form11, "EN", Form11->translation);
+	DataModule1->translateForm(Form5, "EN", Form5->translation);
+	DataModule1->translateForm(Form6, "EN", Form6->translation);
 }
 //---------------------------------------------------------------------------
 
@@ -617,6 +621,13 @@ void __fastcall TForm1::AddCarClick(TObject *Sender)
 {
     Form3->AddCarMode();
     Form3->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::AddEmployeeClick(TObject *Sender)
+{
+    Form6->CreateMode();
+	Form6->ShowModal();
 }
 //---------------------------------------------------------------------------
 

@@ -17,6 +17,7 @@
 #include "AvatarGeneration.h"
 #include <Vcl.Menus.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
+#include "EmployeeInfoInputForm.h"
 #include <map>
 
 //---------------------------------------------------------------------------
@@ -119,6 +120,7 @@ __published:	// IDE-managed Components
 	void __fastcall ImgHrClick(TObject *Sender);
 	void __fastcall ImgEnClick(TObject *Sender);
 	void __fastcall AddCarClick(TObject *Sender);
+	void __fastcall AddEmployeeClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

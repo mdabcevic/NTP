@@ -3814,6 +3814,7 @@ object Form1: TForm1
       Height = 25
       Caption = 'Add new employee'
       TabOrder = 1
+      OnClick = AddEmployeeClick
     end
     object SeeClients: TButton
       Left = 16
