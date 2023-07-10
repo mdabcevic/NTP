@@ -60,7 +60,6 @@ __published:	// IDE-managed Components
 	TLabel *Username2Label;
 	TLabel *FirstNameLabel;
 	TLabel *SecondNameLabel;
-	TLabel *Email2Label;
 	TLabel *PhoneLabel;
 	TLabel *DepartmentLabel;
 	TLabel *PIDLabel;
@@ -86,6 +85,15 @@ __published:	// IDE-managed Components
 	TButton *AddClient;
 	TButton *AllCars;
 	TButton *AddCar;
+	TLabel *u1;
+	TLabel *f1;
+	TLabel *l1;
+	TLabel *e1;
+	TLabel *p1;
+	TLabel *d1;
+	TLabel *pid1;
+	TLabel *c1;
+	TMenuItem *CleanrepositoryBEFORELOGIN1;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
@@ -114,6 +122,7 @@ __published:	// IDE-managed Components
 	void __fastcall ImgEnClick(TObject *Sender);
 	void __fastcall AddCarClick(TObject *Sender);
 	void __fastcall AddEmployeeClick(TObject *Sender);
+	void __fastcall CleanrepositoryBEFORELOGIN1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
@@ -123,8 +132,8 @@ public:		// User declarations
 
 	void ApplySettings();
 	void VisualChangeLogin();
-    void Inconvenient();
-
+	void Inconvenient();
+    void FillInfo();
 
 
 };

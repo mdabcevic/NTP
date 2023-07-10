@@ -176,7 +176,6 @@ public:		// User declarations
 	_di_CountryInfoServiceSoapType service = GetCountryInfoServiceSoapType();
     _di_ICarValidation carValidation = GetICarValidation();
 
-
 	//TCP requests
 	void AddToXmlRequest();
     void EditXMLRequest(int index);
@@ -184,7 +183,6 @@ public:		// User declarations
 
 	//UDP requests
 	void DeleteFromXml(int index);
-	//to do: send client files to the server
 	void SendJSON();
 
 	//HASH and encryption
@@ -213,7 +211,10 @@ public:		// User declarations
 	void DecryptAsym();
 	//void SymEncryptFile();
 
-    void translateForm(TForm* Form, String Language, const std::map<String, std::map<String, String>>& translation);
+	void translateForm(TForm* Form, String Language, const std::map<String, std::map<String, String>>& translation);
+
+	//another process
+    int StartProcess();
 
 
 };

@@ -299,7 +299,7 @@ void TDataModule1::SendPublicKey(){
   //---------------------------------------------------------------------------
   void TDataModule1::SendJSON(){
 
-	//encrypt - extract to another method?
+	//encrypt sym - extract to another method?
 	SymCodec->Password = SymKey;
 	std::unique_ptr<TMemoryStream> original (new TMemoryStream);
 	original->LoadFromFile("clients.json");
@@ -361,6 +361,24 @@ void TDataModule1::SendPublicKey(){
 					if(it_Language->first == Language) // find translation for the target language
 						if(IsPublishedProp(Form->Components[i], "Caption"))
 							SetPropValue(Form->Components[i], "Caption", it_Language->second);
+}
+
+//---------------------------------------------------------------------------
+int TDataModule1::StartProcess()
+{
+    STARTUPINFO startInfo;
+	PROCESS_INFORMATION processInfo;
+	wchar_t CommandLine[255] = L"PrepareRepositoryOnStart.exe";
+	unsigned long exitcode;
+	GetStartupInfo(&startInfo);
+	if ((CreateProcess(NULL, CommandLine, NULL, NULL, FALSE, 0, NULL, NULL,
+		&startInfo, &processInfo)) == NULL) {
+		ShowMessage("Cannot create process!");
+		return 0;
+	}
+	WaitForSingleObject(processInfo.hProcess, INFINITE);
+	GetExitCodeProcess(processInfo.hProcess, &exitcode);
+    return(exitcode);
 }
 
 

@@ -331,9 +331,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 {
 	//move into thread with keygen, sendkey & sendJSON
     Inconvenient();
-    LoadIcons *threadedLoad = new LoadIcons(false);
-
-
+	LoadIcons *threadedLoad = new LoadIcons(false);
 
 	//load theme and font for window (INI)
 	DataModule1->themeHelper.LoadSection("CURRENT THEME");
@@ -609,3 +607,16 @@ void TForm1::FillInfo()
 	pid1->Caption = DataModule1->currentUser.IDNum;
     c1->Caption = DataModule1->currentUser.ID;
 }
+void __fastcall TForm1::CleanrepositoryBEFORELOGIN1Click(TObject *Sender)
+{
+	int result = DataModule1->StartProcess();
+    if(result == 0)
+	{
+		ShowMessage("Repository was successfully cleaned!");
+	}
+	else{
+		ShowMessage("There was an error in cleaning junk files.");
+	}
+}
+//---------------------------------------------------------------------------
+

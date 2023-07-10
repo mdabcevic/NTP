@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Login'
-  ClientHeight = 632
-  ClientWidth = 1057
+  ClientHeight = 633
+  ClientWidth = 1061
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -4021,6 +4021,10 @@ object Form1: TForm1
       end
       object About1: TMenuItem
         Caption = 'About'
+      end
+      object CleanrepositoryBEFORELOGIN1: TMenuItem
+        Caption = 'Clean repository (BEFORE LOGIN)'
+        OnClick = CleanrepositoryBEFORELOGIN1Click
       end
     end
   end
