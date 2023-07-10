@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Login'
-  ClientHeight = 633
-  ClientWidth = 1061
+  ClientHeight = 632
+  ClientWidth = 1057
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -3754,13 +3754,6 @@ object Form1: TForm1
       Height = 15
       Caption = 'Last Name: '
     end
-    object Email2Label: TLabel
-      Left = 16
-      Top = 333
-      Width = 32
-      Height = 15
-      Caption = 'Email:'
-    end
     object PhoneLabel: TLabel
       Left = 16
       Top = 374
@@ -3788,6 +3781,59 @@ object Form1: TForm1
       Width = 31
       Height = 15
       Caption = 'Code:'
+    end
+    object u1: TLabel
+      Left = 112
+      Top = 216
+      Width = 57
+      Height = 15
+    end
+    object f1: TLabel
+      Left = 112
+      Top = 253
+      Width = 56
+      Height = 15
+    end
+    object l1: TLabel
+      Left = 112
+      Top = 292
+      Width = 57
+      Height = 15
+      Caption = 'xxx'
+    end
+    object e1: TLabel
+      Left = 48
+      Top = 333
+      Width = 89
+      Height = 15
+    end
+    object p1: TLabel
+      Left = 112
+      Top = 374
+      Width = 57
+      Height = 15
+      Caption = 'xxx'
+    end
+    object d1: TLabel
+      Left = 112
+      Top = 410
+      Width = 57
+      Height = 15
+      Caption = 'xxx'
+    end
+    object pid1: TLabel
+      Left = 112
+      Top = 441
+      Width = 57
+      Height = 15
+      Caption = 'xxx'
+    end
+    object c1: TLabel
+      Left = 112
+      Top = 479
+      Width = 57
+      Height = 15
+      Caption = 'xxx'
     end
   end
   object EmployeesBox: TGroupBox

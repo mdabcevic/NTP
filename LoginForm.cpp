@@ -299,6 +299,7 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 		//try to log in
 		if(DataModule1->Login(usernameBox->Text, pwBox->Text)){
 			VisualChangeLogin();
+            FillInfo();
             //save settings - move to its own function
 			if(isRememberMe->Checked){
                 DataModule1->wrSettingsHelper.isRememberMe = true;
@@ -597,3 +598,14 @@ void __fastcall TForm1::AddEmployeeClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void TForm1::FillInfo()
+{
+	u1->Caption = DataModule1->currentUser.Username;
+	f1->Caption = DataModule1->currentUser.FirstName;
+	l1->Caption = DataModule1->currentUser.LastName;
+	e1->Caption = DataModule1->currentUser.Email;
+	p1->Caption = DataModule1->currentUser.Phone;
+	d1->Caption = DataModule1->currentUser.DepartmentName;
+	pid1->Caption = DataModule1->currentUser.IDNum;
+    c1->Caption = DataModule1->currentUser.ID;
+}

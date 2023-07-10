@@ -184,6 +184,7 @@ void TDataModule1::Registration(UnicodeString username, UnicodeString password, 
 	EmployeeTable->Append();
 	EmployeeTable->FieldByName("Username")->AsString = username;
 	EmployeeTable->FieldByName("Password")->AsString = hashedpw;
+    EmployeeTable->FieldByName("Email")->AsString = email;
 	EmployeeTable->Post();
 }
 //---------------------------------------------------------------------------
@@ -204,8 +205,15 @@ bool TDataModule1::Login(UnicodeString username, UnicodeString password){
 	//get user info
 	currentUser.Username = MultiQuery->FieldByName("Username")->AsString;
 	currentUser.Password = MultiQuery->FieldByName("Password")->AsString;
-    ShowMessage(currentUser.Username + " " + currentUser.Password);
-    currentUser.ID = MultiQuery->FieldByName("EmployeeID")->AsInteger;
+	currentUser.FirstName = MultiQuery->FieldByName("FirstName")->AsString;
+	currentUser.LastName = MultiQuery->FieldByName("LastName")->AsString;
+	currentUser.Email = MultiQuery->FieldByName("Email")->AsString;
+	currentUser.DepartmentName = MultiQuery->FieldByName("DepartmentCode")->AsString;
+	currentUser.Password = MultiQuery->FieldByName("Password")->AsString;
+	currentUser.IDNum = MultiQuery->FieldByName("IdentificationNumber")->AsString;
+	currentUser.Phone = MultiQuery->FieldByName("Phone")->AsString;
+	//ShowMessage(currentUser.Username + " " + currentUser.Password);
+	currentUser.ID = MultiQuery->FieldByName("EmployeeID")->AsInteger;
 	MultiQuery->SQL->Clear(); // clear it for next query just in case
     return true;
 }
