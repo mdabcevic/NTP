@@ -72,17 +72,23 @@ void __fastcall TForm9::EditButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm9::ReportWarrantClick(TObject *Sender)
 {
-
-
 	int selectedWarrantID = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;
 	DataModule1->JoinedReport->Parameters->ParamByName("WarrantID")->Value = selectedWarrantID;
 	DataModule1->JoinedReport->Open();
-	DataModule1->WarrantLayout->PrepareReport(true);
-	DataModule1->WarrantLayout->FileName = "file.pdf";
-	DataModule1->WarrantLayout->Export(DataModule1->PDFExport);
-    DataModule1->WarrantLayout->PrepareReport(true);
-	DataModule1->WarrantLayout->FileName = "file.rtf";
-	DataModule1->WarrantLayout->Export(DataModule1->RTFExport);
+	if(PDFOption->Checked){
+        DataModule1->WarrantLayout->PrepareReport(true);
+		DataModule1->WarrantLayout->FileName = "file.pdf";
+		DataModule1->WarrantLayout->Export(DataModule1->PDFExport);
+		return;
+	}
+	else{
+        DataModule1->WarrantLayout->PrepareReport(true);
+		DataModule1->WarrantLayout->FileName = "file.rtf";
+		DataModule1->WarrantLayout->Export(DataModule1->RTFExport);
+        return;
+    }
+
+
 }
 //---------------------------------------------------------------------------
 

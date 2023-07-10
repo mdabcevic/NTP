@@ -20,6 +20,9 @@ __published:	// IDE-managed Components
 	TButton *DeleteButton;
 	TButton *EditButton;
 	TButton *ReportWarrant;
+	TGroupBox *GroupBox1;
+	TRadioButton *PDFOption;
+	TRadioButton *RTFOption;
 	void __fastcall DeleteButtonClick(TObject *Sender);
 	void __fastcall EditButtonClick(TObject *Sender);
 	void __fastcall ReportWarrantClick(TObject *Sender);

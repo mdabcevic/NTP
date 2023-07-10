@@ -41,67 +41,56 @@ object Form9: TForm9
       item
         Expanded = False
         FieldName = 'EmployeeID'
-        Width = 70
+        Width = 88
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Departure'
-        Width = 70
+        Width = 126
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Arrival'
-        Width = 70
+        Width = 129
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Partners'
-        Width = 100
+        Width = 178
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Purposes'
-        Width = 100
+        Width = 145
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'LicensePlate'
-        Width = 75
+        Width = 133
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Mileage'
+        Width = 149
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Toll'
-        Width = 100
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'OtherVehicles'
-        Width = 80
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'AuthorizedBy'
-        Width = 100
+        Width = 120
         Visible = True
       end>
   end
   object DeleteButton: TButton
-    Left = 423
+    Left = 295
     Top = 186
-    Width = 386
+    Width = 282
     Height = 25
     Caption = 'Delete selected warrant'
     TabOrder = 1
@@ -110,19 +99,44 @@ object Form9: TForm9
   object EditButton: TButton
     Left = 8
     Top = 186
-    Width = 409
+    Width = 281
     Height = 25
     Caption = 'Edit selected warrant'
     TabOrder = 2
     OnClick = EditButtonClick
   end
   object ReportWarrant: TButton
-    Left = 815
+    Left = 583
     Top = 186
     Width = 296
     Height = 25
     Caption = 'Generate report for selected warrant'
     TabOrder = 3
     OnClick = ReportWarrantClick
+  end
+  object GroupBox1: TGroupBox
+    Left = 885
+    Top = 186
+    Width = 222
+    Height = 25
+    TabOrder = 4
+    object PDFOption: TRadioButton
+      Left = 51
+      Top = 5
+      Width = 46
+      Height = 17
+      Caption = 'PDF'
+      Checked = True
+      TabOrder = 0
+      TabStop = True
+    end
+    object RTFOption: TRadioButton
+      Left = 123
+      Top = 5
+      Width = 46
+      Height = 17
+      Caption = 'RTF'
+      TabOrder = 1
+    end
   end
 end
