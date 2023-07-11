@@ -317,11 +317,6 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 			}
 
 		}
-		else{
-            return;
-        }
-
-
 	}
 
 }
@@ -362,7 +357,6 @@ void __fastcall TForm1::isRememberMeClick(TObject *Sender)
 	if(!Form1->isRememberMe->Checked){
 		DataModule1->wrSettingsHelper.DeleteSettings();
 	}
-	//move saving from test window
 }
 //---------------------------------------------------------------------------
 
@@ -438,6 +432,7 @@ void __fastcall TForm1::Medium2Click(TObject *Sender)
 {
     DataModule1->fontHelper.LoadSection("LARGE FONT");
 	DataModule1->fontHelper.SaveCurrent();
+	//apply instantly or not?
 }
 //---------------------------------------------------------------------------
 
@@ -452,8 +447,11 @@ void __fastcall TForm1::ResetFont1Click(TObject *Sender)
     DataModule1->fontHelper.ResetToDefault();
 }
 //---------------------------------------------------------------------------
+
+//handles the change of view after successful login
 void TForm1::VisualChangeLogin()
 {
+	//make visible & move to the top left
 	Form1->UserInfoRibbon->Visible = true;
 	Form1->UserInfoRibbon->Top = 48;
 	Form1->UserInfoRibbon->Left = 15;
@@ -490,14 +488,14 @@ void TForm1::Inconvenient()
 }
 void __fastcall TForm1::AllWarrantsClick(TObject *Sender)
 {
-	// all warrants
+	//Travel warrants form
     Form9->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::NewWarrantClick(TObject *Sender)
 {
-	//create warrant
+	//Travel warrant info input form
     Form7->CreateMode();
     Form7->ShowModal();
 }
@@ -505,7 +503,7 @@ void __fastcall TForm1::NewWarrantClick(TObject *Sender)
 
 void __fastcall TForm1::AllEmployeesClick(TObject *Sender)
 {
-	//all employees
+	//Employees form
 	Form4->ShowModal();
 }
 //---------------------------------------------------------------------------
@@ -528,27 +526,27 @@ void __fastcall TForm1::CreateAvatarButtonClick(TObject *Sender)
 
 void __fastcall TForm1::SeeDepartmentsClick(TObject *Sender)
 {
-	//all departments
+	//Departments form
 	Form5->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::AllCarsClick(TObject *Sender)
 {
-	//all cars
+	//Company cars form
 	Form12->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::SeeClientsClick(TObject *Sender)
 {
-	//all clients
+	//Clients info form
 	Form10->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 
-//translation to Croatian on flag click - all forms
+//translation to Croatian on flag click - all forms except 'Donwload' and 'Remote Rest'
 void __fastcall TForm1::ImgHrClick(TObject *Sender)
 {
 	DataModule1->translateForm(this, "HR", translation);
@@ -565,7 +563,7 @@ void __fastcall TForm1::ImgHrClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-// translation to English on flag click - all forms
+// translation to English on flag click - all forms except 'Donwload' and 'Remote Rest'
 void __fastcall TForm1::ImgEnClick(TObject *Sender)
 {
 	DataModule1->translateForm(this, "EN", translation);
@@ -584,6 +582,7 @@ void __fastcall TForm1::ImgEnClick(TObject *Sender)
 
 void __fastcall TForm1::AddCarClick(TObject *Sender)
 {
+	//Car info input form
     Form3->AddCarMode();
     Form3->ShowModal();
 }
@@ -591,11 +590,14 @@ void __fastcall TForm1::AddCarClick(TObject *Sender)
 
 void __fastcall TForm1::AddEmployeeClick(TObject *Sender)
 {
+	//Employee Info Input Form
     Form6->CreateMode();
 	Form6->ShowModal();
 }
 //---------------------------------------------------------------------------
 
+//would be better to use DB components directly, but it'd involve setting DS
+//dynamically, as the SQL is set dynamically as well
 void TForm1::FillInfo()
 {
 	u1->Caption = DataModule1->currentUser.Username;
@@ -607,6 +609,9 @@ void TForm1::FillInfo()
 	pid1->Caption = DataModule1->currentUser.IDNum;
     c1->Caption = DataModule1->currentUser.ID;
 }
+
+//starts the process for cleaning directories, making sure ones from previous
+//session aren't used
 void __fastcall TForm1::CleanrepositoryBEFORELOGIN1Click(TObject *Sender)
 {
 	int result = DataModule1->StartProcess();
