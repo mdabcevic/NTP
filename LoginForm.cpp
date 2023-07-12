@@ -15,6 +15,7 @@
 #include "DownloadResourcesForm.h"
 #include "PreparationThread.h"
 #include "LoadIconsThread.h"
+#include <jpeg.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -622,6 +623,20 @@ void __fastcall TForm1::CleanrepositoryBEFORELOGIN1Click(TObject *Sender)
 	else{
 		ShowMessage("There was an error in cleaning junk files.");
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Help1Click(TObject *Sender)
+{
+	HINSTANCE ResourceDll;
+	if((ResourceDll = LoadLibrary(L"ManualDynLib.dll"))==NULL){
+		ShowMessage("Resources inaccessible");
+		return;
+	}
+	TResourceStream* stream = new TResourceStream((int)ResourceDll, "manual_JPG", RT_RCDATA);
+	ManualImg->Picture->LoadFromStream(stream);
+	delete stream;
+    FreeLibrary(ResourceDll);
 }
 //---------------------------------------------------------------------------
 

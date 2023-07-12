@@ -17,6 +17,12 @@ __fastcall TForm14::TForm14(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm14::FormShow(TObject *Sender)
 {
+	//RESTRequest1->Execute();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm14::Button1Click(TObject *Sender)
+{
     RESTRequest1->Execute();
 }
 //---------------------------------------------------------------------------

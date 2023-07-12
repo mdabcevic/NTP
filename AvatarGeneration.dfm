@@ -37,6 +37,7 @@ object Form14: TForm14
     Height = 25
     Caption = 'Go'
     TabOrder = 2
+    OnClick = Button1Click
   end
   object LabeledEdit2: TLabeledEdit
     Left = 256
