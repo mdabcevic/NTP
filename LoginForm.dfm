@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Login'
   ClientHeight = 633
-  ClientWidth = 1061
+  ClientWidth = 1130
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -74,6 +74,13 @@ object Form1: TForm1
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
     Visible = False
+  end
+  object ManualImg: TImage
+    Left = 556
+    Top = 44
+    Width = 562
+    Height = 505
+    Stretch = True
   end
   object WarrantsBox: TGroupBox
     Left = 696
@@ -3785,53 +3792,53 @@ object Form1: TForm1
     object u1: TLabel
       Left = 112
       Top = 216
-      Width = 57
+      Width = 3
       Height = 15
     end
     object f1: TLabel
       Left = 112
       Top = 253
-      Width = 56
+      Width = 3
       Height = 15
     end
     object l1: TLabel
       Left = 112
       Top = 292
-      Width = 57
+      Width = 18
       Height = 15
       Caption = 'xxx'
     end
     object e1: TLabel
       Left = 48
       Top = 333
-      Width = 89
+      Width = 3
       Height = 15
     end
     object p1: TLabel
       Left = 112
       Top = 374
-      Width = 57
+      Width = 18
       Height = 15
       Caption = 'xxx'
     end
     object d1: TLabel
       Left = 112
       Top = 410
-      Width = 57
+      Width = 18
       Height = 15
       Caption = 'xxx'
     end
     object pid1: TLabel
       Left = 112
       Top = 441
-      Width = 57
+      Width = 18
       Height = 15
       Caption = 'xxx'
     end
     object c1: TLabel
       Left = 112
       Top = 479
-      Width = 57
+      Width = 18
       Height = 15
       Caption = 'xxx'
     end
@@ -4018,6 +4025,7 @@ object Form1: TForm1
       Caption = 'Other'
       object Help1: TMenuItem
         Caption = 'Help'
+        OnClick = Help1Click
       end
       object About1: TMenuItem
         Caption = 'About'

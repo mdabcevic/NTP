@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/07/08 00:38:00.000.989,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/08 00:38:01.000.041,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/07/12 22:17:17.186,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/12 22:17:17.192,=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2023/07/12 22:19:55.603,=C:\Users\Maja\Downloads\Manual.jpg</Transaction>
+    <Transaction>2023/07/12 22:20:36.208,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\DynamicLib\ManualDynLibPCH1.h=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/12 22:20:36.238,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\DynamicLib\File1.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2023/07/12 22:20:36.243,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\DynamicLib\ManualDynLib.cbproj=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2023/07/12 22:20:42.001,C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\DynamicLib\Main.cpp=C:\Users\Maja\Documents\Embarcadero\Studio\Projects\NTP projekt\DynamicLib\File1.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

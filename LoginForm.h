@@ -94,6 +94,7 @@ __published:	// IDE-managed Components
 	TLabel *pid1;
 	TLabel *c1;
 	TMenuItem *CleanrepositoryBEFORELOGIN1;
+	TImage *ManualImg;
 	void __fastcall isRegisterClick(TObject *Sender);
 	void __fastcall loginButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
@@ -123,6 +124,7 @@ __published:	// IDE-managed Components
 	void __fastcall AddCarClick(TObject *Sender);
 	void __fastcall AddEmployeeClick(TObject *Sender);
 	void __fastcall CleanrepositoryBEFORELOGIN1Click(TObject *Sender);
+	void __fastcall Help1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
