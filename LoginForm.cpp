@@ -309,8 +309,8 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 				DataModule1->wrSettingsHelper.SaveSettings();
                 //thread here!
 				Preparation *threadedPrep = new Preparation(false);
-                //ne radi make announcement
-				//DataModule1->CheckAuthentication();
+				//this part works, but make announcemets doesn't
+				DataModule1->CheckAuthentication();
                 //DataModule1->Authentification();
 				//move to toolbar
 				//DataModule1->MakeAnnouncement("test");
@@ -637,6 +637,26 @@ void __fastcall TForm1::Help1Click(TObject *Sender)
 	ManualImg->Picture->LoadFromStream(stream);
 	delete stream;
     FreeLibrary(ResourceDll);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::AvatarDblClick(TObject *Sender)
+{
+	if(DataModule1->OpenDialog1->Execute()){
+        Avatar->Picture->LoadFromFile(DataModule1->OpenDialog1->FileName);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Checkforannouncements1Click(TObject *Sender)
+{
+    DataModule1->CheckForAnnouncement();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Makeanannouncement1Click(TObject *Sender)
+{
+    DataModule1->MakeAnnouncement("test");
 }
 //---------------------------------------------------------------------------
 

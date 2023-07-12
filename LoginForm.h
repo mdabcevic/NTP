@@ -125,6 +125,9 @@ __published:	// IDE-managed Components
 	void __fastcall AddEmployeeClick(TObject *Sender);
 	void __fastcall CleanrepositoryBEFORELOGIN1Click(TObject *Sender);
 	void __fastcall Help1Click(TObject *Sender);
+	void __fastcall AvatarDblClick(TObject *Sender);
+	void __fastcall Checkforannouncements1Click(TObject *Sender);
+	void __fastcall Makeanannouncement1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

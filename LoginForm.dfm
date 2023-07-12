@@ -3725,6 +3725,7 @@ object Form1: TForm1
         3C563221009315181A8D0068063B196A073B19D24A0083E6A2A5A31EAB8074A1
         1E5786D0E0FF02F1760D03ADFC6CF30000000049454E44AE426082}
       Proportional = True
+      OnDblClick = AvatarDblClick
     end
     object WelcomeLabel: TLabel
       Left = 24
@@ -4016,9 +4017,11 @@ object Form1: TForm1
       Caption = 'Announcements'
       object Checkforannouncements1: TMenuItem
         Caption = 'Check for announcements'
+        OnClick = Checkforannouncements1Click
       end
       object Makeanannouncement1: TMenuItem
         Caption = 'Make an announcement'
+        OnClick = Makeanannouncement1Click
       end
     end
     object Reset: TMenuItem
