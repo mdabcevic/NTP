@@ -3831,7 +3831,7 @@ object Form1: TForm1
     end
     object pid1: TLabel
       Left = 112
-      Top = 441
+      Top = 448
       Width = 18
       Height = 15
       Caption = 'xxx'

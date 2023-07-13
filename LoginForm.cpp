@@ -311,10 +311,6 @@ void __fastcall TForm1::loginButtonClick(TObject *Sender)
 				Preparation *threadedPrep = new Preparation(false);
 				//this part works, but make announcemets doesn't
 				DataModule1->CheckAuthentication();
-                //DataModule1->Authentification();
-				//move to toolbar
-				//DataModule1->MakeAnnouncement("test");
-				//DataModule1->CheckForAnnouncement();
 			}
 
 		}
@@ -383,6 +379,7 @@ void __fastcall TForm1::Button9Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+//loads default profile pic
 void TForm1::ShowImg(TImage* image, TMemoryStream* memory){
 	image->Picture->LoadFromStream(memory);
 }
@@ -626,6 +623,7 @@ void __fastcall TForm1::CleanrepositoryBEFORELOGIN1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+//loads screenshot with instructions
 void __fastcall TForm1::Help1Click(TObject *Sender)
 {
 	HINSTANCE ResourceDll;
@@ -640,6 +638,7 @@ void __fastcall TForm1::Help1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+//select new profile picture
 void __fastcall TForm1::AvatarDblClick(TObject *Sender)
 {
 	if(DataModule1->OpenDialog1->Execute()){
@@ -648,12 +647,14 @@ void __fastcall TForm1::AvatarDblClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+//displays current message on REST with GET
 void __fastcall TForm1::Checkforannouncements1Click(TObject *Sender)
 {
     DataModule1->CheckForAnnouncement();
 }
 //---------------------------------------------------------------------------
 
+//doesn't work - should add new message on REST via POST
 void __fastcall TForm1::Makeanannouncement1Click(TObject *Sender)
 {
     DataModule1->MakeAnnouncement("test");
