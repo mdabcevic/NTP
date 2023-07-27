@@ -16,6 +16,8 @@
 class TWebModule1 : public TWebModule
 {
 __published:	// IDE-managed Components
+	TADOConnection *Connection;
+	TADOQuery *Query;
 	void __fastcall WebModule1DefaultHandlerAction(TObject *Sender, TWebRequest *Request,
           TWebResponse *Response, bool &Handled);
 	void __fastcall WebModule1ActEmployeesAction(TObject *Sender, TWebRequest *Request,
