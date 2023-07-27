@@ -8,6 +8,9 @@ SOAP Server/WIn32/Debug/
 REST Server/WIn32/Debug/
 Staticlib/Win32/Debug/
 DynamicLib/Win32/Debug/
+Manual/
+Samples/
+Avatars/
 
 # Exclude intermediate language files
 *.ilc
@@ -20,3 +23,10 @@ DynamicLib/Win32/Debug/
 
 # Exclude Turbo Debugger symbol files
 *.tds
+
+# Exclude Disk Image files
+*.pdi
+
+# Exclude local settings
+*.cbproj.local
+*.groupproj.local
