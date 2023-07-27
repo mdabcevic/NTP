@@ -109,7 +109,7 @@ void __fastcall TWebModule1::WebModule1ActEmployeesAction(TObject *Sender, TWebR
 
 	xml += "<id>" + Query->FieldByName("EmployeeID")->AsString + "</id>";
 	xml += "<firstName>" + Query->FieldByName("FirstName")->AsString + "</firstName>";
-	xml += "<lastName>" + Query->FieldByName("LastName")->AsString + "</LastName>";
+	xml += "<lastName>" + Query->FieldByName("LastName")->AsString + "</lastName>";
 	xml += "<department>" + Query->FieldByName("DepartmentName")->AsString + "</department>";
 	xml += "<email>" + Query->FieldByName("Email")->AsString + "</email>";
 	xml += "<phone>" + Query->FieldByName("Phone")->AsString + "</phone>";

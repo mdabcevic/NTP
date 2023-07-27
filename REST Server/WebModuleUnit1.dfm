@@ -24,10 +24,11 @@ object WebModule1: TWebModule1
   Height = 340
   Width = 527
   object Connection: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=restapi' +
-      ';Initial Catalog=PutniNaloziDB;Data Source=localhost\SQLEXPRESS;' +
-      'Initial File Name="";Server SPN=""'
+      ';Password=apiaccess;Initial Catalog=PutniNaloziDB;Data Source=lo' +
+      'calhost\SQLEXPRESS;Initial File Name="";Server SPN="";'
     LoginPrompt = False
     Provider = 'SQLNCLI11.1'
     Left = 56
