@@ -39,6 +39,9 @@ public:		// User declarations
 		"INNER JOIN Employees as emp ON tw.EmployeeID = emp.EmployeeID "
 		"INNER JOIN Departments as dep ON emp.DepartmentCode = dep.DepartmentCode "
 		"WHERE tw.WarrantID = :WarrantID";
+
+	UnicodeString ExportEmployee(int id);
+    UnicodeString ExportWarrant(int id);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TWebModule1 *WebModule1;

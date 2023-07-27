@@ -95,3 +95,59 @@ void __fastcall TWebModule1::WebModule1ActEmployeesAction(TObject *Sender, TWebR
 
 //---------------------------------------------------------------------------
 
+
+ UnicodeString TWebModule1::ExportEmployee(int id)
+ {
+	//get record from DB
+	Query->SQL->Clear();
+	Query->SQL ->Add(EmployeeQuery);
+	Query->Parameters->ParamByName("EmployeeID")->Value = id;
+	Query->Open();
+
+	//convert it to xml
+	String xml = "<employee>";
+
+	xml += "<id>" + Query->FieldByName("EmployeeID")->AsString + "</id>";
+	xml += "<firstName>" + Query->FieldByName("FirstName")->AsString + "</firstName>";
+	xml += "<lastName>" + Query->FieldByName("LastName")->AsString + "</LastName>";
+	xml += "<department>" + Query->FieldByName("DepartmentName")->AsString + "</department>";
+	xml += "<email>" + Query->FieldByName("Email")->AsString + "</email>";
+	xml += "<phone>" + Query->FieldByName("Phone")->AsString + "</phone>";
+
+	xml += "</employee>";
+	Query->Close();
+	return xml;
+ }
+
+ //---------------------------------------------------------------------------
+
+ UnicodeString TWebModule1::ExportWarrant(int id)
+ {
+	//get record from DB
+	Query->SQL->Clear();
+	Query->SQL ->Add(WarrantQuery);
+	Query->Parameters->ParamByName("WarrantID")->Value = id;
+	Query->Open();
+
+    //convert it to xml
+	String xml = "<warrant>";
+
+	xml += "<id>" + Query->FieldByName("WarrantID")->AsString + "</id>";
+	xml += "<employee>" + Query->FieldByName("FirstName")->AsString + " " + Query->FieldByName("LastName")->AsString + "</employee>";
+	xml += "<department>" + Query->FieldByName("DepartmentName")->AsString + "</department>";
+	xml += "<created>" + Query->FieldByName("CreatedAt")->AsString + "</created>";
+	xml += "<international>" + Query->FieldByName("IsInternational")->AsString + "</international>";
+	xml += "<departure>" + Query->FieldByName("Departure")->AsString + "</departure>";
+	xml += "<arrival>" + Query->FieldByName("Arrival")->AsString + "</arrival>";
+	xml += "<partners>" + Query->FieldByName("Partners")->AsString + "</partners>";
+	xml += "<purposes>" + Query->FieldByName("Purposes")->AsString + "</purposes>";
+	xml += "<toll>" + Query->FieldByName("Toll")->AsString + "</toll>";
+	xml += "<vehicle>" + Query->FieldByName("LicensePlate")->AsString + "</vehicle>";
+	xml += "<odometerStart>" + Query->FieldByName("StartingOdometer")->AsString + "</odometerStart>";
+	xml += "<odometerEnd>" + Query->FieldByName("EndingOdometer")->AsString + "</odometerEnd>";
+
+	xml += "</warrant>";
+    Query->Close();
+	return xml;
+
+ }
