@@ -15,7 +15,7 @@ TComponentClass WebModuleClass = __classid(TWebModule1);
 __fastcall TWebModule1::TWebModule1(TComponent* Owner)
 	: TWebModule(Owner)
 {
-    MessageList = new TStringList();
+	MessageList = new TStringList();
 }
 //---------------------------------------------------------------------------
 
