@@ -1015,6 +1015,8 @@ object DataModule1: TDataModule1
     Active = True
     Connection = Connection
     CursorType = ctStatic
+    IndexFieldNames = 'EmployeeID'
+    MasterFields = 'EmployeeID'
     MasterSource = EmployeeDataSource
     TableName = 'TravelWarrants'
     Left = 128
