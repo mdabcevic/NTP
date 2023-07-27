@@ -253,7 +253,7 @@ object DataModule1: TDataModule1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45109.764086875000000000
-    ReportOptions.LastChange = 45111.711624074070000000
+    ReportOptions.LastChange = 45111.711624074100000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -460,7 +460,7 @@ object DataModule1: TDataModule1
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 71.811070000000000000
+        Height = 124.724490000000000000
         Top = 309.921460000000000000
         Width = 718.110700000000000000
         DataSet = WarrantDetail
@@ -472,7 +472,7 @@ object DataModule1: TDataModule1
           Left = 7.559060000000000000
           Top = 15.118120000000000000
           Width = 154.960730000000000000
-          Height = 22.677180000000000000
+          Height = 71.811070000000000000
           DataField = 'WarrantID'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
@@ -493,7 +493,7 @@ object DataModule1: TDataModule1
           Left = 192.756030000000000000
           Top = 15.118120000000000000
           Width = 143.622140000000000000
-          Height = 22.677180000000000000
+          Height = 71.811070000000000000
           DataField = 'CreatedAt'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
@@ -514,7 +514,7 @@ object DataModule1: TDataModule1
           Left = 343.937230000000000000
           Top = 15.118120000000000000
           Width = 185.196970000000000000
-          Height = 22.677180000000000000
+          Height = 71.811070000000000000
           DataField = 'Partners'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
@@ -535,7 +535,7 @@ object DataModule1: TDataModule1
           Left = 544.252320000000000000
           Top = 15.118120000000000000
           Width = 170.078850000000000000
-          Height = 22.677180000000000000
+          Height = 71.811070000000000000
           DataField = 'Purposes'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
@@ -558,7 +558,7 @@ object DataModule1: TDataModule1
     RangeEnd = reCurrent
     UserName = 'Employee'
     CloseDataSource = False
-    DataSet = EmployeeTable
+    DataSource = EmployeeDataSource
     BCDToCurrency = False
     DataSetOptions = []
     Left = 776
@@ -1015,6 +1015,7 @@ object DataModule1: TDataModule1
     Active = True
     Connection = Connection
     CursorType = ctStatic
+    MasterSource = EmployeeDataSource
     TableName = 'TravelWarrants'
     Left = 128
     Top = 272
@@ -1119,5 +1120,10 @@ object DataModule1: TDataModule1
   object RResponse: TRESTResponse
     Left = 576
     Top = 592
+  end
+  object EmployeeTableDS: TDataSource
+    DataSet = EmployeeTable
+    Left = 520
+    Top = 120
   end
 end

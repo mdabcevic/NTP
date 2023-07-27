@@ -154,6 +154,7 @@ __published:	// IDE-managed Components
 	TWideStringField *EmployeeQueryEmail;
 	TWideStringField *EmployeeQueryPhone;
 	TStringField *EmployeeQueryEmployeeDepartment;
+	TDataSource *EmployeeTableDS;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations

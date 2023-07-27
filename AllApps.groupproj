@@ -9,6 +9,15 @@
         <Projects Include="PutniNalozi.cbproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="StaticLib\StaticLibrary.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DynamicLib\WRDynamicLib.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DynamicLib\RestDownloadDynLib.cbproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +44,41 @@
     <Target Name="PutniNalozi:Make">
         <MSBuild Projects="PutniNalozi.cbproj" Targets="Make"/>
     </Target>
+    <Target Name="StaticLibrary">
+        <MSBuild Projects="StaticLib\StaticLibrary.cbproj"/>
+    </Target>
+    <Target Name="StaticLibrary:Clean">
+        <MSBuild Projects="StaticLib\StaticLibrary.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StaticLibrary:Make">
+        <MSBuild Projects="StaticLib\StaticLibrary.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="WRDynamicLib">
+        <MSBuild Projects="DynamicLib\WRDynamicLib.cbproj"/>
+    </Target>
+    <Target Name="WRDynamicLib:Clean">
+        <MSBuild Projects="DynamicLib\WRDynamicLib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WRDynamicLib:Make">
+        <MSBuild Projects="DynamicLib\WRDynamicLib.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="RestDownloadDynLib">
+        <MSBuild Projects="DynamicLib\RestDownloadDynLib.cbproj"/>
+    </Target>
+    <Target Name="RestDownloadDynLib:Clean">
+        <MSBuild Projects="DynamicLib\RestDownloadDynLib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestDownloadDynLib:Make">
+        <MSBuild Projects="DynamicLib\RestDownloadDynLib.cbproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Server;PutniNalozi"/>
+        <CallTarget Targets="Server;PutniNalozi;StaticLibrary;WRDynamicLib;RestDownloadDynLib"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Server:Clean;PutniNalozi:Clean"/>
+        <CallTarget Targets="Server:Clean;PutniNalozi:Clean;StaticLibrary:Clean;WRDynamicLib:Clean;RestDownloadDynLib:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Server:Make;PutniNalozi:Make"/>
+        <CallTarget Targets="Server:Make;PutniNalozi:Make;StaticLibrary:Make;WRDynamicLib:Make;RestDownloadDynLib:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

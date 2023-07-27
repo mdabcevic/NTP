@@ -72,9 +72,9 @@ void __fastcall TForm9::EditButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm9::ReportWarrantClick(TObject *Sender)
 {
+	//DataModule1->JoinedReport->Open();
 	int selectedWarrantID = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;
 	DataModule1->JoinedReport->Parameters->ParamByName("WarrantID")->Value = selectedWarrantID;
-	DataModule1->JoinedReport->Open();
 	if(PDFOption->Checked){
         DataModule1->WarrantLayout->PrepareReport(true);
 		DataModule1->WarrantLayout->FileName = "file.pdf";

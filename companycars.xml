@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-2"?>
 <companycars>
 	<car>
-		<licenseplate>xxx</licenseplate>
-		<internalmark>Toyota-01-yar</internalmark>
-		<assigned>X. X.</assigned>
-		<currentuser>X.X.</currentuser>
+		<licenseplate>ZG-3297-DA</licenseplate>
+		<internalmark>Toyota-02-yar</internalmark>
+		<assigned>Kre?imir Dab?evi?</assigned>
+		<currentuser>Kre?imir Dab?evi?</currentuser>
 		<location>Zagreb</location>
 	</car>
   
@@ -17,4 +17,20 @@
     <currentuser>Safi Hajjo</currentuser>
     <location>Zagreb</location>
   </car>
+  <car>
+    <licenseplate>ZG-1973-HG</licenseplate>
+    <internalmark>Toyota-Camry-06</internalmark>
+    <assigned>Dubravka Dab?evi?</assigned>
+    <currentuser>Dubravka Dab?evi?</currentuser>
+    <location>Zagreb</location>
+  </car>
+  
+  <car>
+    <licenseplate>SB-5572-TH</licenseplate>
+    <internalmark>Peugeot-508-21</internalmark>
+    <assigned>Maja Dab?evi?</assigned>
+    <currentuser>Nina Dabcevic</currentuser>
+    <location>Zagreb</location>
+  </car>
+  
 </companycars>

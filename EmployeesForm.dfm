@@ -192,6 +192,7 @@ object Form4: TForm4
     Width = 129
     Height = 17
     Caption = 'Department Name'
+    Enabled = False
     TabOrder = 9
     OnClick = Sort
   end

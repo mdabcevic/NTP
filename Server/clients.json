@@ -43,25 +43,11 @@
       "ContactPerson": "Zlatko Jagric"
     },
     {
-      "CompanyName": "p",
-      "Address": "p",
-      "IdentificationNumber": "p",
-      "Email": "p",
-      "ContactPerson": "p"
-    },
-    {
-      "CompanyName": "k",
-      "Address": "k",
-      "IdentificationNumber": "k",
-      "Email": "k",
-      "ContactPerson": "k"
-    },
-    {
-      "CompanyName": "l",
-      "Address": "l",
-      "IdentificationNumber": "l",
-      "Email": "l",
-      "ContactPerson": "l"
+      "CompanyName": "Belupo",
+      "Address": "Slavonska avenija 55",
+      "IdentificationNumber": "46812",
+      "Email": "hello@belupo.hr",
+      "ContactPerson": "Anita Brakus"
     }
   ]
 }
