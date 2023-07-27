@@ -151,3 +151,43 @@ void __fastcall TWebModule1::WebModule1ActEmployeesAction(TObject *Sender, TWebR
 	return xml;
 
  }
+void __fastcall TWebModule1::WebModule1ExpEmployeeAction(TObject *Sender, TWebRequest *Request,
+          TWebResponse *Response, bool &Handled)
+{
+	if(Request->QueryFields->Count == 1)
+	{
+		int EmployeeID = Request->QueryFields->Values["id"].ToInt();
+		UnicodeString result = ExportEmployee(EmployeeID);
+
+		Response->StatusCode = 200;
+		Response->ReasonString = "OK";
+		Response->ContentType = "application/xml; charset=UTF-8";
+		Response->Content = result;
+	}
+	else
+	{
+		Response->Content = "Bad input";
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TWebModule1::WebModule1ExpWarrantAction(TObject *Sender, TWebRequest *Request,
+          TWebResponse *Response, bool &Handled)
+{
+    if(Request->QueryFields->Count == 1)
+	{
+		int WarrantID = Request->QueryFields->Values["id"].ToInt();
+		UnicodeString result = ExportWarrant(WarrantID);
+
+		Response->StatusCode = 200;
+		Response->ReasonString = "OK";
+		Response->ContentType = "application/xml; charset=UTF-8";
+		Response->Content = result;
+	}
+	else
+	{
+		Response->Content = "Bad input";
+	}
+}
+//---------------------------------------------------------------------------
+

@@ -22,6 +22,10 @@ __published:	// IDE-managed Components
           TWebResponse *Response, bool &Handled);
 	void __fastcall WebModule1ActEmployeesAction(TObject *Sender, TWebRequest *Request,
           TWebResponse *Response, bool &Handled);
+	void __fastcall WebModule1ExpEmployeeAction(TObject *Sender, TWebRequest *Request,
+          TWebResponse *Response, bool &Handled);
+	void __fastcall WebModule1ExpWarrantAction(TObject *Sender, TWebRequest *Request,
+          TWebResponse *Response, bool &Handled);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TWebModule1(TComponent* Owner);

@@ -10,6 +10,16 @@ object WebModule1: TWebModule1
       Name = 'ActEmployees'
       PathInfo = '/employees'
       OnAction = WebModule1ActEmployeesAction
+    end
+    item
+      Name = 'ExpEmployee'
+      PathInfo = '/export/employee'
+      OnAction = WebModule1ExpEmployeeAction
+    end
+    item
+      Name = 'ExpWarrant'
+      PathInfo = '/export/warrant'
+      OnAction = WebModule1ExpWarrantAction
     end>
   Height = 340
   Width = 527
