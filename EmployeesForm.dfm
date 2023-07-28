@@ -2,8 +2,8 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Employees'
-  ClientHeight = 565
-  ClientWidth = 1673
+  ClientHeight = 960
+  ClientWidth = 652
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,7 +13,7 @@ object Form4: TForm4
   OnClick = Sort
   TextHeight = 15
   object Title: TLabel
-    Left = 8
+    Left = 252
     Top = 16
     Width = 92
     Height = 25
@@ -26,15 +26,15 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label1: TLabel
-    Left = 1079
-    Top = 59
+    Left = 16
+    Top = 443
     Width = 165
     Height = 15
     Caption = 'Enter year for monthly analysis:'
   end
   object SortingBox: TGroupBox
     Left = 8
-    Top = 356
+    Top = 252
     Width = 185
     Height = 148
     Caption = 'Sorting field'
@@ -78,9 +78,9 @@ object Form4: TForm4
   end
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 64
+    Top = 60
     Width = 609
-    Height = 249
+    Height = 149
     DataSource = DataModule1.EmployeeDataSource
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
@@ -117,7 +117,7 @@ object Form4: TForm4
   end
   object AddButton: TButton
     Left = 8
-    Top = 325
+    Top = 221
     Width = 193
     Height = 25
     Caption = 'Add employee'
@@ -126,7 +126,7 @@ object Form4: TForm4
   end
   object DeleteButton: TButton
     Left = 207
-    Top = 325
+    Top = 221
     Width = 202
     Height = 25
     Caption = 'Delete selected employee'
@@ -135,7 +135,7 @@ object Form4: TForm4
   end
   object EditButton: TButton
     Left = 415
-    Top = 325
+    Top = 221
     Width = 202
     Height = 25
     Caption = 'Edit Selected employee'
@@ -144,7 +144,7 @@ object Form4: TForm4
   end
   object Sorting2Box: TGroupBox
     Left = 199
-    Top = 356
+    Top = 252
     Width = 185
     Height = 148
     Caption = 'Sorting direction'
@@ -170,7 +170,7 @@ object Form4: TForm4
   end
   object FilteringBox: TGroupBox
     Left = 390
-    Top = 356
+    Top = 252
     Width = 227
     Height = 121
     Caption = 'Filtering field'
@@ -178,7 +178,7 @@ object Form4: TForm4
   end
   object FnFilterOption: TRadioButton
     Left = 424
-    Top = 384
+    Top = 280
     Width = 113
     Height = 17
     Caption = 'First Name'
@@ -187,7 +187,7 @@ object Form4: TForm4
   end
   object LnFilterOption: TRadioButton
     Left = 424
-    Top = 407
+    Top = 303
     Width = 113
     Height = 17
     Caption = 'Last Name'
@@ -196,7 +196,7 @@ object Form4: TForm4
   end
   object DepartmentFilterOption: TRadioButton
     Left = 424
-    Top = 430
+    Top = 326
     Width = 129
     Height = 17
     Caption = 'Department Name'
@@ -206,7 +206,7 @@ object Form4: TForm4
   end
   object FilterBox: TEdit
     Left = 390
-    Top = 481
+    Top = 377
     Width = 121
     Height = 23
     TabOrder = 10
@@ -214,7 +214,7 @@ object Form4: TForm4
   end
   object ClearFilter: TButton
     Left = 512
-    Top = 480
+    Top = 376
     Width = 105
     Height = 25
     Caption = 'Clear filter'
@@ -223,7 +223,7 @@ object Form4: TForm4
   end
   object ReportPrint: TButton
     Left = 8
-    Top = 511
+    Top = 407
     Width = 376
     Height = 25
     Caption = 'Print reports for selected employee'
@@ -232,7 +232,7 @@ object Form4: TForm4
   end
   object ReportBox: TGroupBox
     Left = 390
-    Top = 510
+    Top = 406
     Width = 227
     Height = 26
     TabOrder = 13
@@ -256,10 +256,10 @@ object Form4: TForm4
     end
   end
   object DBChart1: TDBChart
-    Left = 632
-    Top = 64
-    Width = 441
-    Height = 472
+    Left = 8
+    Top = 711
+    Width = 609
+    Height = 235
     Title.Text.Strings = (
       'TDBChart')
     View3D = False
@@ -343,10 +343,10 @@ object Form4: TForm4
     end
   end
   object DBChart2: TDBChart
-    Left = 1079
-    Top = 86
-    Width = 489
-    Height = 450
+    Left = 8
+    Top = 470
+    Width = 609
+    Height = 228
     Title.Text.Strings = (
       'TDBChart')
     LeftAxis.Increment = 1.000000000000000000
@@ -395,6 +395,7 @@ object Form4: TForm4
     end
     object Series8: TLineSeries
       HoverElement = [heCurrent]
+      Active = False
       Brush.BackColor = clDefault
       Pointer.InflateMargins = True
       Pointer.Style = psRectangle
@@ -405,18 +406,18 @@ object Form4: TForm4
     end
   end
   object YearSelection: TEdit
-    Left = 1256
-    Top = 57
-    Width = 137
+    Left = 187
+    Top = 440
+    Width = 197
     Height = 23
     NumbersOnly = True
     TabOrder = 16
     Text = '2022'
   end
   object Button1: TButton
-    Left = 1407
-    Top = 55
-    Width = 161
+    Left = 390
+    Top = 439
+    Width = 227
     Height = 25
     Caption = 'Generate analysis'
     TabOrder = 17
