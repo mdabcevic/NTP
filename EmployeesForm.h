@@ -46,12 +46,11 @@ __published:	// IDE-managed Components
 	TGroupBox *ReportBox;
 	TRadioButton *PDFRadio;
 	TRadioButton *RDFRadio;
-	TChart *EmpTotalChart;
-	TChart *Chart2;
-	TBarSeries *Series1;
-	TBarSeries *Series2;
-	TBarSeries *Series3;
 	TDBCrossTabSource *DBCrossTabSource1;
+	TDBCrossTabSource *DBCrossTabSource2;
+	TDBCrossTabSource *DBCrossTabSource3;
+	TDBChart *DBChart1;
+	TBarSeries *Series2;
 	void __fastcall AddButtonClick(TObject *Sender);
 	void __fastcall DeleteButtonClick(TObject *Sender);
 	void __fastcall EditButtonClick(TObject *Sender);

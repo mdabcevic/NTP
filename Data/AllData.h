@@ -157,6 +157,8 @@ __published:	// IDE-managed Components
 	TDataSource *EmployeeTableDS;
 	TADOQuery *ChartingQuery;
 	TDataSource *ChartingDataSource;
+	TIntegerField *ChartingQueryTotalWarrants;
+	TIntegerField *ChartingQueryYear;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -220,11 +222,11 @@ public:		// User declarations
 	int StartProcess();
 
 	//charting queries
-    UnicodeString EmployeeTotal =
-    "SELECT YEAR(Departure) AS Yearly, COUNT(*) AS TotalWarrants "
-    "FROM TravelWarrants "
-    "WHERE EmployeeID = :id "
-	"GROUP BY YEAR(Departure)";
+	UnicodeString EmployeeTotal =
+	"SELECT YEAR(Departure) AS Year, COUNT(*) AS TotalWarrants "
+	"FROM TravelWarrants "
+	"WHERE EmployeeID = :id "
+	"GROUP BY YEAR(Departure) ";
 
 
 };

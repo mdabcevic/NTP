@@ -248,91 +248,48 @@ object Form4: TForm4
       TabOrder = 1
     end
   end
-  object EmpTotalChart: TChart
-    Left = 632
+  object DBChart1: TDBChart
+    Left = 640
     Top = 64
     Width = 400
-    Height = 233
-    BackWall.Pen.Visible = False
-    BottomWall.Brush.Gradient.EndColor = clSilver
-    BottomWall.Brush.Gradient.StartColor = clGray
-    BottomWall.Brush.Gradient.Visible = True
-    BottomWall.Pen.Color = clGray
-    BottomWall.Size = 4
-    Gradient.Direction = gdFromTopLeft
-    Gradient.EndColor = clWhite
-    Gradient.StartColor = clSilver
-    Gradient.Visible = True
-    LeftWall.Brush.Gradient.EndColor = clSilver
-    LeftWall.Brush.Gradient.StartColor = clGray
-    LeftWall.Brush.Gradient.Visible = True
-    LeftWall.Color = clWhite
-    LeftWall.Pen.Color = clGray
-    LeftWall.Size = 4
-    MarginLeft = 4
-    MarginRight = 4
+    Height = 249
     Title.Text.Strings = (
-      'TChart')
-    BottomAxis.Grid.Color = 14540253
-    BottomAxis.LabelsFormat.Font.Color = clGray
-    BottomAxis.LabelsFormat.Font.Height = -9
-    BottomAxis.LabelStyle = talValue
-    Frame.Visible = False
-    LeftAxis.Grid.Color = 14540253
-    LeftAxis.LabelsFormat.Font.Color = clGray
-    LeftAxis.LabelsFormat.Font.Height = -9
-    LeftAxis.LabelStyle = talValue
-    Zoom.Animated = True
-    BevelWidth = 2
-    Color = clWhite
+      'TDBChart')
+    View3D = False
     TabOrder = 14
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
-    object Series1: TBarSeries
-      HoverElement = []
-      Active = False
-      DataSource = DBCrossTabSource1
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Bar'
-      YValues.Order = loNone
-    end
     object Series2: TBarSeries
       HoverElement = []
+      DataSource = DataModule1.ChartingQuery
+      XLabelsSource = 'Year'
       XValues.Name = 'X'
       XValues.Order = loAscending
+      XValues.ValueSource = 'Year'
       YValues.Name = 'Bar'
       YValues.Order = loNone
+      YValues.ValueSource = 'TotalWarrants'
     end
-    object Series3: TBarSeries
-      HoverElement = []
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Bar'
-      YValues.Order = loNone
-    end
-  end
-  object Chart2: TChart
-    Left = 632
-    Top = 314
-    Width = 400
-    Height = 223
-    Title.Text.Strings = (
-      'TChart')
-    TabOrder = 15
-    DefaultCanvas = 'TGDIPlusCanvas'
-    ColorPaletteIndex = 13
   end
   object DBCrossTabSource1: TDBCrossTabSource
-    Active = True
     CaseSensitive = False
     Formula = gfCount
-    GroupField = 'Yearly'
-    LabelField = 'Yearly'
-    Series = Series1
-    ValueField = 'TotalWarrants'
+    GroupField = 'Year'
+    HideSeries = False
+    LabelField = 'Year'
+    ValueField = 'Warrant'
     DataSet = DataModule1.ChartingQuery
     Left = 672
     Top = 8
+  end
+  object DBCrossTabSource2: TDBCrossTabSource
+    GroupField = 'Year'
+    HideSeries = False
+    LabelField = 'Year'
+    ValueField = 'Warrant'
+    DataSet = DataModule1.ChartingQuery
+  end
+  object DBCrossTabSource3: TDBCrossTabSource
+    DataSet = DataModule1.ChartingQuery
   end
 end
