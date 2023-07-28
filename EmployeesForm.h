@@ -51,6 +51,7 @@ __published:	// IDE-managed Components
 	TDBCrossTabSource *DBCrossTabSource3;
 	TDBChart *DBChart1;
 	TBarSeries *Series2;
+	TBarSeries *Series1;
 	void __fastcall AddButtonClick(TObject *Sender);
 	void __fastcall DeleteButtonClick(TObject *Sender);
 	void __fastcall EditButtonClick(TObject *Sender);

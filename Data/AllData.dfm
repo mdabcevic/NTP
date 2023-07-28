@@ -1134,7 +1134,10 @@ object DataModule1: TDataModule1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT YEAR(Departure) AS Year, COUNT(*) AS TotalWarrants'
+      
+        'SELECT YEAR(Departure) AS Year, COUNT(*) AS TotalWarrants, SUM(C' +
+        'ASE WHEN IsInternational = 1 THEN 1 ELSE 0 END) AS International' +
+        'Travels'
       'FROM TravelWarrants'
       'WHERE EmployeeID = 55'
       'GROUP BY YEAR(Departure)')
@@ -1146,6 +1149,10 @@ object DataModule1: TDataModule1
     end
     object ChartingQueryYear: TIntegerField
       FieldName = 'Year'
+      ReadOnly = True
+    end
+    object ChartingQueryInternationalTravels: TIntegerField
+      FieldName = 'InternationalTravels'
       ReadOnly = True
     end
   end

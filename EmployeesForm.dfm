@@ -270,6 +270,17 @@ object Form4: TForm4
       YValues.Order = loNone
       YValues.ValueSource = 'TotalWarrants'
     end
+    object Series1: TBarSeries
+      HoverElement = []
+      Active = False
+      DataSource = DataModule1.ChartingQuery
+      XLabelsSource = 'Year'
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      XValues.ValueSource = 'Year'
+      YValues.Name = 'Bar'
+      YValues.Order = loNone
+    end
   end
   object DBCrossTabSource1: TDBCrossTabSource
     CaseSensitive = False
@@ -288,8 +299,12 @@ object Form4: TForm4
     LabelField = 'Year'
     ValueField = 'Warrant'
     DataSet = DataModule1.ChartingQuery
+    Left = 912
+    Top = 8
   end
   object DBCrossTabSource3: TDBCrossTabSource
     DataSet = DataModule1.ChartingQuery
+    Left = 792
+    Top = 8
   end
 end
