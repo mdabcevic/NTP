@@ -52,6 +52,16 @@ __published:	// IDE-managed Components
 	TDBChart *DBChart1;
 	TBarSeries *Series2;
 	TBarSeries *Series1;
+	TLineSeries *Series3;
+	TLineSeries *Series4;
+	TDBChart *DBChart2;
+	TLabel *Label1;
+	TEdit *YearSelection;
+	TBarSeries *Series5;
+	TBarSeries *Series6;
+	TLineSeries *Series7;
+	TLineSeries *Series8;
+	TButton *Button1;
 	void __fastcall AddButtonClick(TObject *Sender);
 	void __fastcall DeleteButtonClick(TObject *Sender);
 	void __fastcall EditButtonClick(TObject *Sender);
@@ -60,11 +70,13 @@ __published:	// IDE-managed Components
 	void __fastcall ClearFilterClick(TObject *Sender);
 	void __fastcall ReportPrintClick(TObject *Sender);
 	void __fastcall DBGrid1CellClick(TColumn *Column);
+	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm4(TComponent* Owner);
 	std::map<String, std::map<String, String>> translation;
 	void chartEmployeeTotal(int id);
+    void chartEmployeeYearly(int id, int year);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm4 *Form4;

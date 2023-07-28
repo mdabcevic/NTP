@@ -2,8 +2,8 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Employees'
-  ClientHeight = 601
-  ClientWidth = 1100
+  ClientHeight = 565
+  ClientWidth = 1673
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,8 +13,8 @@ object Form4: TForm4
   OnClick = Sort
   TextHeight = 15
   object Title: TLabel
-    Left = 256
-    Top = 24
+    Left = 8
+    Top = 16
     Width = 92
     Height = 25
     Caption = 'Employees'
@@ -25,9 +25,16 @@ object Form4: TForm4
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
   end
+  object Label1: TLabel
+    Left = 1079
+    Top = 59
+    Width = 165
+    Height = 15
+    Caption = 'Enter year for monthly analysis:'
+  end
   object SortingBox: TGroupBox
     Left = 8
-    Top = 357
+    Top = 356
     Width = 185
     Height = 148
     Caption = 'Sorting field'
@@ -110,7 +117,7 @@ object Form4: TForm4
   end
   object AddButton: TButton
     Left = 8
-    Top = 326
+    Top = 325
     Width = 193
     Height = 25
     Caption = 'Add employee'
@@ -119,7 +126,7 @@ object Form4: TForm4
   end
   object DeleteButton: TButton
     Left = 207
-    Top = 326
+    Top = 325
     Width = 202
     Height = 25
     Caption = 'Delete selected employee'
@@ -128,7 +135,7 @@ object Form4: TForm4
   end
   object EditButton: TButton
     Left = 415
-    Top = 326
+    Top = 325
     Width = 202
     Height = 25
     Caption = 'Edit Selected employee'
@@ -137,7 +144,7 @@ object Form4: TForm4
   end
   object Sorting2Box: TGroupBox
     Left = 199
-    Top = 357
+    Top = 356
     Width = 185
     Height = 148
     Caption = 'Sorting direction'
@@ -163,7 +170,7 @@ object Form4: TForm4
   end
   object FilteringBox: TGroupBox
     Left = 390
-    Top = 357
+    Top = 356
     Width = 227
     Height = 121
     Caption = 'Filtering field'
@@ -171,7 +178,7 @@ object Form4: TForm4
   end
   object FnFilterOption: TRadioButton
     Left = 424
-    Top = 385
+    Top = 384
     Width = 113
     Height = 17
     Caption = 'First Name'
@@ -180,7 +187,7 @@ object Form4: TForm4
   end
   object LnFilterOption: TRadioButton
     Left = 424
-    Top = 408
+    Top = 407
     Width = 113
     Height = 17
     Caption = 'Last Name'
@@ -189,7 +196,7 @@ object Form4: TForm4
   end
   object DepartmentFilterOption: TRadioButton
     Left = 424
-    Top = 431
+    Top = 430
     Width = 129
     Height = 17
     Caption = 'Department Name'
@@ -199,7 +206,7 @@ object Form4: TForm4
   end
   object FilterBox: TEdit
     Left = 390
-    Top = 482
+    Top = 481
     Width = 121
     Height = 23
     TabOrder = 10
@@ -207,7 +214,7 @@ object Form4: TForm4
   end
   object ClearFilter: TButton
     Left = 512
-    Top = 481
+    Top = 480
     Width = 105
     Height = 25
     Caption = 'Clear filter'
@@ -216,7 +223,7 @@ object Form4: TForm4
   end
   object ReportPrint: TButton
     Left = 8
-    Top = 512
+    Top = 511
     Width = 376
     Height = 25
     Caption = 'Print reports for selected employee'
@@ -225,7 +232,7 @@ object Form4: TForm4
   end
   object ReportBox: TGroupBox
     Left = 390
-    Top = 511
+    Top = 510
     Width = 227
     Height = 26
     TabOrder = 13
@@ -249,10 +256,10 @@ object Form4: TForm4
     end
   end
   object DBChart1: TDBChart
-    Left = 640
+    Left = 632
     Top = 64
-    Width = 400
-    Height = 249
+    Width = 441
+    Height = 472
     Title.Text.Strings = (
       'TDBChart')
     View3D = False
@@ -261,6 +268,8 @@ object Form4: TForm4
     ColorPaletteIndex = 13
     object Series2: TBarSeries
       HoverElement = []
+      Marks.Visible = False
+      Marks.Style = smsValue
       DataSource = DataModule1.ChartingQuery
       XLabelsSource = 'Year'
       XValues.Name = 'X'
@@ -272,7 +281,8 @@ object Form4: TForm4
     end
     object Series1: TBarSeries
       HoverElement = []
-      Active = False
+      Marks.Visible = False
+      Marks.Style = smsValue
       DataSource = DataModule1.ChartingQuery
       XLabelsSource = 'Year'
       XValues.Name = 'X'
@@ -280,7 +290,137 @@ object Form4: TForm4
       XValues.ValueSource = 'Year'
       YValues.Name = 'Bar'
       YValues.Order = loNone
+      YValues.ValueSource = 'InternationalTravels'
     end
+    object Series3: TLineSeries
+      HoverElement = [heCurrent]
+      DataSource = DataModule1.ChartingQuery
+      SeriesColor = 13870501
+      Shadow.Color = 2894892
+      Shadow.Transparency = 0
+      XLabelsSource = 'Year'
+      Brush.BackColor = clDefault
+      DrawStyle = dsCurve
+      LinePen.Color = clDefault
+      OutLine.Color = 3158064
+      Pointer.HorizSize = 3
+      Pointer.InflateMargins = False
+      Pointer.Pen.Color = clDefault
+      Pointer.Style = psCircle
+      Pointer.VertSize = 3
+      Pointer.Visible = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      XValues.ValueSource = 'Year'
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+      YValues.ValueSource = 'AvgDaysPerJourney'
+    end
+    object Series4: TLineSeries
+      HoverElement = [heCurrent]
+      Active = False
+      DataSource = DataModule1.ChartingQuery
+      SeriesColor = 8388672
+      Shadow.Color = 2894892
+      Shadow.Transparency = 0
+      XLabelsSource = 'Year'
+      Brush.BackColor = clDefault
+      DrawStyle = dsCurve
+      LinePen.Color = clDefault
+      OutLine.Color = 3158064
+      Pointer.HorizSize = 3
+      Pointer.InflateMargins = False
+      Pointer.Pen.Color = clDefault
+      Pointer.Style = psCircle
+      Pointer.VertSize = 3
+      Pointer.Visible = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      XValues.ValueSource = 'Year'
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+      YValues.ValueSource = 'AvgMileagePerWarrant'
+    end
+  end
+  object DBChart2: TDBChart
+    Left = 1079
+    Top = 86
+    Width = 489
+    Height = 450
+    Title.Text.Strings = (
+      'TDBChart')
+    LeftAxis.Increment = 1.000000000000000000
+    View3D = False
+    TabOrder = 15
+    DefaultCanvas = 'TGDIPlusCanvas'
+    ColorPaletteIndex = 13
+    object Series5: TBarSeries
+      HoverElement = []
+      Marks.Visible = False
+      DataSource = DataModule1.ChartingYearly
+      XLabelsSource = 'Monthly'
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      XValues.ValueSource = 'Monthly'
+      YValues.Name = 'Bar'
+      YValues.Order = loNone
+      YValues.ValueSource = 'TotalWarrants'
+    end
+    object Series6: TBarSeries
+      HoverElement = []
+      Marks.Visible = False
+      DataSource = DataModule1.ChartingYearly
+      XLabelsSource = 'Monthly'
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      XValues.ValueSource = 'Monthly'
+      YValues.Name = 'Bar'
+      YValues.Order = loNone
+      YValues.ValueSource = 'InternationalTravels'
+    end
+    object Series7: TLineSeries
+      HoverElement = [heCurrent]
+      Active = False
+      DataSource = DataModule1.ChartingYearly
+      XLabelsSource = 'Monthly'
+      Brush.BackColor = clDefault
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      XValues.ValueSource = 'Monthly'
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+      YValues.ValueSource = 'AvgMileage'
+    end
+    object Series8: TLineSeries
+      HoverElement = [heCurrent]
+      Brush.BackColor = clDefault
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+  end
+  object YearSelection: TEdit
+    Left = 1256
+    Top = 57
+    Width = 137
+    Height = 23
+    NumbersOnly = True
+    TabOrder = 16
+    Text = '2022'
+  end
+  object Button1: TButton
+    Left = 1407
+    Top = 55
+    Width = 161
+    Height = 25
+    Caption = 'Generate analysis'
+    TabOrder = 17
+    OnClick = Button1Click
   end
   object DBCrossTabSource1: TDBCrossTabSource
     CaseSensitive = False

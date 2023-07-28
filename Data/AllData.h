@@ -160,6 +160,10 @@ __published:	// IDE-managed Components
 	TIntegerField *ChartingQueryTotalWarrants;
 	TIntegerField *ChartingQueryYear;
 	TIntegerField *ChartingQueryInternationalTravels;
+	TIntegerField *ChartingQueryAvgDaysPerJourney;
+	TIntegerField *ChartingQueryAvgMileagePerWarrant;
+	TADOQuery *ChartingYearly;
+	TDataSource *YearlyDataSource;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -224,10 +228,25 @@ public:		// User declarations
 
 	//charting queries
 	UnicodeString EmployeeTotal =
-	"SELECT YEAR(Departure) AS Year, COUNT(*) AS TotalWarrants, SUM(CASE WHEN IsInternational = 1 THEN 1 ELSE 0 END) AS InternationalTravels "
+	"SELECT YEAR(Departure) AS Year, COUNT(*) AS TotalWarrants, SUM(CASE WHEN IsInternational = 1 THEN 1 ELSE 0 END) AS InternationalTravels, "
+	"CAST(SUM(DATEDIFF(DAY, Departure, Arrival)) AS INT) / COUNT(*) AS AvgDaysPerJourney, "
+    "SUM(EndingOdometer - StartingOdometer) / COUNT(*) AS AvgMileagePerWarrant "
 	"FROM TravelWarrants "
 	"WHERE EmployeeID = :id "
 	"GROUP BY YEAR(Departure) ";
+
+	UnicodeString EmployeeYearly =
+    "SELECT "
+    "MONTH(Departure) AS Monthly, "
+    "COUNT(*) AS TotalWarrants, "
+    "SUM(CASE WHEN IsInternational = 1 THEN 1 ELSE 0 END) AS InternationalTravels, "
+    "SUM(DATEDIFF(DAY, Departure, Arrival)) AS TotalDaysSpent, "
+    "SUM(EndingOdometer - StartingOdometer) / COUNT(*) AS AvgMileage "
+    "FROM TravelWarrants "
+    "WHERE EmployeeID = :id "
+	"AND YEAR(Departure) = :year "
+    "GROUP BY MONTH(Departure)";
+
 
 
 };

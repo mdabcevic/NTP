@@ -1027,15 +1027,15 @@ object DataModule1: TDataModule1
     Host = '127.0.0.1'
     Port = 26138
     ReadTimeout = -1
-    Left = 40
-    Top = 472
+    Left = 776
+    Top = 560
   end
   object UDPClient: TIdUDPClient
     Active = True
     Host = '127.0.0.1'
     Port = 16138
-    Left = 128
-    Top = 472
+    Left = 856
+    Top = 560
   end
   object HTTP: TIdHTTP
     IOHandler = SSLHandler
@@ -1051,8 +1051,8 @@ object DataModule1: TDataModule1
     Request.Ranges.Units = 'bytes'
     Request.Ranges = <>
     HTTPOptions = [hoForceEncodeParams]
-    Left = 112
-    Top = 592
+    Left = 704
+    Top = 560
   end
   object SSLHandler: TIdSSLIOHandlerSocketOpenSSL
     MaxLineAction = maException
@@ -1061,8 +1061,8 @@ object DataModule1: TDataModule1
     SSLOptions.Mode = sslmUnassigned
     SSLOptions.VerifyMode = []
     SSLOptions.VerifyDepth = 0
-    Left = 40
-    Top = 592
+    Left = 616
+    Top = 560
   end
   object AsymCryptLib: TCryptographicLibrary
     Left = 1016
@@ -1100,28 +1100,28 @@ object DataModule1: TDataModule1
     ChainId = 'native.CBC'
   end
   object HTTPBaseAuth: THTTPBasicAuthenticator
-    Left = 336
-    Top = 592
+    Left = 616
+    Top = 616
   end
   object RClient: TRESTClient
     Authenticator = HTTPBaseAuth
     BaseURL = 'http://localhost/RESTISAPI.dll/employees'
     Params = <>
     SynchronizedEvents = False
-    Left = 424
-    Top = 592
+    Left = 704
+    Top = 616
   end
   object RRequest: TRESTRequest
     Client = RClient
     Params = <>
     Response = RResponse
     SynchronizedEvents = False
-    Left = 496
-    Top = 592
+    Left = 776
+    Top = 616
   end
   object RResponse: TRESTResponse
-    Left = 576
-    Top = 592
+    Left = 856
+    Top = 616
   end
   object EmployeeTableDS: TDataSource
     DataSet = EmployeeTable
@@ -1134,10 +1134,16 @@ object DataModule1: TDataModule1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
+      'SELECT YEAR(Departure) AS Year, '
       
-        'SELECT YEAR(Departure) AS Year, COUNT(*) AS TotalWarrants, SUM(C' +
-        'ASE WHEN IsInternational = 1 THEN 1 ELSE 0 END) AS International' +
-        'Travels'
+        'COUNT(*) AS TotalWarrants, SUM(CASE WHEN IsInternational = 1 THE' +
+        'N 1 ELSE 0 END) AS InternationalTravels,'
+      
+        'CAST(SUM(DATEDIFF(DAY, Departure, Arrival)) AS INT) / COUNT(*) A' +
+        'S AvgDaysPerJourney,'
+      
+        'SUM(EndingOdometer - StartingOdometer) / COUNT(*) AS AvgMileageP' +
+        'erWarrant'
       'FROM TravelWarrants'
       'WHERE EmployeeID = 55'
       'GROUP BY YEAR(Departure)')
@@ -1155,10 +1161,47 @@ object DataModule1: TDataModule1
       FieldName = 'InternationalTravels'
       ReadOnly = True
     end
+    object ChartingQueryAvgDaysPerJourney: TIntegerField
+      FieldName = 'AvgDaysPerJourney'
+      ReadOnly = True
+    end
+    object ChartingQueryAvgMileagePerWarrant: TIntegerField
+      FieldName = 'AvgMileagePerWarrant'
+      ReadOnly = True
+    end
   end
   object ChartingDataSource: TDataSource
     DataSet = ChartingQuery
     Left = 384
     Top = 488
+  end
+  object ChartingYearly: TADOQuery
+    Active = True
+    Connection = Connection
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      ''
+      '    SELECT '
+      '    MONTH(Departure) AS Monthly, '
+      '    COUNT(*) AS TotalWarrants, '
+      
+        '    SUM(CASE WHEN IsInternational = 1 THEN 1 ELSE 0 END) AS Inte' +
+        'rnationalTravels, '
+      '    SUM(DATEDIFF(DAY, Departure,Arrival)) AS TotalDaysSpent, '
+      
+        '    SUM(EndingOdometer - StartingOdometer) / COUNT(*) AS AvgMile' +
+        'age '
+      '    FROM TravelWarrants '
+      '    WHERE EmployeeID = 55 '
+      '    AND YEAR(Departure) = 2022'
+      '    GROUP BY MONTH(Departure);')
+    Left = 256
+    Top = 560
+  end
+  object YearlyDataSource: TDataSource
+    DataSet = ChartingYearly
+    Left = 384
+    Top = 560
   end
 end

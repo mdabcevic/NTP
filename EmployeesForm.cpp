@@ -273,11 +273,32 @@ void __fastcall TForm4::ReportPrintClick(TObject *Sender)
 	//ShowMessage(id);
 
 	//DataModule1->ChartingQuery->Close();
-    DataModule1->ChartingQuery->Open();
+	DataModule1->ChartingQuery->Open();
  }
+ //---------------------------------------------------------------------------
 void __fastcall TForm4::DBGrid1CellClick(TColumn *Column)
 {
 	chartEmployeeTotal(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger);
+	chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
+
+}
+//---------------------------------------------------------------------------
+
+void TForm4::chartEmployeeYearly(int id, int year)
+ {
+	DataModule1->ChartingYearly->SQL->Text = DataModule1->EmployeeYearly;
+	// Create the 'EmployeeID' parameter if it doesn't exist
+	DataModule1->ChartingYearly->Parameters->ParamByName("id")->Value = id;
+	DataModule1->ChartingYearly->Parameters->ParamByName("year")->Value = year;
+	//ShowMessage(id);
+
+	//DataModule1->ChartingQuery->Close();
+	DataModule1->ChartingYearly->Open();
+ }
+
+void __fastcall TForm4::Button1Click(TObject *Sender)
+{
+    chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
 }
 //---------------------------------------------------------------------------
 
