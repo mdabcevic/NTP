@@ -1128,4 +1128,21 @@ object DataModule1: TDataModule1
     Left = 520
     Top = 120
   end
+  object ChartingQuery: TADOQuery
+    Active = True
+    Connection = Connection
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT YEAR(Departure) AS Yearly, COUNT(*) AS TotalWarrants'
+      'FROM TravelWarrants'
+      'GROUP BY YEAR(Departure)')
+    Left = 256
+    Top = 488
+  end
+  object ChartingDataSource: TDataSource
+    DataSet = ChartingQuery
+    Left = 384
+    Top = 488
+  end
 end

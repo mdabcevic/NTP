@@ -265,4 +265,19 @@ void __fastcall TForm4::ReportPrintClick(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
+ void TForm4::chartEmployeeTotal(int id)
+ {
+	DataModule1->ChartingQuery->SQL->Text = DataModule1->EmployeeTotal;
+	// Create the 'EmployeeID' parameter if it doesn't exist
+	DataModule1->ChartingQuery->Parameters->ParamByName("id")->Value = id;
+	//ShowMessage(id);
+
+	//DataModule1->ChartingQuery->Close();
+    DataModule1->ChartingQuery->Open();
+ }
+void __fastcall TForm4::DBGrid1CellClick(TColumn *Column)
+{
+	chartEmployeeTotal(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger);
+}
+//---------------------------------------------------------------------------
 

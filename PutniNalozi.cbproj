@@ -58,7 +58,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib;frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib;soaprtl.lib;inet.lib;bindcomp.lib;bindcompvcl.lib;RESTComponents.lib;CustomIPTransport.lib;LockBox3CR.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;xmlrtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;vclx.lib;frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;IndySystem.lib;IndyCore.lib;IndyProtocols.lib;soaprtl.lib;inet.lib;bindcomp.lib;bindcompvcl.lib;RESTComponents.lib;CustomIPTransport.lib;LockBox3CR.lib;Tee.lib;TeeDB.lib;TeeUI.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -115,7 +115,7 @@
         <LinkPackageStatics>frx28.lib;fs28.lib;frxDB28.lib;fsDB28.lib;frxe28.lib;LockBox3CR.lib</LinkPackageStatics>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <FinalOutputDir>.</FinalOutputDir>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;xmlrtl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclwinx.bpi;vclimg.bpi;bindengine.bpi;vclx.bpi;IndySystem.bpi;IndyCore.bpi;IndyProtocols.bpi;soaprtl.bpi;inet.bpi;bindcomp.bpi;bindcompvcl.bpi;RESTComponents.bpi;CustomIPTransport.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;xmlrtl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclwinx.bpi;vclimg.bpi;bindengine.bpi;vclx.bpi;IndySystem.bpi;IndyCore.bpi;IndyProtocols.bpi;soaprtl.bpi;inet.bpi;bindcomp.bpi;bindcompvcl.bpi;RESTComponents.bpi;CustomIPTransport.bpi;Tee.bpi;TeeDB.bpi;TeeUI.bpi</LinkPackageImports>
         <Debugger_DebugSourcePath>C:\Users\Maja\Downloads\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">

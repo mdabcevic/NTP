@@ -155,6 +155,8 @@ __published:	// IDE-managed Components
 	TWideStringField *EmployeeQueryPhone;
 	TStringField *EmployeeQueryEmployeeDepartment;
 	TDataSource *EmployeeTableDS;
+	TADOQuery *ChartingQuery;
+	TDataSource *ChartingDataSource;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
@@ -215,7 +217,14 @@ public:		// User declarations
 	void translateForm(TForm* Form, String Language, const std::map<String, std::map<String, String>>& translation);
 
 	//another process
-    int StartProcess();
+	int StartProcess();
+
+	//charting queries
+    UnicodeString EmployeeTotal =
+    "SELECT YEAR(Departure) AS Yearly, COUNT(*) AS TotalWarrants "
+    "FROM TravelWarrants "
+    "WHERE EmployeeID = :id "
+	"GROUP BY YEAR(Departure)";
 
 
 };
