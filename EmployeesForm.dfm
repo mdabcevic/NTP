@@ -262,6 +262,9 @@ object Form4: TForm4
     Height = 235
     Title.Text.Strings = (
       'Total analysis')
+    BottomAxis.Axis.Visible = False
+    BottomAxis.Grid.Visible = False
+    LeftAxis.Axis.Visible = False
     Legend.Alignment = laBottom
     Legend.CheckBoxes = True
     Legend.Frame.Width = 0
@@ -376,6 +379,8 @@ object Form4: TForm4
       00000000000000B002400001045465787406034465630556616C756505000000
       00000000C0024000}
     LeftAxis.Increment = 1.000000000000000000
+    Legend.Alignment = laBottom
+    Legend.CheckBoxes = True
     Panning.MouseWheel = pmwNone
     View3D = False
     Zoom.MouseButton = mbRight
@@ -427,7 +432,9 @@ object Form4: TForm4
     end
     object Series8: TLineSeries
       HoverElement = [heCurrent]
+      Legend.Visible = False
       Active = False
+      ShowInLegend = False
       Brush.BackColor = clDefault
       Pointer.InflateMargins = True
       Pointer.Style = psRectangle
