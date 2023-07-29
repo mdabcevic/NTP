@@ -3,7 +3,7 @@ object Form4: TForm4
   Top = 0
   Caption = 'Employees'
   ClientHeight = 960
-  ClientWidth = 652
+  ClientWidth = 701
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -260,13 +260,21 @@ object Form4: TForm4
     Top = 711
     Width = 609
     Height = 235
+    BackWall.Pen.Width = 0
     Border.Width = 0
+    Border.Visible = True
+    Title.Alignment = taRightJustify
+    Title.Font.Color = clBlack
+    Title.Font.Height = -13
+    Title.Font.Name = 'Segoe UI'
+    Title.Font.Style = [fsBold]
     Title.Text.Strings = (
       'Total analysis')
     BottomAxis.Axis.Visible = False
     BottomAxis.Grid.Visible = False
     DepthAxis.Axis.Width = 0
     DepthTopAxis.Axis.Width = 0
+    Frame.Width = 0
     LeftAxis.Axis.Width = 0
     LeftAxis.Axis.Visible = False
     Legend.Alignment = laBottom
@@ -382,10 +390,23 @@ object Form4: TForm4
     Top = 470
     Width = 609
     Height = 228
+    BackWall.Pen.Width = 0
+    Border.Visible = True
+    LeftWall.Pen.Width = 0
+    MarginBottom = 2
+    MarginLeft = 2
+    MarginRight = 2
+    MarginTop = 2
     ScrollMouseButton = mbLeft
+    Title.Alignment = taRightJustify
+    Title.Font.Color = clBlack
+    Title.Font.Height = -13
+    Title.Font.Name = 'Segoe UI'
+    Title.Font.Style = [fsBold]
     Title.Text.Strings = (
       'Monthly analysis for chosen year')
     BottomAxis.Axis.Width = 0
+    BottomAxis.Axis.Visible = False
     BottomAxis.Grid.Visible = False
     BottomAxis.Title.Pen.Visible = False
     BottomAxis.Items = {
@@ -405,7 +426,9 @@ object Form4: TForm4
     DepthAxis.Title.Pen.Visible = False
     DepthTopAxis.Axis.Width = 0
     DepthTopAxis.Title.Pen.Visible = False
+    Frame.Width = 0
     LeftAxis.Axis.Width = 0
+    LeftAxis.Axis.Visible = False
     LeftAxis.Increment = 1.000000000000000000
     LeftAxis.Title.Visible = False
     LeftAxis.Title.Pen.Width = 0
@@ -501,7 +524,7 @@ object Form4: TForm4
     Top = 439
     Width = 227
     Height = 25
-    Caption = 'Generate analysis'
+    Caption = 'Refresh'
     TabOrder = 17
     OnClick = Button1Click
   end

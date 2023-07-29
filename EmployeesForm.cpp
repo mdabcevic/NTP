@@ -268,18 +268,23 @@ void __fastcall TForm4::ReportPrintClick(TObject *Sender)
  void TForm4::chartEmployeeTotal(int id)
  {
 	DataModule1->ChartingQuery->SQL->Text = DataModule1->EmployeeTotal;
-	// Create the 'EmployeeID' parameter if it doesn't exist
 	DataModule1->ChartingQuery->Parameters->ParamByName("id")->Value = id;
-	//ShowMessage(id);
-
-	//DataModule1->ChartingQuery->Close();
 	DataModule1->ChartingQuery->Open();
  }
  //---------------------------------------------------------------------------
 void __fastcall TForm4::DBGrid1CellClick(TColumn *Column)
 {
 	chartEmployeeTotal(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger);
+
+	UnicodeString fullname = TrimRight(DataModule1->EmployeeQuery->FieldByName("FirstName")->AsString) +   " " +
+							TrimRight(DataModule1->EmployeeQuery->FieldByName("LastName")->AsString);
+	DBChart1->Title->Text->Clear();
+	DBChart1->Title->Text->Add("Total analysis: " + fullname);
+
 	chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
+	UnicodeString monthly = fullname + " - " + YearSelection->Text;
+	DBChart2->Title->Text->Clear();
+	DBChart2->Title->Text->Add("Monthly analysis: " + monthly);
 
 }
 //---------------------------------------------------------------------------
@@ -287,18 +292,20 @@ void __fastcall TForm4::DBGrid1CellClick(TColumn *Column)
 void TForm4::chartEmployeeYearly(int id, int year)
  {
 	DataModule1->ChartingYearly->SQL->Text = DataModule1->EmployeeYearly;
-	// Create the 'EmployeeID' parameter if it doesn't exist
 	DataModule1->ChartingYearly->Parameters->ParamByName("id")->Value = id;
 	DataModule1->ChartingYearly->Parameters->ParamByName("year")->Value = year;
-	//ShowMessage(id);
-
-	//DataModule1->ChartingQuery->Close();
 	DataModule1->ChartingYearly->Open();
  }
 
 void __fastcall TForm4::Button1Click(TObject *Sender)
 {
-    chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
+	chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
+    UnicodeString fullname = TrimRight(DataModule1->EmployeeQuery->FieldByName("FirstName")->AsString) +   " " +
+							TrimRight(DataModule1->EmployeeQuery->FieldByName("LastName")->AsString);
+    UnicodeString monthly = fullname + " - " + YearSelection->Text;
+	DBChart2->Title->Text->Clear();
+	DBChart2->Title->Text->Add("Monthly analysis: " + monthly);
+
 }
 //---------------------------------------------------------------------------
 
