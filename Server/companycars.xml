@@ -1,36 +1,67 @@
 <?xml version="1.0" encoding="ISO-8859-2"?>
 <companycars>
 	<car>
-		<licenseplate>ZG-3297-DA</licenseplate>
-		<internalmark>Toyota-02-yar</internalmark>
-		<assigned>Kre?imir Dab?evi?</assigned>
-		<currentuser>Kre?imir Dab?evi?</currentuser>
+		<licenseplate>MI-3297-ZG</licenseplate>
+		<internalmark>Toyota-Corolla-08</internalmark>
+		<assigned>Kresimir Dabcevic</assigned>
+		<currentuser>Kresimir Dabcevic</currentuser>
 		<location>Zagreb</location>
 	</car>
-  
-  
-  
   <car>
-    <licenseplate>ZG-9142-UQ</licenseplate>
-    <internalmark>Toyota-Yaris-01</internalmark>
+    <licenseplate>UQ-9142-ZG</licenseplate>
+    <internalmark>Toyota-Corolla-07</internalmark>
     <assigned>Safi Hajjo</assigned>
     <currentuser>Safi Hajjo</currentuser>
     <location>Zagreb</location>
   </car>
   <car>
-    <licenseplate>ZG-1973-HG</licenseplate>
+    <licenseplate>VF-1973-ZG</licenseplate>
     <internalmark>Toyota-Camry-06</internalmark>
-    <assigned>Dubravka Dab?evi?</assigned>
-    <currentuser>Dubravka Dab?evi?</currentuser>
+    <assigned>Dubravka Dabcevic</assigned>
+    <currentuser>Dubravka Dabcevic</currentuser>
     <location>Zagreb</location>
   </car>
   
   <car>
-    <licenseplate>SB-5572-TH</licenseplate>
+    <licenseplate>TH-5572-SB</licenseplate>
     <internalmark>Peugeot-508-21</internalmark>
-    <assigned>Maja Dab?evi?</assigned>
+    <assigned>Maja Dabcevic</assigned>
     <currentuser>Nina Dabcevic</currentuser>
+    <location>Slavonski Brod</location>
+  </car> 
+  <car>
+    <licenseplate>YZ-8619-SB</licenseplate>
+    <internalmark>Peugeot-508-22</internalmark>
+    <assigned>Nika Kocurek</assigned>
+    <currentuser>Nika Kocurek</currentuser>
+    <location>Slavonski Brod</location>
+  </car> 
+  <car>
+    <licenseplate>ST-4763-ZG</licenseplate>
+    <internalmark>Toyota-Corolla-01</internalmark>
+    <assigned>Josip Mirkovic</assigned>
+    <currentuser>Josip Mirkovic</currentuser>
     <location>Zagreb</location>
-  </car>
-  
+  </car> 
+  <car>
+    <licenseplate>PK-8921-OS</licenseplate>
+    <internalmark>Toyota-Corolla-02</internalmark>
+    <assigned>Kim Lugovic</assigned>
+    <currentuser>Kim Lugovic</currentuser>
+    <location>Osijek</location>
+  </car> 
+  <car>
+    <licenseplate>NV-2378-OS</licenseplate>
+    <internalmark>Toyota-Corolla-03</internalmark>
+    <assigned>Hrvoje Bilic</assigned>
+    <currentuser>Hrvoje Bilic</currentuser>
+    <location>Osijek</location>
+  </car> 
+  <car>
+    <licenseplate>JH-6814-ZG</licenseplate>
+    <internalmark>Toyota-Corolla-04</internalmark>
+    <assigned>Petar Karadza</assigned>
+    <currentuser>Petar Karadza</currentuser>
+    <location>Zagreb</location>
+  </car> 
 </companycars>
