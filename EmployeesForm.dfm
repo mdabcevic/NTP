@@ -347,10 +347,28 @@ object Form4: TForm4
     Top = 470
     Width = 609
     Height = 228
+    ScrollMouseButton = mbLeft
     Title.Text.Strings = (
-      'TDBChart')
+      'Mjese'#269'na analiza za odabranu godinu')
+    BottomAxis.Grid.Visible = False
+    BottomAxis.Items = {
+      0C00000001045465787406034A616E0556616C7565050000000000000080FF3F
+      0001045465787406034665620556616C75650500000000000000800040000104
+      5465787406034D61720556616C75650500000000000000C00040000104546578
+      7406034170720556616C75650500000000000000800140000104546578740605
+      4D61790D0A0556616C75650500000000000000A001400001045465787406074A
+      756E0D0A0D0A0556616C75650500000000000000C00140000104546578740603
+      4A756C0556616C75650500000000000000E00140000104546578740605417567
+      0D0A0556616C7565050000000000000080024000010454657874060353657005
+      56616C756505000000000000009002400001045465787406034F63740556616C
+      75650500000000000000A002400001045465787406034E6F760556616C756505
+      00000000000000B002400001045465787406034465630556616C756505000000
+      00000000C0024000}
     LeftAxis.Increment = 1.000000000000000000
+    Panning.MouseWheel = pmwNone
     View3D = False
+    Zoom.MouseButton = mbRight
+    ZoomWheel = pmwNormal
     TabOrder = 15
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
@@ -358,6 +376,7 @@ object Form4: TForm4
       HoverElement = []
       Marks.Visible = False
       DataSource = DataModule1.ChartingYearly
+      Title = 'Svi nalozi'
       XLabelsSource = 'Monthly'
       XValues.Name = 'X'
       XValues.Order = loAscending
@@ -370,6 +389,7 @@ object Form4: TForm4
       HoverElement = []
       Marks.Visible = False
       DataSource = DataModule1.ChartingYearly
+      Title = 'Inozemni'
       XLabelsSource = 'Monthly'
       XValues.Name = 'X'
       XValues.Order = loAscending
@@ -382,6 +402,7 @@ object Form4: TForm4
       HoverElement = [heCurrent]
       Active = False
       DataSource = DataModule1.ChartingYearly
+      Title = 'Dani na terenu'
       XLabelsSource = 'Monthly'
       Brush.BackColor = clDefault
       Pointer.InflateMargins = True
