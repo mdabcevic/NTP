@@ -260,10 +260,14 @@ object Form4: TForm4
     Top = 711
     Width = 609
     Height = 235
+    Border.Width = 0
     Title.Text.Strings = (
       'Total analysis')
     BottomAxis.Axis.Visible = False
     BottomAxis.Grid.Visible = False
+    DepthAxis.Axis.Width = 0
+    DepthTopAxis.Axis.Width = 0
+    LeftAxis.Axis.Width = 0
     LeftAxis.Axis.Visible = False
     Legend.Alignment = laBottom
     Legend.CheckBoxes = True
@@ -276,6 +280,7 @@ object Form4: TForm4
     ColorPaletteIndex = 13
     object Series2: TBarSeries
       HoverElement = []
+      BarPen.Width = 0
       Marks.Visible = False
       Marks.Style = smsValue
       DataSource = DataModule1.ChartingQuery
@@ -290,6 +295,7 @@ object Form4: TForm4
     end
     object Series1: TBarSeries
       HoverElement = []
+      BarPen.Width = 0
       Marks.Visible = False
       Marks.Style = smsValue
       DataSource = DataModule1.ChartingQuery
@@ -306,6 +312,19 @@ object Form4: TForm4
       HoverElement = [heCurrent]
       Legend.Text = 'Prosje'#269'no dana na terenu'
       LegendTitle = 'Prosje'#269'no dana na terenu'
+      Marks.Font.Color = 8388672
+      Marks.Font.Name = 'Segoe UI Light'
+      Marks.Font.Style = [fsBold]
+      Marks.Font.DefaultFont = True
+      Marks.Font.OutLine.Width = 0
+      Marks.Font.OutLine.Visible = True
+      Marks.Frame.Visible = False
+      Marks.Transparent = True
+      Marks.Visible = True
+      Marks.Margins.Left = 10
+      Marks.TextAlignment = taRightJustify
+      Marks.Style = smsValue
+      Marks.TextAlign = taRightJustify
       DataSource = DataModule1.ChartingQuery
       SeriesColor = 13870501
       Shadow.Color = 2894892
@@ -332,6 +351,8 @@ object Form4: TForm4
     object Series4: TLineSeries
       HoverElement = [heCurrent]
       Active = False
+      Marks.Visible = True
+      Marks.Style = smsValue
       DataSource = DataModule1.ChartingQuery
       SeriesColor = 8388672
       Shadow.Color = 2894892
@@ -364,7 +385,9 @@ object Form4: TForm4
     ScrollMouseButton = mbLeft
     Title.Text.Strings = (
       'Monthly analysis for chosen year')
+    BottomAxis.Axis.Width = 0
     BottomAxis.Grid.Visible = False
+    BottomAxis.Title.Pen.Visible = False
     BottomAxis.Items = {
       0C00000001045465787406034A616E0556616C7565050000000000000080FF3F
       0001045465787406034665620556616C75650500000000000000800040000104
@@ -378,10 +401,19 @@ object Form4: TForm4
       75650500000000000000A002400001045465787406034E6F760556616C756505
       00000000000000B002400001045465787406034465630556616C756505000000
       00000000C0024000}
+    DepthAxis.Axis.Width = 0
+    DepthAxis.Title.Pen.Visible = False
+    DepthTopAxis.Axis.Width = 0
+    DepthTopAxis.Title.Pen.Visible = False
+    LeftAxis.Axis.Width = 0
     LeftAxis.Increment = 1.000000000000000000
+    LeftAxis.Title.Visible = False
+    LeftAxis.Title.Pen.Width = 0
     Legend.Alignment = laBottom
     Legend.CheckBoxes = True
     Panning.MouseWheel = pmwNone
+    RightAxis.Axis.Width = 0
+    TopAxis.Axis.Width = 4
     View3D = False
     Zoom.MouseButton = mbRight
     ZoomWheel = pmwNormal
@@ -390,6 +422,7 @@ object Form4: TForm4
     ColorPaletteIndex = 13
     object Series5: TBarSeries
       HoverElement = []
+      BarPen.Width = 0
       Marks.Visible = False
       DataSource = DataModule1.ChartingYearly
       Title = 'Svi nalozi'
@@ -403,6 +436,9 @@ object Form4: TForm4
     end
     object Series6: TBarSeries
       HoverElement = []
+      Legend.Text = 'Inozemni nalozi'
+      LegendTitle = 'Inozemni nalozi'
+      BarPen.Width = 0
       Marks.Visible = False
       DataSource = DataModule1.ChartingYearly
       Title = 'Inozemni'
@@ -417,12 +453,18 @@ object Form4: TForm4
     object Series7: TLineSeries
       HoverElement = [heCurrent]
       Active = False
+      Marks.Transparent = True
+      Marks.Visible = True
+      Marks.Style = smsValue
       DataSource = DataModule1.ChartingYearly
-      Title = 'Dani na terenu'
+      Title = 'Ukupna kilometra'#382'a'
       XLabelsSource = 'Monthly'
       Brush.BackColor = clDefault
+      Pointer.HorizSize = 3
       Pointer.InflateMargins = True
-      Pointer.Style = psRectangle
+      Pointer.Style = psCircle
+      Pointer.VertSize = 3
+      Pointer.Visible = True
       XValues.Name = 'X'
       XValues.Order = loAscending
       XValues.ValueSource = 'Monthly'
@@ -435,6 +477,7 @@ object Form4: TForm4
       Legend.Visible = False
       Active = False
       ShowInLegend = False
+      Title = 'Dani na terenu'
       Brush.BackColor = clDefault
       Pointer.InflateMargins = True
       Pointer.Style = psRectangle
