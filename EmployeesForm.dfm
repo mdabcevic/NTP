@@ -261,7 +261,12 @@ object Form4: TForm4
     Width = 609
     Height = 235
     Title.Text.Strings = (
-      'TDBChart')
+      'Total analysis')
+    Legend.Alignment = laBottom
+    Legend.CheckBoxes = True
+    Legend.Frame.Width = 0
+    Legend.Symbol.Pen.Width = 0
+    Legend.TextSymbolGap = 3
     View3D = False
     TabOrder = 14
     DefaultCanvas = 'TGDIPlusCanvas'
@@ -271,6 +276,7 @@ object Form4: TForm4
       Marks.Visible = False
       Marks.Style = smsValue
       DataSource = DataModule1.ChartingQuery
+      Title = 'Svi nalozi'
       XLabelsSource = 'Year'
       XValues.Name = 'X'
       XValues.Order = loAscending
@@ -284,6 +290,7 @@ object Form4: TForm4
       Marks.Visible = False
       Marks.Style = smsValue
       DataSource = DataModule1.ChartingQuery
+      Title = 'Inozemni nalozi'
       XLabelsSource = 'Year'
       XValues.Name = 'X'
       XValues.Order = loAscending
@@ -294,10 +301,13 @@ object Form4: TForm4
     end
     object Series3: TLineSeries
       HoverElement = [heCurrent]
+      Legend.Text = 'Prosje'#269'no dana na terenu'
+      LegendTitle = 'Prosje'#269'no dana na terenu'
       DataSource = DataModule1.ChartingQuery
       SeriesColor = 13870501
       Shadow.Color = 2894892
       Shadow.Transparency = 0
+      Title = 'Prosjek dana na terenu'
       XLabelsSource = 'Year'
       Brush.BackColor = clDefault
       DrawStyle = dsCurve
@@ -323,6 +333,7 @@ object Form4: TForm4
       SeriesColor = 8388672
       Shadow.Color = 2894892
       Shadow.Transparency = 0
+      Title = 'Prosje'#269'na kilometra'#382'a'
       XLabelsSource = 'Year'
       Brush.BackColor = clDefault
       DrawStyle = dsCurve
@@ -349,7 +360,7 @@ object Form4: TForm4
     Height = 228
     ScrollMouseButton = mbLeft
     Title.Text.Strings = (
-      'Mjese'#269'na analiza za odabranu godinu')
+      'Monthly analysis for chosen year')
     BottomAxis.Grid.Visible = False
     BottomAxis.Items = {
       0C00000001045465787406034A616E0556616C7565050000000000000080FF3F
