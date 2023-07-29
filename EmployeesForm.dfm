@@ -28,9 +28,9 @@ object Form4: TForm4
   object Label1: TLabel
     Left = 16
     Top = 443
-    Width = 165
+    Width = 189
     Height = 15
-    Caption = 'Enter year for monthly analysis:'
+    Caption = 'Unesite godinu za detaljniju analizu:'
   end
   object SortingBox: TGroupBox
     Left = 8
@@ -90,6 +90,7 @@ object Form4: TForm4
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     OnCellClick = DBGrid1CellClick
+    OnMouseWheel = DBGrid1MouseWheel
     Columns = <
       item
         Expanded = False
@@ -520,22 +521,35 @@ object Form4: TForm4
     end
   end
   object YearSelection: TEdit
-    Left = 187
-    Top = 440
-    Width = 197
+    Left = 211
+    Top = 438
+    Width = 151
     Height = 23
     NumbersOnly = True
     TabOrder = 16
-    Text = '2022'
+    Text = '2018'
   end
   object Button1: TButton
     Left = 390
     Top = 439
     Width = 227
     Height = 25
-    Caption = 'Refresh'
+    Caption = 'Osvje'#382'i podatke'
     TabOrder = 17
     OnClick = Button1Click
+  end
+  object UpDown1: TUpDown
+    Left = 362
+    Top = 438
+    Width = 17
+    Height = 23
+    Associate = YearSelection
+    Min = 2018
+    Max = 2023
+    Position = 2018
+    TabOrder = 18
+    Thousands = False
+    OnClick = UpDown1Click
   end
   object DBCrossTabSource1: TDBCrossTabSource
     CaseSensitive = False

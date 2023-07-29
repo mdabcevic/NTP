@@ -18,6 +18,7 @@
 #include <VCLTee.TeeProcs.hpp>
 #include <VCLTee.DBChart.hpp>
 #include <VCLTee.TeeDBCrossTab.hpp>
+#include <Vcl.ComCtrls.hpp>
 #include <map>
 //---------------------------------------------------------------------------
 class TForm4 : public TForm
@@ -62,6 +63,7 @@ __published:	// IDE-managed Components
 	TLineSeries *Series7;
 	TLineSeries *Series8;
 	TButton *Button1;
+	TUpDown *UpDown1;
 	void __fastcall AddButtonClick(TObject *Sender);
 	void __fastcall DeleteButtonClick(TObject *Sender);
 	void __fastcall EditButtonClick(TObject *Sender);
@@ -71,6 +73,9 @@ __published:	// IDE-managed Components
 	void __fastcall ReportPrintClick(TObject *Sender);
 	void __fastcall DBGrid1CellClick(TColumn *Column);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall UpDown1Click(TObject *Sender, TUDBtnType Button);
+	void __fastcall DBGrid1MouseWheel(TObject *Sender, TShiftState Shift, int WheelDelta,
+          TPoint &MousePos, bool &Handled);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm4(TComponent* Owner);

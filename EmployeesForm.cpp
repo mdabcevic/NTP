@@ -279,12 +279,12 @@ void __fastcall TForm4::DBGrid1CellClick(TColumn *Column)
 	UnicodeString fullname = TrimRight(DataModule1->EmployeeQuery->FieldByName("FirstName")->AsString) +   " " +
 							TrimRight(DataModule1->EmployeeQuery->FieldByName("LastName")->AsString);
 	DBChart1->Title->Text->Clear();
-	DBChart1->Title->Text->Add("Total analysis: " + fullname);
+	DBChart1->Title->Text->Add("Ukupna analiza: " + fullname);
 
 	chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
 	UnicodeString monthly = fullname + " - " + YearSelection->Text;
 	DBChart2->Title->Text->Clear();
-	DBChart2->Title->Text->Add("Monthly analysis: " + monthly);
+	DBChart2->Title->Text->Add("Godišnja analiza: " + monthly);
 
 }
 //---------------------------------------------------------------------------
@@ -300,12 +300,40 @@ void TForm4::chartEmployeeYearly(int id, int year)
 void __fastcall TForm4::Button1Click(TObject *Sender)
 {
 	chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
-    UnicodeString fullname = TrimRight(DataModule1->EmployeeQuery->FieldByName("FirstName")->AsString) +   " " +
+	UnicodeString fullname = TrimRight(DataModule1->EmployeeQuery->FieldByName("FirstName")->AsString) +   " " +
 							TrimRight(DataModule1->EmployeeQuery->FieldByName("LastName")->AsString);
-    UnicodeString monthly = fullname + " - " + YearSelection->Text;
+	UnicodeString monthly = fullname + " - " + YearSelection->Text;
 	DBChart2->Title->Text->Clear();
-	DBChart2->Title->Text->Add("Monthly analysis: " + monthly);
+	DBChart2->Title->Text->Add("Godišnja analiza: " + monthly);
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm4::UpDown1Click(TObject *Sender, TUDBtnType Button)
+{
+    chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
+	UnicodeString fullname = TrimRight(DataModule1->EmployeeQuery->FieldByName("FirstName")->AsString) +   " " +
+							TrimRight(DataModule1->EmployeeQuery->FieldByName("LastName")->AsString);
+	UnicodeString monthly = fullname + " - " + YearSelection->Text;
+	DBChart2->Title->Text->Clear();
+	DBChart2->Title->Text->Add("Godišnja analiza: " + monthly);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm4::DBGrid1MouseWheel(TObject *Sender, TShiftState Shift, int WheelDelta,
+          TPoint &MousePos, bool &Handled)
+{
+    chartEmployeeTotal(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger);
+
+	UnicodeString fullname = TrimRight(DataModule1->EmployeeQuery->FieldByName("FirstName")->AsString) +   " " +
+							TrimRight(DataModule1->EmployeeQuery->FieldByName("LastName")->AsString);
+	DBChart1->Title->Text->Clear();
+	DBChart1->Title->Text->Add("Ukupna analiza: " + fullname);
+
+	chartEmployeeYearly(DataModule1->EmployeeQuery->FieldByName("EmployeeID")->AsInteger, YearSelection->Text.ToInt());
+	UnicodeString monthly = fullname + " - " + YearSelection->Text;
+	DBChart2->Title->Text->Clear();
+	DBChart2->Title->Text->Add("Godišnja analiza: " + monthly);
 }
 //---------------------------------------------------------------------------
 
