@@ -40,8 +40,28 @@ object DataModule1: TDataModule1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'select *'
-      'from Employees;')
+      'WITH EmployeeAggregates AS ('
+      '    SELECT '
+      '        emp.EmployeeID,'
+      '        MAX(emp.FirstName) AS ime,'
+      '        MAX(emp.LastName) AS prezime,'
+      '        MAX(emp.DepartmentCode) AS odjel,'
+      '        COUNT(tw.WarrantID) AS nalozi'
+      '    FROM Employees AS emp '
+      
+        '    INNER JOIN TravelWarrants AS tw ON emp.EmployeeID = tw.Emplo' +
+        'yeeID'
+      '    GROUP BY emp.EmployeeID'
+      ')'
+      'SELECT '
+      '    ea.ime,'
+      '    ea.prezime,'
+      '    ea.odjel,'
+      '    ea.nalozi,'
+      '    emp.* -- Select all columns from the Employees table'
+      'FROM EmployeeAggregates AS ea'
+      'INNER JOIN Employees AS emp ON ea.EmployeeID = emp.EmployeeID'
+      'ORDER BY ea.nalozi DESC;')
     Left = 256
     Top = 120
     object EmployeeQueryEmployeeID: TAutoIncField
@@ -113,6 +133,24 @@ object DataModule1: TDataModule1
       LookupResultField = 'DepartmentName'
       KeyFields = 'DepartmentCode'
       Lookup = True
+    end
+    object EmployeeQueryime: TWideStringField
+      FieldName = 'ime'
+      ReadOnly = True
+      FixedChar = True
+    end
+    object EmployeeQueryprezime: TWideStringField
+      FieldName = 'prezime'
+      ReadOnly = True
+      FixedChar = True
+    end
+    object EmployeeQueryodjel: TIntegerField
+      FieldName = 'odjel'
+      ReadOnly = True
+    end
+    object EmployeeQuerynalozi: TIntegerField
+      FieldName = 'nalozi'
+      ReadOnly = True
     end
   end
   object DepartmentsQuery: TADOQuery

@@ -164,6 +164,10 @@ __published:	// IDE-managed Components
 	TIntegerField *ChartingQueryAvgMileagePerWarrant;
 	TADOQuery *ChartingYearly;
 	TDataSource *YearlyDataSource;
+	TWideStringField *EmployeeQueryime;
+	TWideStringField *EmployeeQueryprezime;
+	TIntegerField *EmployeeQueryodjel;
+	TIntegerField *EmployeeQuerynalozi;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations

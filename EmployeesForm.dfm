@@ -3,7 +3,7 @@ object Form4: TForm4
   Top = 0
   Caption = 'Employees'
   ClientHeight = 960
-  ClientWidth = 701
+  ClientWidth = 629
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -93,25 +93,39 @@ object Form4: TForm4
     Columns = <
       item
         Expanded = False
-        FieldName = 'FirstName'
-        Width = 140
+        FieldName = 'EmployeeID'
+        Title.Caption = #353'ifra'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'LastName'
-        Width = 140
+        FieldName = 'ime'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Email'
-        Width = 140
+        FieldName = 'prezime'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'EmployeeDepartment'
+        Title.Caption = 'odjel'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nalozi'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Username'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Email'
         Visible = True
       end>
   end
@@ -262,7 +276,6 @@ object Form4: TForm4
     Height = 235
     BackWall.Pen.Width = 0
     Border.Width = 0
-    Border.Visible = True
     Title.Alignment = taRightJustify
     Title.Font.Color = clBlack
     Title.Font.Height = -13
@@ -327,12 +340,9 @@ object Form4: TForm4
       Marks.Font.OutLine.Width = 0
       Marks.Font.OutLine.Visible = True
       Marks.Frame.Visible = False
-      Marks.Transparent = True
       Marks.Visible = True
       Marks.Margins.Left = 10
-      Marks.TextAlignment = taRightJustify
       Marks.Style = smsValue
-      Marks.TextAlign = taRightJustify
       DataSource = DataModule1.ChartingQuery
       SeriesColor = 13870501
       Shadow.Color = 2894892
@@ -391,7 +401,6 @@ object Form4: TForm4
     Width = 609
     Height = 228
     BackWall.Pen.Width = 0
-    Border.Visible = True
     LeftWall.Pen.Width = 0
     MarginBottom = 2
     MarginLeft = 2
