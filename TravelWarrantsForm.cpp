@@ -92,3 +92,18 @@ void __fastcall TForm9::ReportWarrantClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm9::Button1Click(TObject *Sender)
+{
+	DataModule1->MultiQuery->SQL->Clear();
+	AnsiString updateSQL = "UPDATE TravelWarrants SET AuthorizedBy = :AuthorizedBy WHERE WarrantID = :WarrantID";
+	DataModule1->MultiQuery->SQL->Text = updateSQL;
+	DataModule1->MultiQuery->Parameters->ParamByName("AuthorizedBy")->Value = DataModule1->currentUser.ID;
+	DataModule1->MultiQuery->Parameters->ParamByName("WarrantID")->Value = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;; // Specify the ID of the record you want to update
+	DataModule1->MultiQuery->ExecSQL();
+    DataModule1->MultiQuery->SQL->Clear();
+    DataModule1->WarrantsQuery->Close();
+    DataModule1->WarrantsQuery->Open();
+
+}
+//---------------------------------------------------------------------------
+

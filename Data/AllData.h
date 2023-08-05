@@ -170,6 +170,8 @@ __published:	// IDE-managed Components
 	TDateTimeField *WarrantsQueryCreatedAt;
 	TBooleanField *WarrantsQueryIsInternational;
 	TStringField *WarrantsQueryInozemo;
+	TStringField *WarrantsQueryAuth;
+	TIntegerField *WarrantsQueryMileage;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations

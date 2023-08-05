@@ -242,14 +242,20 @@ object DataModule1: TDataModule1
       
         #9#9'tw.EndingOdometer, tw.StartingOdometer, tw.Toll, tw.LicensePla' +
         'te, ae.AttachmentID, ae.expensesList,'
-      #9#9'tw.AuthorizedBy'
+      
+        #9#9'tw.AuthorizedBy, CASE WHEN tw.AuthorizedBy IS NULL OR tw.Autho' +
+        'rizedBy = '#39#39' THEN '#39'NIJE ODOBRENO'#39' ELSE empAuth.FirstName + '#39' '#39' +' +
+        ' empAuth.LastName END as AuthorizedByName'
       'from TravelWarrants as tw'
       'INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID'
       
         'INNER JOIN Departments as dep on emp.DepartmentCode = dep.Depart' +
         'mentCode'
       'LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID'
-      'ORDER BY tw.Departure DESC')
+      
+        'LEFT JOIN Employees as empAuth on tw.AuthorizedBy = empAuth.Empl' +
+        'oyeeID -- Joining Employees table again to get AuthorizedBy name'
+      'ORDER BY tw.Departure DESC;')
     Left = 256
     Top = 344
     object WarrantsQueryWarrantID: TAutoIncField
@@ -320,6 +326,20 @@ object DataModule1: TDataModule1
     end
     object WarrantsQueryAuthorizedBy: TIntegerField
       FieldName = 'AuthorizedBy'
+    end
+    object WarrantsQueryAuth: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Auth'
+      LookupDataSet = EmployeeTable
+      LookupKeyFields = 'EmployeeID'
+      LookupResultField = 'Username'
+      KeyFields = 'AuthorizedBy'
+      Lookup = True
+    end
+    object WarrantsQueryMileage: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'Mileage'
+      Calculated = True
     end
   end
   object WarrantsDataSource: TDataSource

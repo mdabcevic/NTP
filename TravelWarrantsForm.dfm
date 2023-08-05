@@ -41,13 +41,20 @@ object Form9: TForm9
       item
         Expanded = False
         FieldName = 'WarrantID'
+        Title.Caption = #352'ifra'
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EmployeeID'
+        Title.Caption = #352'ifra zaposlenika'
+        Visible = False
       end
       item
         Expanded = False
         FieldName = 'imePrezime'
         Title.Caption = 'Zaposlenik'
-        Width = 134
+        Width = 116
         Visible = True
       end
       item
@@ -65,63 +72,71 @@ object Form9: TForm9
       item
         Expanded = False
         FieldName = 'Duration'
+        Title.Caption = 'Trajanje'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Inozemo?'
-        Title.Caption = 'Inozemno?'
+        Title.Caption = 'Inozemno'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Partners'
-        Width = 141
+        Title.Caption = 'Partneri i klijenti'
+        Width = 154
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Purposes'
-        Width = 188
+        Title.Caption = 'Razlozi putovanja'
+        Width = 186
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'StartingOdometer'
-        Title.Caption = 'Po'#269'etno stanje brojila'
+        Title.Caption = 'Po'#269'etno brojilo'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'EndingOdometer'
-        Title.Caption = 'Krajnje stanje brojila'
+        Title.Caption = 'Krajnje brojilo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Mileage'
+        Title.Caption = 'Kilometra'#382'a'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Toll'
         Title.Caption = 'Cestarina'
-        Width = 97
+        Width = 86
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'LicensePlate'
-        Title.Caption = 'Registarska oznaka'
+        Title.Caption = 'Vozilo'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'expensesList'
         Title.Caption = 'Tro'#353'kovi'
-        Width = 205
+        Width = 194
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'AuthorizedBy'
-        Title.Caption = 'Odobreno?'
-        Width = 140
+        FieldName = 'Auth'
+        Title.Caption = 'Odobravatelj'
         Visible = True
       end>
   end
@@ -185,6 +200,7 @@ object Form9: TForm9
     Height = 25
     Caption = 'Potpi'#353'i ozna'#269'eni nalog'
     TabOrder = 4
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 8
