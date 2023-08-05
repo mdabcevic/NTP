@@ -10,6 +10,7 @@ object Form9: TForm9
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Title: TLabel
     Left = 520
@@ -77,7 +78,7 @@ object Form9: TForm9
       end
       item
         Expanded = False
-        FieldName = 'Inozemo?'
+        FieldName = 'Inozemno?'
         Title.Caption = 'Inozemno'
         Visible = True
       end

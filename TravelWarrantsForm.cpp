@@ -223,3 +223,9 @@ void __fastcall TForm9::UpdateFilters(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm9::FormShow(TObject *Sender)
+{
+    WindowState = wsMaximized;
+}
+//---------------------------------------------------------------------------
+
