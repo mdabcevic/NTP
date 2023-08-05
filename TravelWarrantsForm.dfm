@@ -27,7 +27,7 @@ object Form9: TForm9
   object DBGrid1: TDBGrid
     Left = 168
     Top = 60
-    Width = 1641
+    Width = 1761
     Height = 318
     DataSource = DataModule1.WarrantsDataSource
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -46,86 +46,82 @@ object Form9: TForm9
       item
         Expanded = False
         FieldName = 'imePrezime'
-        Width = 92
+        Title.Caption = 'Zaposlenik'
+        Width = 134
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Departure'
-        Width = 116
+        Title.Caption = 'Odlazak'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Arrival'
-        Width = 117
+        Title.Caption = 'Povratak'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Duration'
-        Width = 55
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Inozemno?'
+        FieldName = 'Inozemo?'
+        Title.Caption = 'Inozemno?'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Partners'
-        Width = 131
+        Width = 141
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Purposes'
-        Width = 189
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'LicensePlate'
-        Width = 87
+        Width = 188
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'StartingOdometer'
+        Title.Caption = 'Po'#269'etno stanje brojila'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'EndingOdometer'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Mileage'
-        Width = 56
+        Title.Caption = 'Krajnje stanje brojila'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Toll'
-        Width = 78
+        Title.Caption = 'Cestarina'
+        Width = 97
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'ExpensesID'
+        FieldName = 'LicensePlate'
+        Title.Caption = 'Registarska oznaka'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'expensesList'
+        Title.Caption = 'Tro'#353'kovi'
         Width = 205
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'AuthorizedBy'
+        Title.Caption = 'Odobreno?'
+        Width = 140
         Visible = True
       end>
   end
