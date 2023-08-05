@@ -100,22 +100,6 @@ __published:	// IDE-managed Components
 	TDataSource *ExpensesDataSource;
 	TADOQuery *WarrantsQuery;
 	TDataSource *WarrantsDataSource;
-	TIntegerField *WarrantsQueryMileage;
-	TAutoIncField *WarrantsQueryWarrantID;
-	TIntegerField *WarrantsQueryEmployeeID;
-	TDateTimeField *WarrantsQueryCreatedAt;
-	TDateTimeField *WarrantsQueryDeparture;
-	TDateTimeField *WarrantsQueryArrival;
-	TBooleanField *WarrantsQueryIsInternational;
-	TWideStringField *WarrantsQueryPartners;
-	TWideStringField *WarrantsQueryPurposes;
-	TIntegerField *WarrantsQueryAttachmentID;
-	TIntegerField *WarrantsQueryStartingOdometer;
-	TIntegerField *WarrantsQueryEndingOdometer;
-	TWideStringField *WarrantsQueryToll;
-	TWideStringField *WarrantsQueryLicensePlate;
-	TWideStringField *WarrantsQueryOtherVehicles;
-	TIntegerField *WarrantsQueryAuthorizedBy;
 	TfrxReport *EmployeeLayout;
 	TfrxDBDataset *frxDBEmployee;
 	TADOQuery *JoinedReport;
@@ -168,6 +152,24 @@ __published:	// IDE-managed Components
 	TWideStringField *EmployeeQueryprezime;
 	TIntegerField *EmployeeQueryodjel;
 	TIntegerField *EmployeeQuerynalozi;
+	TAutoIncField *WarrantsQueryWarrantID;
+	TWideStringField *WarrantsQueryimePrezime;
+	TDateTimeField *WarrantsQueryDeparture;
+	TDateTimeField *WarrantsQueryArrival;
+	TIntegerField *WarrantsQueryDuration;
+	TWideStringField *WarrantsQueryPartners;
+	TWideStringField *WarrantsQueryPurposes;
+	TIntegerField *WarrantsQueryEndingOdometer;
+	TIntegerField *WarrantsQueryStartingOdometer;
+	TWideStringField *WarrantsQueryToll;
+	TWideStringField *WarrantsQueryLicensePlate;
+	TStringField *WarrantsQueryexpensesList;
+	TIntegerField *WarrantsQueryAuthorizedBy;
+	TIntegerField *WarrantsQueryEmployeeID;
+	TIntegerField *WarrantsQueryAttachmentID;
+	TDateTimeField *WarrantsQueryCreatedAt;
+	TBooleanField *WarrantsQueryIsInternational;
+	TStringField *WarrantsQueryInozemo;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations

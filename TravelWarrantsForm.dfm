@@ -2,8 +2,8 @@ object Form9: TForm9
   Left = 0
   Top = 0
   Caption = 'Travel Warrants'
-  ClientHeight = 440
-  ClientWidth = 1115
+  ClientHeight = 439
+  ClientWidth = 1928
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -25,10 +25,10 @@ object Form9: TForm9
     ParentFont = False
   end
   object DBGrid1: TDBGrid
-    Left = 8
+    Left = 168
     Top = 60
-    Width = 1103
-    Height = 120
+    Width = 1641
+    Height = 318
     DataSource = DataModule1.WarrantsDataSource
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
@@ -40,57 +40,99 @@ object Form9: TForm9
     Columns = <
       item
         Expanded = False
-        FieldName = 'EmployeeID'
-        Width = 88
+        FieldName = 'WarrantID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'imePrezime'
+        Width = 92
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Departure'
-        Width = 126
+        Width = 116
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Arrival'
-        Width = 129
+        Width = 117
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Duration'
+        Width = 55
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Inozemno?'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Partners'
-        Width = 178
+        Width = 131
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Purposes'
-        Width = 145
+        Width = 189
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'LicensePlate'
-        Width = 133
+        Width = 87
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'StartingOdometer'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EndingOdometer'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Mileage'
-        Width = 149
+        Width = 56
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Toll'
-        Width = 120
+        Width = 78
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ExpensesID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'expensesList'
+        Width = 205
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'AuthorizedBy'
         Visible = True
       end>
   end
   object DeleteButton: TButton
-    Left = 295
-    Top = 186
-    Width = 282
+    Left = 8
+    Top = 353
+    Width = 154
     Height = 25
     Caption = 'Delete selected warrant'
     TabOrder = 1
@@ -98,31 +140,23 @@ object Form9: TForm9
   end
   object EditButton: TButton
     Left = 8
-    Top = 186
-    Width = 281
+    Top = 290
+    Width = 154
     Height = 25
     Caption = 'Edit selected warrant'
     TabOrder = 2
     OnClick = EditButtonClick
   end
-  object ReportWarrant: TButton
-    Left = 583
-    Top = 186
-    Width = 296
-    Height = 25
-    Caption = 'Generate report for selected warrant'
-    TabOrder = 3
-    OnClick = ReportWarrantClick
-  end
   object GroupBox1: TGroupBox
-    Left = 885
-    Top = 186
-    Width = 222
-    Height = 25
-    TabOrder = 4
+    Left = 8
+    Top = 173
+    Width = 154
+    Height = 111
+    Caption = 'Ispis ozna'#269'enog naloga'
+    TabOrder = 3
     object PDFOption: TRadioButton
-      Left = 51
-      Top = 5
+      Left = 19
+      Top = 52
       Width = 46
       Height = 17
       Caption = 'PDF'
@@ -131,11 +165,64 @@ object Form9: TForm9
       TabStop = True
     end
     object RTFOption: TRadioButton
-      Left = 123
-      Top = 5
+      Left = 19
+      Top = 29
       Width = 46
       Height = 17
       Caption = 'RTF'
+      TabOrder = 1
+    end
+    object ReportWarrant: TButton
+      Left = 19
+      Top = 75
+      Width = 110
+      Height = 25
+      Caption = 'Generate'
+      TabOrder = 2
+      OnClick = ReportWarrantClick
+    end
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 142
+    Width = 154
+    Height = 25
+    Caption = 'Potpi'#353'i ozna'#269'eni nalog'
+    TabOrder = 4
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 322
+    Width = 154
+    Height = 25
+    Caption = 'A'#382'uriraj tro'#353'kove'
+    TabOrder = 5
+  end
+  object GroupBox2: TGroupBox
+    Left = 8
+    Top = 52
+    Width = 154
+    Height = 84
+    Caption = 'Prikaz'
+    TabOrder = 6
+    object CheckBox1: TCheckBox
+      Left = 17
+      Top = 47
+      Width = 97
+      Height = 17
+      Caption = 'Potpisani'
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+    end
+    object CheckBox2: TCheckBox
+      Left = 17
+      Top = 24
+      Width = 97
+      Height = 17
+      Caption = 'Nepotpisani'
+      Checked = True
+      State = cbChecked
       TabOrder = 1
     end
   end

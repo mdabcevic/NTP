@@ -23,6 +23,11 @@ __published:	// IDE-managed Components
 	TGroupBox *GroupBox1;
 	TRadioButton *PDFOption;
 	TRadioButton *RTFOption;
+	TButton *Button1;
+	TButton *Button2;
+	TCheckBox *CheckBox1;
+	TCheckBox *CheckBox2;
+	TGroupBox *GroupBox2;
 	void __fastcall DeleteButtonClick(TObject *Sender);
 	void __fastcall EditButtonClick(TObject *Sender);
 	void __fastcall ReportWarrantClick(TObject *Sender);

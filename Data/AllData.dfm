@@ -212,24 +212,60 @@ object DataModule1: TDataModule1
     OnCalcFields = WarrantsQueryCalcFields
     Parameters = <>
     SQL.Strings = (
-      'SELECT *'
-      'FROM TravelWarrants')
+      'WITH AllExpenses AS ('
+      '    SELECT tw.AttachmentID, tw.WarrantID,'
+      
+        '        CASE WHEN te.TransportationToll = 1 THEN '#39'Cestarina, '#39' E' +
+        'LSE '#39#39' END +'
+      
+        #9#9'CASE WHEN te.Hospitality = 1 THEN '#39'Reprezentacija, '#39' ELSE '#39#39' E' +
+        'ND +'
+      #9#9'CASE WHEN te.Parking = 1 THEN '#39'Parking, '#39' ELSE '#39#39' END +'
+      #9#9'CASE WHEN te.Accomodation = 1 THEN '#39'Smje'#353'taj '#39' ELSE '#39#39' END +'
+      
+        #9#9'CASE WHEN te.Other = 1 THEN '#39'Ostali tro'#353'kovi '#39' ELSE '#39#39' END AS ' +
+        'expensesList'
+      #9#9'FROM TravelExpenses AS te '
+      
+        '    INNER JOIN TravelWarrants AS tw ON te.ExpensesID = tw.Attach' +
+        'mentID'
+      ')'
+      
+        'select'#9'tw.WarrantID, tw.CreatedAt, tw.EmployeeID, RTRIM(emp.Firs' +
+        'tName) + '#39' '#39' + RTRIM(emp.LastName) as imePrezime, '
+      
+        #9#9'tw.Departure, tw.Arrival, DATEDIFF(DAY,tw.Departure, tw.Arriva' +
+        'l) as Duration, tw.Partners, tw.Purposes, '
+      
+        #9#9'tw.IsInternational, CASE WHEN tw.IsInternational = 1 THEN '#39'Da'#39 +
+        ' ELSE '#39'Ne'#39' END as "Inozemo?",'
+      
+        #9#9'tw.EndingOdometer, tw.StartingOdometer, tw.Toll, tw.LicensePla' +
+        'te, ae.AttachmentID, ae.expensesList,'
+      #9#9'tw.AuthorizedBy'
+      'from TravelWarrants as tw'
+      'INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID'
+      
+        'INNER JOIN Departments as dep on emp.DepartmentCode = dep.Depart' +
+        'mentCode'
+      'LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID'
+      'ORDER BY tw.Departure DESC')
     Left = 256
     Top = 344
-    object WarrantsQueryMileage: TIntegerField
-      FieldKind = fkCalculated
-      FieldName = 'Mileage'
-      Calculated = True
-    end
     object WarrantsQueryWarrantID: TAutoIncField
       FieldName = 'WarrantID'
       ReadOnly = True
     end
+    object WarrantsQueryCreatedAt: TDateTimeField
+      FieldName = 'CreatedAt'
+    end
     object WarrantsQueryEmployeeID: TIntegerField
       FieldName = 'EmployeeID'
     end
-    object WarrantsQueryCreatedAt: TDateTimeField
-      FieldName = 'CreatedAt'
+    object WarrantsQueryimePrezime: TWideStringField
+      FieldName = 'imePrezime'
+      ReadOnly = True
+      Size = 41
     end
     object WarrantsQueryDeparture: TDateTimeField
       FieldName = 'Departure'
@@ -237,8 +273,17 @@ object DataModule1: TDataModule1
     object WarrantsQueryArrival: TDateTimeField
       FieldName = 'Arrival'
     end
+    object WarrantsQueryDuration: TIntegerField
+      FieldName = 'Duration'
+      ReadOnly = True
+    end
     object WarrantsQueryIsInternational: TBooleanField
       FieldName = 'IsInternational'
+    end
+    object WarrantsQueryInozemo: TStringField
+      FieldName = 'Inozemo?'
+      ReadOnly = True
+      Size = 2
     end
     object WarrantsQueryPartners: TWideStringField
       FieldName = 'Partners'
@@ -250,14 +295,11 @@ object DataModule1: TDataModule1
       FixedChar = True
       Size = 100
     end
-    object WarrantsQueryAttachmentID: TIntegerField
-      FieldName = 'AttachmentID'
+    object WarrantsQueryEndingOdometer: TIntegerField
+      FieldName = 'EndingOdometer'
     end
     object WarrantsQueryStartingOdometer: TIntegerField
       FieldName = 'StartingOdometer'
-    end
-    object WarrantsQueryEndingOdometer: TIntegerField
-      FieldName = 'EndingOdometer'
     end
     object WarrantsQueryToll: TWideStringField
       FieldName = 'Toll'
@@ -268,10 +310,13 @@ object DataModule1: TDataModule1
       FieldName = 'LicensePlate'
       FixedChar = True
     end
-    object WarrantsQueryOtherVehicles: TWideStringField
-      FieldName = 'OtherVehicles'
-      FixedChar = True
-      Size = 10
+    object WarrantsQueryAttachmentID: TIntegerField
+      FieldName = 'AttachmentID'
+    end
+    object WarrantsQueryexpensesList: TStringField
+      FieldName = 'expensesList'
+      ReadOnly = True
+      Size = 61
     end
     object WarrantsQueryAuthorizedBy: TIntegerField
       FieldName = 'AuthorizedBy'

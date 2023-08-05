@@ -122,7 +122,7 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 		ShowMessage("Please upload recepits file before proceeding!");
 		return;
 		}
-        DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger = ExpensesID;
+		DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger = ExpensesID;
 	}
 	DataModule1->WarrantsQuery->FieldByName("CreatedAt")->AsDateTime = Now();
 	//time is always now, there is no selection :/
