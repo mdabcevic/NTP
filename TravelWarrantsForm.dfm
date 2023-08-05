@@ -226,6 +226,7 @@ object Form9: TForm9
       Checked = True
       State = cbChecked
       TabOrder = 0
+      OnClick = UpdateFilters
     end
     object CheckBox2: TCheckBox
       Left = 17
@@ -236,6 +237,7 @@ object Form9: TForm9
       Checked = True
       State = cbChecked
       TabOrder = 1
+      OnClick = UpdateFilters
     end
   end
 end
