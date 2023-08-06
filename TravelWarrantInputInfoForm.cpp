@@ -150,7 +150,7 @@ void __fastcall TForm7::UpdateWarrant(TObject *Sender)
 			"AttachmentID = :AttachmentID "
 			"WHERE WarrantID = :WarrantID";
 
-        DataModule1->MultiQuery->Parameters->ParamByName("AttachmentID")->Value = ExpensesID;
+		DataModule1->MultiQuery->Parameters->ParamByName("AttachmentID")->Value = ExpensesID;
 		DataModule1->MultiQuery->Parameters->ParamByName("WarrantID")->Value = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;
 
         DataModule1->MultiQuery->ExecSQL();
@@ -233,6 +233,7 @@ void __fastcall TForm7::FormShow(TObject *Sender)
 		UnicodeString name = purpose.name;
 		PurposesList->Items->Add(name);
 	}
+    Form8->Upload->OnClick = Form8->UploadClick;
 }
 //---------------------------------------------------------------------------
 

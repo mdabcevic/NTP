@@ -261,3 +261,12 @@ void __fastcall TForm9::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm9::Button2Click(TObject *Sender)
+{
+	Form8->Upload->OnClick = Form8->EditExpenses;
+	Form8->ShowModal();
+    DataModule1->WarrantsQuery->Close();
+	DataModule1->WarrantsQuery->Open();
+}
+//---------------------------------------------------------------------------
+

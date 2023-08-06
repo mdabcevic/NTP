@@ -30,6 +30,7 @@ __published:	// IDE-managed Components
 	TDBEdit *ExpenseIDVal;
 	TLabel *ExpenseID;
 	void __fastcall UploadClick(TObject *Sender);
+    void __fastcall EditExpenses(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations

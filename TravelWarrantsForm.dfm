@@ -210,6 +210,7 @@ object Form9: TForm9
     Height = 25
     Caption = 'A'#382'uriraj tro'#353'kove'
     TabOrder = 5
+    OnClick = Button2Click
   end
   object GroupBox2: TGroupBox
     Left = 8

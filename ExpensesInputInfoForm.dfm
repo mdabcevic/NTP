@@ -29,7 +29,7 @@ object Form8: TForm8
   object ExpenseID: TLabel
     Left = 312
     Top = 62
-    Width = 97
+    Width = 76
     Height = 15
     Caption = 'Identification: '
   end
