@@ -86,6 +86,8 @@ void __fastcall TForm9::ReportWarrantClick(TObject *Sender)
 	") \n"
 	"SELECT	tw.*,  \n"
 	"        RTRIM(emp.FirstName) + ' ' + RTRIM(emp.LastName) as imePrezime,  \n"
+    "        RTRIM( dep.DepartmentName) AS Department,\n"
+
 	"        DATEDIFF(DAY,tw.Departure, tw.Arrival) as Duration,  \n"
 	"        CASE WHEN tw.IsInternational = 1 THEN 'Da' ELSE 'Ne' END as \"Inozemno?\", \n"
 	"        RTRIM(auth.FirstName) + ' ' + RTRIM(auth.LastName) as AuthorizedByName, \n"

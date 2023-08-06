@@ -827,7 +827,7 @@ object DataModule1: TDataModule1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45111.020645266200000000
-    ReportOptions.LastChange = 45144.647903738400000000
+    ReportOptions.LastChange = 45144.680580266210000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -863,14 +863,14 @@ object DataModule1: TDataModule1
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 94.488250000000000000
+        Height = 151.181200000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
           AllowVectorExport = True
           Top = 30.236240000000000000
           Width = 718.110700000000000000
-          Height = 56.692950000000000000
+          Height = 30.236240000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -21
@@ -882,6 +882,22 @@ object DataModule1: TDataModule1
             'IZVJE'#352#262'E O SLU'#381'BENOM PUTOVANJU')
           ParentFont = False
         end
+        object Memo17: TfrxMemoView
+          AllowVectorExport = True
+          Top = 90.708720000000000000
+          Width = 721.890230000000000000
+          Height = 34.015770000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -21
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            #352'IFRA NALOGA:  [frxDBDataset1."WarrantID"]')
+          ParentFont = False
+        end
       end
       object AllInfo: TfrxMasterData
         FillType = ftBrush
@@ -890,8 +906,8 @@ object DataModule1: TDataModule1
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 907.087200000000000000
-        Top = 173.858380000000000000
+        Height = 869.291900000000000000
+        Top = 230.551330000000000000
         Width = 718.110700000000000000
         DataSet = WarrantReport
         DataSetName = 'frxDBDataset1'
@@ -899,7 +915,7 @@ object DataModule1: TDataModule1
         object Memo10: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 532.913730000000000000
+          Top = 517.795610000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -916,7 +932,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 532.913730000000000000
+          Top = 517.795610000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'LicensePlate'
@@ -936,7 +952,7 @@ object DataModule1: TDataModule1
         object Memo11: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 574.488560000000000000
+          Top = 559.370440000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -953,7 +969,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 574.488560000000000000
+          Top = 559.370440000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'StartingOdometer'
@@ -973,7 +989,7 @@ object DataModule1: TDataModule1
         object Memo12: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 616.063390000000000000
+          Top = 600.945270000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -990,7 +1006,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 616.063390000000000000
+          Top = 600.945270000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'EndingOdometer'
@@ -1010,7 +1026,7 @@ object DataModule1: TDataModule1
         object Memo13: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 657.638220000000000000
+          Top = 642.520100000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1026,7 +1042,7 @@ object DataModule1: TDataModule1
         object Memo8: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 404.409710000000000000
+          Top = 389.291590000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1043,7 +1059,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 400.630180000000000000
+          Top = 385.512060000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'Partners'
@@ -1063,7 +1079,7 @@ object DataModule1: TDataModule1
         object Memo9: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 442.205010000000000000
+          Top = 427.086890000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1080,7 +1096,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 442.205010000000000000
+          Top = 427.086890000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'Purposes'
@@ -1100,7 +1116,7 @@ object DataModule1: TDataModule1
         object Memo2: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 71.811070000000000000
+          Top = 56.692950000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1117,7 +1133,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 71.811070000000000000
+          Top = 56.692950000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataSet = WarrantReport
@@ -1136,7 +1152,7 @@ object DataModule1: TDataModule1
         object Memo3: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 109.606370000000000000
+          Top = 94.488250000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1152,7 +1168,7 @@ object DataModule1: TDataModule1
         object Memo4: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 147.401670000000000000
+          Top = 132.283550000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1169,7 +1185,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 147.401670000000000000
+          Top = 132.283550000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'CreatedAt'
@@ -1189,7 +1205,7 @@ object DataModule1: TDataModule1
         object Memo5: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 238.110390000000000000
+          Top = 222.992270000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1206,7 +1222,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 238.110390000000000000
+          Top = 222.992270000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'Departure'
@@ -1226,7 +1242,7 @@ object DataModule1: TDataModule1
         object Memo6: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 275.905690000000000000
+          Top = 260.787570000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1243,7 +1259,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 275.905690000000000000
+          Top = 260.787570000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'Arrival'
@@ -1263,7 +1279,7 @@ object DataModule1: TDataModule1
         object Memo7: TfrxMemoView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 313.700990000000000000
+          Top = 298.582870000000000000
           Width = 238.110390000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1280,7 +1296,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 313.700990000000000000
+          Top = 298.582870000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataSet = WarrantReport
@@ -1300,7 +1316,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 404.409710000000000000
-          Top = 657.638220000000000000
+          Top = 642.520100000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataField = 'Toll'
@@ -1320,7 +1336,7 @@ object DataModule1: TDataModule1
         object Memo14: TfrxMemoView
           AllowVectorExport = True
           Left = 79.370130000000000000
-          Top = 827.717070000000000000
+          Top = 789.921770000000000000
           Width = 211.653680000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1337,7 +1353,7 @@ object DataModule1: TDataModule1
         object Memo15: TfrxMemoView
           AllowVectorExport = True
           Left = 419.527830000000000000
-          Top = 827.717070000000000000
+          Top = 789.921770000000000000
           Width = 226.771800000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -1354,7 +1370,7 @@ object DataModule1: TDataModule1
         object Line1: TfrxLineView
           AllowVectorExport = True
           Left = 71.811070000000000000
-          Top = 820.158010000000000000
+          Top = 782.362710000000000000
           Width = 226.771800000000000000
           Color = clBlack
           Frame.Typ = [ftTop]
@@ -1362,7 +1378,7 @@ object DataModule1: TDataModule1
         object Line2: TfrxLineView
           AllowVectorExport = True
           Left = 419.527830000000000000
-          Top = 820.158010000000000000
+          Top = 782.362710000000000000
           Width = 226.771800000000000000
           Color = clBlack
           Frame.Typ = [ftTop]
@@ -1371,7 +1387,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 359.055350000000000000
-          Top = 786.142240000000000000
+          Top = 748.346940000000000000
           Width = 351.496290000000000000
           Height = 30.236240000000000000
           DataField = 'AuthorizedByName'
@@ -1392,7 +1408,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 26.456710000000000000
-          Top = 786.142240000000000000
+          Top = 748.346940000000000000
           Width = 321.260050000000000000
           Height = 30.236240000000000000
           DataField = 'imePrezime'
@@ -1412,7 +1428,7 @@ object DataModule1: TDataModule1
         object Line3: TfrxLineView
           AllowVectorExport = True
           Left = 151.181200000000000000
-          Top = 200.315090000000000000
+          Top = 162.519790000000000000
           Width = 415.748019290000000000
           Color = clBlack
           Frame.Typ = [ftTop]
@@ -1420,7 +1436,7 @@ object DataModule1: TDataModule1
         object Line4: TfrxLineView
           AllowVectorExport = True
           Left = 151.181200000000000000
-          Top = 370.393940000000000000
+          Top = 355.275820000000000000
           Width = 415.748019290000000000
           Color = clBlack
           Frame.Typ = [ftTop]
@@ -1428,7 +1444,7 @@ object DataModule1: TDataModule1
         object Line5: TfrxLineView
           AllowVectorExport = True
           Left = 154.960730000000000000
-          Top = 502.677490000000000000
+          Top = 487.559370000000000000
           Width = 411.968489290000000000
           Color = clBlack
           Frame.Typ = [ftTop]
@@ -1437,7 +1453,7 @@ object DataModule1: TDataModule1
           IndexTag = 1
           AllowVectorExport = True
           Left = 406.299475000000000000
-          Top = 109.606370000000000000
+          Top = 94.488250000000000000
           Width = 185.196970000000000000
           Height = 22.677180000000000000
           DataSet = WarrantReport
