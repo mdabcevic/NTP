@@ -238,6 +238,9 @@ object DataModule1: TDataModule1
       
         #9#9'CASE WHEN tw.IsInternational = 1 THEN '#39'Da'#39' ELSE '#39'Ne'#39' END as "I' +
         'nozemno?",'
+      
+        #9#9'RTRIM(auth.FirstName) + '#39' '#39' + RTRIM(auth.LastName) as Authoriz' +
+        'edByName,'
       #9#9'ae.AttachmentID, ae.expensesList'
       'from TravelWarrants as tw'
       'INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID'
@@ -245,6 +248,9 @@ object DataModule1: TDataModule1
         'INNER JOIN Departments as dep on emp.DepartmentCode = dep.Depart' +
         'mentCode'
       'LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID'
+      
+        'LEFT JOIN Employees as auth on tw.AuthorizedBy = auth.EmployeeID' +
+        ' -- Joining Employees table for AuthorizedBy name'
       'ORDER BY tw.Departure DESC;')
     Left = 256
     Top = 344
@@ -335,6 +341,11 @@ object DataModule1: TDataModule1
       FieldName = 'expensesList'
       ReadOnly = True
       Size = 61
+    end
+    object WarrantsQueryAuthorizedByName: TWideStringField
+      FieldName = 'AuthorizedByName'
+      ReadOnly = True
+      Size = 41
     end
   end
   object WarrantsDataSource: TDataSource
@@ -663,37 +674,138 @@ object DataModule1: TDataModule1
     Top = 144
   end
   object JoinedReport: TADOQuery
+    Active = True
     Connection = Connection
     CursorType = ctStatic
-    Parameters = <
-      item
-        Name = 'WarrantID'
-        Attributes = [paSigned, paNullable]
-        DataType = ftInteger
-        Precision = 10
-        Size = 4
-        Value = Null
-      end>
+    Parameters = <>
     SQL.Strings = (
+      'WITH AllExpenses AS ('
+      '    SELECT tw.AttachmentID, tw.WarrantID,'
       
-        'SELECT'#9'ISNULL(e.FirstName + '#39' '#39', '#39#39') + ISNULL(e.LastName, '#39#39') AS' +
-        ' FullName, '
+        '        CASE WHEN te.TransportationToll = 1 THEN '#39'Cestarina, '#39' E' +
+        'LSE '#39#39' END +'
       
-        #9#9'd.DepartmentName, t.CreatedAt, t.Departure, t.Arrival, t.IsInt' +
-        'ernational, '
+        #9#9'CASE WHEN te.Hospitality = 1 THEN '#39'Reprezentacija, '#39' ELSE '#39#39' E' +
+        'ND +'
+      #9#9'CASE WHEN te.Parking = 1 THEN '#39'Parking, '#39' ELSE '#39#39' END +'
+      #9#9'CASE WHEN te.Accomodation = 1 THEN '#39'Smje'#353'taj '#39' ELSE '#39#39' END +'
       
-        #9#9't.Partners, t.Purposes, t.StartingOdometer, t.EndingOdometer, ' +
-        't.LicensePlate,'
-      #9#9't.OtherVehicles'
-      'FROM Employees as e '
-      'INNER JOIN TravelWarrants as t ON e.EmployeeID = t.EmployeeID'
+        #9#9'CASE WHEN te.Other = 1 THEN '#39'Ostali tro'#353'kovi '#39' ELSE '#39#39' END AS ' +
+        'expensesList'
+      #9#9'FROM TravelExpenses AS te '
       
-        'INNER JOIN Departments as d on e.DepartmentCode = d.DepartmentCo' +
-        'de'
-      'WHERE t.WarrantID = :WarrantID'
-      '')
+        '    INNER JOIN TravelWarrants AS tw ON te.ExpensesID = tw.Attach' +
+        'mentID'
+      ')'
+      'select'#9'tw.*, '
+      
+        #9#9'RTRIM(emp.FirstName) + '#39' '#39' + RTRIM(emp.LastName) as imePrezime' +
+        ','
+      
+        '                                RTRIM( dep.DepartmentName) AS De' +
+        'partment,'
+      #9#9'DATEDIFF(DAY,tw.Departure, tw.Arrival) as Duration, '
+      
+        #9#9'CASE WHEN tw.IsInternational = 1 THEN '#39'Da'#39' ELSE '#39'Ne'#39' END as "I' +
+        'nozemno?",'
+      
+        #9#9'RTRIM(auth.FirstName) + '#39' '#39' + RTRIM(auth.LastName) as Authoriz' +
+        'edByName,'
+      #9#9'ae.AttachmentID, ae.expensesList'
+      'from TravelWarrants as tw'
+      'INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID'
+      
+        'INNER JOIN Departments as dep on emp.DepartmentCode = dep.Depart' +
+        'mentCode'
+      'LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID'
+      'LEFT JOIN Employees as auth on tw.AuthorizedBy = auth.EmployeeID'
+      'WHERE tw.WarrantID = 700;')
     Left = 880
     Top = 80
+    object JoinedReportWarrantID: TAutoIncField
+      FieldName = 'WarrantID'
+      ReadOnly = True
+    end
+    object JoinedReportEmployeeID: TIntegerField
+      FieldName = 'EmployeeID'
+    end
+    object JoinedReportCreatedAt: TDateTimeField
+      FieldName = 'CreatedAt'
+    end
+    object JoinedReportDeparture: TDateTimeField
+      FieldName = 'Departure'
+    end
+    object JoinedReportArrival: TDateTimeField
+      FieldName = 'Arrival'
+    end
+    object JoinedReportIsInternational: TBooleanField
+      FieldName = 'IsInternational'
+    end
+    object JoinedReportPartners: TWideStringField
+      FieldName = 'Partners'
+      FixedChar = True
+      Size = 100
+    end
+    object JoinedReportPurposes: TWideStringField
+      FieldName = 'Purposes'
+      FixedChar = True
+      Size = 100
+    end
+    object JoinedReportAttachmentID: TIntegerField
+      FieldName = 'AttachmentID'
+    end
+    object JoinedReportStartingOdometer: TIntegerField
+      FieldName = 'StartingOdometer'
+    end
+    object JoinedReportEndingOdometer: TIntegerField
+      FieldName = 'EndingOdometer'
+    end
+    object JoinedReportToll: TWideStringField
+      FieldName = 'Toll'
+      FixedChar = True
+      Size = 50
+    end
+    object JoinedReportLicensePlate: TWideStringField
+      FieldName = 'LicensePlate'
+      FixedChar = True
+    end
+    object JoinedReportOtherVehicles: TWideStringField
+      FieldName = 'OtherVehicles'
+      FixedChar = True
+      Size = 10
+    end
+    object JoinedReportAuthorizedBy: TIntegerField
+      FieldName = 'AuthorizedBy'
+    end
+    object JoinedReportimePrezime: TWideStringField
+      FieldName = 'imePrezime'
+      ReadOnly = True
+      Size = 41
+    end
+    object JoinedReportDuration: TIntegerField
+      FieldName = 'Duration'
+      ReadOnly = True
+    end
+    object JoinedReportInozemno: TStringField
+      FieldName = 'Inozemno?'
+      ReadOnly = True
+      Size = 2
+    end
+    object JoinedReportAuthorizedByName: TWideStringField
+      FieldName = 'AuthorizedByName'
+      ReadOnly = True
+      Size = 41
+    end
+    object JoinedReportexpensesList: TStringField
+      FieldName = 'expensesList'
+      ReadOnly = True
+      Size = 61
+    end
+    object JoinedReportDepartment: TWideStringField
+      FieldName = 'Department'
+      ReadOnly = True
+      Size = 50
+    end
   end
   object WarrantReport: TfrxDBDataset
     RangeBegin = rbCurrent
@@ -715,7 +827,7 @@ object DataModule1: TDataModule1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45111.020645266200000000
-    ReportOptions.LastChange = 45111.020645266200000000
+    ReportOptions.LastChange = 45144.647903738400000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -751,19 +863,24 @@ object DataModule1: TDataModule1
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 22.677180000000000000
+        Height = 94.488250000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
           AllowVectorExport = True
-          Left = 98.267780000000000000
-          Top = 7.559060000000000000
-          Width = 495.118430000000000000
-          Height = 37.795300000000000000
+          Top = 30.236240000000000000
+          Width = 718.110700000000000000
+          Height = 56.692950000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -21
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsItalic, fsUnderline]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'IZVJE'#352#262'E O SLU'#381'BENOM PUTOVANJU')
+          ParentFont = False
         end
       end
       object AllInfo: TfrxMasterData
@@ -773,285 +890,568 @@ object DataModule1: TDataModule1
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 759.685530000000000000
-        Top = 102.047310000000000000
+        Height = 907.087200000000000000
+        Top = 173.858380000000000000
         Width = 718.110700000000000000
         DataSet = WarrantReport
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object Memo10: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 495.118430000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 532.913730000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
             'REGISTRACIJA VOZILA')
+          ParentFont = False
         end
         object frxDBDataset1LicensePlate: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 495.118430000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
+          Left = 404.409710000000000000
+          Top = 532.913730000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataField = 'LicensePlate'
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."LicensePlate"]')
+          ParentFont = False
         end
         object Memo11: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 536.693260000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 574.488560000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
-            'BROJILO (PO'#268'ETAK)')
+            'STANJE BROJILA NA PO'#268'ETKU')
+          ParentFont = False
         end
         object frxDBDataset1StartingOdometer: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 536.693260000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
+          Left = 404.409710000000000000
+          Top = 574.488560000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataField = 'StartingOdometer'
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."StartingOdometer"]')
+          ParentFont = False
         end
         object Memo12: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 578.268090000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 616.063390000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
-            'BROJILO (KRAJ)')
+            'STANJE BROJILA NA KRAJU')
+          ParentFont = False
         end
         object frxDBDataset1EndingOdometer: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 578.268090000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
+          Left = 404.409710000000000000
+          Top = 616.063390000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataField = 'EndingOdometer'
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."EndingOdometer"]')
+          ParentFont = False
         end
         object Memo13: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 619.842920000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 657.638220000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
-            'CESTARINA')
+            'NA'#268'IN PLA'#262'ANJA CESTARINE')
+          ParentFont = False
         end
         object Memo8: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 366.614410000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 404.409710000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
             'NAZIVI PARTNERA')
+          ParentFont = False
         end
         object frxDBDataset1Partners: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 362.834880000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
+          Left = 404.409710000000000000
+          Top = 400.630180000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataField = 'Partners'
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."Partners"]')
+          ParentFont = False
         end
         object Memo9: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 404.409710000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 442.205010000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
             'RAZLOZI PUTOVANJA')
+          ParentFont = False
         end
         object frxDBDataset1Purposes: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 404.409710000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
+          Left = 404.409710000000000000
+          Top = 442.205010000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataField = 'Purposes'
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."Purposes"]')
+          ParentFont = False
         end
         object Memo2: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 34.015770000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 71.811070000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
-            'IME I PREZIME:')
+            'IME I PREZIME')
+          ParentFont = False
         end
         object frxDBDataset1FullName: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 34.015770000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
-          DataField = 'FullName'
+          Left = 404.409710000000000000
+          Top = 71.811070000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDBDataset1."FullName"]')
+            '[frxDBDataset1."imePrezime"]')
+          ParentFont = False
         end
         object Memo3: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 71.811070000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 109.606370000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
             'ODJEL')
-        end
-        object frxDBDataset1DepartmentName: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 71.811070000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
-          DataField = 'DepartmentName'
-          DataSet = WarrantReport
-          DataSetName = 'frxDBDataset1'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDataset1."DepartmentName"]')
+          ParentFont = False
         end
         object Memo4: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 109.606370000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 147.401670000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
             'DATUM PISANJA')
+          ParentFont = False
         end
         object frxDBDataset1CreatedAt: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 109.606370000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
+          Left = 404.409710000000000000
+          Top = 147.401670000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataField = 'CreatedAt'
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."CreatedAt"]')
+          ParentFont = False
         end
         object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 200.315090000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 238.110390000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
-            'POLAZAK')
+            'DATUM I VRIJEME POLASKA')
+          ParentFont = False
         end
         object frxDBDataset1Departure: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 200.315090000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
+          Left = 404.409710000000000000
+          Top = 238.110390000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataField = 'Departure'
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."Departure"]')
+          ParentFont = False
         end
         object Memo6: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 238.110390000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 275.905690000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
-            'POVRATAK')
+            'DATUM I VRIJEME POVRATKA')
+          ParentFont = False
         end
         object frxDBDataset1Arrival: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 238.110390000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
+          Left = 404.409710000000000000
+          Top = 275.905690000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataField = 'Arrival'
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."Arrival"]')
+          ParentFont = False
         end
         object Memo7: TfrxMemoView
           AllowVectorExport = True
-          Left = 11.338590000000000000
-          Top = 275.905690000000000000
-          Width = 173.858380000000000000
-          Height = 18.897650000000000000
+          Left = 154.960730000000000000
+          Top = 313.700990000000000000
+          Width = 238.110390000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsUnderline]
           Frame.Typ = []
           Memo.UTF8W = (
             'INOZEMNO PUTOVANJE')
+          ParentFont = False
         end
         object frxDBDataset1IsInternational: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 207.874150000000000000
-          Top = 275.905690000000000000
-          Width = 328.819110000000000000
-          Height = 18.897650000000000000
-          DataField = 'IsInternational'
+          Left = 404.409710000000000000
+          Top = 313.700990000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
           DataSet = WarrantReport
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDBDataset1."IsInternational"]')
+            '[frxDBDataset1."Inozemno?"]')
+          ParentFont = False
+        end
+        object frxDBDataset1Toll: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 404.409710000000000000
+          Top = 657.638220000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
+          DataField = 'Toll'
+          DataSet = WarrantReport
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset1."Toll"]')
+          ParentFont = False
+        end
+        object Memo14: TfrxMemoView
+          AllowVectorExport = True
+          Left = 79.370130000000000000
+          Top = 827.717070000000000000
+          Width = 211.653680000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'ime i prezime podnositelja')
+          ParentFont = False
+        end
+        object Memo15: TfrxMemoView
+          AllowVectorExport = True
+          Left = 419.527830000000000000
+          Top = 827.717070000000000000
+          Width = 226.771800000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'ime i prezime odobravatelja')
+          ParentFont = False
+        end
+        object Line1: TfrxLineView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 820.158010000000000000
+          Width = 226.771800000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line2: TfrxLineView
+          AllowVectorExport = True
+          Left = 419.527830000000000000
+          Top = 820.158010000000000000
+          Width = 226.771800000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object frxDBDataset1AuthorizedByName: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 359.055350000000000000
+          Top = 786.142240000000000000
+          Width = 351.496290000000000000
+          Height = 30.236240000000000000
+          DataField = 'AuthorizedByName'
+          DataSet = WarrantReport
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -21
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsItalic]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset1."AuthorizedByName"]')
+          ParentFont = False
+        end
+        object frxDBDataset1imePrezime: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 26.456710000000000000
+          Top = 786.142240000000000000
+          Width = 321.260050000000000000
+          Height = 30.236240000000000000
+          DataField = 'imePrezime'
+          DataSet = WarrantReport
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -21
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold, fsItalic]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset1."imePrezime"]')
+          ParentFont = False
+        end
+        object Line3: TfrxLineView
+          AllowVectorExport = True
+          Left = 151.181200000000000000
+          Top = 200.315090000000000000
+          Width = 415.748019290000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line4: TfrxLineView
+          AllowVectorExport = True
+          Left = 151.181200000000000000
+          Top = 370.393940000000000000
+          Width = 415.748019290000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line5: TfrxLineView
+          AllowVectorExport = True
+          Left = 154.960730000000000000
+          Top = 502.677490000000000000
+          Width = 411.968489290000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo16: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 406.299475000000000000
+          Top = 109.606370000000000000
+          Width = 185.196970000000000000
+          Height = 22.677180000000000000
+          DataSet = WarrantReport
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset1."Department"]')
+          ParentFont = False
         end
       end
     end

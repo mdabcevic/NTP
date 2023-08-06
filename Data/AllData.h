@@ -173,6 +173,28 @@ __published:	// IDE-managed Components
 	TIntegerField *WarrantsQueryDuration;
 	TStringField *WarrantsQueryInozemno;
 	TStringField *WarrantsQueryexpensesList;
+	TWideStringField *WarrantsQueryAuthorizedByName;
+	TAutoIncField *JoinedReportWarrantID;
+	TIntegerField *JoinedReportEmployeeID;
+	TDateTimeField *JoinedReportCreatedAt;
+	TDateTimeField *JoinedReportDeparture;
+	TDateTimeField *JoinedReportArrival;
+	TBooleanField *JoinedReportIsInternational;
+	TWideStringField *JoinedReportPartners;
+	TWideStringField *JoinedReportPurposes;
+	TIntegerField *JoinedReportAttachmentID;
+	TIntegerField *JoinedReportStartingOdometer;
+	TIntegerField *JoinedReportEndingOdometer;
+	TWideStringField *JoinedReportToll;
+	TWideStringField *JoinedReportLicensePlate;
+	TWideStringField *JoinedReportOtherVehicles;
+	TIntegerField *JoinedReportAuthorizedBy;
+	TWideStringField *JoinedReportimePrezime;
+	TIntegerField *JoinedReportDuration;
+	TStringField *JoinedReportInozemno;
+	TWideStringField *JoinedReportAuthorizedByName;
+	TStringField *JoinedReportexpensesList;
+	TWideStringField *JoinedReportDepartment;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
