@@ -124,6 +124,37 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 		}
 		DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger = ExpensesID;
 	}
+
+	if(WarrantAction->Caption == "Edit selected warrant")
+	{
+		DataModule1->MultiQuery->SQL->Clear();
+        DataModule1->MultiQuery->SQL->Text =
+		"UPDATE TravelWarrants SET "
+		"Departure = :Departure, "
+		"Arrival = :Arrival, "
+		"IsInternational = :IsInternational, "
+		"Partners = :Partners, "
+		"Purposes = :Purposes, "
+		"StartingOdometer = :StartingOdometer, "
+		"EndingOdometer = :EndingOdometer, "
+		"Toll = :Toll, "
+		"LicensePlate = :LicensePlate "
+		"WHERE WarrantID = :WarrantID";
+
+		DataModule1->MultiQuery->Parameters->ParamByName("Departure")->Value = DepartureDateTime->Date + DepartureDateTime->Time;
+		DataModule1->MultiQuery->Parameters->ParamByName("Arrival")->Value = ArrivalDateTime->Date + ArrivalDateTime->Time;
+		DataModule1->MultiQuery->Parameters->ParamByName("IsInternational")->Value = isInternational->Checked;
+		DataModule1->MultiQuery->Parameters->ParamByName("Partners")->Value = partners;
+		DataModule1->MultiQuery->Parameters->ParamByName("Purposes")->Value = purposes;
+		DataModule1->MultiQuery->Parameters->ParamByName("StartingOdometer")->Value = OdometerStart->Value;
+		DataModule1->MultiQuery->Parameters->ParamByName("EndingOdometer")->Value = OdometerEnd->Value;
+		DataModule1->MultiQuery->Parameters->ParamByName("Toll")->Value = TollInfo->Text;
+		DataModule1->MultiQuery->Parameters->ParamByName("LicensePlate")->Value = CarSelection->Text;
+		DataModule1->MultiQuery->Parameters->ParamByName("WarrantID")->Value = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger; // Specify the WarrantID of the record you want to update
+		DataModule1->MultiQuery->ExecSQL();
+        DataModule1->MultiQuery->SQL->Clear();
+		return;
+    }
 	DataModule1->WarrantsQuery->FieldByName("CreatedAt")->AsDateTime = Now();
 	//time is always now, there is no selection :/
 	DataModule1->WarrantsQuery->FieldByName("Departure")->AsDateTime = DepartureDateTime->Date +  DepartureDateTime->Time;
@@ -142,7 +173,7 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 void  TForm7::EditMode(){
-	DataModule1->WarrantsQuery->Edit();
+	//DataModule1->WarrantsQuery->Edit();
 	WarrantAction->Caption = "Edit selected warrant";
 	ExpensesID = DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger;
 }

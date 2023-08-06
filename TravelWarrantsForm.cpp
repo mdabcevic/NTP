@@ -73,6 +73,30 @@ void __fastcall TForm9::EditButtonClick(TObject *Sender)
 void __fastcall TForm9::ReportWarrantClick(TObject *Sender)
 {
 	//DataModule1->JoinedReport->Open();
+	DataModule1->JoinedReport->SQL->Text =
+	"WITH AllExpenses AS ( \n"
+	"    SELECT tw.AttachmentID, tw.WarrantID, \n"
+	"        CASE WHEN te.TransportationToll = 1 THEN 'Cestarina, ' ELSE '' END + \n"
+	"        CASE WHEN te.Hospitality = 1 THEN 'Reprezentacija, ' ELSE '' END + \n"
+	"        CASE WHEN te.Parking = 1 THEN 'Parking, ' ELSE '' END + \n"
+	"        CASE WHEN te.Accomodation = 1 THEN 'Smještaj ' ELSE '' END + \n"
+	"        CASE WHEN te.Other = 1 THEN 'Ostali troškovi ' ELSE '' END AS expensesList \n"
+	"    FROM TravelExpenses AS te  \n"
+	"    INNER JOIN TravelWarrants AS tw ON te.ExpensesID = tw.AttachmentID \n"
+	") \n"
+	"SELECT	tw.*,  \n"
+	"        RTRIM(emp.FirstName) + ' ' + RTRIM(emp.LastName) as imePrezime,  \n"
+	"        DATEDIFF(DAY,tw.Departure, tw.Arrival) as Duration,  \n"
+	"        CASE WHEN tw.IsInternational = 1 THEN 'Da' ELSE 'Ne' END as \"Inozemno?\", \n"
+	"        RTRIM(auth.FirstName) + ' ' + RTRIM(auth.LastName) as AuthorizedByName, \n"
+	"        ae.AttachmentID, ae.expensesList \n"
+	"FROM TravelWarrants as tw \n"
+	"INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID \n"
+	"INNER JOIN Departments as dep on emp.DepartmentCode = dep.DepartmentCode \n"
+	"LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID \n"
+	"LEFT JOIN Employees as auth on tw.AuthorizedBy = auth.EmployeeID \n"
+	"WHERE tw.WarrantID = :WarrantID";
+
 	int selectedWarrantID = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;
 	DataModule1->JoinedReport->Parameters->ParamByName("WarrantID")->Value = selectedWarrantID;
 	if(PDFOption->Checked){
@@ -85,10 +109,8 @@ void __fastcall TForm9::ReportWarrantClick(TObject *Sender)
         DataModule1->WarrantLayout->PrepareReport(true);
 		DataModule1->WarrantLayout->FileName = "file.rtf";
 		DataModule1->WarrantLayout->Export(DataModule1->RTFExport);
-        return;
-    }
-
-
+		return;
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -98,7 +120,7 @@ void __fastcall TForm9::Button1Click(TObject *Sender)
 	AnsiString updateSQL = "UPDATE TravelWarrants SET AuthorizedBy = :AuthorizedBy WHERE WarrantID = :WarrantID";
 	DataModule1->MultiQuery->SQL->Text = updateSQL;
 	DataModule1->MultiQuery->Parameters->ParamByName("AuthorizedBy")->Value = DataModule1->currentUser.ID;
-	DataModule1->MultiQuery->Parameters->ParamByName("WarrantID")->Value = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;; // Specify the ID of the record you want to update
+	DataModule1->MultiQuery->Parameters->ParamByName("WarrantID")->Value = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger; // Specify the ID of the record you want to update
 	DataModule1->MultiQuery->ExecSQL();
     DataModule1->MultiQuery->SQL->Clear();
 	DataModule1->WarrantsQuery->Close();
@@ -127,11 +149,13 @@ void __fastcall TForm9::UpdateFilters(TObject *Sender)
 	"        RTRIM(emp.FirstName) + ' ' + RTRIM(emp.LastName) as imePrezime, \n"
 	"        DATEDIFF(DAY,tw.Departure, tw.Arrival) as Duration, \n"
 	"        CASE WHEN tw.IsInternational = 1 THEN 'Da' ELSE 'Ne' END as \"Inozemno?\",\n"
+	"        RTRIM(auth.FirstName) + ' ' + RTRIM(auth.LastName) as AuthorizedByName,\n"
 	"        ae.AttachmentID, ae.expensesList\n"
 	"FROM TravelWarrants as tw\n"
 	"INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID\n"
 	"INNER JOIN Departments as dep on emp.DepartmentCode = dep.DepartmentCode\n"
 	"LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID\n"
+	"LEFT JOIN Employees as auth on tw.AuthorizedBy = auth.EmployeeID\n"
 	"ORDER BY tw.Departure DESC;";
 
 		DataModule1->WarrantsQuery->Close();
@@ -155,11 +179,13 @@ void __fastcall TForm9::UpdateFilters(TObject *Sender)
 	"        RTRIM(emp.FirstName) + ' ' + RTRIM(emp.LastName) as imePrezime, \n"
 	"        DATEDIFF(DAY,tw.Departure, tw.Arrival) as Duration, \n"
 	"        CASE WHEN tw.IsInternational = 1 THEN 'Da' ELSE 'Ne' END as \"Inozemno?\",\n"
+	"        RTRIM(auth.FirstName) + ' ' + RTRIM(auth.LastName) as AuthorizedByName,\n"
 	"        ae.AttachmentID, ae.expensesList\n"
 	"FROM TravelWarrants as tw\n"
 	"INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID\n"
 	"INNER JOIN Departments as dep on emp.DepartmentCode = dep.DepartmentCode\n"
 	"LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID\n"
+	"LEFT JOIN Employees as auth on tw.AuthorizedBy = auth.EmployeeID\n"
 	"WHERE tw.AuthorizedBy IS NULL\n"
 	"ORDER BY tw.Departure DESC;";
 		DataModule1->WarrantsQuery->Close();
@@ -182,11 +208,13 @@ void __fastcall TForm9::UpdateFilters(TObject *Sender)
 	"        RTRIM(emp.FirstName) + ' ' + RTRIM(emp.LastName) as imePrezime, \n"
 	"        DATEDIFF(DAY,tw.Departure, tw.Arrival) as Duration, \n"
 	"        CASE WHEN tw.IsInternational = 1 THEN 'Da' ELSE 'Ne' END as \"Inozemno?\",\n"
+	"        RTRIM(auth.FirstName) + ' ' + RTRIM(auth.LastName) as AuthorizedByName,\n"
 	"        ae.AttachmentID, ae.expensesList\n"
 	"FROM TravelWarrants as tw\n"
 	"INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID\n"
 	"INNER JOIN Departments as dep on emp.DepartmentCode = dep.DepartmentCode\n"
 	"LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID\n"
+	"LEFT JOIN Employees as auth on tw.AuthorizedBy = auth.EmployeeID\n"
 	"WHERE tw.AuthorizedBy IS NOT NULL\n"
 	"ORDER BY tw.Departure DESC;";
 		DataModule1->WarrantsQuery->Close();
@@ -209,11 +237,13 @@ void __fastcall TForm9::UpdateFilters(TObject *Sender)
 	"        RTRIM(emp.FirstName) + ' ' + RTRIM(emp.LastName) as imePrezime, \n"
 	"        DATEDIFF(DAY,tw.Departure, tw.Arrival) as Duration, \n"
 	"        CASE WHEN tw.IsInternational = 1 THEN 'Da' ELSE 'Ne' END as \"Inozemno?\",\n"
+    "        RTRIM(auth.FirstName) + ' ' + RTRIM(auth.LastName) as AuthorizedByName,\n"
 	"        ae.AttachmentID, ae.expensesList\n"
 	"FROM TravelWarrants as tw\n"
 	"INNER JOIN Employees as emp on tw.EmployeeID = emp.EmployeeID\n"
 	"INNER JOIN Departments as dep on emp.DepartmentCode = dep.DepartmentCode\n"
 	"LEFT JOIN AllExpenses as ae on tw.WarrantID = ae.WarrantID\n"
+	"LEFT JOIN Employees as auth on tw.AuthorizedBy = auth.EmployeeID\n"
 	"WHERE tw.AuthorizedBy IS NOT NULL AND tw.AuthorizedBy IS NULL\n"
 	"ORDER BY tw.Departure DESC;";
 		DataModule1->WarrantsQuery->Close();
