@@ -140,7 +140,6 @@ void __fastcall TForm7::UpdateWarrant(TObject *Sender)
 	DataModule1->MultiQuery->ExecSQL();
 	DataModule1->MultiQuery->SQL->Clear();
 
-	//ExpensesID = DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger;
 	if(DataModule1->WarrantsQuery->FieldByName("AttachmentID")->IsNull){
 		ShowMessage("Please upload recepits file before proceeding!");
 		//open form for attachments
@@ -203,14 +202,23 @@ void __fastcall TForm7::NewWarrant(TObject *Sender)
 //---------------------------------------------------------------------------
 
 void  TForm7::EditMode(){
-	//DataModule1->WarrantsQuery->Edit();
 	WarrantAction->Caption = "Edit selected warrant";
-	//ExpensesID = DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger;
-    WarrantAction->OnClick = UpdateWarrant;
+	WarrantAction->OnClick = UpdateWarrant;
+	DepartureDateTime->Date = DataModule1->WarrantsQuery->FieldByName("Departure")->AsDateTime;
+	//DepartureDateTime->Time = DataModule1->WarrantsQuery->FieldByName("Departure")->Value;
+	ArrivalDateTime->Date = DataModule1->WarrantsQuery->FieldByName("Arrival")->AsDateTime;
+	//ArrivalDateTime->Time = DataModule1->WarrantsQuery->FieldByName("Arrival")->Value;
+	isInternational->Checked = DataModule1->WarrantsQuery->FieldByName("IsInternational")->AsBoolean;
+	// populate and select partners
+	// select purposes
+   OdometerStart->Value = DataModule1->WarrantsQuery->FieldByName("StartingOdometer")->AsInteger;
+   OdometerEnd->Value = DataModule1->WarrantsQuery->FieldByName("EndingOdometer")->AsInteger;
+   TollInfo->ItemIndex = TollInfo->Items->IndexOf(DataModule1->WarrantsQuery->FieldByName("Toll")->AsString.Trim());
+   TollInfo->Text = DataModule1->WarrantsQuery->FieldByName("Toll")->AsString;
+   CarSelection->Text = DataModule1->WarrantsQuery->FieldByName("LicensePlate")->AsString;
 }
 //---------------------------------------------------------------------------
 void  TForm7::CreateMode(){
-	//DataModule1->WarrantsQuery->Insert();
 	WarrantAction->Caption = "Create new warrant";
 	ExpensesID = 0;
     WarrantAction->OnClick = NewWarrant;
@@ -259,7 +267,7 @@ UnicodeString TForm7::MergeIntoString(TCheckListBox* list){
 	UnicodeString selectedValues;
 	for (int i = 0; i < list->Items->Count; i++) {
   if (list->Checked[i]) {
-	selectedValues += list->Items->Strings[i] + " ";
+	selectedValues += list->Items->Strings[i] + ", ";
   }
 }
 selectedValues = selectedValues.Trim();  // Remove trailing space if needed
