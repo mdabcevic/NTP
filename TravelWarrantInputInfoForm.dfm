@@ -198,7 +198,7 @@ object Form7: TForm7
     Height = 33
     Caption = 'Add / Edit Travel Warrant'
     TabOrder = 11
-    OnClick = WarrantActionClick
+    OnClick = NewWarrant
   end
   object TollInfo: TComboBox
     Left = 104

@@ -45,7 +45,8 @@ __published:	// IDE-managed Components
 	TComboBox *TollInfo;
 	TButton *CarSelect;
 	TButton *PartnersButton;
-	void __fastcall WarrantActionClick(TObject *Sender);
+	void __fastcall NewWarrant(TObject *Sender);
+    void __fastcall UpdateWarrant(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall CarSelectClick(TObject *Sender);
 	void __fastcall PartnersListClick(TObject *Sender);

@@ -109,26 +109,13 @@ __fastcall TForm7::TForm7(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm7::WarrantActionClick(TObject *Sender)
+void __fastcall TForm7::UpdateWarrant(TObject *Sender)
 {
 	UnicodeString partners = MergeIntoString(PartnersList);
 	UnicodeString purposes = MergeIntoString(PurposesList);
 
-	//DataModule1->WarrantsQuery->Insert();
-	//DataModule1->WarrantsQuery->FieldByName("EmployeeID")->AsInteger = 5;
-	if(WarrantAction->Caption == "Create new warrant"){
-		DataModule1->WarrantsQuery->FieldByName("EmployeeID")->AsInteger = DataModule1->currentUser.ID;
-		if(ExpensesID == 0){
-		ShowMessage("Please upload recepits file before proceeding!");
-		return;
-		}
-		DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger = ExpensesID;
-	}
-
-	if(WarrantAction->Caption == "Edit selected warrant")
-	{
-		DataModule1->MultiQuery->SQL->Clear();
-        DataModule1->MultiQuery->SQL->Text =
+	DataModule1->MultiQuery->SQL->Clear();
+	DataModule1->MultiQuery->SQL->Text =
 		"UPDATE TravelWarrants SET "
 		"Departure = :Departure, "
 		"Arrival = :Arrival, "
@@ -140,34 +127,77 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 		"Toll = :Toll, "
 		"LicensePlate = :LicensePlate "
 		"WHERE WarrantID = :WarrantID";
+	DataModule1->MultiQuery->Parameters->ParamByName("Departure")->Value = DepartureDateTime->Date + DepartureDateTime->Time;
+	DataModule1->MultiQuery->Parameters->ParamByName("Arrival")->Value = ArrivalDateTime->Date + ArrivalDateTime->Time;
+	DataModule1->MultiQuery->Parameters->ParamByName("IsInternational")->Value = isInternational->Checked;
+	DataModule1->MultiQuery->Parameters->ParamByName("Partners")->Value = partners;
+	DataModule1->MultiQuery->Parameters->ParamByName("Purposes")->Value = purposes;
+	DataModule1->MultiQuery->Parameters->ParamByName("StartingOdometer")->Value = OdometerStart->Value;
+	DataModule1->MultiQuery->Parameters->ParamByName("EndingOdometer")->Value = OdometerEnd->Value;
+	DataModule1->MultiQuery->Parameters->ParamByName("Toll")->Value = TollInfo->Text;
+	DataModule1->MultiQuery->Parameters->ParamByName("LicensePlate")->Value = CarSelection->Text;
+	DataModule1->MultiQuery->Parameters->ParamByName("WarrantID")->Value = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger; // Specify the WarrantID of the record you want to update
+	DataModule1->MultiQuery->ExecSQL();
+	DataModule1->MultiQuery->SQL->Clear();
 
-		DataModule1->MultiQuery->Parameters->ParamByName("Departure")->Value = DepartureDateTime->Date + DepartureDateTime->Time;
-		DataModule1->MultiQuery->Parameters->ParamByName("Arrival")->Value = ArrivalDateTime->Date + ArrivalDateTime->Time;
-		DataModule1->MultiQuery->Parameters->ParamByName("IsInternational")->Value = isInternational->Checked;
-		DataModule1->MultiQuery->Parameters->ParamByName("Partners")->Value = partners;
-		DataModule1->MultiQuery->Parameters->ParamByName("Purposes")->Value = purposes;
-		DataModule1->MultiQuery->Parameters->ParamByName("StartingOdometer")->Value = OdometerStart->Value;
-		DataModule1->MultiQuery->Parameters->ParamByName("EndingOdometer")->Value = OdometerEnd->Value;
-		DataModule1->MultiQuery->Parameters->ParamByName("Toll")->Value = TollInfo->Text;
-		DataModule1->MultiQuery->Parameters->ParamByName("LicensePlate")->Value = CarSelection->Text;
-		DataModule1->MultiQuery->Parameters->ParamByName("WarrantID")->Value = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger; // Specify the WarrantID of the record you want to update
-		DataModule1->MultiQuery->ExecSQL();
-        DataModule1->MultiQuery->SQL->Clear();
+	//ExpensesID = DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger;
+	if(DataModule1->WarrantsQuery->FieldByName("AttachmentID")->IsNull){
+		ShowMessage("Please upload recepits file before proceeding!");
+		//open form for attachments
+        Form8->ShowModal();
+		//update attachment value
+		DataModule1->MultiQuery->SQL->Text =
+			"UPDATE TravelWarrants SET "
+			"AttachmentID = :AttachmentID "
+			"WHERE WarrantID = :WarrantID";
+
+        DataModule1->MultiQuery->Parameters->ParamByName("AttachmentID")->Value = ExpensesID;
+		DataModule1->MultiQuery->Parameters->ParamByName("WarrantID")->Value = DataModule1->WarrantsQuery->FieldByName("WarrantID")->AsInteger;
+
+        DataModule1->MultiQuery->ExecSQL();
+		DataModule1->MultiQuery->SQL->Clear();
+	}
+
+	DataModule1->WarrantsQuery->Close();
+	DataModule1->WarrantsQuery->Open();
+	ExpensesID = 0;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm7::NewWarrant(TObject *Sender)
+{
+	UnicodeString partners = MergeIntoString(PartnersList);
+	UnicodeString purposes = MergeIntoString(PurposesList);
+	if(ExpensesID == 0){
+		ShowMessage("Please upload recepits file before proceeding!");
 		return;
-    }
-	DataModule1->WarrantsQuery->FieldByName("CreatedAt")->AsDateTime = Now();
-	//time is always now, there is no selection :/
-	DataModule1->WarrantsQuery->FieldByName("Departure")->AsDateTime = DepartureDateTime->Date +  DepartureDateTime->Time;
-	DataModule1->WarrantsQuery->FieldByName("Arrival")->AsDateTime = ArrivalDateTime->Date +  ArrivalDateTime->Time;
-	DataModule1->WarrantsQuery->FieldByName("IsInternational")->AsBoolean = isInternational->Checked;
-	DataModule1->WarrantsQuery->FieldByName("Partners")->AsString = partners;
-	DataModule1->WarrantsQuery->FieldByName("Purposes")->AsString = purposes;
-	DataModule1->WarrantsQuery->FieldByName("StartingOdometer")->AsInteger = OdometerStart->Value;
-	DataModule1->WarrantsQuery->FieldByName("EndingOdometer")->AsInteger = OdometerEnd->Value;
-	DataModule1->WarrantsQuery->FieldByName("Toll")->AsString = TollInfo->Text;
-	DataModule1->WarrantsQuery->FieldByName("LicensePlate")->AsString = CarSelection->Text;
-	DataModule1->WarrantsQuery->Post();
-    ExpensesID = 0;
+	}
+
+	DataModule1->MultiQuery->SQL->Clear();
+	DataModule1->MultiQuery->SQL->Text =
+		"INSERT INTO TravelWarrants "
+		"(EmployeeID, Departure, Arrival, IsInternational, Partners, Purposes, StartingOdometer, EndingOdometer, Toll, LicensePlate, AttachmentID) "
+		"VALUES "
+		"(:EmployeeID, :Departure, :Arrival, :IsInternational, :Partners, :Purposes, :StartingOdometer, :EndingOdometer, :Toll, :LicensePlate, :AttachmentID)";
+
+	DataModule1->MultiQuery->Parameters->ParamByName("EmployeeID")->Value = DataModule1->currentUser.ID;
+	DataModule1->MultiQuery->Parameters->ParamByName("Departure")->Value = DepartureDateTime->Date + DepartureDateTime->Time;
+	DataModule1->MultiQuery->Parameters->ParamByName("Arrival")->Value = ArrivalDateTime->Date + ArrivalDateTime->Time;
+	DataModule1->MultiQuery->Parameters->ParamByName("IsInternational")->Value = isInternational->Checked;
+	DataModule1->MultiQuery->Parameters->ParamByName("Partners")->Value = partners;
+	DataModule1->MultiQuery->Parameters->ParamByName("Purposes")->Value = purposes;
+	DataModule1->MultiQuery->Parameters->ParamByName("StartingOdometer")->Value = OdometerStart->Value;
+	DataModule1->MultiQuery->Parameters->ParamByName("EndingOdometer")->Value = OdometerEnd->Value;
+	DataModule1->MultiQuery->Parameters->ParamByName("Toll")->Value = TollInfo->Text;
+	DataModule1->MultiQuery->Parameters->ParamByName("LicensePlate")->Value = CarSelection->Text;
+	DataModule1->MultiQuery->Parameters->ParamByName("AttachmentID")->Value = ExpensesID;
+
+	DataModule1->MultiQuery->ExecSQL();
+	DataModule1->MultiQuery->SQL->Clear();
+	DataModule1->WarrantsQuery->Close();
+	DataModule1->WarrantsQuery->Open();
+	return;
 
 }
 //---------------------------------------------------------------------------
@@ -175,13 +205,15 @@ void __fastcall TForm7::WarrantActionClick(TObject *Sender)
 void  TForm7::EditMode(){
 	//DataModule1->WarrantsQuery->Edit();
 	WarrantAction->Caption = "Edit selected warrant";
-	ExpensesID = DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger;
+	//ExpensesID = DataModule1->WarrantsQuery->FieldByName("AttachmentID")->AsInteger;
+    WarrantAction->OnClick = UpdateWarrant;
 }
 //---------------------------------------------------------------------------
 void  TForm7::CreateMode(){
-	DataModule1->WarrantsQuery->Insert();
+	//DataModule1->WarrantsQuery->Insert();
 	WarrantAction->Caption = "Create new warrant";
-    ExpensesID = 0;
+	ExpensesID = 0;
+    WarrantAction->OnClick = NewWarrant;
 }
 
 void __fastcall TForm7::FormShow(TObject *Sender)
