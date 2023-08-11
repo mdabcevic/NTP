@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-2"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <companycars>
 	<car>
 		<licenseplate>MI-3297-ZG</licenseplate>
@@ -7,6 +7,13 @@
 		<currentuser>Kresimir Dabcevic</currentuser>
 		<location>Zagreb</location>
 	</car>
+  <car>
+    <licenseplate>SB-8619-YZ</licenseplate>
+    <internalmark>Peugeot-508-22</internalmark>
+    <assigned>Nika Kocurek</assigned>
+    <currentuser>Nika Kocurek</currentuser>
+    <location>Slavonski Brod</location>
+  </car> 
   <car>
     <licenseplate>UQ-9142-ZG</licenseplate>
     <internalmark>Toyota-Corolla-07</internalmark>
@@ -21,19 +28,11 @@
     <currentuser>Dubravka Dabcevic</currentuser>
     <location>Zagreb</location>
   </car>
-  
   <car>
-    <licenseplate>TH-5572-SB</licenseplate>
+    <licenseplate>SB-5572-TH</licenseplate>
     <internalmark>Peugeot-508-21</internalmark>
     <assigned>Maja Dabcevic</assigned>
     <currentuser>Nina Dabcevic</currentuser>
-    <location>Slavonski Brod</location>
-  </car> 
-  <car>
-    <licenseplate>YZ-8619-SB</licenseplate>
-    <internalmark>Peugeot-508-22</internalmark>
-    <assigned>Nika Kocurek</assigned>
-    <currentuser>Nika Kocurek</currentuser>
     <location>Slavonski Brod</location>
   </car> 
   <car>

@@ -411,7 +411,7 @@ object DataModule1: TDataModule1
           Top = 7.559060000000000000
           Width = 714.331170000000000000
           Height = 41.574830000000000000
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -27
           Font.Name = 'Segoe UI Semibold'
@@ -419,7 +419,7 @@ object DataModule1: TDataModule1
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            'IZVJESCE O PUTNIM NALOZIMA ZA ZAPOSLENIKA')
+            'IZVJE'#352#262'E O PUTNIM NALOZIMA ZA ZAPOSLENIKA')
           ParentFont = False
         end
       end
@@ -455,7 +455,7 @@ object DataModule1: TDataModule1
           DataField = 'FirstName'
           DataSet = frxDBEmployee
           DataSetName = 'Employee'
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -21
           Font.Name = 'Segoe UI Semibold'
@@ -475,7 +475,7 @@ object DataModule1: TDataModule1
           Height = 41.574830000000000000
           DataSet = frxDBEmployee
           DataSetName = 'Employee'
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -21
           Font.Name = 'Segoe UI Semibold'
@@ -489,30 +489,30 @@ object DataModule1: TDataModule1
           AllowVectorExport = True
           Left = 7.559060000000000000
           Top = 102.047310000000000000
-          Width = 154.960730000000000000
+          Width = 79.370130000000000000
           Height = 26.456710000000000000
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
           Font.Name = 'Segoe UI'
-          Font.Style = []
+          Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            'Sifra naloga')
+            #353'ifra naloga')
           ParentFont = False
         end
         object Memo4: TfrxMemoView
           AllowVectorExport = True
-          Left = 170.078850000000000000
+          Left = 94.488250000000000000
           Top = 102.047310000000000000
           Width = 166.299320000000000000
           Height = 26.456710000000000000
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
           Font.Name = 'Segoe UI'
-          Font.Style = []
+          Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
@@ -521,15 +521,15 @@ object DataModule1: TDataModule1
         end
         object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 343.937230000000000000
+          Left = 272.126160000000000000
           Top = 102.047310000000000000
           Width = 170.078850000000000000
           Height = 26.456710000000000000
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
           Font.Name = 'Segoe UI'
-          Font.Style = []
+          Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
@@ -538,15 +538,15 @@ object DataModule1: TDataModule1
         end
         object Memo6: TfrxMemoView
           AllowVectorExport = True
-          Left = 544.252320000000000000
+          Left = 457.323130000000000000
           Top = 102.047310000000000000
           Width = 170.078850000000000000
           Height = 26.456710000000000000
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
           Font.Name = 'Segoe UI'
-          Font.Style = []
+          Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
@@ -580,12 +580,12 @@ object DataModule1: TDataModule1
           AllowVectorExport = True
           Left = 7.559060000000000000
           Top = 15.118120000000000000
-          Width = 154.960730000000000000
+          Width = 79.370130000000000000
           Height = 71.811070000000000000
           DataField = 'WarrantID'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Segoe UI'
@@ -599,14 +599,14 @@ object DataModule1: TDataModule1
         object WarrantsCreatedAt: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 192.756030000000000000
+          Left = 102.047310000000000000
           Top = 15.118120000000000000
-          Width = 143.622140000000000000
+          Width = 158.740260000000000000
           Height = 71.811070000000000000
           DataField = 'CreatedAt'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Segoe UI'
@@ -620,14 +620,14 @@ object DataModule1: TDataModule1
         object WarrantsPartners: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 343.937230000000000000
+          Left = 272.126160000000000000
           Top = 15.118120000000000000
-          Width = 185.196970000000000000
+          Width = 170.078850000000000000
           Height = 71.811070000000000000
           DataField = 'Partners'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Segoe UI'
@@ -641,14 +641,14 @@ object DataModule1: TDataModule1
         object WarrantsPurposes: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 544.252320000000000000
+          Left = 457.323130000000000000
           Top = 15.118120000000000000
-          Width = 170.078850000000000000
+          Width = 166.299320000000000000
           Height = 71.811070000000000000
           DataField = 'Purposes'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
-          Font.Charset = ANSI_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Segoe UI'
@@ -827,7 +827,7 @@ object DataModule1: TDataModule1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45111.020645266200000000
-    ReportOptions.LastChange = 45144.680580266210000000
+    ReportOptions.LastChange = 45149.423439340280000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -863,7 +863,7 @@ object DataModule1: TDataModule1
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 151.181200000000000000
+        Height = 128.504020000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
@@ -874,7 +874,7 @@ object DataModule1: TDataModule1
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -21
-          Font.Name = 'Segoe UI'
+          Font.Name = 'Verdana'
           Font.Style = [fsBold, fsItalic, fsUnderline]
           Frame.Typ = []
           HAlign = haCenter
@@ -884,13 +884,13 @@ object DataModule1: TDataModule1
         end
         object Memo17: TfrxMemoView
           AllowVectorExport = True
-          Top = 90.708720000000000000
+          Top = 75.590600000000000000
           Width = 721.890230000000000000
           Height = 34.015770000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -21
-          Font.Name = 'Segoe UI'
+          Font.Name = 'Verdana'
           Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
@@ -907,7 +907,7 @@ object DataModule1: TDataModule1
         FillGap.Right = 0
         Frame.Typ = []
         Height = 869.291900000000000000
-        Top = 230.551330000000000000
+        Top = 207.874150000000000000
         Width = 718.110700000000000000
         DataSet = WarrantReport
         DataSetName = 'frxDBDataset1'
@@ -931,9 +931,9 @@ object DataModule1: TDataModule1
         object frxDBDataset1LicensePlate: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 404.409710000000000000
+          Left = 449.764070000000000000
           Top = 517.795610000000000000
-          Width = 185.196970000000000000
+          Width = 113.385900000000000000
           Height = 22.677180000000000000
           DataField = 'LicensePlate'
           DataSet = WarrantReport
@@ -944,7 +944,6 @@ object DataModule1: TDataModule1
           Font.Name = 'Segoe UI'
           Font.Style = []
           Frame.Typ = []
-          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."LicensePlate"]')
           ParentFont = False
@@ -977,8 +976,8 @@ object DataModule1: TDataModule1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Segoe UI'
+          Font.Height = -15
+          Font.Name = 'Verdana'
           Font.Style = []
           Frame.Typ = []
           HAlign = haCenter
@@ -1014,8 +1013,8 @@ object DataModule1: TDataModule1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Segoe UI'
+          Font.Height = -15
+          Font.Name = 'Verdana'
           Font.Style = []
           Frame.Typ = []
           HAlign = haCenter
@@ -1193,8 +1192,8 @@ object DataModule1: TDataModule1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Segoe UI'
+          Font.Height = -15
+          Font.Name = 'Verdana'
           Font.Style = []
           Frame.Typ = []
           HAlign = haCenter
@@ -1230,8 +1229,8 @@ object DataModule1: TDataModule1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Segoe UI'
+          Font.Height = -15
+          Font.Name = 'Verdana'
           Font.Style = []
           Frame.Typ = []
           HAlign = haCenter
@@ -1267,8 +1266,8 @@ object DataModule1: TDataModule1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Segoe UI'
+          Font.Height = -15
+          Font.Name = 'Verdana'
           Font.Style = []
           Frame.Typ = []
           HAlign = haCenter
@@ -1315,9 +1314,9 @@ object DataModule1: TDataModule1
         object frxDBDataset1Toll: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 404.409710000000000000
+          Left = 457.323130000000000000
           Top = 642.520100000000000000
-          Width = 185.196970000000000000
+          Width = 94.488250000000000000
           Height = 22.677180000000000000
           DataField = 'Toll'
           DataSet = WarrantReport
@@ -1328,7 +1327,6 @@ object DataModule1: TDataModule1
           Font.Name = 'Segoe UI'
           Font.Style = []
           Frame.Typ = []
-          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."Toll"]')
           ParentFont = False
@@ -1395,8 +1393,8 @@ object DataModule1: TDataModule1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -21
-          Font.Name = 'Segoe UI'
+          Font.Height = -19
+          Font.Name = 'Verdana'
           Font.Style = [fsBold, fsItalic]
           Frame.Typ = []
           HAlign = haCenter
@@ -1416,8 +1414,8 @@ object DataModule1: TDataModule1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -21
-          Font.Name = 'Segoe UI'
+          Font.Height = -19
+          Font.Name = 'Verdana'
           Font.Style = [fsBold, fsItalic]
           Frame.Typ = []
           HAlign = haCenter
@@ -1429,7 +1427,7 @@ object DataModule1: TDataModule1
           AllowVectorExport = True
           Left = 151.181200000000000000
           Top = 162.519790000000000000
-          Width = 415.748019290000000000
+          Width = 438.425199290000000000
           Color = clBlack
           Frame.Typ = [ftTop]
         end
@@ -1437,7 +1435,7 @@ object DataModule1: TDataModule1
           AllowVectorExport = True
           Left = 151.181200000000000000
           Top = 355.275820000000000000
-          Width = 415.748019290000000000
+          Width = 438.425199290000000000
           Color = clBlack
           Frame.Typ = [ftTop]
         end
@@ -1445,7 +1443,7 @@ object DataModule1: TDataModule1
           AllowVectorExport = True
           Left = 154.960730000000000000
           Top = 487.559370000000000000
-          Width = 411.968489290000000000
+          Width = 434.645669290000000000
           Color = clBlack
           Frame.Typ = [ftTop]
         end
