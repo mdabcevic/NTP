@@ -195,7 +195,24 @@ __published:	// IDE-managed Components
 	TWideStringField *JoinedReportAuthorizedByName;
 	TStringField *JoinedReportexpensesList;
 	TWideStringField *JoinedReportDepartment;
+	TAutoIncField *WarrantsTableWarrantID;
+	TIntegerField *WarrantsTableEmployeeID;
+	TDateTimeField *WarrantsTableCreatedAt;
+	TDateTimeField *WarrantsTableDeparture;
+	TDateTimeField *WarrantsTableArrival;
+	TBooleanField *WarrantsTableIsInternational;
+	TWideStringField *WarrantsTablePartners;
+	TWideStringField *WarrantsTablePurposes;
+	TIntegerField *WarrantsTableAttachmentID;
+	TIntegerField *WarrantsTableStartingOdometer;
+	TIntegerField *WarrantsTableEndingOdometer;
+	TWideStringField *WarrantsTableToll;
+	TWideStringField *WarrantsTableLicensePlate;
+	TWideStringField *WarrantsTableOtherVehicles;
+	TIntegerField *WarrantsTableAuthorizedBy;
+	TStringField *WarrantsTableMileage;
 	void __fastcall WarrantsQueryCalcFields(TDataSet *DataSet);
+	void __fastcall WarrantsTableCalcFields(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);

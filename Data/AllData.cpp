@@ -382,3 +382,10 @@ int TDataModule1::StartProcess()
 }
 
 
+void __fastcall TDataModule1::WarrantsTableCalcFields(TDataSet *DataSet)
+{
+	int mileage = WarrantsTable->FieldByName("EndingOdometer")->AsInteger - WarrantsTable->FieldByName("StartingOdometer")->AsInteger;
+    WarrantsTable->FieldByName("Mileage")->AsString = (UnicodeString)mileage + " km";
+}
+//---------------------------------------------------------------------------
+

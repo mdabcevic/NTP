@@ -362,7 +362,7 @@ object DataModule1: TDataModule1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45109.764086875000000000
-    ReportOptions.LastChange = 45111.711624074100000000
+    ReportOptions.LastChange = 45153.413017870400000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -430,7 +430,7 @@ object DataModule1: TDataModule1
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 151.181200000000000000
+        Height = 117.165430000000000000
         Top = 136.063080000000000000
         Width = 718.110700000000000000
         DataSet = frxDBEmployee
@@ -438,21 +438,21 @@ object DataModule1: TDataModule1
         RowCount = 0
         object Shape1: TfrxShapeView
           AllowVectorExport = True
-          Top = 98.267780000000000000
-          Width = 737.008350000000000000
+          Left = 3.779530000000000000
+          Top = 71.811070000000000000
+          Width = 695.433080630000000000
           Height = 34.015770000000000000
-          Fill.BackColor = 13434828
+          Fill.BackColor = clSilver
           Fill.ForeColor = 13434828
           Frame.Typ = []
         end
         object EmployeeFirstName: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 7.559060000000000000
+          Left = 306.141930000000000000
           Top = 7.559060000000000000
-          Width = 309.921460000000000000
+          Width = 105.826840000000000000
           Height = 41.574830000000000000
-          DataField = 'FirstName'
           DataSet = frxDBEmployee
           DataSetName = 'Employee'
           Font.Charset = DEFAULT_CHARSET
@@ -461,7 +461,7 @@ object DataModule1: TDataModule1
           Font.Name = 'Segoe UI Semibold'
           Font.Style = [fsBold, fsItalic]
           Frame.Typ = []
-          HAlign = haRight
+          HAlign = haCenter
           Memo.UTF8W = (
             '[Employee."FirstName"]')
           ParentFont = False
@@ -469,9 +469,9 @@ object DataModule1: TDataModule1
         object Memo2: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 366.614410000000000000
+          Left = 359.055350000000000000
           Top = 7.559060000000000000
-          Width = 347.716760000000000000
+          Width = 109.606370000000000000
           Height = 41.574830000000000000
           DataSet = frxDBEmployee
           DataSetName = 'Employee'
@@ -481,37 +481,38 @@ object DataModule1: TDataModule1
           Font.Name = 'Segoe UI Semibold'
           Font.Style = [fsBold, fsItalic]
           Frame.Typ = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[Employee."LastName"]')
           ParentFont = False
         end
         object Memo3: TfrxMemoView
           AllowVectorExport = True
-          Left = 7.559060000000000000
-          Top = 102.047310000000000000
-          Width = 79.370130000000000000
+          Left = 15.118120000000000000
+          Top = 75.590600000000000000
+          Width = 56.692950000000000000
           Height = 26.456710000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
-          Font.Name = 'Segoe UI'
+          Font.Name = 'Segoe UI Semibold'
           Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            #353'ifra naloga')
+            #352'ifra')
           ParentFont = False
         end
         object Memo4: TfrxMemoView
           AllowVectorExport = True
-          Left = 94.488250000000000000
-          Top = 102.047310000000000000
-          Width = 166.299320000000000000
+          Left = 83.149660000000000000
+          Top = 75.590600000000000000
+          Width = 94.488250000000000000
           Height = 26.456710000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
-          Font.Name = 'Segoe UI'
+          Font.Name = 'Segoe UI Semibold'
           Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
@@ -521,45 +522,62 @@ object DataModule1: TDataModule1
         end
         object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 272.126160000000000000
-          Top = 102.047310000000000000
-          Width = 170.078850000000000000
+          Left = 188.976500000000000000
+          Top = 75.590600000000000000
+          Width = 158.740260000000000000
           Height = 26.456710000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
-          Font.Name = 'Segoe UI'
+          Font.Name = 'Segoe UI Semibold'
           Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            'Partneri')
+            'Poslovni partneri')
           ParentFont = False
         end
         object Memo6: TfrxMemoView
           AllowVectorExport = True
-          Left = 457.323130000000000000
-          Top = 102.047310000000000000
-          Width = 170.078850000000000000
+          Left = 351.496290000000000000
+          Top = 75.590600000000000000
+          Width = 200.315090000000000000
           Height = 26.456710000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
-          Font.Name = 'Segoe UI'
+          Font.Name = 'Segoe UI Semibold'
           Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            'Razlog')
+            'Svrha putovanja')
           ParentFont = False
         end
         object Line1: TfrxLineView
           AllowVectorExport = True
-          Left = 79.370130000000000000
+          Left = 7.559060000000000000
           Top = 52.913420000000000000
-          Width = 563.149970000000000000
+          Width = 691.653990000000000000
           Color = clAppWorkSpace
           Frame.Typ = [ftTop]
+        end
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 563.149970000000000000
+          Top = 75.590600000000000000
+          Width = 117.165430000000000000
+          Height = 26.456710000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Kilometra'#382'a')
+          ParentFont = False
         end
       end
       object DetailData1: TfrxDetailData
@@ -569,8 +587,8 @@ object DataModule1: TDataModule1
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 124.724490000000000000
-        Top = 309.921460000000000000
+        Height = 71.811070000000000000
+        Top = 275.905690000000000000
         Width = 718.110700000000000000
         DataSet = WarrantDetail
         DataSetName = 'Warrants'
@@ -578,17 +596,17 @@ object DataModule1: TDataModule1
         object WarrantsWarrantID: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 7.559060000000000000
+          Left = 15.118120000000000000
           Top = 15.118120000000000000
-          Width = 79.370130000000000000
-          Height = 71.811070000000000000
+          Width = 56.692950000000000000
+          Height = 37.795300000000000000
           DataField = 'WarrantID'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Segoe UI'
+          Font.Height = -12
+          Font.Name = 'Verdana'
           Font.Style = []
           Frame.Typ = []
           HAlign = haCenter
@@ -599,17 +617,17 @@ object DataModule1: TDataModule1
         object WarrantsCreatedAt: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 102.047310000000000000
+          Left = 83.149660000000000000
           Top = 15.118120000000000000
-          Width = 158.740260000000000000
-          Height = 71.811070000000000000
+          Width = 94.488250000000000000
+          Height = 37.795300000000000000
           DataField = 'CreatedAt'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Segoe UI'
+          Font.Height = -12
+          Font.Name = 'Verdana'
           Font.Style = []
           Frame.Typ = []
           HAlign = haCenter
@@ -620,20 +638,19 @@ object DataModule1: TDataModule1
         object WarrantsPartners: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 272.126160000000000000
+          Left = 188.976500000000000000
           Top = 15.118120000000000000
-          Width = 170.078850000000000000
-          Height = 71.811070000000000000
+          Width = 158.740260000000000000
+          Height = 37.795300000000000000
           DataField = 'Partners'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
+          Font.Height = -13
           Font.Name = 'Segoe UI'
           Font.Style = []
           Frame.Typ = []
-          HAlign = haCenter
           Memo.UTF8W = (
             '[Warrants."Partners"]')
           ParentFont = False
@@ -641,22 +658,49 @@ object DataModule1: TDataModule1
         object WarrantsPurposes: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 457.323130000000000000
+          Left = 351.496290000000000000
           Top = 15.118120000000000000
-          Width = 166.299320000000000000
-          Height = 71.811070000000000000
+          Width = 200.315090000000000000
+          Height = 37.795300000000000000
           DataField = 'Purposes'
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -16
+          Font.Height = -13
           Font.Name = 'Segoe UI'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Warrants."Purposes"]')
+          ParentFont = False
+        end
+        object Line2: TfrxLineView
+          AllowVectorExport = True
+          Left = 7.559060000000000000
+          Top = 64.252010000000000000
+          Width = 691.653990000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo8: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 563.149970000000000000
+          Top = 15.118120000000000000
+          Width = 120.944960000000000000
+          Height = 37.795300000000000000
+          DataSet = WarrantDetail
+          DataSetName = 'Warrants'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Verdana'
           Font.Style = []
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            '[Warrants."Purposes"]')
+            '[Warrants."Mileage"]')
           ParentFont = False
         end
       end
@@ -1527,12 +1571,73 @@ object DataModule1: TDataModule1
     Active = True
     Connection = Connection
     CursorType = ctStatic
+    OnCalcFields = WarrantsTableCalcFields
     IndexFieldNames = 'EmployeeID'
     MasterFields = 'EmployeeID'
     MasterSource = EmployeeDataSource
     TableName = 'TravelWarrants'
     Left = 128
     Top = 272
+    object WarrantsTableWarrantID: TAutoIncField
+      FieldName = 'WarrantID'
+      ReadOnly = True
+    end
+    object WarrantsTableEmployeeID: TIntegerField
+      FieldName = 'EmployeeID'
+    end
+    object WarrantsTableCreatedAt: TDateTimeField
+      FieldName = 'CreatedAt'
+    end
+    object WarrantsTableDeparture: TDateTimeField
+      FieldName = 'Departure'
+    end
+    object WarrantsTableArrival: TDateTimeField
+      FieldName = 'Arrival'
+    end
+    object WarrantsTableIsInternational: TBooleanField
+      FieldName = 'IsInternational'
+    end
+    object WarrantsTablePartners: TWideStringField
+      FieldName = 'Partners'
+      FixedChar = True
+      Size = 100
+    end
+    object WarrantsTablePurposes: TWideStringField
+      FieldName = 'Purposes'
+      FixedChar = True
+      Size = 100
+    end
+    object WarrantsTableAttachmentID: TIntegerField
+      FieldName = 'AttachmentID'
+    end
+    object WarrantsTableStartingOdometer: TIntegerField
+      FieldName = 'StartingOdometer'
+    end
+    object WarrantsTableEndingOdometer: TIntegerField
+      FieldName = 'EndingOdometer'
+    end
+    object WarrantsTableToll: TWideStringField
+      FieldName = 'Toll'
+      FixedChar = True
+      Size = 50
+    end
+    object WarrantsTableLicensePlate: TWideStringField
+      FieldName = 'LicensePlate'
+      FixedChar = True
+    end
+    object WarrantsTableOtherVehicles: TWideStringField
+      FieldName = 'OtherVehicles'
+      FixedChar = True
+      Size = 10
+    end
+    object WarrantsTableAuthorizedBy: TIntegerField
+      FieldName = 'AuthorizedBy'
+    end
+    object WarrantsTableMileage: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'Mileage'
+      Calculated = True
+    end
   end
   object TCPClient: TIdTCPClient
     ConnectTimeout = 0
