@@ -362,7 +362,7 @@ object DataModule1: TDataModule1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45109.764086875000000000
-    ReportOptions.LastChange = 45153.413017870400000000
+    ReportOptions.LastChange = 45153.532637384260000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -517,7 +517,7 @@ object DataModule1: TDataModule1
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            'Datum')
+            'Trajanje')
           ParentFont = False
         end
         object Memo5: TfrxMemoView
@@ -620,10 +620,11 @@ object DataModule1: TDataModule1
           Left = 83.149660000000000000
           Top = 15.118120000000000000
           Width = 94.488250000000000000
-          Height = 37.795300000000000000
-          DataField = 'CreatedAt'
+          Height = 15.118120000000000000
           DataSet = WarrantDetail
           DataSetName = 'Warrants'
+          DisplayFormat.FormatStr = 'dd.mm.yyyy'
+          DisplayFormat.Kind = fkDateTime
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -12
@@ -632,7 +633,7 @@ object DataModule1: TDataModule1
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            '[Warrants."CreatedAt"]')
+            '[Warrants."Departure"]')
           ParentFont = False
         end
         object WarrantsPartners: TfrxMemoView
@@ -701,6 +702,28 @@ object DataModule1: TDataModule1
           HAlign = haCenter
           Memo.UTF8W = (
             '[Warrants."Mileage"]')
+          ParentFont = False
+        end
+        object Memo10: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 83.149660000000000000
+          Top = 37.795300000000000000
+          Width = 94.488250000000000000
+          Height = 15.118120000000000000
+          DataSet = WarrantDetail
+          DataSetName = 'Warrants'
+          DisplayFormat.FormatStr = 'dd.mm.yyyy'
+          DisplayFormat.Kind = fkDateTime
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[Warrants."Arrival"]')
           ParentFont = False
         end
       end
