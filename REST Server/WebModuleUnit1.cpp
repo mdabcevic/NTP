@@ -63,9 +63,7 @@ void __fastcall TWebModule1::WebModule1ActEmployeesAction(TObject *Sender, TWebR
 	//get and check user credentials
 	UnicodeString username = SplitString(login, ":")[0];
 	UnicodeString password = SplitString(login, ":")[1];
-	//Response->Content = "Successfully Authenticated";
 	if(Request->MethodType == mtGet){
-		//Response->Content = "Message: " + MessageList->Text;
 		Response->StatusCode = 200;
 		Response->Content = MessageList->Text;
 		Response->ContentType = "text/plain; charset=UTF-8";

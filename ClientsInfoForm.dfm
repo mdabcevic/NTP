@@ -2,8 +2,8 @@ object Form10: TForm10
   Left = 0
   Top = 0
   Caption = 'Clients'
-  ClientHeight = 491
-  ClientWidth = 616
+  ClientHeight = 321
+  ClientWidth = 947
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -28,7 +28,7 @@ object Form10: TForm10
     Left = 8
     Top = 88
     Width = 608
-    Height = 150
+    Height = 167
     Columns = <
       item
         AutoSize = True
@@ -57,7 +57,7 @@ object Form10: TForm10
   end
   object AddClient: TButton
     Left = 8
-    Top = 244
+    Top = 261
     Width = 202
     Height = 25
     Caption = 'Add new client'
@@ -66,7 +66,7 @@ object Form10: TForm10
   end
   object EditClient: TButton
     Left = 216
-    Top = 244
+    Top = 261
     Width = 192
     Height = 25
     Caption = 'Edit selected client'
@@ -75,7 +75,7 @@ object Form10: TForm10
   end
   object DeleteClient: TButton
     Left = 414
-    Top = 244
+    Top = 261
     Width = 202
     Height = 25
     Caption = 'Delete selected client'
@@ -83,8 +83,8 @@ object Form10: TForm10
     OnClick = DeleteClientClick
   end
   object GroupBox1: TGroupBox
-    Left = 8
-    Top = 275
+    Left = 622
+    Top = 88
     Width = 297
     Height = 198
     Caption = 'Enter client information'

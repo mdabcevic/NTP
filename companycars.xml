@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <companycars>
 	<car>
-		<licenseplate>MI-3297-ZG</licenseplate>
+		<licenseplate>ZG-3297-MI</licenseplate>
 		<internalmark>Toyota-Corolla-08</internalmark>
 		<assigned>Kresimir Dabcevic</assigned>
 		<currentuser>Kresimir Dabcevic</currentuser>
@@ -15,14 +15,14 @@
     <location>Slavonski Brod</location>
   </car> 
   <car>
-    <licenseplate>UQ-9142-ZG</licenseplate>
+    <licenseplate>ZG-9142-UQ</licenseplate>
     <internalmark>Toyota-Corolla-07</internalmark>
     <assigned>Safi Hajjo</assigned>
     <currentuser>Safi Hajjo</currentuser>
     <location>Zagreb</location>
   </car>
   <car>
-    <licenseplate>VF-1973-ZG</licenseplate>
+    <licenseplate>ZG-1973-VF</licenseplate>
     <internalmark>Toyota-Camry-06</internalmark>
     <assigned>Dubravka Dabcevic</assigned>
     <currentuser>Dubravka Dabcevic</currentuser>
